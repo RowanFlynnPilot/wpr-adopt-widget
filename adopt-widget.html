@@ -116,7 +116,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   cursor:pointer;text-decoration:none;color:inherit;display:block;
 }
 .pet-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.pet-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--sand);display:block}
+.pet-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 20%;background:var(--sand);display:block}
 .pet-card-img-placeholder{
   width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
   font-size:2.5rem;background:var(--sand);color:var(--border);
@@ -356,6 +356,56 @@ function getAnimalType(species){
 }
 function emoji(s){const t=getAnimalType(s);return t==='dog'?'🐕':t==='cat'?'🐈':'🐾'}
 function imgFail(el){const d=document.createElement('div');d.className='pet-card-img-placeholder';d.textContent=el.dataset.emoji||'🐾';el.replaceWith(d)}
+
+// Smart crop: analyze each loaded image to find the focal point (where the animal face likely is)
+// Uses a small canvas to find the region with the most detail/contrast
+function smartPosition(img){
+  if(!img.naturalWidth)return;
+  try{
+    const c=document.createElement('canvas');
+    const sz=64; // sample at 64px for speed
+    c.width=sz;c.height=sz;
+    const ctx=c.getContext('2d');
+    ctx.drawImage(img,0,0,sz,sz);
+    const data=ctx.getImageData(0,0,sz,sz).data;
+    // Divide image into vertical thirds and measure detail (variance) in each
+    const thirds=[0,0,0];
+    const thirdH=Math.floor(sz/3);
+    for(let row=0;row<sz;row++){
+      const third=Math.min(Math.floor(row/thirdH),2);
+      for(let col=0;col<sz;col++){
+        const i=(row*sz+col)*4;
+        // Edge detection approximation: difference from neighbors
+        if(col>0&&row>0){
+          const prev=(row*sz+(col-1))*4;
+          const above=((row-1)*sz+col)*4;
+          const diff=Math.abs(data[i]-data[prev])+Math.abs(data[i]-data[above])+
+                     Math.abs(data[i+1]-data[prev+1])+Math.abs(data[i+1]-data[above+1]);
+          thirds[third]+=diff;
+        }
+      }
+    }
+    // If the top third has the most detail, crop from top (face is up)
+    // If bottom third has the most, crop from bottom
+    // Otherwise stay at 20% from top (our default bias)
+    const max=Math.max(...thirds);
+    if(thirds[0]===max)img.style.objectPosition='center 15%';
+    else if(thirds[2]===max)img.style.objectPosition='center 70%';
+    else img.style.objectPosition='center 35%';
+  }catch(e){/* canvas tainted by CORS, keep default */}
+}
+
+// Apply smart positioning to all pet images once they load
+document.addEventListener('DOMContentLoaded',()=>{
+  const observer=new MutationObserver(()=>{
+    document.querySelectorAll('.pet-card-img:not([data-positioned])').forEach(img=>{
+      img.dataset.positioned='1';
+      if(img.complete&&img.naturalWidth)smartPosition(img);
+      else img.addEventListener('load',()=>smartPosition(img),{once:true});
+    });
+  });
+  observer.observe(document.getElementById('shelterContent'),{childList:true,subtree:true});
+});
 
 function card(p){
   const sc=getAnimalType(p.species);
