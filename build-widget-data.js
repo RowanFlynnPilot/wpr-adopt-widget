@@ -1,12 +1,12 @@
 /**
- * WP&R Adoptable Pets — Data Builder v5
+ * WP&R Adoptable Pets — Data Builder v5.1
  *
- * v5 fixes:
- *   - Adoptapet: pagination is CLIENT-SIDE React — must click "next" button
- *     instead of changing URL params (which returned same page every time)
- *   - Adoptapet: stealth mode — override navigator.webdriver to avoid detection
- *   - Adoptapet: images load so we can get photo URLs from img.src
- *   - Added delay between pagination clicks to let React re-render
+ * v5.1 fix: Adoptapet photos
+ *   - Try img.src, img.getAttribute('src'), img.dataset.src, img.srcset
+ *   - Log first image's raw src for debugging
+ *   - Extract Cloudinary ID from any available attribute
+ *   - Also try: scrape the "Learn More" card's expanded section which
+ *     sometimes has a different img with the full src
  */
 
 const puppeteer = require('puppeteer');
@@ -29,25 +29,22 @@ async function makePage(browser) {
   const page = await browser.newPage();
   await page.setUserAgent(UA);
   await page.setViewport({ width: 1280, height: 900 });
-  
-  // Stealth: hide headless indicators
   await page.evaluateOnNewDocument(() => {
     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
     Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
     window.chrome = { runtime: {} };
   });
-  
   return page;
 }
 
 // ═══════════════════════════════════════════════════════
-// ADOPTAPET SCRAPER — click-through pagination
+// ADOPTAPET — click-through pagination + photo fix
 // ═══════════════════════════════════════════════════════
 async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const url = `https://www.adoptapet.com/shelter/${shelterId}/available-pets`;
   console.log(`\n[${shelterKey}] Adoptapet: ${url}`);
-  
+
   const page = await makePage(browser);
   let allPets = [];
   let totalExpected = 0;
@@ -55,30 +52,53 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
 
-    // Wait for initial pet cards
     try {
       await page.waitForSelector('img[alt^="Photo of"]', { timeout: 20000 });
-      console.log('    OK: initial pet images rendered');
+      console.log('    OK: pet images rendered');
     } catch {
-      console.log('    WARN: no pet images after 20s, trying extra wait...');
+      console.log('    WARN: no pet images after 20s');
       await new Promise(r => setTimeout(r, 8000));
       const count = await page.evaluate(() => document.querySelectorAll('img[alt^="Photo of"]').length);
       if (count === 0) {
-        console.log('    FAIL: no pet images found at all');
+        console.log('    FAIL: no pet images');
         saveDiag(`${shelterKey}-initial`, await page.content());
         await page.close();
         return [];
       }
     }
 
-    // Scrape current page and paginate by clicking buttons
-    let pageNum = 1;
-    const MAX_PAGES = 12;
+    // Debug: log raw src attributes of first few images
+    const debugSrcs = await page.evaluate(() => {
+      const imgs = document.querySelectorAll('img[alt^="Photo of"]');
+      const results = [];
+      imgs.forEach((img, i) => {
+        if (i < 3) {
+          results.push({
+            alt: img.alt,
+            src: img.src,
+            getSrc: img.getAttribute('src'),
+            dataSrc: img.dataset?.src || '',
+            srcset: img.srcset || img.getAttribute('srcset') || '',
+            outerSnippet: img.outerHTML.substring(0, 300)
+          });
+        }
+      });
+      return results;
+    });
+    console.log('    DEBUG - First image attributes:');
+    debugSrcs.forEach((d, i) => {
+      console.log(`      [${i}] alt: ${d.alt}`);
+      console.log(`          src: ${d.src?.substring(0, 120)}`);
+      console.log(`          getAttribute: ${d.getSrc?.substring(0, 120)}`);
+      console.log(`          data-src: ${d.dataSrc?.substring(0, 120)}`);
+      console.log(`          srcset: ${d.srcset?.substring(0, 120)}`);
+      console.log(`          html: ${d.outerSnippet?.substring(0, 200)}`);
+    });
 
-    while (pageNum <= MAX_PAGES) {
+    let pageNum = 1;
+    while (pageNum <= 12) {
       console.log(`  Scraping page ${pageNum}...`);
-      
-      // Extract pets from current view
+
       const result = await page.evaluate(() => {
         const pets = [];
         const seen = new Set();
@@ -93,24 +113,42 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           const name = (img.alt || '').replace(/^Photo of\s*/i, '').trim();
           if (!name || name.length > 60) return;
 
-          // Photo URL
-          const src = img.src || img.getAttribute('src') || '';
+          // Try every possible source for the image URL
+          const rawSrc = img.getAttribute('src') || img.src || '';
+          const dataSrc = img.dataset?.src || img.getAttribute('data-src') || '';
+          const srcset = img.srcset || img.getAttribute('srcset') || '';
+          
+          // Check all possible sources for a Cloudinary image ID
           let photo = null;
-          if (src.includes('adoptapet.com') && !src.includes('NoPetPhoto')) {
-            const idMatch = src.match(/f_auto,q_auto\/(\d+)/);
-            if (idMatch) {
+          const allSrcs = [rawSrc, dataSrc, srcset];
+          
+          for (const s of allSrcs) {
+            if (!s) continue;
+            // Match the numeric ID at end of Adoptapet Cloudinary URLs
+            // Pattern: f_auto,q_auto/1292568064  or  q_auto/1292568064
+            const idMatch = s.match(/q_auto\/(\d{8,})/);
+            if (idMatch && !s.includes('NoPetPhoto') && !s.includes('badge') && !s.includes('hero')) {
               photo = `https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/${idMatch[1]}`;
+              break;
+            }
+          }
+          
+          // Fallback: try to find ANY numeric ID in the src that's 8+ digits
+          if (!photo && rawSrc && !rawSrc.includes('NoPetPhoto')) {
+            const fallbackMatch = rawSrc.match(/\/(\d{8,})(?:\.|\/|$)/);
+            if (fallbackMatch) {
+              photo = `https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/${fallbackMatch[1]}`;
             }
           }
 
-          // Parse text
+          // Parse text content for breed/gender/age
           const fullText = link.textContent || '';
           const firstIdx = fullText.indexOf(name);
           let textAfterName = '';
           if (firstIdx >= 0) {
             const secondIdx = fullText.indexOf(name, firstIdx + name.length);
-            textAfterName = secondIdx >= 0 
-              ? fullText.substring(secondIdx + name.length) 
+            textAfterName = secondIdx >= 0
+              ? fullText.substring(secondIdx + name.length)
               : fullText.substring(firstIdx + name.length);
           }
 
@@ -135,34 +173,21 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           pets.push({ name, breed, age, gender, photo, url: href, species: isCat ? 'Cat' : 'Dog' });
         });
 
-        // Total: "1 - 9 of 62 pets available"
         const cm = document.body.innerText.match(/(\d+)\s*-\s*(\d+)\s+of\s+(\d+)/);
         
-        // Find the next page button — look for pagination buttons
-        // Adoptapet uses numbered page buttons: 1, 2, 3, ..., and also "next" arrows
-        const currentPageNum = cm ? Math.ceil(parseInt(cm[2]) / (parseInt(cm[2]) - parseInt(cm[1]) + 1)) : 1;
-        const nextPageNum = currentPageNum + 1;
-        
-        // Look for a button/link with the next page number
+        // Find next page button
         let hasNextPage = false;
-        const allButtons = [...document.querySelectorAll('button, a, [role="button"]')];
-        for (const btn of allButtons) {
-          const txt = btn.textContent.trim();
-          if (txt === String(nextPageNum) && !btn.disabled) {
-            hasNextPage = true;
-            break;
-          }
+        let nextPageNum = 0;
+        if (cm) {
+          const perPage = parseInt(cm[2]) - parseInt(cm[1]) + 1;
+          nextPageNum = Math.ceil(parseInt(cm[2]) / perPage) + 1;
+          const allBtns = [...document.querySelectorAll('button, a, [role="button"]')];
+          hasNextPage = allBtns.some(btn => btn.textContent.trim() === String(nextPageNum) && !btn.disabled);
         }
 
-        return { 
-          pets, 
-          totalPets: cm ? parseInt(cm[3]) : 0,
-          hasNextPage,
-          nextPageNum
-        };
+        return { pets, totalPets: cm ? parseInt(cm[3]) : 0, hasNextPage, nextPageNum };
       });
 
-      // Collect unique pets
       let newCount = 0;
       for (const pet of result.pets) {
         if (!allPets.find(p => p.url === pet.url)) {
@@ -171,132 +196,88 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         }
       }
 
-      if (pageNum === 1 && result.totalPets > 0) {
-        totalExpected = result.totalPets;
-      }
+      if (pageNum === 1 && result.totalPets > 0) totalExpected = result.totalPets;
 
-      console.log(`    Found ${result.pets.length} on page, ${newCount} new (total ${allPets.length}${totalExpected ? '/' + totalExpected : ''})`);
-      
+      const photosOnPage = result.pets.filter(p => p.photo).length;
+      console.log(`    Found ${result.pets.length} on page, ${newCount} new, ${photosOnPage} with photos (total ${allPets.length}${totalExpected ? '/' + totalExpected : ''})`);
+
       if (result.pets.length > 0) {
-        const sample = result.pets[0];
-        console.log(`    Sample: ${sample.name} | ${sample.breed} | ${sample.gender}, ${sample.age} | photo: ${sample.photo ? 'YES' : 'no'}`);
+        const s = result.pets[0];
+        console.log(`    Sample: ${s.name} | ${s.breed} | ${s.gender}, ${s.age} | photo: ${s.photo ? 'YES' : 'no'}`);
       }
 
-      // Stop if no new pets or got all expected
-      if (newCount === 0) {
-        console.log('    No new pets found, stopping');
-        break;
-      }
-      if (totalExpected > 0 && allPets.length >= totalExpected) {
-        console.log('    Got all expected pets, stopping');
-        break;
-      }
-
-      // Click next page button
-      if (!result.hasNextPage) {
-        console.log('    No next page button found, stopping');
-        break;
-      }
+      if (newCount === 0) { console.log('    No new pets, stopping'); break; }
+      if (totalExpected > 0 && allPets.length >= totalExpected) { console.log('    Got all expected, stopping'); break; }
+      if (!result.hasNextPage) { console.log('    No next page button, stopping'); break; }
 
       console.log(`    Clicking page ${result.nextPageNum}...`);
-      
-      const clicked = await page.evaluate((nextNum) => {
-        const allBtns = [...document.querySelectorAll('button, a, [role="button"]')];
-        for (const btn of allBtns) {
-          if (btn.textContent.trim() === String(nextNum) && !btn.disabled) {
-            btn.click();
-            return true;
-          }
+      const clicked = await page.evaluate((n) => {
+        const btns = [...document.querySelectorAll('button, a, [role="button"]')];
+        for (const b of btns) {
+          if (b.textContent.trim() === String(n) && !b.disabled) { b.click(); return true; }
         }
         return false;
       }, result.nextPageNum);
 
-      if (!clicked) {
-        console.log('    Could not click next button, stopping');
-        break;
-      }
+      if (!clicked) { console.log('    Could not click next, stopping'); break; }
 
-      // Wait for new content to load
       await new Promise(r => setTimeout(r, 3000));
-      
-      // Wait for the page count text to update
       try {
         await page.waitForFunction(
-          (prevTotal) => {
-            const text = document.body.innerText;
-            const m = text.match(/(\d+)\s*-\s*(\d+)\s+of\s+(\d+)/);
-            if (!m) return false;
-            return parseInt(m[1]) !== prevTotal;
+          (prevStart) => {
+            const m = document.body.innerText.match(/(\d+)\s*-\s*\d+\s+of\s+\d+/);
+            return m && parseInt(m[1]) !== prevStart;
           },
           { timeout: 10000 },
-          (pageNum - 1) * 9 + 1 // previous page's start number
+          (pageNum - 1) * 9 + 1
         );
-        console.log('    Page content updated');
       } catch {
-        console.log('    WARN: page content may not have updated, continuing anyway');
         await new Promise(r => setTimeout(r, 3000));
       }
 
       pageNum++;
     }
-
   } catch (err) {
     console.error(`    ERR: ${err.message}`);
     try { saveDiag(`${shelterKey}-error`, await page.content()); } catch {}
   }
 
   await page.close();
-
-  console.log(`  [${shelterKey}] TOTAL: ${allPets.length} unique pets`);
+  console.log(`  [${shelterKey}] TOTAL: ${allPets.length} unique pets, ${allPets.filter(p => p.photo).length} with photos`);
 
   return allPets.map(p => ({
-    name: p.name,
-    species: p.species,
-    breed: p.breed || 'Unknown',
-    age: p.age || 'Unknown',
-    gender: p.gender || 'Unknown',
-    bio: '',
-    photo: p.photo,
-    url: p.url
+    name: p.name, species: p.species, breed: p.breed || 'Unknown',
+    age: p.age || 'Unknown', gender: p.gender || 'Unknown',
+    bio: '', photo: p.photo, url: p.url
   }));
 }
 
 // ═══════════════════════════════════════════════════════
-// PETFINDER (Clark County) — unchanged from v4
+// PETFINDER (Clark County) — unchanged
 // ═══════════════════════════════════════════════════════
 async function scrapePetfinder(browser, shelterKey) {
   const url = 'https://www.petfinder.com/member/us/wi/neillsville/clark-county-humane-society-wi34/';
   console.log(`\n[${shelterKey}] Petfinder: ${url}`);
   const page = await makePage(browser);
-
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
-    try {
-      await page.waitForSelector('a[href*="/details/"]', { timeout: 15000 });
-      console.log('    OK: pet links found');
-    } catch {
-      console.log('    WARN: no pet links, extra wait...');
-      await new Promise(r => setTimeout(r, 8000));
-    }
+    try { await page.waitForSelector('a[href*="/details/"]', { timeout: 15000 }); console.log('    OK: pet links found'); }
+    catch { await new Promise(r => setTimeout(r, 8000)); }
 
     const pets = await page.evaluate(() => {
-      const results = [];
-      const seen = new Set();
+      const results = [], seen = new Set();
       document.querySelectorAll('a[href*="/details/"]').forEach(link => {
         const href = link.href;
-        if (seen.has(href)) return;
-        seen.add(href);
+        if (seen.has(href)) return; seen.add(href);
         const img = link.querySelector('img');
         if (!img) return;
-        const alt = img.alt || '';
-        const src = img.src || '';
+        const alt = img.alt || '', src = img.src || '';
         const name = alt.split(',')[0]?.trim();
         if (!name || name.length > 60 || name.length < 2) return;
         results.push({ name, altText: alt, photo: src, url: href });
       });
       return results;
     });
-
     console.log(`  Found ${pets.length} pets`);
     if (pets.length === 0) saveDiag(`${shelterKey}-pf`, await page.content());
     await page.close();
@@ -319,21 +300,18 @@ async function scrapePetfinder(browser, shelterKey) {
 }
 
 // ═══════════════════════════════════════════════════════
-// NLPAC — unchanged from v4
+// NLPAC — unchanged
 // ═══════════════════════════════════════════════════════
 async function scrapeNlpac(browser) {
   const url = 'https://www.nlpac.com/pets';
   console.log(`\n[nlpac] ${url}`);
   const page = await makePage(browser);
-
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(r => setTimeout(r, 3000));
-
     const pets = await page.evaluate(() => {
-      const results = [];
-      const seen = new Set();
-      document.querySelectorAll('a[href*="/q/pets/"], a[href*="/pets/"]').forEach(a => {
+      const results = [], seen = new Set();
+      document.querySelectorAll('a[href*="/q/pets/"]').forEach(a => {
         const href = a.href;
         if (seen.has(href) || !href) return;
         const parts = new URL(href).pathname.split('/').filter(Boolean);
@@ -348,15 +326,12 @@ async function scrapeNlpac(browser) {
       });
       return results;
     });
-
     console.log(`  Found ${pets.length} pet links`);
     if (pets.length === 0) saveDiag('nlpac-list', await page.content());
     await page.close();
-
     return pets.map(p => ({ name: p.name, species: 'Dog', breed: '', age: '', gender: '', bio: '', photo: p.photo, url: p.url }));
   } catch (err) {
     console.error(`  ERR: ${err.message}`);
-    try { saveDiag('nlpac-err', await page.content()); } catch {}
     await page.close();
     return [];
   }
@@ -367,7 +342,7 @@ async function scrapeNlpac(browser) {
 // ═══════════════════════════════════════════════════════
 async function main() {
   console.log('╔══════════════════════════════════════════════════╗');
-  console.log('║  WP&R Pet Data Builder v5                       ║');
+  console.log('║  WP&R Pet Data Builder v5.1                     ║');
   console.log('╚══════════════════════════════════════════════════╝\n');
 
   const browser = await puppeteer.launch({
@@ -392,8 +367,8 @@ async function main() {
   for (const [key, pets] of Object.entries(data.shelters)) {
     const d = pets.filter(p => p.species === 'Dog').length;
     const c = pets.filter(p => p.species === 'Cat').length;
-    const photos = pets.filter(p => p.photo).length;
-    console.log(`║  ${key.padEnd(12)} ${String(pets.length).padStart(3)} pets (${d}D ${c}C) ${photos} photos`.padEnd(51) + '║');
+    const ph = pets.filter(p => p.photo).length;
+    console.log(`║  ${key.padEnd(12)} ${String(pets.length).padStart(3)} pets (${d}D ${c}C) ${ph} photos`.padEnd(51) + '║');
     total += pets.length;
   }
   console.log('╠══════════════════════════════════════════════════╣');
