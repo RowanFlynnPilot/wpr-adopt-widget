@@ -1,14 +1,8 @@
 # .github/workflows/update-pets.yml
 # 
 # Automated pet data scraper for the WP&R Adoptable Pets widget.
-# Runs every 6 hours, scrapes all four shelters, and commits 
+# Runs every 6 hours, scrapes all five shelters, and commits 
 # updated pet-data.json to the repo (which GitHub Pages serves).
-#
-# Setup:
-#   1. Create a new GitHub repo (e.g., wpr-adopt-widget)
-#   2. Copy the /scraper folder and this workflow file into it
-#   3. Enable GitHub Pages on the repo (Settings → Pages → main branch)
-#   4. The widget HTML loads pet-data.json from the Pages URL
 
 name: Update Pet Data
 
@@ -32,22 +26,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: scraper/package.json
+          node-version: '24'
 
       - name: Install dependencies
-        working-directory: scraper
-        run: npm ci
+        run: npm install
+
+      - name: Install Puppeteer browsers
+        run: npx puppeteer browsers install chrome
 
       - name: Run pet scraper
-        working-directory: scraper
         run: node build-widget-data.js
 
       - name: Copy data to docs folder (for GitHub Pages)
         run: |
           mkdir -p docs
-          cp scraper/pet-data.json docs/pet-data.json
+          cp pet-data.json docs/pet-data.json
           echo "Pet data updated at $(date -u)" >> docs/update-log.txt
 
       - name: Commit and push
