@@ -18,16 +18,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Delete package-lock if stale
-        run: rm -f package-lock.json
+      - name: Check Node version
+        run: node --version
 
       - name: Install dependencies
-        run: npm install --no-package-lock
+        run: npm install
 
       - name: Install Puppeteer browsers
         run: npx puppeteer browsers install chrome
