@@ -1,8 +1,4 @@
 # .github/workflows/update-pets.yml
-# 
-# Automated pet data scraper for the WP&R Adoptable Pets widget.
-# Runs every 6 hours, scrapes all five shelters, and commits 
-# updated pet-data.json to the repo (which GitHub Pages serves).
 
 name: Update Pet Data
 
@@ -26,10 +22,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: ''
+
+      - name: Delete package-lock if stale
+        run: rm -f package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-package-lock
 
       - name: Install Puppeteer browsers
         run: npx puppeteer browsers install chrome
