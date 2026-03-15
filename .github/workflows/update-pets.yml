@@ -8,9 +8,8 @@ name: Update Pet Data
 
 on:
   schedule:
-    # Run every 6 hours
     - cron: '0 */6 * * *'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,7 +25,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '22'
+          cache: ''
 
       - name: Install dependencies
         run: npm install
@@ -37,7 +37,7 @@ jobs:
       - name: Run pet scraper
         run: node build-widget-data.js
 
-      - name: Copy data to docs folder (for GitHub Pages)
+      - name: Copy data to docs folder
         run: |
           mkdir -p docs
           cp pet-data.json docs/pet-data.json
