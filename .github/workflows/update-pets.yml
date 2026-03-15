@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Check Node version
         run: node --version
@@ -38,7 +41,7 @@ jobs:
         run: |
           git config user.name "WPR Pet Bot"
           git config user.email "bot@wausaupilotandreview.com"
+          git pull origin main --rebase
           git add docs/pet-data.json docs/update-log.txt
           git diff --staged --quiet || git commit -m "🐾 Update pet data $(date -u '+%Y-%m-%d %H:%M') UTC"
-          git pull --rebase
-          git push
+          git push origin main
