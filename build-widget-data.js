@@ -231,115 +231,114 @@ async function scrapePetfinder(browser, shelterKey) {
 }
 
 // ═══════════════════════════════════════════════════════
-// NLPAC — parse listing page cards (detail pages are bot-blocked)
-// The listing page has: name, breed, short bio, photo, and link for each pet
+// NLPAC — plain HTTP fetch (bot protection only blocks Puppeteer, not fetch)
+// Step 1: fetch listing page to get pet links
+// Step 2: fetch each detail page for full info + photos
 // ═══════════════════════════════════════════════════════
-async function scrapeNlpac(browser) {
-  const url = 'https://www.nlpac.com/pets';
-  console.log(`\n[nlpac] ${url}`);
-  const page = await makePage(browser);
+async function scrapeNlpac() {
+  const listUrl = 'https://www.nlpac.com/pets';
+  console.log(`\n[nlpac] ${listUrl}`);
+
   try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 3000));
+    // Step 1: Get listing page and extract pet links
+    const listRes = await fetch(listUrl, { headers: { 'User-Agent': UA } });
+    const listHtml = await listRes.text();
 
-    const pets = await page.evaluate(() => {
-      const results = [];
-      const seen = new Set();
+    // Extract all /q/pets/name links
+    const linkRegex = /href="(https?:\/\/www\.nlpac\.com\/q\/pets\/[^"]+)"/g;
+    const links = new Set();
+    let match;
+    while ((match = linkRegex.exec(listHtml)) !== null) {
+      links.add(match[1]);
+    }
 
-      // Each pet card has a "Learn More" link to /q/pets/name
-      // Walk backwards from each link to find the card container with name, breed, bio, image
-      document.querySelectorAll('a[href*="/q/pets/"]').forEach(a => {
-        const href = a.href;
-        if (seen.has(href) || !href) return;
-        const pathParts = new URL(href).pathname.split('/').filter(Boolean);
-        if (pathParts.length < 3) return;
-        seen.add(href);
+    console.log(`  Found ${links.size} pet links`);
+    if (links.size === 0) {
+      saveDiag('nlpac-list', listHtml);
+      return [];
+    }
 
-        // Walk up to find the card container — usually a parent div or section
-        // containing the image, name, breed, and bio
-        let container = a.parentElement;
-        // Go up a few levels to find a container with enough text
-        for (let i = 0; i < 5; i++) {
-          if (container && container.textContent.length > 20) break;
-          container = container?.parentElement;
+    // Step 2: Fetch each detail page
+    const allPets = [];
+    for (const petUrl of links) {
+      try {
+        console.log(`    Fetching: ${petUrl}`);
+        const detailRes = await fetch(petUrl, { headers: { 'User-Agent': UA } });
+        const html = await detailRes.text();
+
+        // Parse name from <h1>Meet Ninja</h1>
+        const nameMatch = html.match(/<h1[^>]*>Meet\s+(.+?)<\/h1>/i);
+        const name = nameMatch ? nameMatch[1].trim() : '';
+        if (!name) { console.log('      SKIP: no name found'); continue; }
+
+        // Parse photo from <img> with custompages or bizcategories in src
+        const photoMatch = html.match(/<img[^>]+src="(https:\/\/www\.wausaubusinessdirectory\.com\/images[^"]*custompages[^"]+)"/i);
+        const photo = photoMatch ? photoMatch[1] : null;
+
+        // Parse structured info from <li><strong>Key:</strong> Value</li>
+        const info = {};
+        const liRegex = /<li[^>]*>\s*<strong>([^<]+):<\/strong>\s*([^<]+)/gi;
+        let liMatch;
+        while ((liMatch = liRegex.exec(html)) !== null) {
+          info[liMatch[1].trim()] = liMatch[2].trim();
         }
-        if (!container) return;
 
-        // Get all text content, split into lines
-        const allText = container.textContent.trim();
-        const lines = allText.split('\n').map(s => s.trim()).filter(s => s && s !== 'Learn More');
-
-        // Expected pattern from the page:
-        // "Breckie" (name)
-        // "American Eskimo Dog" (breed)  
-        // "Breckie is a male American Eskimo." (bio)
-        const name = lines[0] || '';
-        const breed = lines[1] || '';
-        const bio = lines[2] || '';
-
-        // Get image
-        const img = container.querySelector('img:not([src*="logo"]):not([src*="pixel"])');
-        const photo = img?.src || null;
-
-        if (name && name.length > 1 && name.length < 60 && name !== 'Learn More') {
-          results.push({ name, breed, bio, photo, url: href });
+        // Also try without <strong> tags: "Animal Type: Cat"
+        const liRegex2 = /<li[^>]*>\s*\*?\*?([^:*]+):\*?\*?\s*([^<]+)/gi;
+        while ((liMatch = liRegex2.exec(html)) !== null) {
+          const key = liMatch[1].replace(/\*/g, '').trim();
+          if (!info[key]) info[key] = liMatch[2].trim();
         }
-      });
 
-      return results;
-    });
+        // Parse description
+        const descMatch = html.match(/Description:?\s*<\/[^>]+>\s*<[^>]+>(.+?)<\//is);
+        let bio = '';
+        if (descMatch) {
+          bio = descMatch[1].replace(/<[^>]+>/g, '').trim();
+        }
+        // Fallback: find the paragraph after "Description"
+        if (!bio) {
+          const descMatch2 = html.match(/Description:?\s*(?:<[^>]+>\s*)*(.+?)(?:<\/p>|<\/div>|<br)/is);
+          if (descMatch2) bio = descMatch2[1].replace(/<[^>]+>/g, '').trim();
+        }
 
-    console.log(`  Found ${pets.length} pets from listing page`);
+        const animalType = (info['Animal Type'] || '').toLowerCase();
+        const breed = info['Breed'] || '';
+        const age = info['Age'] || 'Adult';
 
-    await page.close();
+        // Species
+        let species = 'Dog';
+        if (animalType.includes('cat')) species = 'Cat';
+        else if (animalType.includes('guinea') || breed.toLowerCase().includes('guinea')) species = 'Other';
 
-    // Process each pet: derive species and gender from breed/bio text
-    return pets.map(p => {
-      const breedLower = (p.breed || '').toLowerCase();
-      const bioLower = (p.bio || '').toLowerCase();
-      const combined = breedLower + ' ' + bioLower;
+        // Gender from bio
+        let gender = '';
+        const bioLower = bio.toLowerCase();
+        if (bioLower.includes('female') || bioLower.includes(' her ') || bioLower.includes(' she ')) gender = 'Female';
+        else if (bioLower.includes(' male') || bioLower.includes(' his ') || bioLower.includes(' he ')) gender = 'Male';
 
-      // Species detection
-      let species = 'Dog';
-      if (combined.includes('guinea pig')) species = 'Other';
-      else if (breedLower.includes('shorthair') || breedLower.includes('longhair') || breedLower.includes('mediumhair') ||
-               breedLower.includes('tabby') || breedLower.includes('tortoiseshell') || breedLower.includes('calico') ||
-               breedLower.includes('siamese') || bioLower.includes('dsh') || bioLower.includes('dlh') ||
-               combined.includes(' cat')) {
-        species = 'Cat';
+        console.log(`      ✅ ${name} | ${breed} | ${species} | ${gender} | ${age} | photo: ${photo ? 'YES' : 'no'}`);
+
+        allPets.push({
+          name, species, breed, age, gender,
+          bio: bio.substring(0, 300),
+          photo,
+          url: petUrl
+        });
+
+        // Small delay to be polite
+        await new Promise(r => setTimeout(r, 500));
+
+      } catch (err) {
+        console.error(`      ERR on ${petUrl}: ${err.message}`);
       }
+    }
 
-      // Gender detection from bio
-      let gender = '';
-      if (bioLower.includes('female')) gender = 'Female';
-      else if (bioLower.includes(' male')) gender = 'Male';
-      else if (bioLower.includes(' is a male')) gender = 'Male';
+    console.log(`  [nlpac] TOTAL: ${allPets.length} pets, ${allPets.filter(p => p.photo).length} with photos`);
+    return allPets;
 
-      // Age detection
-      let age = 'Adult';
-      if (bioLower.includes('senior')) age = 'Senior';
-      else if (bioLower.includes('kitten') || bioLower.includes('puppy')) age = 'Young';
-
-      // Clean up breed (remove color info after dash)
-      let cleanBreed = p.breed || '';
-
-      console.log(`    ${p.name} | ${cleanBreed} | ${species} | ${gender} | photo: ${p.photo ? 'YES' : 'no'}`);
-
-      return {
-        name: p.name,
-        species,
-        breed: cleanBreed,
-        age,
-        gender,
-        bio: p.bio || '',
-        photo: (p.photo && !p.photo.includes('logo')) ? p.photo : null,
-        url: p.url
-      };
-    });
   } catch (err) {
     console.error(`  ERR: ${err.message}`);
-    try { saveDiag('nlpac-err', await page.content()); } catch {}
-    await page.close();
     return [];
   }
 }
@@ -362,7 +361,7 @@ async function main() {
   data.shelters.clark = await scrapePetfinder(browser, 'clark');
   data.shelters.adams = await scrapeAdoptapet(browser, '76343-adams-county-humane-society-friendship-wisconsin', 'adams');
   data.shelters.lincoln = [];
-  data.shelters.nlpac = await scrapeNlpac(browser);
+  data.shelters.nlpac = await scrapeNlpac();
   await browser.close();
 
   console.log('\n╔══════════════════════════════════════════════════╗');
