@@ -231,7 +231,8 @@ async function scrapePetfinder(browser, shelterKey) {
 }
 
 // ═══════════════════════════════════════════════════════
-// NLPAC — unchanged
+// NLPAC — parse listing page cards (detail pages are bot-blocked)
+// The listing page has: name, breed, short bio, photo, and link for each pet
 // ═══════════════════════════════════════════════════════
 async function scrapeNlpac(browser) {
   const url = 'https://www.nlpac.com/pets';
@@ -240,24 +241,106 @@ async function scrapeNlpac(browser) {
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(r => setTimeout(r, 3000));
+
     const pets = await page.evaluate(() => {
-      const results = [], seen = new Set();
+      const results = [];
+      const seen = new Set();
+
+      // Each pet card has a "Learn More" link to /q/pets/name
+      // Walk backwards from each link to find the card container with name, breed, bio, image
       document.querySelectorAll('a[href*="/q/pets/"]').forEach(a => {
-        const href = a.href; if (seen.has(href) || !href) return;
-        const parts = new URL(href).pathname.split('/').filter(Boolean);
-        if (parts.length < 3) return; seen.add(href);
-        const slug = parts[parts.length - 1];
-        const name = slug.replace(/\d+$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()).trim();
-        results.push({ name, photo: null, url: href });
+        const href = a.href;
+        if (seen.has(href) || !href) return;
+        const pathParts = new URL(href).pathname.split('/').filter(Boolean);
+        if (pathParts.length < 3) return;
+        seen.add(href);
+
+        // Walk up to find the card container — usually a parent div or section
+        // containing the image, name, breed, and bio
+        let container = a.parentElement;
+        // Go up a few levels to find a container with enough text
+        for (let i = 0; i < 5; i++) {
+          if (container && container.textContent.length > 20) break;
+          container = container?.parentElement;
+        }
+        if (!container) return;
+
+        // Get all text content, split into lines
+        const allText = container.textContent.trim();
+        const lines = allText.split('\n').map(s => s.trim()).filter(s => s && s !== 'Learn More');
+
+        // Expected pattern from the page:
+        // "Breckie" (name)
+        // "American Eskimo Dog" (breed)  
+        // "Breckie is a male American Eskimo." (bio)
+        const name = lines[0] || '';
+        const breed = lines[1] || '';
+        const bio = lines[2] || '';
+
+        // Get image
+        const img = container.querySelector('img:not([src*="logo"]):not([src*="pixel"])');
+        const photo = img?.src || null;
+
+        if (name && name.length > 1 && name.length < 60 && name !== 'Learn More') {
+          results.push({ name, breed, bio, photo, url: href });
+        }
       });
+
       return results;
     });
-    console.log(`  Found ${pets.length} pet links`);
+
+    console.log(`  Found ${pets.length} pets from listing page`);
+
     await page.close();
-    return pets.map(p => ({ name: p.name, species: 'Dog', breed: '', age: '', gender: '', bio: '', photo: null, url: p.url }));
+
+    // Process each pet: derive species and gender from breed/bio text
+    return pets.map(p => {
+      const breedLower = (p.breed || '').toLowerCase();
+      const bioLower = (p.bio || '').toLowerCase();
+      const combined = breedLower + ' ' + bioLower;
+
+      // Species detection
+      let species = 'Dog';
+      if (combined.includes('guinea pig')) species = 'Other';
+      else if (breedLower.includes('shorthair') || breedLower.includes('longhair') || breedLower.includes('mediumhair') ||
+               breedLower.includes('tabby') || breedLower.includes('tortoiseshell') || breedLower.includes('calico') ||
+               breedLower.includes('siamese') || bioLower.includes('dsh') || bioLower.includes('dlh') ||
+               combined.includes(' cat')) {
+        species = 'Cat';
+      }
+
+      // Gender detection from bio
+      let gender = '';
+      if (bioLower.includes('female')) gender = 'Female';
+      else if (bioLower.includes(' male')) gender = 'Male';
+      else if (bioLower.includes(' is a male')) gender = 'Male';
+
+      // Age detection
+      let age = 'Adult';
+      if (bioLower.includes('senior')) age = 'Senior';
+      else if (bioLower.includes('kitten') || bioLower.includes('puppy')) age = 'Young';
+
+      // Clean up breed (remove color info after dash)
+      let cleanBreed = p.breed || '';
+
+      console.log(`    ${p.name} | ${cleanBreed} | ${species} | ${gender} | photo: ${p.photo ? 'YES' : 'no'}`);
+
+      return {
+        name: p.name,
+        species,
+        breed: cleanBreed,
+        age,
+        gender,
+        bio: p.bio || '',
+        photo: (p.photo && !p.photo.includes('logo')) ? p.photo : null,
+        url: p.url
+      };
+    });
   } catch (err) {
     console.error(`  ERR: ${err.message}`);
-    await page.close(); return [];
+    try { saveDiag('nlpac-err', await page.content()); } catch {}
+    await page.close();
+    return [];
   }
 }
 
@@ -266,7 +349,7 @@ async function scrapeNlpac(browser) {
 // ═══════════════════════════════════════════════════════
 async function main() {
   console.log('╔══════════════════════════════════════════════════╗');
-  console.log('║  WP&R Pet Data Builder v5.2                     ║');
+  console.log('║  WP&R Pet Data Builder v5.3                     ║');
   console.log('╚══════════════════════════════════════════════════╝\n');
 
   const browser = await puppeteer.launch({
