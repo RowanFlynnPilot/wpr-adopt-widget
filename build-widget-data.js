@@ -477,7 +477,7 @@ async function main() {
   data.shelters.marathon = await scrapeAdoptapet(browser, '77626-humane-society-of-marathon-county-wausau-wisconsin', 'marathon');
   data.shelters.clark = await scrapePetfinder(browser, 'clark');
   data.shelters.adams = await scrapeAdoptapet(browser, '76343-adams-county-humane-society-friendship-wisconsin', 'adams');
-  data.shelters.lincoln = await scrapeLincoln();
+  data.shelters.lincoln = []; // furrypets.com too dynamic, using widget fallback
   data.shelters.nlpac = await scrapeNlpac();
   await browser.close();
 
