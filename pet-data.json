@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16T02:26:34.624Z",
+  "lastUpdated": "2026-03-16T02:42:20.586Z",
   "shelters": {
     "marathon": [
       {
@@ -1077,68 +1077,7 @@
         "url": "https://www.adoptapet.com/pet/47064563-friendship-wisconsin-cat"
       }
     ],
-    "lincoln": [
-      {
-        "name": "Emergency Care",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/emergency-care/"
-      },
-      {
-        "name": "Pet Grooming",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/pet-grooming/"
-      },
-      {
-        "name": "Vaccinations",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/vaccinations/"
-      },
-      {
-        "name": "Nutrition",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/nutrition/"
-      },
-      {
-        "name": "Surgery",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/surgery/"
-      },
-      {
-        "name": "Check Ups",
-        "species": "Dog",
-        "breed": "",
-        "age": "Adult",
-        "gender": "",
-        "bio": "Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin sem, sed vestibulum dui nisi ut purus. Quisque varius odio ante, ac viverra.",
-        "photo": "https://furrypets.com/wp-content/uploads/2016/11/avtar-1.jpg",
-        "url": "https://furrypets.com/portfolio-items/check-ups/"
-      }
-    ],
+    "lincoln": [],
     "nlpac": []
   }
 }
