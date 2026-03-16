@@ -126,8 +126,15 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
                         bl.includes('siamese') || bl.includes('tabby') || bl.includes('calico') ||
                         bl.includes('persian') || bl.includes('bengal') || bl.includes('ragdoll') ||
                         href.endsWith('-cat');
+          const isOther = bl.includes('rat') || bl.includes('hamster') || bl.includes('guinea') ||
+                          bl.includes('rabbit') || bl.includes('bird') || bl.includes('ferret') ||
+                          bl.includes('reptile') || bl.includes('turtle') || bl.includes('snake') ||
+                          bl.includes('chinchilla') || bl.includes('gerbil') || bl.includes('mouse') ||
+                          href.includes('-hamster') || href.includes('-rat') || href.includes('-rabbit') ||
+                          href.includes('-guinea') || href.includes('-bird') || href.includes('-ferret');
 
-          pets.push({ name, breed, age, gender, photo, url: href, species: isCat ? 'Cat' : 'Dog' });
+          const species = isOther ? 'Other' : isCat ? 'Cat' : 'Dog';
+          pets.push({ name, breed, age, gender, photo, url: href, species });
         });
 
         const cm = document.body.innerText.match(/(\d+)\s*-\s*(\d+)\s+of\s+(\d+)/);
