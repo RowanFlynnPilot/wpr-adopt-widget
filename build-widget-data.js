@@ -72,21 +72,32 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           }
         });
 
-        // Pagination: "1 - 9 of 62" or "10 - 18 of 62"
+        // Pagination: "1 - 9 of 62" or "10 - 18 of 62" (or "1-9 of 62")
         const countText = document.body.innerText.match(/(\d+)\s*-\s*(\d+)\s+of\s+(\d+)/);
-        let totalPets = 0, hasNextPage = false, nextPageNum = 0;
+        let totalPets = 0, hasNextPage = false, nextPageNum = 0, rangeStart = 0;
+        const candidates = [...document.querySelectorAll('button, a, [role="button"], [aria-label]')];
         if (countText) {
-          totalPets = parseInt(countText[3]);
-          const rangeEnd = parseInt(countText[2]);
-          const perPage = rangeEnd - parseInt(countText[1]) + 1;
+          totalPets = parseInt(countText[3], 10);
+          rangeStart = parseInt(countText[1], 10);
+          const rangeEnd = parseInt(countText[2], 10);
+          const perPage = rangeEnd - rangeStart + 1;
           nextPageNum = Math.floor(rangeEnd / perPage) + 1;
-          const nextBtn = [...document.querySelectorAll('button, a, [role="button"]')].find(
-            el => el.textContent.trim() === String(nextPageNum) && !el.disabled
+          const nextBtn = candidates.find(el => el.textContent.trim() === String(nextPageNum) && !el.disabled);
+          const nextLink = candidates.find(el =>
+            /^next$/i.test(el.textContent.trim()) || (el.getAttribute('aria-label') || '').toLowerCase().includes('next')
           );
-          hasNextPage = !!nextBtn;
+          hasNextPage = !!nextBtn || !!nextLink;
+        } else {
+          // No "X - Y of Z" text: still try to go next if we see a "2" or "Next" (site may have changed copy)
+          const hasTwo = candidates.some(el => el.textContent.trim() === '2' && !el.disabled);
+          const hasNext = candidates.some(el =>
+            /^next$/i.test(el.textContent.trim()) || (el.getAttribute('aria-label') || '').toLowerCase().includes('next')
+          );
+          hasNextPage = hasTwo || hasNext;
+          nextPageNum = 2;
         }
 
-        return { pets, totalPets, hasNextPage, nextPageNum };
+        return { pets, totalPets, hasNextPage, nextPageNum, rangeStart };
       });
 
       const newPets = result.pets.filter(p => !allPets.some(ex => ex.url === p.url));
@@ -99,11 +110,15 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       if (totalExpected > 0 && allPets.length >= totalExpected) break;
       if (!result.hasNextPage) break;
 
+      const prevRangeStart = result.rangeStart;
       const clicked = await page.evaluate((n) => {
-        const btn = [...document.querySelectorAll('button, a, [role="button"]')].find(
-          el => el.textContent.trim() === String(n) && !el.disabled
+        const candidates = [...document.querySelectorAll('button, a, [role="button"], [aria-label]')];
+        const byNum = candidates.find(el => el.textContent.trim() === String(n) && !el.disabled);
+        if (byNum) { byNum.click(); return true; }
+        const byNext = candidates.find(el =>
+          /^next$/i.test(el.textContent.trim()) || (el.getAttribute('aria-label') || '').toLowerCase().includes('next')
         );
-        if (btn) { btn.click(); return true; }
+        if (byNext && !byNext.disabled) { byNext.click(); return true; }
         return false;
       }, result.nextPageNum);
 
@@ -115,15 +130,15 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       await new Promise(r => setTimeout(r, 2500));
       try {
         await page.waitForFunction(
-          (prevTotal) => {
+          (prevStart) => {
             const m = document.body.innerText.match(/(\d+)\s*-\s*\d+\s+of\s+\d+/);
-            return m && parseInt(m[1]) > prevTotal;
+            return m && parseInt(m[1], 10) > prevStart;
           },
-          { timeout: 10000 },
-          (pageNum - 1) * 9
+          { timeout: 12000 },
+          prevRangeStart
         );
       } catch {
-        await new Promise(r => setTimeout(r, 2000));
+        await new Promise(r => setTimeout(r, 3000));
       }
 
       pageNum++;
@@ -528,6 +543,18 @@ async function main() {
   // Write output
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2));
   console.log(`\n✅ Saved to ${OUTPUT_FILE}`);
+
+  // Inject built data into widget HTML so Lincoln (and all shelters) show live data without needing pet-data.json
+  const widgetPath = path.join(__dirname, 'adopt-widget.html');
+  if (fs.existsSync(widgetPath)) {
+    let html = fs.readFileSync(widgetPath, 'utf8');
+    const inject = 'const PET_DATA=' + JSON.stringify(data.shelters) + ';';
+    const replaced = html.replace(/const PET_DATA=\{[\s\S]*?  \]\n\};/, inject);
+    if (replaced !== html) {
+      fs.writeFileSync(widgetPath, replaced);
+      console.log('✅ Injected pet data into adopt-widget.html');
+    }
+  }
 }
 
 main().catch(err => {
