@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16T02:47:18.153Z",
+  "lastUpdated": "2026-03-16T02:53:50.343Z",
   "shelters": {
     "marathon": [
       {
@@ -124,7 +124,7 @@
       },
       {
         "name": "Sea",
-        "species": "Dog",
+        "species": "Other",
         "breed": "Rat",
         "age": "1 yr 2 mos",
         "gender": "Female",
@@ -134,7 +134,7 @@
       },
       {
         "name": "Sand",
-        "species": "Dog",
+        "species": "Other",
         "breed": "Rat",
         "age": "1 yr 2 mos",
         "gender": "Female",
@@ -144,7 +144,7 @@
       },
       {
         "name": "Sun",
-        "species": "Dog",
+        "species": "Other",
         "breed": "Rat",
         "age": "1 yr 2 mos",
         "gender": "Female",
@@ -334,7 +334,7 @@
       },
       {
         "name": "Faith",
-        "species": "Dog",
+        "species": "Other",
         "breed": "Hamster",
         "age": "9 mos",
         "gender": "Female",
