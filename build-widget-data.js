@@ -25,6 +25,35 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_FILE = path.join(__dirname, 'pet-data.json');
+const DIAG_DIR = path.join(__dirname, 'docs');
+
+// Realistic Chrome UA to reduce bot detection (sites often block headless)
+const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+
+function ensureDiagDir() {
+  if (!fs.existsSync(DIAG_DIR)) fs.mkdirSync(DIAG_DIR, { recursive: true });
+}
+
+function saveDiag(name, html) {
+  ensureDiagDir();
+  const file = path.join(DIAG_DIR, `diag-${name}.html`);
+  fs.writeFileSync(file, (html || '').substring(0, 500000));
+  console.log(`    [diag] Saved docs/diag-${name}.html — open to see what the page actually returned`);
+}
+
+/** Create a page with stealth-ish settings to reduce bot blocks */
+async function makePage(browser) {
+  const page = await browser.newPage();
+  await page.setUserAgent(USER_AGENT);
+  await page.setViewport({ width: 1280, height: 900 });
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+    Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
+    Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
+    if (typeof window.chrome === 'undefined') window.chrome = { runtime: {} };
+  });
+  return page;
+}
 
 // ─── ADOPTAPET SCRAPER ───
 // Adoptapet uses client-side pagination (Next/numbered buttons). URL ?page=N is ignored,
@@ -34,21 +63,25 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const url = `${baseUrl}/available-pets`;
   console.log(`\n[${shelterKey}] Scraping Adoptapet: ${url}`);
 
-  const page = await browser.newPage();
+  const page = await makePage(browser);
   let allPets = [];
   let totalExpected = 0;
   const MAX_PAGES = 15;  // Safety limit
   let pageNum = 1;
 
   try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
-    await new Promise(r => setTimeout(r, 3000));
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+    await new Promise(r => setTimeout(r, 5000));
 
     // Wait for pet content to appear
     try {
-      await page.waitForSelector('a[href*="/pet/"]', { timeout: 15000 });
+      await page.waitForSelector('a[href*="/pet/"]', { timeout: 20000 });
     } catch {
       await new Promise(r => setTimeout(r, 5000));
+      const petCount = await page.evaluate(() => document.querySelectorAll('a[href*="/pet/"]').length);
+      if (petCount === 0) {
+        saveDiag(`${shelterKey}-adoptapet`, await page.content());
+      }
     }
 
     while (pageNum <= MAX_PAGES) {
@@ -106,7 +139,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
 
       console.log(`    Found ${result.pets.length} on page, ${newPets.length} new (total ${allPets.length}${totalExpected ? '/' + totalExpected : ''})`);
 
-      if (result.pets.length === 0) break;
+      if (result.pets.length === 0) {
+        if (pageNum === 1) saveDiag(`${shelterKey}-adoptapet`, await page.content());
+        break;
+      }
       if (totalExpected > 0 && allPets.length >= totalExpected) break;
       if (!result.hasNextPage) break;
 
@@ -145,6 +181,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     }
   } catch (err) {
     console.error(`  Error: ${err.message}`);
+    try { saveDiag(`${shelterKey}-adoptapet-error`, await page.content()); } catch (_) {}
   } finally {
     await page.close();
   }
@@ -190,10 +227,10 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
   const url = `https://www.petfinder.com/member/us/wi/${shelterSlug}`;
   console.log(`\n[${shelterKey}] Scraping Petfinder: ${url}`);
   
-  const page = await browser.newPage();
+  const page = await makePage(browser);
   try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 3000));
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+    await new Promise(r => setTimeout(r, 5000));
     
     const pets = await page.evaluate(() => {
       const results = [];
@@ -224,6 +261,7 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
     });
     
     console.log(`  Found ${pets.length} pets`);
+    if (pets.length === 0) saveDiag(`${shelterKey}-petfinder`, await page.content());
     await page.close();
     
     return pets.map(p => {
@@ -380,10 +418,10 @@ async function scrapeNlpac(browser) {
   const url = 'https://www.nlpac.com/pets';
   console.log(`\n[nlpac] Scraping: ${url}`);
   
-  const page = await browser.newPage();
+  const page = await makePage(browser);
   try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 2000));
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+    await new Promise(r => setTimeout(r, 3000));
     
     // Get pet links from the listing page
     const petLinks = await page.evaluate(() => {
@@ -401,13 +439,14 @@ async function scrapeNlpac(browser) {
       return links;
     });
     
+    if (petLinks.length === 0) saveDiag('nlpac-list', await page.content());
     await page.close();
     console.log(`  Found ${petLinks.length} pet links, fetching details...`);
     
     // Visit each pet's detail page to get full info
     const allPets = [];
     for (const link of petLinks) {
-      const detailPage = await browser.newPage();
+      const detailPage = await makePage(browser);
       try {
         await detailPage.goto(link.href, { waitUntil: 'networkidle2', timeout: 20000 });
         await new Promise(r => setTimeout(r, 1000));
@@ -484,7 +523,14 @@ async function main() {
   
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--disable-blink-features=AutomationControlled',
+      '--window-size=1280,900'
+    ]
   });
   
   const data = {
