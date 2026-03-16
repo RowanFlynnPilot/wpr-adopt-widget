@@ -464,13 +464,10 @@ function section(key){
     pets=pets.filter(p=>getAnimalType(p.species)===activeAnimal);
   }
   const shortName=s.name.replace('Humane Society of ','').replace('Humane Society','HS');
-  const COLLAPSE_THRESHOLD=8;
-  const needsToggle=pets.length>COLLAPSE_THRESHOLD;
   const gridId=`grid-${key}`;
 
   const grid=pets.length>0
-    ?`<div class="pet-grid${needsToggle?' collapsed':''}" id="${gridId}">${pets.map(card).join('')}</div>
-      ${needsToggle?`<div class="toggle-row"><button class="toggle-btn" onclick="toggleGrid('${gridId}',this)" data-count="${pets.length}">Show all ${pets.length} pets ▾</button></div>`:''}`
+    ?`<div class="pet-grid" id="${gridId}">${pets.map(card).join('')}</div>`
     :`<div class="empty-state"><div class="empty-paw">🐾</div><p>${activeAnimal!=='all'?'No '+activeAnimal+'s currently listed at this shelter.':'No pets currently listed online. Visit the shelter website or call for the latest.'}</p></div>`;
 
   return`<div class="shelter-section" data-shelter="${key}">
