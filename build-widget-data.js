@@ -231,6 +231,123 @@ async function scrapePetfinder(browser, shelterKey) {
 }
 
 // ═══════════════════════════════════════════════════════
+// LINCOLN COUNTY — WordPress REST API (furrypets.com)
+// Their site uses Avada theme with portfolio posts for pets.
+// The WP REST API exposes these as JSON — no browser needed.
+// ═══════════════════════════════════════════════════════
+async function scrapeLincoln() {
+  console.log('\n[lincoln] Trying WordPress REST API...');
+
+  // Avada stores portfolio items as 'avada_portfolio' post type
+  // Also try 'portfolio' and regular 'posts' as fallbacks
+  const postTypes = ['avada_portfolio', 'portfolio', 'posts'];
+  
+  // First, discover available post types
+  try {
+    const typesRes = await fetch('https://furrypets.com/wp-json/wp/v2/types', { headers: { 'User-Agent': UA } });
+    if (typesRes.ok) {
+      const types = await typesRes.json();
+      console.log(`  Available post types: ${Object.keys(types).join(', ')}`);
+    }
+  } catch (e) {
+    console.log(`  Could not fetch post types: ${e.message}`);
+  }
+
+  // Try each post type to find pet listings
+  for (const postType of postTypes) {
+    const apiUrl = `https://furrypets.com/wp-json/wp/v2/${postType}?per_page=100&_fields=id,title,link,content,excerpt,featured_media,categories`;
+    console.log(`  Trying: ${apiUrl}`);
+
+    try {
+      const res = await fetch(apiUrl, { headers: { 'User-Agent': UA } });
+      
+      if (!res.ok) {
+        console.log(`    HTTP ${res.status} — skipping`);
+        continue;
+      }
+
+      const posts = await res.json();
+      
+      if (!Array.isArray(posts) || posts.length === 0) {
+        console.log(`    No posts found for type '${postType}'`);
+        continue;
+      }
+
+      console.log(`    Found ${posts.length} posts of type '${postType}'`);
+
+      // Filter and parse pet posts
+      const allPets = [];
+
+      for (const post of posts) {
+        const title = post.title?.rendered || '';
+        const name = title.replace(/<[^>]+>/g, '').trim();
+        const link = post.link || '';
+        const content = (post.content?.rendered || '').replace(/<[^>]+>/g, ' ').trim();
+        const excerpt = (post.excerpt?.rendered || '').replace(/<[^>]+>/g, ' ').trim();
+        const combined = (content + ' ' + excerpt).toLowerCase();
+
+        // Skip non-pet posts (news, events, etc.)
+        if (!name || name.length > 80) continue;
+        // Skip if it looks like a news/info post
+        if (combined.includes('newsletter') || combined.includes('thank you') || combined.includes('membership')) continue;
+
+        // Try to get featured image
+        let photo = null;
+        if (post.featured_media && post.featured_media > 0) {
+          try {
+            const mediaRes = await fetch(`https://furrypets.com/wp-json/wp/v2/media/${post.featured_media}?_fields=source_url`, { headers: { 'User-Agent': UA } });
+            if (mediaRes.ok) {
+              const media = await mediaRes.json();
+              photo = media.source_url || null;
+            }
+          } catch {}
+        }
+
+        // Also try to extract image from content HTML
+        if (!photo) {
+          const imgMatch = (post.content?.rendered || '').match(/<img[^>]+src="([^"]+)"/i);
+          if (imgMatch && !imgMatch[1].includes('logo')) photo = imgMatch[1];
+        }
+
+        // Determine species from link URL or content
+        let species = 'Dog';
+        if (link.includes('cat') || link.includes('kitten') || combined.includes('domestic shorthair') || combined.includes('domestic longhair')) {
+          species = 'Cat';
+        }
+
+        // Try to extract breed/gender/age from content
+        let breed = '', gender = '', age = 'Adult';
+        if (combined.includes('female')) gender = 'Female';
+        else if (combined.includes('male')) gender = 'Male';
+        if (combined.includes('kitten') || combined.includes('puppy')) age = 'Young';
+        if (combined.includes('senior')) age = 'Senior';
+
+        console.log(`      ${name} | ${species} | ${gender} | photo: ${photo ? 'YES' : 'no'}`);
+
+        allPets.push({
+          name, species, breed, age, gender,
+          bio: excerpt.substring(0, 300),
+          photo,
+          url: link
+        });
+      }
+
+      if (allPets.length > 0) {
+        console.log(`  [lincoln] TOTAL: ${allPets.length} pets, ${allPets.filter(p => p.photo).length} with photos`);
+        return allPets;
+      }
+
+    } catch (err) {
+      console.log(`    Error: ${err.message}`);
+    }
+  }
+
+  // If REST API didn't work, log it
+  console.log('  [lincoln] REST API returned no pets — will use fallback data in widget');
+  return [];
+}
+
+// ═══════════════════════════════════════════════════════
 // NLPAC — plain HTTP fetch (bot protection only blocks Puppeteer, not fetch)
 // Step 1: fetch listing page to get pet links
 // Step 2: fetch each detail page for full info + photos
@@ -360,7 +477,7 @@ async function main() {
   data.shelters.marathon = await scrapeAdoptapet(browser, '77626-humane-society-of-marathon-county-wausau-wisconsin', 'marathon');
   data.shelters.clark = await scrapePetfinder(browser, 'clark');
   data.shelters.adams = await scrapeAdoptapet(browser, '76343-adams-county-humane-society-friendship-wisconsin', 'adams');
-  data.shelters.lincoln = [];
+  data.shelters.lincoln = await scrapeLincoln();
   data.shelters.nlpac = await scrapeNlpac();
   await browser.close();
 
