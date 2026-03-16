@@ -183,6 +183,29 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 }
 .status-banner strong{color:var(--ink)}
 
+/* ─── SHARE BUTTON ─── */
+.pet-card-footer{display:flex;align-items:center;justify-content:space-between;padding:0 13px 10px}
+.share-btn{
+  background:none;border:1px solid var(--border);border-radius:100px;
+  padding:4px 10px;font-size:.7rem;font-weight:600;color:var(--slate);
+  cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:3px;
+  font-family:'Source Sans 3',sans-serif;
+}
+.share-btn:hover{border-color:var(--teal);color:var(--teal)}
+.share-menu{
+  display:none;position:absolute;bottom:100%;right:0;margin-bottom:4px;
+  background:var(--card-bg);border:1px solid var(--border);border-radius:8px;
+  box-shadow:var(--shadow-md);overflow:hidden;z-index:10;min-width:150px;
+}
+.share-menu.open{display:block}
+.share-menu a{
+  display:flex;align-items:center;gap:8px;padding:9px 14px;
+  font-size:.8rem;color:var(--ink);text-decoration:none;transition:background .15s;
+  font-family:'Source Sans 3',sans-serif;white-space:nowrap;
+}
+.share-menu a:hover{background:var(--teal-bg)}
+.share-wrap{position:relative}
+
 @media(max-width:640px){
   .adopt-widget{padding:0 10px 28px}
   .pet-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -447,13 +470,27 @@ function card(p){
   const img=p.photo
     ?`<img class="pet-card-img" src="${p.photo}" alt="Photo of ${p.name}" loading="lazy" data-emoji="${emoji(p.species)}" onerror="imgFail(this)">`
     :`<div class="pet-card-img-placeholder">${emoji(p.species)}</div>`;
-  return`<a class="pet-card" href="${p.url}" target="_blank" rel="noopener" title="Learn more about ${p.name}">
+  const shareSubject=encodeURIComponent(`Check out ${p.name} — adoptable pet!`);
+  const shareBody=encodeURIComponent(`I found ${p.name} (${p.breed}) on the Wausau Pilot & Review adoptable pets page!\n\n${p.url}`);
+  const smsBody=encodeURIComponent(`Check out ${p.name} (${p.breed}) — adoptable! ${p.url}`);
+  const uid='s'+Math.random().toString(36).substr(2,6);
+  return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;window.open('${p.url}','_blank')" title="Learn more about ${p.name}">
     ${img}<div class="pet-card-body">
     <div class="pet-card-name">${p.name}</div>
     <div class="pet-card-breed">${p.breed} · ${p.age||'Unknown'}</div>
     ${p.bio?`<div class="pet-card-bio">${p.bio}</div>`:''}
     <div class="pet-card-tags"><span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}</div>
-    </div></a>`;
+    </div>
+    <div class="pet-card-footer"><span></span>
+      <div class="share-wrap">
+        <button class="share-btn" onclick="event.stopPropagation();toggleShare('${uid}')">↗ Share</button>
+        <div class="share-menu" id="${uid}">
+          <a href="mailto:?subject=${shareSubject}&body=${shareBody}" onclick="event.stopPropagation()">✉️ Email</a>
+          <a href="sms:?&body=${smsBody}" onclick="event.stopPropagation()">💬 Text</a>
+          <a href="#" onclick="event.preventDefault();event.stopPropagation();copyLink('${p.url}',this)">🔗 Copy Link</a>
+        </div>
+      </div>
+    </div></div>`;
 }
 
 function section(key){
@@ -464,13 +501,10 @@ function section(key){
     pets=pets.filter(p=>getAnimalType(p.species)===activeAnimal);
   }
   const shortName=s.name.replace('Humane Society of ','').replace('Humane Society','HS');
-  const COLLAPSE_THRESHOLD=8;
-  const needsToggle=pets.length>COLLAPSE_THRESHOLD;
   const gridId=`grid-${key}`;
 
   const grid=pets.length>0
-    ?`<div class="pet-grid${needsToggle?' collapsed':''}" id="${gridId}">${pets.map(card).join('')}</div>
-      ${needsToggle?`<div class="toggle-row"><button class="toggle-btn" onclick="toggleGrid('${gridId}',this)" data-count="${pets.length}">Show all ${pets.length} pets ▾</button></div>`:''}`
+    ?`<div class="pet-grid" id="${gridId}">${pets.map(card).join('')}</div>`
     :`<div class="empty-state"><div class="empty-paw">🐾</div><p>${activeAnimal!=='all'?'No '+activeAnimal+'s currently listed at this shelter.':'No pets currently listed online. Visit the shelter website or call for the latest.'}</p></div>`;
 
   return`<div class="shelter-section" data-shelter="${key}">
@@ -543,6 +577,26 @@ document.querySelectorAll('#animalFilter .filter-btn').forEach(b=>{
 render();
 // Fetch live data in background — will re-render when ready
 loadLiveData();
+
+// ═══ SHARE FUNCTIONS ═══
+function toggleShare(id){
+  // Close any other open menus first
+  document.querySelectorAll('.share-menu.open').forEach(m=>{if(m.id!==id)m.classList.remove('open')});
+  document.getElementById(id).classList.toggle('open');
+}
+function copyLink(url,el){
+  navigator.clipboard.writeText(url).then(()=>{
+    el.textContent='✓ Copied!';
+    setTimeout(()=>{el.textContent='🔗 Copy Link'},1500);
+  }).catch(()=>{
+    // Fallback for older browsers
+    const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);
+    el.textContent='✓ Copied!';
+    setTimeout(()=>{el.textContent='🔗 Copy Link'},1500);
+  });
+}
+// Close share menus when clicking outside
+document.addEventListener('click',e=>{if(!e.target.closest('.share-wrap'))document.querySelectorAll('.share-menu.open').forEach(m=>m.classList.remove('open'))});
 </script>
 </body>
 </html>
