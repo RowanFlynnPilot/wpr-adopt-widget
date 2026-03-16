@@ -274,7 +274,7 @@ const pf=(type,slug,id)=>`https://www.petfinder.com/${type}/${slug}-${id}/wi/nei
 const pfImg=(a,i)=>`https://dbw3zep4prcju.cloudfront.net/animal/${a}/image/${i}.jpg`;
 const aapImg=(id)=>`https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/${id}`;
 
-const PET_DATA={
+const FALLBACK_DATA={
   marathon:[
     {name:'Sonny',species:'Dog',breed:'Schnauzer (Miniature)',age:'3 yrs',gender:'Male',bio:"Sonny has been through a lot and wants a soft spot to land. He's friendly with other pets and not one to shy away from attention.",photo:aapImg('1292404477'),url:'https://www.adoptapet.com/pet/47464900-wausau-wisconsin-schnauzer-miniature-mix'},
     {name:'Tilly',species:'Dog',breed:'Cattle Dog / Shepherd',age:'4 mos',gender:'Female',bio:"An energetic puppy looking for an active family. Playful, curious, and ready for adventure.",photo:aapImg('1292374031'),url:'https://www.adoptapet.com/pet/47463531-wausau-wisconsin-australian-cattle-dog-australian-shepherd-mix'},
@@ -341,6 +341,40 @@ const PET_DATA={
     {name:'Nala',species:'Other',breed:'Guinea Pig',age:'Adult',gender:'Female',bio:"Nala is a female guinea pig who would love a companion and a cozy home.",photo:null,url:'https://www.nlpac.com/q/pets/nala'}
   ]
 };
+
+// ═══ LIVE DATA + FALLBACK MERGE ═══
+// Start with fallback data, then try to load live scraped data from GitHub Pages.
+// For each shelter: use live data if it has entries, otherwise keep fallback.
+const LIVE_JSON_URL='https://rowanflynnpilot.github.io/wpr-adopt-widget/pet-data.json';
+let PET_DATA=JSON.parse(JSON.stringify(FALLBACK_DATA)); // deep copy of fallback
+
+async function loadLiveData(){
+  try{
+    const res=await fetch(LIVE_JSON_URL+'?t='+Date.now()); // cache-bust
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const live=await res.json();
+    if(!live.shelters)return;
+    // Merge: use live data when shelter has pets, fallback when empty
+    for(const key of Object.keys(SHELTERS)){
+      const livePets=live.shelters[key];
+      if(Array.isArray(livePets)&&livePets.length>0){
+        PET_DATA[key]=livePets;
+        console.log(`[live] ${key}: ${livePets.length} pets loaded`);
+      }else{
+        console.log(`[fallback] ${key}: using ${(FALLBACK_DATA[key]||[]).length} hardcoded pets`);
+      }
+    }
+    // Update timestamp display if present
+    if(live.lastUpdated){
+      const d=new Date(live.lastUpdated);
+      const ts=d.toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+      console.log(`[live] Data updated: ${ts}`);
+    }
+    render(); // re-render with merged data
+  }catch(err){
+    console.warn('[live] Could not fetch live data, using fallback:',err.message);
+  }
+}
 
 // ═══ FILTER STATE ═══
 let activeShelter='all';
@@ -507,6 +541,8 @@ document.querySelectorAll('#animalFilter .filter-btn').forEach(b=>{
 });
 
 render();
+// Fetch live data in background — will re-render when ready
+loadLiveData();
 </script>
 </body>
 </html>
