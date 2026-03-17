@@ -124,8 +124,13 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
               name = (cleaned || name.substring(0, 30)).trim();
             }
           }
-          const breed = textLines[1] || '';
+          let breed = textLines[1] || '';
           const details = textLines[2] || fullText; // use fullText when no clear lines so we can regex gender/age later
+          if (!breed && fullText) {
+            const afterName = name ? fullText.replace(new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), '').trim() : fullText;
+            const m = afterName.match(/^(.+?)\s+(?:Male|Female)\b/i);
+            if (m && m[1] && !/\d+\s*(?:yr|mo|wk)/i.test(m[1].trim())) breed = m[1].trim();
+          }
 
           if (name && name.length < 50 && !name.includes('Learn More') && !name.includes('Color')) {
             pets.push({ name, breed, details, photo: img?.src || null, url: href });
@@ -240,24 +245,21 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
         await new Promise(r => setTimeout(r, 1500));
         const bio = await bioPage.evaluate(() => {
-          const sel = '[class*="description"], [class*="about"], [class*="story"], [class*="bio"], .pet-details, [itemprop="description"]';
-          const el = document.querySelector(sel);
-          if (el) {
-            const t = el.textContent.trim().replace(/\s+/g, ' ');
-            if (t.length > 40) return t.substring(0, 400);
-          }
-          const paras = [...document.querySelectorAll('main p, article p, .content p, [class*="content"] p')];
+          const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b/i;
+          const paras = [...document.querySelectorAll('main p, article p, [class*="content"] p, [class*="description"] p')];
           let out = '';
           for (const para of paras) {
-            const t = para.textContent.trim();
-            if (t.length > 30 && !/^Adopt|^Contact|^Share|^Print/i.test(t) && !t.includes('adoptapet.com')) {
-              out += (out ? ' ' : '') + t;
-              if (out.length >= 350) break;
-            }
+            const t = para.textContent.trim().replace(/\s+/g, ' ');
+            if (t.length < 50) continue;
+            if (skip.test(t) || t.includes('adoptapet.com')) continue;
+            if (/Cared for by|Ask About Me/.test(t)) continue;
+            out += (out ? ' ' : '') + t;
+            if (out.length >= 350) break;
           }
           return out ? out.substring(0, 400) : '';
         });
-        pet.bio = bio || '';
+        const generic = /Cared for by|Ask About Me|Humane Society of/i;
+        pet.bio = (bio && !generic.test(bio) && bio.length >= 50) ? bio : '';
       } catch (err) {
         pet.bio = '';
       }
@@ -269,10 +271,22 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   
   // Transform to standard format
   return allPets.map(p => {
-    const raw = p.details || '';
-    // Gender: only the word "Male" or "Female", not a long segment containing it
-    const genderMatch = raw.match(/\b(Male|Female)\b/i);
-    const gender = genderMatch ? genderMatch[1] : '';
+    const raw = (p.details || '').trim();
+    // Gender: try word boundary first, then comma/space boundaries, then any occurrence
+    const genderMatch = raw.match(/\b(Male|Female)\b/i) || raw.match(/(?:^|[\s,])(Male|Female)(?=[\s,]|$)/i) || raw.match(/(Male|Female)/i);
+    const gender = genderMatch ? genderMatch[1].trim() : '';
+
+    // Breed: from card line if present, else parse from details (text before "Male"/"Female" that isn't age)
+    let breed = (p.breed || '').trim();
+    if (!breed && raw) {
+      const withoutName = p.name ? raw.replace(new RegExp(p.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), '').trim() : raw;
+      const beforeGender = withoutName.match(/^(.+?)\s+(?:Male|Female)\b/i);
+      if (beforeGender) {
+        const cand = beforeGender[1].trim();
+        if (!/\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)/i.test(cand)) breed = cand;
+      }
+    }
+
     // Age: e.g. "1 yr 9 mos" — capture number+unit(s), stop before location (Wausau, Merrill, WI etc.)
     let ageMatch = raw.match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)(?:\s+\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?))*)/i);
     let age = ageMatch ? ageMatch[1].trim() : '';
@@ -299,7 +313,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       breed: p.breed || 'Unknown',
       age: age || 'Unknown',
       gender: gender || 'Unknown',
-      bio: (p.bio || '').trim().substring(0, 500),
+      bio: (p.bio || '').trim().substring(0, 500) || '',
       photo,
       url: p.url
     };
