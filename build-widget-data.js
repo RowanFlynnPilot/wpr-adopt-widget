@@ -95,10 +95,23 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
 
           if (!href || !href.includes('/pet/') || href.includes('blog')) return;
 
-          const textLines = card.textContent.trim().split('\n').map(s => s.trim()).filter(Boolean);
-          const name = textLines[0] || '';
+          const fullText = card.textContent.trim();
+          const textLines = fullText.split(/\n/).map(s => s.trim()).filter(Boolean);
+          // Prefer image alt "Photo of Ada" for name; site often has no newlines so textLines[0] can be one long blob
+          let name = '';
+          if (img && img.alt && /^Photo of\s+/i.test(img.alt)) {
+            name = img.alt.replace(/^Photo of\s+/i, '').trim();
+          }
+          if (!name && textLines[0]) {
+            name = textLines[0];
+            // If name looks like concatenated blob (e.g. "AdaDomestic ShorthairFemale, 11 mos"), take only the pet name part
+            if (name.length > 35 || /Domestic|Shorthair|Longhair|Female|Male|Friendship|,?\s*\d+\s*(?:yr|mo|wk)/i.test(name)) {
+              const cleaned = name.replace(/(Domestic\s*)?(Shorthair|Longhair|Mediumhair)?\s*(Male|Female).*$/i, '').trim();
+              name = (cleaned || name.substring(0, 30)).trim();
+            }
+          }
           const breed = textLines[1] || '';
-          const details = textLines[2] || '';
+          const details = textLines[2] || fullText; // use fullText when no clear lines so we can regex gender/age later
 
           if (name && name.length < 50 && !name.includes('Learn More') && !name.includes('Color')) {
             pets.push({ name, breed, details, photo: img?.src || null, url: href });
@@ -195,14 +208,21 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   
   // Transform to standard format
   return allPets.map(p => {
-    const detailParts = p.details.split(',').map(s => s.trim());
-    const gender = detailParts.find(s => /male|female/i.test(s)) || '';
-    const age = detailParts.find(s => /yr|mo|wk/i.test(s)) || '';
+    const detailParts = (p.details || '').split(',').map(s => s.trim());
+    let gender = detailParts.find(s => /male|female/i.test(s)) || '';
+    let age = detailParts.find(s => /\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)/i.test(s)) || '';
+    if (!gender && (p.details || '').match(/(Male|Female)/i)) gender = (p.details.match(/(Male|Female)/i) || [])[1];
+    if (!age && (p.details || '').match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)\s*)/i)) age = ((p.details.match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)\s*)/i)) || [])[1].trim();
     
     let photo = p.photo;
     if (photo && photo.includes('adoptapet.com')) {
-      photo = photo.replace(/c_auto,g_auto,w_\d+,ar_[^/]+/, 'c_auto,g_auto,w_400,ar_4:3');
-      photo = photo.replace(/dpr_\d+/, 'dpr_2');
+      const idMatch = photo.match(/\/(\d{7,})(?:\?|$)/);
+      if (idMatch) {
+        photo = `https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/${idMatch[1]}`;
+      } else {
+        photo = photo.replace(/c_auto,g_auto,w_\d+,ar_[^/]+/, 'c_auto,g_auto,w_400,ar_4:3');
+        photo = photo.replace(/dpr_\d+/, 'dpr_2');
+      }
     }
     
     const isCat = p.breed?.toLowerCase().match(/shorthair|longhair|siamese|tabby|calico|persian|bengal|ragdoll/) || 
@@ -452,7 +472,10 @@ async function scrapeNlpac(browser) {
         await new Promise(r => setTimeout(r, 1000));
         
         const pet = await detailPage.evaluate((pageUrl) => {
-          const name = document.querySelector('h1')?.textContent?.replace('Meet ', '').trim() || '';
+          const bodyText = document.body.innerText || '';
+          if (/security service|verify you are not a bot|protect against.*bot/i.test(bodyText)) return null;
+          const name = document.querySelector('h1')?.textContent?.replace(/^Meet\s+/i, '').trim() || '';
+          if (!name || name.includes('www.') || name.includes('.com')) return null;
           const img = document.querySelector('img[src*="custompages"]');
           const photo = img?.src || null;
           
@@ -495,7 +518,8 @@ async function scrapeNlpac(browser) {
           return { name, species, breed, age, gender: '', bio: bio.trim().substring(0, 300), photo, url: pageUrl };
         }, link.href);
         
-        if (pet.name) {
+        if (pet && pet.name && !pet.name.includes('www.') && !pet.name.includes('.com') &&
+            (!pet.bio || !/security service|verify you are not a bot/i.test(pet.bio))) {
           console.log(`    ${pet.name} (${pet.species}) - ${pet.breed}`);
           allPets.push(pet);
         }
