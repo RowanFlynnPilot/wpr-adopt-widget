@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-17T00:39:14.179Z",
+  "lastUpdated": "2026-03-17T00:59:48.628Z",
   "shelters": {
     "marathon": [
       {
         "name": "Kijimi",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -15,7 +15,7 @@
       {
         "name": "Bandita",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -25,7 +25,7 @@
       {
         "name": "Jake",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 9 mo",
         "gender": "Male",
         "bio": "",
@@ -35,7 +35,7 @@
       {
         "name": "Franklin",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 9 mo",
         "gender": "Male",
         "bio": "",
@@ -45,7 +45,7 @@
       {
         "name": "Mancala",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "7 yr",
         "gender": "Male",
         "bio": "",
@@ -55,7 +55,7 @@
       {
         "name": "Tilly",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Australian Cattle Dog/Australian Shepherd",
         "age": "4 mo",
         "gender": "Female",
         "bio": "",
@@ -65,7 +65,7 @@
       {
         "name": "Blue",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Dutch Shepherd/Belgian Malinois",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -75,7 +75,7 @@
       {
         "name": "Red",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Dutch Shepherd/Belgian Malinois",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -85,7 +85,7 @@
       {
         "name": "Noodles",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "10 mo",
         "gender": "Male",
         "bio": "",
@@ -95,7 +95,7 @@
       {
         "name": "Lacy",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Hound (Unknown Type)",
         "age": "6 mo",
         "gender": "Female",
         "bio": "",
@@ -105,7 +105,7 @@
       {
         "name": "Josephine",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Hound (Unknown Type)",
         "age": "1 yr 7 mo",
         "gender": "Female",
         "bio": "",
@@ -115,7 +115,7 @@
       {
         "name": "Grinch",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -125,7 +125,7 @@
       {
         "name": "Ramen",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr",
         "gender": "Male",
         "bio": "",
@@ -135,7 +135,7 @@
       {
         "name": "Sea",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Shepherd",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -145,7 +145,7 @@
       {
         "name": "Sand",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Shepherd",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -155,7 +155,7 @@
       {
         "name": "Sun",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Shepherd",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -165,7 +165,7 @@
       {
         "name": "Patch",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Hound (Unknown Type)",
         "age": "11 mo",
         "gender": "Male",
         "bio": "",
@@ -175,7 +175,7 @@
       {
         "name": "Bowser",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Great Pyrenees",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -185,7 +185,7 @@
       {
         "name": "Short Rib",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr",
         "gender": "Male",
         "bio": "",
@@ -195,7 +195,7 @@
       {
         "name": "Spitfire",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Mediumhair",
         "age": "1 yr",
         "gender": "Male",
         "bio": "",
@@ -205,7 +205,7 @@
       {
         "name": "Hedgewitch",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -215,7 +215,7 @@
       {
         "name": "Kerensky",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -225,7 +225,7 @@
       {
         "name": "Boppy",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Terrier (Unknown Type, Medium)",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -235,17 +235,17 @@
       {
         "name": "Fortune *Bonded Pair*",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "American Bulldog",
         "age": "9 yr",
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1198379013",
-        "url": "https://www.adoptapet.com/pet/43104948-wausau-wisconsin-american-bulldog-mix"
+        "url": "https://www.adoptapet.com/pet/43104948-wausau-american-bulldog-mix"
       },
       {
         "name": "Cookie",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "German Shepherd Dog",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -253,19 +253,9 @@
         "url": "https://www.adoptapet.com/pet/47402422-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
-        "name": "Louie",
-        "species": "Cat",
-        "breed": "Unknown",
-        "age": "10 mo",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290369690",
-        "url": "https://www.adoptapet.com/pet/47381656-wausau-wisconsin-cat"
-      },
-      {
         "name": "Muzan",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "American Bulldog",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -275,7 +265,7 @@
       {
         "name": "Synder",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "10 mo",
         "gender": "Male",
         "bio": "",
@@ -283,9 +273,19 @@
         "url": "https://www.adoptapet.com/pet/47381655-wausau-wisconsin-cat"
       },
       {
+        "name": "Louie",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "10 mo",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290369690",
+        "url": "https://www.adoptapet.com/pet/47381656-wausau-wisconsin-cat"
+      },
+      {
         "name": "Wonder",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -293,19 +293,9 @@
         "url": "https://www.adoptapet.com/pet/46690272-wausau-wisconsin-cat"
       },
       {
-        "name": "Juggle",
-        "species": "Cat",
-        "breed": "Unknown",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290592624",
-        "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
-      },
-      {
         "name": "Kee Kee",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -313,29 +303,9 @@
         "url": "https://www.adoptapet.com/pet/46360585-wausau-wisconsin-cat"
       },
       {
-        "name": "Parcel",
-        "species": "Cat",
-        "breed": "Unknown",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_135,ar_27:28,dpr_2.5/f_auto,q_auto/PDP-NoPetPhoto_Cat.png",
-        "url": "https://www.adoptapet.com/pet/47378899-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Faith",
-        "species": "Dog",
-        "breed": "Unknown",
-        "age": "9 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287190998",
-        "url": "https://www.adoptapet.com/pet/46954145-wausau-wisconsin-hamster"
-      },
-      {
         "name": "Jake",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "German Shepherd Dog",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -343,9 +313,19 @@
         "url": "https://www.adoptapet.com/pet/46433021-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
+        "name": "Faith",
+        "species": "Dog",
+        "breed": "Shepherd",
+        "age": "9 mo",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287190998",
+        "url": "https://www.adoptapet.com/pet/46954145-wausau-wisconsin-hamster"
+      },
+      {
         "name": "Henry VIII *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "6 mo",
         "gender": "Male",
         "bio": "",
@@ -353,9 +333,29 @@
         "url": "https://www.adoptapet.com/pet/46908095-wausau-wisconsin-cat"
       },
       {
+        "name": "Pablo",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 yr 6 mo",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1262779377",
+        "url": "https://www.adoptapet.com/pet/45671126-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Princess",
+        "species": "Dog",
+        "breed": "Husky",
+        "age": "5 yr",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287176820",
+        "url": "https://www.adoptapet.com/pet/46548193-wausau-wisconsin-husky-mix"
+      },
+      {
         "name": "Bunyan Burger",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "6 yr",
         "gender": "Female",
         "bio": "",
@@ -365,7 +365,7 @@
       {
         "name": "Siridean",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -375,7 +375,7 @@
       {
         "name": "Hex",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -385,7 +385,7 @@
       {
         "name": "Nala",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Mixed Breed (Medium)",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -395,7 +395,7 @@
       {
         "name": "Road Trip",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -405,7 +405,7 @@
       {
         "name": "Yuletide",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -415,7 +415,7 @@
       {
         "name": "Emmie",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Chow Chow",
         "age": "13 yr",
         "gender": "Female",
         "bio": "",
@@ -425,7 +425,7 @@
       {
         "name": "Terracotta",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -435,7 +435,7 @@
       {
         "name": "Eastwick",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -445,7 +445,7 @@
       {
         "name": "Wovey",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Mixed Breed (Medium)",
         "age": "1 yr",
         "gender": "Female",
         "bio": "",
@@ -455,7 +455,7 @@
       {
         "name": "Yugi",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -465,7 +465,7 @@
       {
         "name": "Bram",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -475,7 +475,7 @@
       {
         "name": "Ivy",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -485,7 +485,7 @@
       {
         "name": "Jackalope *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "Unknown",
         "gender": "Female",
         "bio": "",
@@ -495,7 +495,7 @@
       {
         "name": "Teeter Totter *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Longhair",
         "age": "Unknown",
         "gender": "Male",
         "bio": "",
@@ -505,7 +505,7 @@
       {
         "name": "Soul",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -515,7 +515,7 @@
       {
         "name": "Bell",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Catahoula Leopard Dog",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -525,7 +525,7 @@
       {
         "name": "Pajamas *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "Unknown",
         "gender": "Male",
         "bio": "",
@@ -535,7 +535,7 @@
       {
         "name": "Volk",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "4 yr",
         "gender": "Male",
         "bio": "",
@@ -545,7 +545,7 @@
       {
         "name": "Rome *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "Unknown",
         "gender": "Male",
         "bio": "",
@@ -555,7 +555,7 @@
       {
         "name": "Nutella *Barn Cat*",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -565,7 +565,7 @@
       {
         "name": "Buttercup *Bonded Pair*",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "American Bulldog",
         "age": "7 yr",
         "gender": "Female",
         "bio": "",
@@ -575,7 +575,7 @@
       {
         "name": "Princess",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "German Shepherd Dog",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -585,7 +585,7 @@
       {
         "name": "Willa",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "German Shepherd Dog",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -869,7 +869,7 @@
       {
         "name": "Madame",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Mediumhair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -879,7 +879,7 @@
       {
         "name": "Buddy",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 8 mo",
         "gender": "Male",
         "bio": "",
@@ -889,7 +889,7 @@
       {
         "name": "Hennessey",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -899,7 +899,7 @@
       {
         "name": "Ada",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "11 mo",
         "gender": "Female",
         "bio": "",
@@ -909,7 +909,7 @@
       {
         "name": "Shrimpy",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "10 yr",
         "gender": "Female",
         "bio": "",
@@ -919,7 +919,7 @@
       {
         "name": "Zelda",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "4 mo",
         "gender": "Female",
         "bio": "",
@@ -929,7 +929,7 @@
       {
         "name": "Roscoe",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "American Pit Bull Terrier/Mixed Breed (Medium)",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -939,7 +939,7 @@
       {
         "name": "Torve",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "8 mo",
         "gender": "Female",
         "bio": "",
@@ -949,7 +949,7 @@
       {
         "name": "Crowe",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Male",
         "bio": "",
@@ -959,7 +959,7 @@
       {
         "name": "Snap",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "",
@@ -969,7 +969,7 @@
       {
         "name": "Pop",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "",
@@ -979,7 +979,7 @@
       {
         "name": "Crackle",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "",
@@ -989,7 +989,7 @@
       {
         "name": "Midnight",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -999,7 +999,7 @@
       {
         "name": "Suzie",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Mixed Breed (Medium)",
         "age": "1 yr 4 mo",
         "gender": "Female",
         "bio": "",
@@ -1009,7 +1009,7 @@
       {
         "name": "Cooper",
         "species": "Dog",
-        "breed": "Unknown",
+        "breed": "Mixed Breed (Medium)",
         "age": "6 yr",
         "gender": "Male",
         "bio": "",
@@ -1019,7 +1019,7 @@
       {
         "name": "Maisie",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -1029,7 +1029,7 @@
       {
         "name": "Panda Bear",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "7 yr",
         "gender": "Male",
         "bio": "",
@@ -1039,7 +1039,7 @@
       {
         "name": "Nac",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 4 mo",
         "gender": "Female",
         "bio": "",
@@ -1051,7 +1051,7 @@
       {
         "name": "Mouse",
         "species": "Cat",
-        "breed": "Unknown",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 7 mo",
         "gender": "Female",
         "bio": "",
