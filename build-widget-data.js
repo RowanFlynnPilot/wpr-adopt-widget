@@ -244,7 +244,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       try {
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
         await new Promise(r => setTimeout(r, 1500));
-        const bio = await bioPage.evaluate(() => {
+        const { bio: pageBio, breed: pageBreed } = await bioPage.evaluate(() => {
           const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b/i;
           const paras = [...document.querySelectorAll('main p, article p, [class*="content"] p, [class*="description"] p')];
           let out = '';
@@ -256,10 +256,18 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             out += (out ? ' ' : '') + t;
             if (out.length >= 350) break;
           }
-          return out ? out.substring(0, 400) : '';
+          const bio = out ? out.substring(0, 400) : '';
+          let breed = '';
+          const bodyText = document.body.innerText || '';
+          const breedLabelMatch = bodyText.match(/(?:Breed|breed)[:\s]+([^\n]+?)(?:\n|Age|Gender|Size|$)/i);
+          const breedPhraseMatch = bodyText.match(/Domestic\s+Shorthair|Domestic\s+Longhair|Domestic\s+Medium\s*Hair|Siamese|Tabby|Calico|Labrador|Shepherd|Terrier|Hound|Retriever|Mix\s*Breed/i);
+          if (breedLabelMatch && breedLabelMatch[1]) breed = breedLabelMatch[1].trim().replace(/\s+/g, ' ').substring(0, 50);
+          else if (breedPhraseMatch) breed = breedPhraseMatch[0].replace(/\s+/g, ' ').trim();
+          return { bio, breed };
         });
         const generic = /Cared for by|Ask About Me|Humane Society of/i;
-        pet.bio = (bio && !generic.test(bio) && bio.length >= 50) ? bio : '';
+        pet.bio = (pageBio && !generic.test(pageBio) && pageBio.length >= 50) ? pageBio : '';
+        if (pageBreed) pet.breedFromPage = pageBreed;
       } catch (err) {
         pet.bio = '';
       }
@@ -285,7 +293,13 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         const cand = beforeGender[1].trim();
         if (!/\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)/i.test(cand)) breed = cand;
       }
+      if (!breed && raw) {
+        const knownBreeds = /Domestic\s+Shorthair|Domestic\s+Longhair|Domestic\s+Medium\s*Hair|Siamese|Tabby|Calico|Persian|Bengal|Ragdoll|Labrador|Shepherd|Terrier|Hound|Retriever|Pit\s*Bull|Beagle|Chihuahua|Mix|Mix\s*Breed/gi;
+        const m = raw.match(knownBreeds);
+        if (m) breed = m[0].replace(/\s+/g, ' ').trim();
+      }
     }
+    if (p.breedFromPage) breed = (p.breedFromPage || breed).trim();
 
     // Age: e.g. "1 yr 9 mos" — capture number+unit(s), stop before location (Wausau, Merrill, WI etc.)
     let ageMatch = raw.match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)(?:\s+\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?))*)/i);
@@ -310,7 +324,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     return {
       name: p.name,
       species: isCat ? 'Cat' : 'Dog',
-      breed: p.breed || 'Unknown',
+      breed: breed || 'Unknown',
       age: age || 'Unknown',
       gender: gender || 'Unknown',
       bio: (p.bio || '').trim().substring(0, 500) || '',
