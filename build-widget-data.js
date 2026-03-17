@@ -84,16 +84,30 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       }
     }
 
+    // Scroll to trigger lazy-loaded cards (some shelters load more as you scroll)
+    await page.evaluate(async () => {
+      const step = 400;
+      for (let y = 0; y < document.body.scrollHeight; y += step) {
+        window.scrollTo(0, y);
+        await new Promise(r => setTimeout(r, 150));
+      }
+      window.scrollTo(0, 0);
+    });
+    await new Promise(r => setTimeout(r, 2000));
+
     while (pageNum <= MAX_PAGES) {
       console.log(`  Page ${pageNum}...`);
 
       const result = await page.evaluate(() => {
         const pets = [];
+        const seen = new Set();
         document.querySelectorAll('a[href*="/pet/"]').forEach(card => {
           const img = card.querySelector('img');
-          const href = card.href;
+          const href = (card.href || '').split('?')[0];
 
           if (!href || !href.includes('/pet/') || href.includes('blog')) return;
+          if (seen.has(href)) return;
+          seen.add(href);
 
           const fullText = card.textContent.trim();
           const textLines = fullText.split(/\n/).map(s => s.trim()).filter(Boolean);
@@ -199,20 +213,71 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     await page.close();
   }
 
+  if (allPets.length <= 1 && shelterKey === 'lincoln') {
+    const diagPage = await makePage(browser);
+    try {
+      await diagPage.goto(url, { waitUntil: 'networkidle2', timeout: 20000 });
+      await new Promise(r => setTimeout(r, 4000));
+      saveDiag('lincoln-single-result', await diagPage.content());
+    } catch (_) {}
+    await diagPage.close();
+  }
+
   console.log(`  [${shelterKey}] TOTAL: ${allPets.length} pets scraped`);
   
   // Deduplicate by URL
   const unique = new Map();
   allPets.forEach(p => { if (!unique.has(p.url)) unique.set(p.url, p); });
   allPets = Array.from(unique.values());
+
+  // Fetch bio from each pet's detail page (Adoptapet lists only name/breed/age on listing)
+  if (allPets.length > 0) {
+    console.log(`  Fetching bios for ${allPets.length} pets...`);
+    for (let i = 0; i < allPets.length; i++) {
+      const pet = allPets[i];
+      const bioPage = await makePage(browser);
+      try {
+        await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
+        await new Promise(r => setTimeout(r, 1500));
+        const bio = await bioPage.evaluate(() => {
+          const sel = '[class*="description"], [class*="about"], [class*="story"], [class*="bio"], .pet-details, [itemprop="description"]';
+          const el = document.querySelector(sel);
+          if (el) {
+            const t = el.textContent.trim().replace(/\s+/g, ' ');
+            if (t.length > 40) return t.substring(0, 400);
+          }
+          const paras = [...document.querySelectorAll('main p, article p, .content p, [class*="content"] p')];
+          let out = '';
+          for (const para of paras) {
+            const t = para.textContent.trim();
+            if (t.length > 30 && !/^Adopt|^Contact|^Share|^Print/i.test(t) && !t.includes('adoptapet.com')) {
+              out += (out ? ' ' : '') + t;
+              if (out.length >= 350) break;
+            }
+          }
+          return out ? out.substring(0, 400) : '';
+        });
+        pet.bio = bio || '';
+      } catch (err) {
+        pet.bio = '';
+      }
+      await bioPage.close();
+      if ((i + 1) % 10 === 0) console.log(`    Bios: ${i + 1}/${allPets.length}`);
+      await new Promise(r => setTimeout(r, 600));
+    }
+  }
   
   // Transform to standard format
   return allPets.map(p => {
-    const detailParts = (p.details || '').split(',').map(s => s.trim());
-    let gender = detailParts.find(s => /male|female/i.test(s)) || '';
-    let age = detailParts.find(s => /\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)/i.test(s)) || '';
-    if (!gender && (p.details || '').match(/(Male|Female)/i)) gender = (p.details.match(/(Male|Female)/i) || [])[1];
-    if (!age && (p.details || '').match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)\s*)/i)) age = ((p.details.match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)\s*)/i)) || [])[1].trim();
+    const raw = p.details || '';
+    // Gender: only the word "Male" or "Female", not a long segment containing it
+    const genderMatch = raw.match(/\b(Male|Female)\b/i);
+    const gender = genderMatch ? genderMatch[1] : '';
+    // Age: e.g. "1 yr 9 mos" — capture number+unit(s), stop before location (Wausau, Merrill, WI etc.)
+    let ageMatch = raw.match(/(\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?)(?:\s+\d+\s*(?:yr|yrs?|mo|mos?|wk|wks?))*)/i);
+    let age = ageMatch ? ageMatch[1].trim() : '';
+    // Strip any trailing city/state that got concatenated (e.g. "1 yr 7 mosMerrill" -> "1 yr 7 mos")
+    if (age) age = age.replace(/\s*(Merrill|Wausau|Friendship|,?\s*WI|Wisconsin)$/i, '').trim();
     
     let photo = p.photo;
     if (photo && photo.includes('adoptapet.com')) {
@@ -234,7 +299,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       breed: p.breed || 'Unknown',
       age: age || 'Unknown',
       gender: gender || 'Unknown',
-      bio: '',
+      bio: (p.bio || '').trim().substring(0, 500),
       photo,
       url: p.url
     };
