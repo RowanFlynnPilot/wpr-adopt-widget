@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-17T13:05:29.731Z",
+  "lastUpdated": "2026-03-17T18:58:47.056Z",
   "shelters": {
     "marathon": [
       {
@@ -560,7 +560,7 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1242801708",
-        "url": "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45327963-wausau-cat"
       },
       {
         "name": "Buttercup *Bonded Pair*",
@@ -675,14 +675,14 @@
         "url": "https://www.petfinder.com/dog/bart-345e5121-c866-46b6-bef1-eee737811447/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Billy",
-        "species": "Dog",
-        "breed": "Australian Cattle Dog / Blue Heeler.",
-        "age": "Puppy",
+        "name": "MoMo",
+        "species": "Cat",
+        "breed": "Domestic Short Hair.",
+        "age": "Adult",
         "gender": "Male",
         "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/20d420e0-7b24-41a2-a9fb-bd36a25ed018/image/fb8a7296-7f1f-4e56-8c7f-3ed29840bae8.jpg",
-        "url": "https://www.petfinder.com/dog/billy-20d420e0-7b24-41a2-a9fb-bd36a25ed018/wi/neillsville/clark-county-humane-society-wi34/details/"
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/b28f0778-df49-42cd-83a5-47bc76bf9028/image/1635e793-012c-4841-9a95-470dd5b2dfe4.jpg",
+        "url": "https://www.petfinder.com/cat/mo-mo-b28f0778-df49-42cd-83a5-47bc76bf9028/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
         "name": "Indigo",
@@ -735,6 +735,16 @@
         "url": "https://www.petfinder.com/cat/licorice-d9b66d02-d978-424f-9c06-4bdb97961c75/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
+        "name": "Bobby",
+        "species": "Cat",
+        "breed": "Domestic Short Hair.",
+        "age": "Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/d2131f65-887c-4590-8b9d-b208b163e1a6/image/13c91f61-ca30-41a5-9834-30f5631c8b35.jpg",
+        "url": "https://www.petfinder.com/cat/bobby-d2131f65-887c-4590-8b9d-b208b163e1a6/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
         "name": "Tia",
         "species": "Dog",
         "breed": "Mixed Breed.",
@@ -755,16 +765,6 @@
         "url": "https://www.petfinder.com/dog/tamara-25b7072a-767e-4957-88b4-0f861f826e06/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Gator",
-        "species": "Dog",
-        "breed": "Bulldog.",
-        "age": "Young",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/c5cada4a-bfa7-4b48-b21c-c3ed82a893b2/image/8f791a6f-d858-4383-b785-9b2e253bccb2.jpg",
-        "url": "https://www.petfinder.com/dog/gator-c5cada4a-bfa7-4b48-b21c-c3ed82a893b2/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Patsy",
         "species": "Dog",
         "breed": "Terrier.",
@@ -773,6 +773,46 @@
         "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/97309da5-b18f-4a53-867e-429c787f6aa8/image/8e331661-9d34-4cbc-957e-9344a8350d41.jpg",
         "url": "https://www.petfinder.com/dog/patsy-97309da5-b18f-4a53-867e-429c787f6aa8/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
+        "name": "Willie",
+        "species": "Dog",
+        "breed": "Terrier.",
+        "age": "Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/6466f0b8-4a86-420f-b9fc-95e8e5611a6f/image/6b744b69-cc58-48a7-b613-5f405fad5ae0.jpg",
+        "url": "https://www.petfinder.com/dog/willie-6466f0b8-4a86-420f-b9fc-95e8e5611a6f/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
+        "name": "Johnny",
+        "species": "Dog",
+        "breed": "Terrier.",
+        "age": "Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/6ad93a69-f06d-4ea3-80ba-4a0028fd0e93/image/39f28ebc-3848-4513-b20e-5035f4427b10.jpg",
+        "url": "https://www.petfinder.com/dog/johnny-6ad93a69-f06d-4ea3-80ba-4a0028fd0e93/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
+        "name": "Hank",
+        "species": "Dog",
+        "breed": "Terrier.",
+        "age": "Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/83046c56-e4ea-4d5f-a8af-c23b34d5c183/image/3ecdb90a-15ac-4974-8808-7cf836e80852.jpg",
+        "url": "https://www.petfinder.com/dog/hank-83046c56-e4ea-4d5f-a8af-c23b34d5c183/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
+        "name": "Alan",
+        "species": "Dog",
+        "breed": "Terrier.",
+        "age": "Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/27b41144-c227-4a83-9557-66ae02443548/image/b365ca78-2e1e-4573-ace2-eaa14b64178d.jpg",
+        "url": "https://www.petfinder.com/dog/alan-27b41144-c227-4a83-9557-66ae02443548/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
         "name": "Daisy Mae",
@@ -795,36 +835,6 @@
         "url": "https://www.petfinder.com/dog/indie-357bea61-c408-4c2a-bace-f5dc4ee60895/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Patty",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Young",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/ce799ff6-8ea6-4819-a30e-704477f8c72f/image/2a5bd9cd-447c-4ce6-b7e3-106202330616.jpg",
-        "url": "https://www.petfinder.com/cat/patty-ce799ff6-8ea6-4819-a30e-704477f8c72f/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Domino",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Young",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/2dc1de4b-95c3-45f4-8301-dd3bdafac954/image/8bd5baba-959f-4f76-ac8a-ab037c421f62.jpg",
-        "url": "https://www.petfinder.com/cat/domino-2dc1de4b-95c3-45f4-8301-dd3bdafac954/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Furrguson",
-        "species": "Cat",
-        "breed": "Domestic Long Hair.",
-        "age": "Young",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/89761e3e-5ce9-41aa-a828-342d8ee2eabd/image/91dd0972-5c9b-47fd-bb84-0ac8c9faf6bf.jpg",
-        "url": "https://www.petfinder.com/cat/furrguson-89761e3e-5ce9-41aa-a828-342d8ee2eabd/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Max",
         "species": "Dog",
         "breed": "Terrier.",
@@ -833,6 +843,16 @@
         "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/9c901e40-6c16-40cb-ab53-b74d1f9dcdf6/image/27d8e1df-37f4-4f65-b48b-283dc34818f3.jpg",
         "url": "https://www.petfinder.com/dog/max-9c901e40-6c16-40cb-ab53-b74d1f9dcdf6/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
+        "name": "Gator",
+        "species": "Dog",
+        "breed": "Bulldog.",
+        "age": "Young",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/c5cada4a-bfa7-4b48-b21c-c3ed82a893b2/image/8f791a6f-d858-4383-b785-9b2e253bccb2.jpg",
+        "url": "https://www.petfinder.com/dog/gator-c5cada4a-bfa7-4b48-b21c-c3ed82a893b2/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
         "name": "Mocha",
@@ -853,16 +873,6 @@
         "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/3eb064c2-6317-41ef-a2e2-5114c099f27f/image/f46b1473-4fd2-4da7-8d82-de889d06c8a2.jpg",
         "url": "https://www.petfinder.com/dog/latte-3eb064c2-6317-41ef-a2e2-5114c099f27f/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Greyson",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Senior",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/31834503-0f9e-42dd-b7ce-e9291b26c7cc/image/ca3394e5-2990-49bc-bdac-8e4b9a96f68c.jpg",
-        "url": "https://www.petfinder.com/cat/greyson-31834503-0f9e-42dd-b7ce-e9291b26c7cc/wi/neillsville/clark-county-humane-society-wi34/details/"
       }
     ],
     "adams": [
@@ -917,26 +927,6 @@
         "url": "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat"
       },
       {
-        "name": "Zelda",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "4 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286843184",
-        "url": "https://www.adoptapet.com/pet/47092646-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Roscoe",
-        "species": "Dog",
-        "breed": "American Pit Bull Terrier/Mixed Breed (Medium)",
-        "age": "2 yr",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286830428",
-        "url": "https://www.adoptapet.com/pet/47157145-friendship-wisconsin-american-pit-bull-terrier-mixed-breed-medium-mix"
-      },
-      {
         "name": "Torve",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -957,14 +947,14 @@
         "url": "https://www.adoptapet.com/pet/47064545-friendship-wisconsin-cat"
       },
       {
-        "name": "Snap",
+        "name": "Crackle",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1285290578",
-        "url": "https://www.adoptapet.com/pet/47172906-friendship-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286843210",
+        "url": "https://www.adoptapet.com/pet/47172905-friendship-wisconsin-cat"
       },
       {
         "name": "Pop",
@@ -977,14 +967,14 @@
         "url": "https://www.adoptapet.com/pet/47172908-friendship-wisconsin-cat"
       },
       {
-        "name": "Crackle",
+        "name": "Snap",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286843210",
-        "url": "https://www.adoptapet.com/pet/47172905-friendship-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1285290578",
+        "url": "https://www.adoptapet.com/pet/47172906-friendship-wisconsin-cat"
       },
       {
         "name": "Midnight",
