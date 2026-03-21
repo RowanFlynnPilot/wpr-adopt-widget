@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T12:41:44.642Z",
+  "lastUpdated": "2026-03-21T18:32:10.810Z",
   "shelters": {
     "marathon": [
       {
@@ -19,7 +19,7 @@
         "age": "1 yr",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293834728",
         "url": "https://www.adoptapet.com/pet/47523372-wausau-wisconsin-cat"
       },
       {
@@ -125,7 +125,7 @@
       {
         "name": "Red",
         "species": "Dog",
-        "breed": "Shepherd",
+        "breed": "101",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -185,7 +185,7 @@
       {
         "name": "Sea",
         "species": "Other",
-        "breed": "Unknown",
+        "breed": "101",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -395,7 +395,7 @@
       {
         "name": "Eastwick",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -785,6 +785,16 @@
         "url": "https://www.petfinder.com/cat/domino-2dc1de4b-95c3-45f4-8301-dd3bdafac954/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
+        "name": "Sally",
+        "species": "Dog",
+        "breed": "Australian Shepherd.",
+        "age": "Young",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/d3693327-4f19-4815-9d14-56cd815f31a9/image/882b7692-52e0-4eb8-89cb-7ee35531f38f.jpg",
+        "url": "https://www.petfinder.com/dog/sally-d3693327-4f19-4815-9d14-56cd815f31a9/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
         "name": "Max",
         "species": "Dog",
         "breed": "Terrier.",
@@ -813,23 +823,33 @@
         "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/00b33639-f043-45d6-be73-fd78a8265ff7/image/ef18f322-1c14-4f45-80f7-6dc2379011d3.jpg",
         "url": "https://www.petfinder.com/dog/mocha-00b33639-f043-45d6-be73-fd78a8265ff7/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Latte",
-        "species": "Dog",
-        "breed": "Spaniel.",
-        "age": "Puppy",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/3eb064c2-6317-41ef-a2e2-5114c099f27f/image/f46b1473-4fd2-4da7-8d82-de889d06c8a2.jpg",
-        "url": "https://www.petfinder.com/dog/latte-3eb064c2-6317-41ef-a2e2-5114c099f27f/wi/neillsville/clark-county-humane-society-wi34/details/"
       }
     ],
     "adams": [
       {
+        "name": "SkyMixed Breed (Medium)",
+        "species": "Dog",
+        "breed": "101",
+        "age": "4 mo",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "url": "https://www.adoptapet.com/pet/47537907-friendship-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "BellMixed Breed (Medium)",
+        "species": "Dog",
+        "breed": "101",
+        "age": "4 mo",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "url": "https://www.adoptapet.com/pet/47537909-friendship-wisconsin-mixed-breed-medium-mix"
+      },
+      {
         "name": "Buddy",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 8 mo",
         "gender": "Male",
         "bio": "",
@@ -849,20 +869,20 @@
       {
         "name": "Kit-Kat",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Mediumhair",
         "age": "10 yr",
         "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293861527",
         "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
       },
       {
         "name": "Harley",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mix",
         "age": "8 yr",
         "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293510513",
         "url": "https://www.adoptapet.com/pet/47507286-friendship-wisconsin-australian-cattle-dog-mix"
       },
@@ -877,16 +897,6 @@
         "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
       },
       {
-        "name": "Hennessey",
-        "species": "Cat",
-        "breed": "101",
-        "age": "1 yr 1 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292179898",
-        "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
-      },
-      {
         "name": "Ada",
         "species": "Cat",
         "breed": "101",
@@ -897,34 +907,34 @@
         "url": "https://www.adoptapet.com/pet/47064543-friendship-cat"
       },
       {
-        "name": "Shrimpy",
+        "name": "Hennessey",
         "species": "Cat",
         "breed": "101",
-        "age": "10 yr",
+        "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292148716",
-        "url": "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292179898",
+        "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
       },
       {
-        "name": "Torve",
-        "species": "Cat",
-        "breed": "101",
-        "age": "8 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1282752867",
-        "url": "https://www.adoptapet.com/pet/47064547-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Crackle",
+        "name": "Pop",
         "species": "Cat",
         "breed": "101",
         "age": "7 mo",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286843210",
-        "url": "https://www.adoptapet.com/pet/47172905-friendship-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1285290577",
+        "url": "https://www.adoptapet.com/pet/47172908-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Snap",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "7 mo",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1285290578",
+        "url": "https://www.adoptapet.com/pet/47172906-friendship-wisconsin-cat"
       },
       {
         "name": "Midnight",
@@ -969,10 +979,10 @@
       {
         "name": "Nac",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 4 mo",
         "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1282752882",
         "url": "https://www.adoptapet.com/pet/47064563-friendship-wisconsin-cat"
       }
