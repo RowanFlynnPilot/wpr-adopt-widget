@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T06:39:02.095Z",
+  "lastUpdated": "2026-03-21T12:41:44.642Z",
   "shelters": {
     "marathon": [
       {
@@ -125,7 +125,7 @@
       {
         "name": "Red",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Shepherd",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -185,7 +185,7 @@
       {
         "name": "Sea",
         "species": "Other",
-        "breed": "101",
+        "breed": "Unknown",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -540,7 +540,7 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
       }
     ],
     "clark": [
