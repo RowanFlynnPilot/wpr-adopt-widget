@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-03-23T01:59:59.408Z",
+  "lastUpdated": "2026-03-23T07:06:15.340Z",
   "shelters": {
     "marathon": [
+      {
+        "name": "Verna",
+        "species": "Cat",
+        "breed": "101",
+        "age": "1 yr",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "url": "https://www.adoptapet.com/pet/47548251-wausau-wisconsin-cat"
+      },
       {
         "name": "Coven",
         "species": "Cat",
@@ -75,22 +85,22 @@
       {
         "name": "Countdown",
         "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 yr",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293383560",
-        "url": "https://www.adoptapet.com/pet/47504551-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Paddy",
-        "species": "Cat",
         "breed": "101",
         "age": "2 yr",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293400517",
-        "url": "https://www.adoptapet.com/pet/47504550-wausau-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293383560",
+        "url": "https://www.adoptapet.com/pet/47504551-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Bandita",
+        "species": "Cat",
+        "breed": "101",
+        "age": "9 mo",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1289397270",
+        "url": "https://www.adoptapet.com/pet/47323290-wausau-wisconsin-cat"
       },
       {
         "name": "Kijimi",
@@ -203,16 +213,6 @@
         "url": "https://www.adoptapet.com/pet/47442632-wausau-wisconsin-rat"
       },
       {
-        "name": "Sand",
-        "species": "Other",
-        "breed": "101",
-        "age": "1 yr 2 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1291888461",
-        "url": "https://www.adoptapet.com/pet/47442630-wausau-wisconsin-rat"
-      },
-      {
         "name": "Short Rib",
         "species": "Cat",
         "breed": "101",
@@ -253,6 +253,16 @@
         "url": "https://www.adoptapet.com/pet/47402422-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
+        "name": "Louie",
+        "species": "Cat",
+        "breed": "101",
+        "age": "10 mo",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290369690",
+        "url": "https://www.adoptapet.com/pet/47381656-wausau-wisconsin-cat"
+      },
+      {
         "name": "Muzan",
         "species": "Dog",
         "breed": "101",
@@ -261,16 +271,6 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287642961",
         "url": "https://www.adoptapet.com/pet/47268781-wausau-wisconsin-american-bulldog-mix"
-      },
-      {
-        "name": "Louie",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "10 mo",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290369690",
-        "url": "https://www.adoptapet.com/pet/47381656-wausau-wisconsin-cat"
       },
       {
         "name": "Kee Kee",
@@ -283,16 +283,6 @@
         "url": "https://www.adoptapet.com/pet/46360585-wausau-wisconsin-cat"
       },
       {
-        "name": "Faith",
-        "species": "Other",
-        "breed": "101",
-        "age": "9 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287190998",
-        "url": "https://www.adoptapet.com/pet/46954145-wausau-wisconsin-hamster"
-      },
-      {
         "name": "Jake",
         "species": "Dog",
         "breed": "101",
@@ -301,6 +291,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287163077",
         "url": "https://www.adoptapet.com/pet/46433021-wausau-wisconsin-german-shepherd-dog-mix"
+      },
+      {
+        "name": "Faith",
+        "species": "Other",
+        "breed": "101",
+        "age": "9 mo",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287190998",
+        "url": "https://www.adoptapet.com/pet/46954145-wausau-wisconsin-hamster"
       },
       {
         "name": "Henry VIII *Barn Cat*",
@@ -513,16 +513,6 @@
         "url": "https://www.adoptapet.com/pet/43104949-wausau-wisconsin-american-bulldog-mix"
       },
       {
-        "name": "Princess",
-        "species": "Dog",
-        "breed": "101",
-        "age": "4 yr",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
-      },
-      {
         "name": "Willa",
         "species": "Dog",
         "breed": "101",
@@ -531,6 +521,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1239069751",
         "url": "https://www.adoptapet.com/pet/43426001-wausau-wisconsin-german-shepherd-dog-mix"
+      },
+      {
+        "name": "Princess",
+        "species": "Dog",
+        "breed": "101",
+        "age": "4 yr",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
       }
     ],
     "clark": [
@@ -819,10 +819,10 @@
       {
         "name": "SkyMixed Breed (Medium)",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mix",
         "age": "4 mo",
         "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
         "url": "https://www.adoptapet.com/pet/47537907-friendship-wisconsin-mixed-breed-medium-mix"
       },
@@ -839,7 +839,7 @@
       {
         "name": "Buddy",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 8 mo",
         "gender": "Male",
         "bio": "",
@@ -874,12 +874,12 @@
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293510513",
-        "url": "https://www.adoptapet.com/pet/47507286-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47507286-friendship-wisconsin-australian-cattle-dog-mix"
       },
       {
         "name": "Madame",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Mediumhair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -899,7 +899,7 @@
       {
         "name": "Hennessey",
         "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "breed": "101",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -954,7 +954,7 @@
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287685468",
-        "url": "https://www.adoptapet.com/pet/47270658-friendship-wisconsin-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47270658-friendship-mixed-breed-medium-mix"
       },
       {
         "name": "Panda Bear",
