@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-23T07:06:15.340Z",
+  "lastUpdated": "2026-03-23T13:01:09.562Z",
   "shelters": {
     "marathon": [
       {
@@ -510,7 +510,7 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1198387973",
-        "url": "https://www.adoptapet.com/pet/43104949-wausau-wisconsin-american-bulldog-mix"
+        "url": "https://www.adoptapet.com/pet/43104949-wausau-american-bulldog-mix"
       },
       {
         "name": "Willa",
@@ -817,29 +817,29 @@
     ],
     "adams": [
       {
-        "name": "SkyMixed Breed (Medium)",
-        "species": "Dog",
-        "breed": "Mix",
-        "age": "4 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
-        "url": "https://www.adoptapet.com/pet/47537907-friendship-wisconsin-mixed-breed-medium-mix"
-      },
-      {
-        "name": "BellMixed Breed (Medium)",
+        "name": "Sky",
         "species": "Dog",
         "breed": "101",
         "age": "4 mo",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": "https://media.adoptapet.com/image/upload/q_auto/new-badge-v2.svg",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294188826",
+        "url": "https://www.adoptapet.com/pet/47537907-friendship-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Bell",
+        "species": "Dog",
+        "breed": "101",
+        "age": "4 mo",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294188811",
         "url": "https://www.adoptapet.com/pet/47537909-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Buddy",
         "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "breed": "101",
         "age": "1 yr 8 mo",
         "gender": "Male",
         "bio": "",
@@ -879,7 +879,7 @@
       {
         "name": "Madame",
         "species": "Cat",
-        "breed": "Domestic Mediumhair",
+        "breed": "101",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
