@@ -102,7 +102,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         const pets = [];
         const seen = new Set();
         document.querySelectorAll('a[href*="/pet/"]').forEach(card => {
-          const img = card.querySelector('img');
+          // Skip badge/overlay images (e.g. "New!" badge) — find the actual pet photo
+          const img = card.querySelector('img[alt^="Photo of"]') || 
+                       card.querySelector('img:not([alt="new badge"]):not([src*="badge"])') ||
+                       card.querySelector('img');
           const href = (card.href || '').split('?')[0];
 
           if (!href || !href.includes('/pet/') || href.includes('blog')) return;
@@ -385,6 +388,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     if (age) age = age.replace(/\s*(Merrill|Wausau|Friendship|,?\s*WI|Wisconsin)$/i, '').trim();
 
     let photo = p.photo;
+    // Filter out Adoptapet's "New!" placeholder badge (shown when shelter hasn't uploaded a photo)
+    if (photo && /new-badge|placeholder|fallback/i.test(photo)) photo = null;
     if (photo && photo.includes('adoptapet.com')) {
       const idMatch = photo.match(/\/(\d{7,})(?:\?|$)/);
       if (idMatch) {
