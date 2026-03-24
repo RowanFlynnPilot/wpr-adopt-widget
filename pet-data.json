@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-24T01:31:54.373Z",
+  "lastUpdated": "2026-03-24T02:02:10.462Z",
   "shelters": {
     "marathon": [
       {
         "name": "Hedgewitch",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -15,7 +15,7 @@
       {
         "name": "Road Trip",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -25,7 +25,7 @@
       {
         "name": "Yugi",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -35,7 +35,7 @@
       {
         "name": "Corwyn",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "4 yr",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -45,7 +45,7 @@
       {
         "name": "Yuletide",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -55,7 +55,7 @@
       {
         "name": "Kijimi",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -65,7 +65,7 @@
       {
         "name": "Bandita",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -75,7 +75,7 @@
       {
         "name": "Ivy",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "10 mo",
         "gender": "Female",
         "bio": "",
@@ -85,7 +85,7 @@
       {
         "name": "Kee Kee",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -95,7 +95,7 @@
       {
         "name": "Muzan",
         "species": "Dog",
-        "breed": "101",
+        "breed": "American Bulldog",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -105,7 +105,7 @@
       {
         "name": "Thia",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -115,7 +115,7 @@
       {
         "name": "Countdown",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -125,7 +125,7 @@
       {
         "name": "Paddy",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -135,7 +135,7 @@
       {
         "name": "Verna",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -145,7 +145,7 @@
       {
         "name": "Coven",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Longhair",
         "age": "10 mo",
         "gender": "Female",
         "bio": "",
@@ -155,7 +155,7 @@
       {
         "name": "Blue",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Dutch Shepherd / Belgian Malinois",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -165,7 +165,7 @@
       {
         "name": "Ryn",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -175,7 +175,7 @@
       {
         "name": "Spiderman",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "10 yr",
         "gender": "Male",
         "bio": "",
@@ -185,7 +185,7 @@
       {
         "name": "Nonia",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -195,7 +195,7 @@
       {
         "name": "Tilly",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Australian Cattle Dog / Australian Shepherd",
         "age": "5 mo",
         "gender": "Female",
         "bio": "",
@@ -205,7 +205,7 @@
       {
         "name": "Patch",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Hound (Unknown Type)",
         "age": "1 yr",
         "gender": "Male",
         "bio": "",
@@ -215,7 +215,7 @@
       {
         "name": "Jake",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 9 mo",
         "gender": "Male",
         "bio": "",
@@ -225,7 +225,7 @@
       {
         "name": "Franklin",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 9 mo",
         "gender": "Male",
         "bio": "",
@@ -235,7 +235,7 @@
       {
         "name": "Mancala",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "7 yr",
         "gender": "Male",
         "bio": "",
@@ -245,7 +245,7 @@
       {
         "name": "Red",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Dutch Shepherd / Belgian Malinois",
         "age": "5 yr",
         "gender": "Male",
         "bio": "",
@@ -255,7 +255,7 @@
       {
         "name": "Lacy",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Hound (Unknown Type)",
         "age": "6 mo",
         "gender": "Female",
         "bio": "",
@@ -265,7 +265,7 @@
       {
         "name": "Josephine",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Hound (Unknown Type)",
         "age": "1 yr 7 mo",
         "gender": "Female",
         "bio": "",
@@ -275,7 +275,7 @@
       {
         "name": "Grinch",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Male",
         "bio": "",
@@ -285,7 +285,7 @@
       {
         "name": "Mr. Red",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 6 mo",
         "gender": "Male",
         "bio": "",
@@ -295,7 +295,7 @@
       {
         "name": "Sand",
         "species": "Other",
-        "breed": "101",
+        "breed": "Rat",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -305,7 +305,7 @@
       {
         "name": "Sun",
         "species": "Other",
-        "breed": "101",
+        "breed": "Rat",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -315,7 +315,7 @@
       {
         "name": "Sea",
         "species": "Other",
-        "breed": "101",
+        "breed": "Rat",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -325,7 +325,7 @@
       {
         "name": "Short Rib",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr",
         "gender": "Male",
         "bio": "",
@@ -335,7 +335,7 @@
       {
         "name": "Boppy",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Terrier (Unknown Type, Medium)",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -345,7 +345,7 @@
       {
         "name": "Cookie",
         "species": "Dog",
-        "breed": "101",
+        "breed": "German Shepherd Dog",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -355,7 +355,7 @@
       {
         "name": "Louie",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "10 mo",
         "gender": "Male",
         "bio": "",
@@ -365,7 +365,7 @@
       {
         "name": "Jake",
         "species": "Dog",
-        "breed": "101",
+        "breed": "German Shepherd Dog",
         "age": "3 yr",
         "gender": "Male",
         "bio": "",
@@ -375,7 +375,7 @@
       {
         "name": "Faith",
         "species": "Other",
-        "breed": "101",
+        "breed": "Hamster",
         "age": "9 mo",
         "gender": "Female",
         "bio": "",
@@ -385,7 +385,7 @@
       {
         "name": "Pablo",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 6 mo",
         "gender": "Male",
         "bio": "",
@@ -395,7 +395,7 @@
       {
         "name": "Henry VIII *Barn Cat*",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "6 mo",
         "gender": "Male",
         "bio": "",
@@ -405,7 +405,7 @@
       {
         "name": "Princess",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Husky",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -415,7 +415,7 @@
       {
         "name": "Bunyan Burger",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "6 yr",
         "gender": "Female",
         "bio": "",
@@ -425,7 +425,7 @@
       {
         "name": "Siridean",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -435,7 +435,7 @@
       {
         "name": "Emmie",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Chow Chow",
         "age": "13 yr",
         "gender": "Female",
         "bio": "",
@@ -445,7 +445,7 @@
       {
         "name": "Terracotta",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "5 yr",
         "gender": "Female",
         "bio": "",
@@ -455,7 +455,7 @@
       {
         "name": "Wovey",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mixed Breed (Medium)",
         "age": "1 yr",
         "gender": "Female",
         "bio": "",
@@ -465,7 +465,7 @@
       {
         "name": "Teeter Totter *Barn Cat*",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Longhair",
         "age": "Unknown",
         "gender": "Male",
         "bio": "",
@@ -475,7 +475,7 @@
       {
         "name": "Soul",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -485,7 +485,7 @@
       {
         "name": "Bell",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Catahoula Leopard Dog",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -495,7 +495,7 @@
       {
         "name": "Rome *Barn Cat*",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "Unknown",
         "gender": "Male",
         "bio": "",
@@ -505,7 +505,7 @@
       {
         "name": "Nutella *Barn Cat*",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -515,7 +515,7 @@
       {
         "name": "Buttercup *Bonded Pair*",
         "species": "Dog",
-        "breed": "101",
+        "breed": "American Bulldog",
         "age": "7 yr",
         "gender": "Female",
         "bio": "",
@@ -525,7 +525,7 @@
       {
         "name": "Willa",
         "species": "Dog",
-        "breed": "101",
+        "breed": "German Shepherd Dog",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -535,7 +535,7 @@
       {
         "name": "Princess",
         "species": "Dog",
-        "breed": "101",
+        "breed": "German Shepherd Dog",
         "age": "4 yr",
         "gender": "Female",
         "bio": "",
@@ -829,7 +829,7 @@
       {
         "name": "Mac",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Mediumhair",
         "age": "3 mo",
         "gender": "Male",
         "bio": "",
@@ -839,7 +839,7 @@
       {
         "name": "Frankie",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Mediumhair",
         "age": "3 mo",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -849,7 +849,7 @@
       {
         "name": "Sky",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mixed Breed (Medium)",
         "age": "4 mo",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -859,17 +859,17 @@
       {
         "name": "Bell",
         "species": "Dog",
-        "breed": "Mix",
+        "breed": "Mixed Breed (Medium)",
         "age": "4 mo",
         "gender": "Female",
-        "bio": "",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294188811",
         "url": "https://www.adoptapet.com/pet/47537909-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Maisie",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "2 yr",
         "gender": "Female",
         "bio": "",
@@ -879,7 +879,7 @@
       {
         "name": "Buddy",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 8 mo",
         "gender": "Male",
         "bio": "",
@@ -892,14 +892,14 @@
         "breed": "Domestic Mediumhair",
         "age": "10 yr",
         "gender": "Female",
-        "bio": "",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1293861527",
         "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
       },
       {
         "name": "Harley",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Australian Cattle Dog / Mixed Breed (Medium)",
         "age": "8 yr",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -909,7 +909,7 @@
       {
         "name": "Madame",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Mediumhair",
         "age": "1 yr 1 mo",
         "gender": "Female",
         "bio": "",
@@ -919,7 +919,7 @@
       {
         "name": "Torve",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "8 mo",
         "gender": "Female",
         "bio": "",
@@ -929,7 +929,7 @@
       {
         "name": "Crowe",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "9 mo",
         "gender": "Male",
         "bio": "",
@@ -939,7 +939,7 @@
       {
         "name": "Pop",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -949,7 +949,7 @@
       {
         "name": "Snap",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "7 mo",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -959,7 +959,7 @@
       {
         "name": "Midnight",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 2 mo",
         "gender": "Female",
         "bio": "",
@@ -969,7 +969,7 @@
       {
         "name": "Suzie",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mixed Breed (Medium)",
         "age": "1 yr 4 mo",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -979,7 +979,7 @@
       {
         "name": "Cooper",
         "species": "Dog",
-        "breed": "101",
+        "breed": "Mixed Breed (Medium)",
         "age": "6 yr",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -989,7 +989,7 @@
       {
         "name": "Panda Bear",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "7 yr",
         "gender": "Male",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -999,7 +999,7 @@
       {
         "name": "Nac",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 4 mo",
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
@@ -1011,7 +1011,7 @@
       {
         "name": "Mouse",
         "species": "Cat",
-        "breed": "101",
+        "breed": "Domestic Shorthair",
         "age": "1 yr 7 mo",
         "gender": "Female",
         "bio": "",
