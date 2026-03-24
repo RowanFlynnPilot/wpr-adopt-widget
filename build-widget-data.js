@@ -220,14 +220,51 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     await page.close();
   }
 
-  if (allPets.length <= 1 && shelterKey === 'lincoln') {
-    const diagPage = await makePage(browser);
+  // Fallback: if card-based scraping found very few results, extract pet URLs from
+  // the page's raw HTML/script data. Adoptapet is a Next.js React app — after JS
+  // hydration, pet cards may be re-rendered with fewer visible than the server-
+  // rendered HTML contained. This fallback catches pets embedded in RSC payloads.
+  if (allPets.length <= 3) {
+    console.log(`  [${shelterKey}] Only ${allPets.length} pets from cards — trying HTML fallback...`);
+    const fallbackPage = await makePage(browser);
     try {
-      await diagPage.goto(url, { waitUntil: 'networkidle2', timeout: 20000 });
-      await new Promise(r => setTimeout(r, 4000));
-      saveDiag('lincoln-single-result', await diagPage.content());
-    } catch (_) {}
-    await diagPage.close();
+      await fallbackPage.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+      await new Promise(r => setTimeout(r, 3000));
+      const rawHtml = await fallbackPage.content();
+      saveDiag(`${shelterKey}-fallback`, rawHtml);
+
+      // Extract pet URLs from anywhere in page source (rendered cards, script data, RSC payloads)
+      const urlMatches = rawHtml.match(/\/pet\/(\d+)-([a-z-]+)/g) || [];
+      const seenUrls = new Set(allPets.map(p => p.url));
+      const newUrls = [...new Set(urlMatches)]
+        .map(path => `https://www.adoptapet.com${path}`)
+        .filter(u => !seenUrls.has(u) && !u.includes('blog'));
+
+      if (newUrls.length > 0) {
+        console.log(`    Found ${newUrls.length} additional pet URLs in page source`);
+        for (const petUrl of newUrls) {
+          // Extract name from the page if possible (look for "Photo of X" near this URL)
+          const petId = petUrl.match(/\/pet\/(\d+)/)?.[1] || '';
+          const nameFromAlt = rawHtml.match(new RegExp(`${petId}[\\s\\S]{0,500}?Photo of ([^"<]+)`, 'i'));
+          const nameFromTitle = rawHtml.match(new RegExp(`Photo of ([^"<]+)[\\s\\S]{0,500}?${petId}`, 'i'));
+          const name = (nameFromAlt?.[1] || nameFromTitle?.[1] || '').trim();
+
+          if (name && name.length < 50) {
+            allPets.push({
+              name,
+              breed: '',
+              details: '',
+              photo: null,
+              url: petUrl
+            });
+            console.log(`    + ${name} (from HTML fallback)`);
+          }
+        }
+      }
+    } catch (err) {
+      console.log(`    Fallback failed: ${err.message}`);
+    }
+    await fallbackPage.close();
   }
 
   console.log(`  [${shelterKey}] TOTAL: ${allPets.length} pets scraped`);
@@ -739,6 +776,23 @@ async function main() {
   data.shelters.nlpac = await scrapeNlpac(browser);
   
   await browser.close();
+  
+  // Cross-shelter dedup: Adoptapet cross-lists pets across nearby shelters.
+  // Remove duplicates so the same pet doesn't appear under both Marathon and Lincoln.
+  // Priority order: marathon > clark > adams > lincoln > nlpac (keep first occurrence)
+  const seenUrls = new Set();
+  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac'];
+  for (const key of shelterOrder) {
+    if (!data.shelters[key]) continue;
+    const before = data.shelters[key].length;
+    data.shelters[key] = data.shelters[key].filter(p => {
+      if (seenUrls.has(p.url)) return false;
+      seenUrls.add(p.url);
+      return true;
+    });
+    const removed = before - data.shelters[key].length;
+    if (removed > 0) console.log(`  [dedup] Removed ${removed} cross-listed pets from ${key}`);
+  }
   
   // Summary
   console.log('\n╔══════════════════════════════════════════════════╗');
