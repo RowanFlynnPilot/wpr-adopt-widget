@@ -125,6 +125,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             }
           }
           let breed = textLines[1] || '';
+          // Filter out nav menu text pollution (e.g. "Breed 101" → textLines picks up "101")
+          if (/^\d+$/.test(breed.trim()) || breed.trim().length < 3) breed = '';
           const details = textLines[2] || fullText; // use fullText when no clear lines so we can regex gender/age later
           if (!breed && fullText) {
             const afterName = name ? fullText.replace(new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), '').trim() : fullText;
@@ -257,12 +259,39 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             if (out.length >= 350) break;
           }
           const bio = out ? out.substring(0, 400) : '';
+
+          // === BREED EXTRACTION (multiple strategies, ordered by reliability) ===
           let breed = '';
-          const bodyText = document.body.innerText || '';
-          const breedLabelMatch = bodyText.match(/(?:Breed|breed)[:\s]+([^\n]+?)(?:\n|Age|Gender|Size|$)/i);
-          const breedPhraseMatch = bodyText.match(/Domestic\s+Shorthair|Domestic\s+Longhair|Domestic\s+Medium\s*Hair|Siamese|Tabby|Calico|Labrador|Shepherd|Terrier|Hound|Retriever|Mix\s*Breed/i);
-          if (breedLabelMatch && breedLabelMatch[1]) breed = breedLabelMatch[1].trim().replace(/\s+/g, ' ').substring(0, 50);
-          else if (breedPhraseMatch) breed = breedPhraseMatch[0].replace(/\s+/g, ' ').trim();
+
+          // Strategy 1: dt/dd pairs (Adoptapet's "My basic info" section)
+          // Structure: <dt>Breed</dt><dd><span><a>Domestic Shorthair</a></span></dd>
+          const dtEls = document.querySelectorAll('dt');
+          for (const dt of dtEls) {
+            if (/^\s*Breed\s*$/i.test(dt.textContent)) {
+              const dd = dt.nextElementSibling;
+              if (dd && dd.tagName === 'DD') {
+                breed = dd.textContent.trim().replace(/\s+/g, ' ').substring(0, 80);
+                break;
+              }
+            }
+          }
+
+          // Strategy 2: page title contains breed ("Wausau, WI - Domestic Shorthair. Meet X...")
+          if (!breed) {
+            const titleMatch = document.title.match(/^.+?-\s*(.+?)\.\s*Meet\s/i);
+            if (titleMatch && titleMatch[1]) breed = titleMatch[1].trim();
+          }
+
+          // Strategy 3: og:description meta ("Pictures of X a Domestic Shorthair for adoption...")
+          if (!breed) {
+            const ogDesc = document.querySelector('meta[property="og:description"]')?.content || '';
+            const ogMatch = ogDesc.match(/\ba\s+(.+?)\s+for\s+adoption/i);
+            if (ogMatch && ogMatch[1]) breed = ogMatch[1].trim();
+          }
+
+          // Filter out nav text pollution (e.g. "Breed 101" → "101")
+          if (/^\d+$/.test(breed) || breed.length < 3) breed = '';
+
           return { bio, breed };
         });
         const generic = /Cared for by|Ask About Me|Humane Society of/i;
@@ -306,6 +335,9 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       }
     }
     if (p.breedFromPage) breed = (p.breedFromPage || breed).trim();
+
+    // Final guard: reject garbage breed values (pure numbers like "101" from Adoptapet nav)
+    if (/^\d+$/.test(breed) || breed.length < 3) breed = '';
 
     // Age: e.g. "1 yr 9 mos" — capture number+unit(s), stop before location (Wausau, Merrill, WI etc.)
     let ageMatch = raw.match(
