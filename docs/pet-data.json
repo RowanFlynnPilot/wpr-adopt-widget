@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-24T13:05:26.475Z",
+  "lastUpdated": "2026-03-24T18:59:23.245Z",
   "shelters": {
     "marathon": [
       {
@@ -265,7 +265,7 @@
       {
         "name": "Josephine",
         "species": "Dog",
-        "breed": "Hound (Unknown Type)",
+        "breed": "Hound",
         "age": "1 yr 7 mo",
         "gender": "Female",
         "bio": "",
@@ -510,7 +510,7 @@
         "gender": "Female",
         "bio": "",
         "photo": null,
-        "url": "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45327963-wausau-cat"
       },
       {
         "name": "Buttercup *Bonded Pair*",
@@ -827,6 +827,16 @@
     ],
     "adams": [
       {
+        "name": "Blitz",
+        "species": "Dog",
+        "breed": "Foxhound / Welsh Springer Spaniel",
+        "age": "1 yr 5 mo",
+        "gender": "Male",
+        "bio": "",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47064542-friendship-wisconsin-foxhound-mix"
+      },
+      {
         "name": "Mac",
         "species": "Cat",
         "breed": "Domestic Mediumhair",
@@ -837,16 +847,6 @@
         "url": "https://www.adoptapet.com/pet/47553039-friendship-wisconsin-cat"
       },
       {
-        "name": "Frankie",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "3 mo",
-        "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": null,
-        "url": "https://www.adoptapet.com/pet/47553041-friendship-wisconsin-cat"
-      },
-      {
         "name": "Sky",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -855,16 +855,6 @@
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": null,
         "url": "https://www.adoptapet.com/pet/47537907-friendship-wisconsin-mixed-breed-medium-mix"
-      },
-      {
-        "name": "Bell",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "4 mo",
-        "gender": "Female",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": null,
-        "url": "https://www.adoptapet.com/pet/47537909-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Maisie",
@@ -917,14 +907,14 @@
         "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
       },
       {
-        "name": "Torve",
+        "name": "Ada",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "8 mo",
+        "age": "11 mo",
         "gender": "Female",
         "bio": "",
         "photo": null,
-        "url": "https://www.adoptapet.com/pet/47064547-friendship-cat"
+        "url": "https://www.adoptapet.com/pet/47064543-friendship-cat"
       },
       {
         "name": "Crowe",
@@ -937,16 +927,6 @@
         "url": "https://www.adoptapet.com/pet/47064545-friendship-cat"
       },
       {
-        "name": "Pop",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "7 mo",
-        "gender": "Male",
-        "bio": "This pet has no story. Contact this organization for more information about this pet.",
-        "photo": null,
-        "url": "https://www.adoptapet.com/pet/47172908-friendship-wisconsin-cat"
-      },
-      {
         "name": "Snap",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -955,6 +935,16 @@
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": null,
         "url": "https://www.adoptapet.com/pet/47172906-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Pop",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "7 mo",
+        "gender": "Male",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47172908-friendship-wisconsin-cat"
       },
       {
         "name": "Midnight",
