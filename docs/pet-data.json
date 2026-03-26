@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-26T02:03:39.654Z",
+  "lastUpdated": "2026-03-26T07:04:03.386Z",
   "shelters": {
     "marathon": [
       {
@@ -867,6 +867,36 @@
     ],
     "adams": [
       {
+        "name": "Lucy",
+        "species": "Dog",
+        "breed": "Norwegian Elkhound / Mixed Breed (Medium)",
+        "age": "1 yr",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47576334-friendship-wisconsin-norwegian-elkhound-mix"
+      },
+      {
+        "name": "Cheese",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "3 mo",
+        "gender": "Male",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47575858-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Duchess",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "3 mo",
+        "gender": "Female",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47575859-friendship-wisconsin-cat"
+      },
+      {
         "name": "Joey",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -924,37 +954,37 @@
         "gender": "Female",
         "bio": "This pet has no story. Contact this organization for more information about this pet.",
         "photo": null,
-        "url": "https://www.adoptapet.com/pet/47507286-friendship-wisconsin-australian-cattle-dog-mix"
+        "url": "https://www.adoptapet.com/pet/47507286-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix"
       },
       {
-        "name": "Madame",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "1 yr 1 mo",
-        "gender": "Female",
-        "bio": "",
-        "photo": null,
-        "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Hennessey",
+        "name": "Torve",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "1 yr 2 mo",
+        "age": "8 mo",
         "gender": "Female",
         "bio": "",
         "photo": null,
-        "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/47064547-friendship-wisconsin-cat"
       },
       {
-        "name": "Ada",
+        "name": "Crowe",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "11 mo",
-        "gender": "Female",
+        "age": "9 mo",
+        "gender": "Male",
         "bio": "",
         "photo": null,
-        "url": "https://www.adoptapet.com/pet/47064543-friendship-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/47064545-friendship-cat"
+      },
+      {
+        "name": "Pop",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "7 mo",
+        "gender": "Male",
+        "bio": "This pet has no story. Contact this organization for more information about this pet.",
+        "photo": null,
+        "url": "https://www.adoptapet.com/pet/47172908-friendship-wisconsin-cat"
       },
       {
         "name": "Snap",
