@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-27T13:00:01.430Z",
+  "lastUpdated": "2026-03-27T18:52:15.397Z",
   "shelters": {
     "marathon": [
       {
@@ -565,7 +565,7 @@
       {
         "name": "Buttercup *Bonded Pair*",
         "species": "Dog",
-        "breed": "American Bulldog",
+        "breed": "Unknown",
         "age": "7 yr",
         "gender": "Female",
         "bio": "",
@@ -835,6 +835,16 @@
         "url": "https://www.petfinder.com/dog/oscar-ee54d8a1-65d6-42ae-aab7-432d59419088/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
+        "name": "Clover",
+        "species": "Dog",
+        "breed": "Black Labrador Retriever.",
+        "age": "Puppy",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/a409a7f5-cd56-4c3e-a184-a4bc4b47d4a6/image/d6ee020a-9a89-4445-b86f-d937db6491ad.jpg",
+        "url": "https://www.petfinder.com/dog/clover-a409a7f5-cd56-4c3e-a184-a4bc4b47d4a6/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
         "name": "Sally",
         "species": "Dog",
         "breed": "Australian Shepherd.",
@@ -863,16 +873,6 @@
         "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/27b41144-c227-4a83-9557-66ae02443548/image/b365ca78-2e1e-4573-ace2-eaa14b64178d.jpg",
         "url": "https://www.petfinder.com/dog/alan-27b41144-c227-4a83-9557-66ae02443548/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Johnny",
-        "species": "Dog",
-        "breed": "Terrier.",
-        "age": "Puppy",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/6ad93a69-f06d-4ea3-80ba-4a0028fd0e93/image/39f28ebc-3848-4513-b20e-5035f4427b10.jpg",
-        "url": "https://www.petfinder.com/dog/johnny-6ad93a69-f06d-4ea3-80ba-4a0028fd0e93/wi/neillsville/clark-county-humane-society-wi34/details/"
       }
     ],
     "adams": [
