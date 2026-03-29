@@ -302,7 +302,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
               if (t.length > 20 && !skip.test(t) && !t.includes('adoptapet.com')) {
                 out += (out ? ' ' : '') + t;
               }
-              if (out.length >= 350) break;
+              if (out.length >= 1500) break;
               next = next.nextElementSibling;
             }
           }
@@ -315,14 +315,14 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
               if (t.length < 50) continue;
               if (skip.test(t) || t.includes('adoptapet.com')) continue;
               out += (out ? ' ' : '') + t;
-              if (out.length >= 350) break;
+              if (out.length >= 1500) break;
             }
           }
           // Strip common intro prefixes like "Here's what the humans have to say about me:"
           let bio = out ? out.replace(/^Here'?s what the humans have to say about me:?\s*/i, '').trim() : '';
           // Fix backtick apostrophes (Adoptapet uses ` instead of ')
           bio = bio.replace(/`/g, "'");
-          bio = bio ? bio.substring(0, 400) : '';
+          bio = bio ? bio.substring(0, 1500) : '';
 
           // === BREED EXTRACTION (multiple strategies, ordered by reliability) ===
           let breed = '';
@@ -449,7 +449,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       breed: breed || 'Unknown',
       age: age || 'Unknown',
       gender: gender || 'Unknown',
-      bio: (p.bio || '').trim().substring(0, 500) || '',
+      bio: (p.bio || '').trim().substring(0, 1500) || '',
       photo,
       url: p.url
     };
@@ -594,7 +594,7 @@ async function scrapeLincoln(browser) {
                   breed: '',
                   age,
                   gender: '',
-                  bio: (desc?.textContent || '').trim().substring(0, 300),
+                  bio: (desc?.textContent || '').trim().substring(0, 1500),
                   photo: src,
                   url: link?.href || ''
                 });
@@ -735,7 +735,7 @@ async function scrapeNlpac() {
         for (const p of paraMatches) {
           const text = p.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
           if (text.length > 50 && !bio && !/Contact|©|PayPal|security service/i.test(text)) {
-            bio = text.substring(0, 300);
+            bio = text.substring(0, 1500);
           }
         }
 
