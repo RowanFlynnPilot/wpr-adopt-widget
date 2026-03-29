@@ -626,121 +626,121 @@ async function scrapeLincoln(browser) {
 
 
 // ─── NLPAC SCRAPER (New Life Pet Adoption Center) ───
-// Their site serves pet data in plain HTML — easy to scrape
-async function scrapeNlpac(browser) {
+// Uses plain HTTP fetch instead of Puppeteer to avoid Cloudflare bot detection.
+// The site serves pet data in plain HTML — no JS execution needed.
+async function scrapeNlpac() {
   const url = 'https://www.nlpac.com/pets';
-  console.log(`\n[nlpac] Scraping: ${url}`);
-  
-  const page = await makePage(browser);
-  try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
-    // Wait for Cloudflare challenge to resolve (if present)
-    await page.waitForFunction(
-      () => !document.title.includes('Just a moment'),
-      { timeout: 30000 }
-    ).catch(() => {});
-    await new Promise(r => setTimeout(r, 3000));
+  console.log(`\n[nlpac] Scraping (HTTP): ${url}`);
 
-    // Get pet links from the listing page
-    const petLinks = await page.evaluate(() => {
-      const links = [];
-      document.querySelectorAll('a[href*="/q/pets/"]').forEach(a => {
-        const href = a.href;
-        const text = a.textContent.trim();
-        if (href && !links.find(l => l.href === href) && text.includes('Learn More')) {
-          // Walk up to find the pet card container
-          const container = a.closest('div') || a.parentElement;
-          const allText = container?.textContent || '';
-          links.push({ href, text: allText.substring(0, 200) });
+  const https = require('https');
+
+  function fetchPage(pageUrl) {
+    return new Promise((resolve, reject) => {
+      const req = https.get(pageUrl, {
+        headers: {
+          'User-Agent': USER_AGENT,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.9',
         }
+      }, (res) => {
+        // Follow redirects
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          const redirect = new URL(res.headers.location, pageUrl).href;
+          fetchPage(redirect).then(resolve).catch(reject);
+          return;
+        }
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(data));
       });
-      return links;
+      req.on('error', reject);
+      req.setTimeout(20000, () => { req.destroy(); reject(new Error('Timeout')); });
     });
-    
-    if (petLinks.length === 0) saveDiag('nlpac-list', await page.content());
-    await page.close();
-    console.log(`  Found ${petLinks.length} pet links, fetching details...`);
-    
-    // Visit each pet's detail page to get full info
-    const allPets = [];
-    for (const link of petLinks) {
-      const detailPage = await makePage(browser);
-      try {
-        await detailPage.goto(link.href, { waitUntil: 'networkidle2', timeout: 20000 });
-        // Wait for Cloudflare challenge to resolve (if present)
-        await detailPage.waitForFunction(
-          () => !document.title.includes('Just a moment'),
-          { timeout: 15000 }
-        ).catch(() => {});
-        await new Promise(r => setTimeout(r, 1000));
+  }
 
-        const pet = await detailPage.evaluate((pageUrl) => {
-          const bodyText = document.body.innerText || '';
-          if (/security service|verify you are not a bot|protect against.*bot/i.test(bodyText)) return null;
-          const name = document.querySelector('h1')?.textContent?.replace(/^Meet\s+/i, '').trim() || '';
-          if (!name || name.includes('www.') || name.includes('.com')) return null;
-          const img = document.querySelector('img[src*="custompages"]') ||
-                      document.querySelector('img[src*="uploads"]') ||
-                      document.querySelector('main img:not([src*="logo"]):not([src*="icon"])') ||
-                      document.querySelector('.entry-content img, article img, [class*="content"] img');
-          const photo = img?.src || null;
-          
-          // Parse the structured info list
-          const info = {};
-          document.querySelectorAll('li').forEach(li => {
-            const text = li.textContent.trim();
-            const match = text.match(/^(.+?):\s*(.+)$/);
-            if (match) info[match[1].trim()] = match[2].trim();
-          });
-          
-          // Get description
-          const descHeader = [...document.querySelectorAll('p, div')].find(el => el.previousElementSibling?.textContent?.includes('Description'));
-          let bio = '';
-          const descEl = document.evaluate("//text()[contains(.,'Description')]/..", document, null, 9, null).singleNodeValue;
-          if (descEl) {
-            let next = descEl.nextElementSibling;
-            while (next && next.tagName !== 'H2') {
-              bio += next.textContent.trim() + ' ';
-              next = next.nextElementSibling;
-            }
-          }
-          // Fallback: just grab first substantial paragraph
-          if (!bio) {
-            document.querySelectorAll('p').forEach(p => {
-              const t = p.textContent.trim();
-              if (t.length > 50 && !bio && !t.includes('Contact') && !t.includes('©')) bio = t;
-            });
-          }
-          
-          const animalType = info['Animal Type'] || '';
-          const breed = info['Breed'] || '';
-          const age = info['Age'] || '';
-          
-          let species = 'Dog';
-          if (animalType.toLowerCase().includes('cat')) species = 'Cat';
-          else if (animalType.toLowerCase().includes('guinea') || breed.toLowerCase().includes('guinea')) species = 'Other';
-          else if (animalType.toLowerCase().includes('dog')) species = 'Dog';
-          
-          return { name, species, breed, age, gender: '', bio: bio.trim().substring(0, 300), photo, url: pageUrl };
-        }, link.href);
-        
-        if (pet && pet.name && !pet.name.includes('www.') && !pet.name.includes('.com') &&
-            (!pet.bio || !/security service|verify you are not a bot/i.test(pet.bio))) {
-          console.log(`    ${pet.name} (${pet.species}) - ${pet.breed}`);
-          allPets.push(pet);
-        }
-      } catch (err) {
-        console.error(`    Error on ${link.href}: ${err.message}`);
-      }
-      await detailPage.close();
+  try {
+    const html = await fetchPage(url);
+
+    // Check for Cloudflare block
+    if (html.includes('Just a moment') || html.includes('cf-browser-verification')) {
+      console.log('  [nlpac] Cloudflare blocked HTTP request, saving diagnostic');
+      saveDiag('nlpac-list', html);
+      return [];
     }
-    
+
+    // Extract pet links: /q/pets/petname
+    const linkMatches = html.match(/href="(\/q\/pets\/[^"]+)"/g) || [];
+    const petPaths = [...new Set(
+      linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
+    )];
+
+    console.log(`  Found ${petPaths.length} pet links, fetching details...`);
+    if (petPaths.length === 0) {
+      saveDiag('nlpac-list', html);
+      return [];
+    }
+
+    const allPets = [];
+    for (const petPath of petPaths) {
+      const petUrl = `https://www.nlpac.com${petPath}`;
+      try {
+        const petHtml = await fetchPage(petUrl);
+
+        // Skip Cloudflare-blocked pages
+        if (petHtml.includes('Just a moment')) continue;
+
+        // Extract name from <h1> (often "Meet Petname" or just "Petname")
+        const nameMatch = petHtml.match(/<h1[^>]*>(.*?)<\/h1>/i);
+        let name = (nameMatch?.[1] || '').replace(/<[^>]+>/g, '').replace(/^Meet\s+/i, '').trim();
+        if (!name || name.includes('www.') || name.includes('.com')) continue;
+
+        // Extract photo: look for custompages image
+        const photoMatch = petHtml.match(/src="(https?:\/\/[^"]*custompages[^"]*)"/i);
+        const photo = photoMatch?.[1] || null;
+
+        // Extract structured info from <li> elements: "Key: Value"
+        const info = {};
+        const liMatches = petHtml.match(/<li[^>]*>(.*?)<\/li>/gi) || [];
+        for (const li of liMatches) {
+          const text = li.replace(/<[^>]+>/g, '').trim();
+          const kvMatch = text.match(/^(.+?):\s*(.+)$/);
+          if (kvMatch) info[kvMatch[1].trim()] = kvMatch[2].trim();
+        }
+
+        // Extract bio: find paragraphs with substantial text
+        let bio = '';
+        const paraMatches = petHtml.match(/<p[^>]*>(.*?)<\/p>/gi) || [];
+        for (const p of paraMatches) {
+          const text = p.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
+          if (text.length > 50 && !bio && !/Contact|©|PayPal|security service/i.test(text)) {
+            bio = text.substring(0, 300);
+          }
+        }
+
+        const animalType = info['Animal Type'] || '';
+        const breed = info['Breed'] || '';
+        const age = info['Age'] || '';
+
+        let species = 'Dog';
+        if (animalType.toLowerCase().includes('cat')) species = 'Cat';
+        else if (/guinea|hamster|rabbit|ferret|bird/i.test(animalType + ' ' + breed)) species = 'Other';
+
+        const pet = { name, species, breed, age, gender: '', bio, photo, url: petUrl };
+        console.log(`    ${name} (${species}) - ${breed}${photo ? '' : ' [no photo]'}`);
+        allPets.push(pet);
+
+        // Small delay between requests to be polite
+        await new Promise(r => setTimeout(r, 500));
+      } catch (err) {
+        console.error(`    Error on ${petUrl}: ${err.message}`);
+      }
+    }
+
     console.log(`  [nlpac] TOTAL: ${allPets.length} pets`);
     return allPets;
-    
+
   } catch (err) {
     console.error(`  Error: ${err.message}`);
-    await page.close();
     return [];
   }
 }
@@ -801,8 +801,8 @@ async function main() {
   const adoptapetOnly = lincolnAdoptapet.filter(p => !lincolnUrls.has(p.url));
   data.shelters.lincoln = [...lincolnDirect, ...adoptapetOnly];
   
-  // New Life Pet Adoption Center — Direct HTML scrape
-  data.shelters.nlpac = await scrapeNlpac(browser);
+  // New Life Pet Adoption Center — plain HTTP scrape (avoids Cloudflare bot detection)
+  data.shelters.nlpac = await scrapeNlpac();
   
   await browser.close();
   
