@@ -318,7 +318,9 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
               if (out.length >= 350) break;
             }
           }
-          const bio = out ? out.substring(0, 400) : '';
+          // Strip common intro prefixes like "Here's what the humans have to say about me:"
+          let bio = out ? out.replace(/^Here'?s what the humans have to say about me:?\s*/i, '').trim() : '';
+          bio = bio ? bio.substring(0, 400) : '';
 
           // === BREED EXTRACTION (multiple strategies, ordered by reliability) ===
           let breed = '';

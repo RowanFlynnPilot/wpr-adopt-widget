@@ -126,8 +126,11 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 .pet-card-breed{font-size:.8rem;color:var(--slate);margin-bottom:5px}
 .pet-card-bio{
   font-size:.76rem;color:#6b6b6b;line-height:1.5;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:7px;
+  max-height:4.5em;overflow-y:auto;margin-bottom:7px;
+  scrollbar-width:thin;scrollbar-color:#ccc transparent;
 }
+.pet-card-bio::-webkit-scrollbar{width:4px}
+.pet-card-bio::-webkit-scrollbar-thumb{background:#ccc;border-radius:2px}
 .pet-card-tags{display:flex;gap:4px;flex-wrap:wrap}
 .pet-tag{
   padding:2px 8px;border-radius:100px;font-size:.68rem;
@@ -211,7 +214,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   .pet-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .filter-row{gap:5px}.filter-btn{padding:5px 12px;font-size:.78rem}
   .shelter-label{flex-wrap:wrap}.shelter-location{margin-left:46px}
-  .pet-card-bio{-webkit-line-clamp:2}
+  .pet-card-bio{max-height:3em}
   .pet-grid.collapsed .pet-card:nth-child(n+7){display:none}
   .widget-brand-header{gap:10px;padding:14px 12px}
   .widget-brand-logo{width:44px;height:44px}
