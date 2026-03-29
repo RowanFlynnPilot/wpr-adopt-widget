@@ -129,6 +129,53 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:7px;
 }
 .pet-card-tags{display:flex;gap:4px;flex-wrap:wrap}
+
+/* ─── Pet Detail Modal ─── */
+.pet-modal-overlay{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.55);z-index:1000;
+  justify-content:center;align-items:center;padding:20px;
+  animation:modalFadeIn .2s ease;
+}
+.pet-modal-overlay.open{display:flex}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+.pet-modal{
+  background:var(--card-bg);border-radius:14px;max-width:460px;width:100%;
+  max-height:90vh;overflow-y:auto;position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);animation:modalSlideUp .25s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.pet-modal-close{
+  position:absolute;top:10px;right:12px;background:rgba(0,0,0,.45);
+  color:#fff;border:none;width:32px;height:32px;border-radius:50%;
+  font-size:1.2rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.pet-modal-close:hover{background:rgba(0,0,0,.7)}
+.pet-modal-img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px 14px 0 0;display:block;
+}
+.pet-modal-img-placeholder{
+  width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  background:var(--sand);border-radius:14px 14px 0 0;font-size:4rem;
+}
+.pet-modal-body{padding:18px 20px 20px}
+.pet-modal-name{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;margin-bottom:2px}
+.pet-modal-breed{font-size:.88rem;color:var(--slate);margin-bottom:10px}
+.pet-modal-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.pet-modal-bio{font-size:.88rem;color:#444;line-height:1.65;margin-bottom:18px}
+.pet-modal-shelter{font-size:.78rem;color:var(--slate);margin-bottom:14px;padding-top:12px;border-top:1px solid var(--border)}
+.pet-modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.pet-modal-btn{
+  flex:1;min-width:0;padding:10px 14px;border-radius:8px;border:none;
+  font-size:.82rem;font-weight:600;cursor:pointer;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  transition:filter .15s;text-align:center;
+}
+.pet-modal-btn:hover{filter:brightness(.92)}
+.pet-modal-btn.call{background:#e8f4f1;color:var(--teal-dark)}
+.pet-modal-btn.email{background:#e8f0f4;color:#2c5f7c}
+.pet-modal-btn.adopt{background:var(--teal);color:#fff}
 .pet-tag{
   padding:2px 8px;border-radius:100px;font-size:.68rem;
   font-weight:600;text-transform:uppercase;letter-spacing:.04em;
@@ -212,6 +259,10 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   .filter-row{gap:5px}.filter-btn{padding:5px 12px;font-size:.78rem}
   .shelter-label{flex-wrap:wrap}.shelter-location{margin-left:46px}
   .pet-card-bio{-webkit-line-clamp:2}
+  .pet-modal-overlay{padding:10px}
+  .pet-modal-body{padding:14px 16px 16px}
+  .pet-modal-actions{flex-direction:column}
+  .pet-modal-btn{min-width:100%}
   .pet-grid.collapsed .pet-card:nth-child(n+7){display:none}
   .widget-brand-header{gap:10px;padding:14px 12px}
   .widget-brand-logo{width:44px;height:44px}
@@ -284,13 +335,29 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   </div>
 </div>
 
+<!-- Pet Detail Modal -->
+<div class="pet-modal-overlay" id="petModal" onclick="if(event.target===this)closePetModal()">
+  <div class="pet-modal">
+    <button class="pet-modal-close" onclick="closePetModal()" aria-label="Close">&times;</button>
+    <div id="petModalImg"></div>
+    <div class="pet-modal-body">
+      <div class="pet-modal-name" id="petModalName"></div>
+      <div class="pet-modal-breed" id="petModalBreed"></div>
+      <div class="pet-modal-tags" id="petModalTags"></div>
+      <div class="pet-modal-bio" id="petModalBio"></div>
+      <div class="pet-modal-shelter" id="petModalShelter"></div>
+      <div class="pet-modal-actions" id="petModalActions"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 const SHELTERS={
-  marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕'},
-  clark:{name:'Clark County Humane Society',location:'Neillsville, WI',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈'},
-  adams:{name:'Adams County Humane Society',location:'Friendship, WI',website:'https://www.adamscountyhumanesociety.org/adoptable-animals.html',allPetsUrl:'https://www.adoptapet.com/shelter/76343-adams-county-humane-society-friendship-wisconsin',icon:'🐾'},
-  lincoln:{name:'Lincoln County Humane Society',location:'Merrill, WI',website:'https://furrypets.com/adopt/',allPetsUrl:'https://furrypets.com/adopt/',icon:'🐶'},
-  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡'}
+  marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕',phone:'715-845-2810',email:'info@catsndogs.org'},
+  clark:{name:'Clark County Humane Society',location:'Neillsville, WI',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈',phone:'715-743-4550',email:'petshelter@email.com'},
+  adams:{name:'Adams County Humane Society',location:'Friendship, WI',website:'https://www.adamscountyhumanesociety.org/adoptable-animals.html',allPetsUrl:'https://www.adoptapet.com/shelter/76343-adams-county-humane-society-friendship-wisconsin',icon:'🐾',phone:'608-339-6700',email:'achs@adamscountyhumanesociety.org'},
+  lincoln:{name:'Lincoln County Humane Society',location:'Merrill, WI',website:'https://furrypets.com/adopt/',allPetsUrl:'https://furrypets.com/adopt/',icon:'🐶',phone:'715-536-3459',email:'Manager@furrypets.com'},
+  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡',phone:'715-443-6699',email:'info@nlpac.com'}
 };
 
 const pf=(type,slug,id)=>`https://www.petfinder.com/${type}/${slug}-${id}/wi/neillsville/clark-county-humane-society-wi34/details/`;
@@ -464,33 +531,27 @@ document.addEventListener('DOMContentLoaded',()=>{
   observer.observe(document.getElementById('shelterContent'),{childList:true,subtree:true});
 });
 
-// Guard against garbage breed values from scraper (e.g. "101" from Adoptapet nav)
-function cleanBreed(b){
-  if(!b)return'';
-  const s=b.trim();
-  if(/^\d+$/.test(s))return''; // pure numbers like "101"
-  if(s.length<3)return'';      // too short to be a real breed
-  return s;
-}
+// Store pet data for modal access
+const _petStore={};
+let _petId=0;
 
-function card(p){
+function card(p,shelterKey){
   const sc=getAnimalType(p.species);
   const gc=(p.gender||'').toLowerCase()==='female'?'female':(p.gender||'').toLowerCase()==='male'?'male':'';
   const img=p.photo
     ?`<img class="pet-card-img" src="${p.photo}" alt="Photo of ${p.name}" loading="lazy" data-emoji="${emoji(p.species)}" onerror="imgFail(this)">`
     :`<div class="pet-card-img-placeholder">${emoji(p.species)}</div>`;
-  const breed=cleanBreed(p.breed);
-  const shareBreed=breed||p.species||'pet';
   const shareSubject=encodeURIComponent(`Check out ${p.name} — adoptable pet!`);
-  const shareBody=encodeURIComponent(`I found ${p.name} (${shareBreed}) on the Wausau Pilot & Review adoptable pets page!\n\n${p.url}`);
-  const smsBody=encodeURIComponent(`Check out ${p.name} (${shareBreed}) — adoptable! ${p.url}`);
+  const shareBody=encodeURIComponent(`I found ${p.name} (${p.breed}) on the Wausau Pilot & Review adoptable pets page!\n\n${p.url}`);
+  const smsBody=encodeURIComponent(`Check out ${p.name} (${p.breed}) — adoptable! ${p.url}`);
   const uid='s'+Math.random().toString(36).substr(2,6);
-  const breedAge=[breed,p.age].filter(Boolean).join(' · ')||'';
-  return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;window.open('${p.url}','_blank')" title="Learn more about ${p.name}">
+  const pid='p'+(_petId++);
+  _petStore[pid]={pet:p,shelterKey};
+  return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;openPetModal('${pid}')" title="Learn more about ${p.name}">
     ${img}<div class="pet-card-body">
     <div class="pet-card-name">${p.name}</div>
-    ${breedAge?`<div class="pet-card-breed">${breedAge}</div>`:''}
-    ${p.bio?`<div class="pet-card-bio">${p.bio}</div>`:''}
+    <div class="pet-card-breed">${p.breed} · ${p.age||'Unknown'}</div>
+    ${p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${p.bio}</div>`:''}
     <div class="pet-card-tags"><span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}</div>
     </div>
     <div class="pet-card-footer"><span></span>
@@ -516,7 +577,7 @@ function section(key){
   const gridId=`grid-${key}`;
 
   const grid=pets.length>0
-    ?`<div class="pet-grid" id="${gridId}">${pets.map(card).join('')}</div>`
+    ?`<div class="pet-grid" id="${gridId}">${pets.map(p=>card(p,key)).join('')}</div>`
     :`<div class="empty-state"><div class="empty-paw">🐾</div><p>${activeAnimal!=='all'?'No '+activeAnimal+'s currently listed at this shelter.':'No pets currently listed online. Visit the shelter website or call for the latest.'}</p></div>`;
 
   return`<div class="shelter-section" data-shelter="${key}">
@@ -609,6 +670,59 @@ function copyLink(url,el){
 }
 // Close share menus when clicking outside
 document.addEventListener('click',e=>{if(!e.target.closest('.share-wrap'))document.querySelectorAll('.share-menu.open').forEach(m=>m.classList.remove('open'))});
+
+// ═══ PET DETAIL MODAL ═══
+function openPetModal(pid){
+  const entry=_petStore[pid];
+  if(!entry)return;
+  const p=entry.pet;
+  const s=SHELTERS[entry.shelterKey];
+  const sc=getAnimalType(p.species);
+  const gc=(p.gender||'').toLowerCase()==='female'?'female':(p.gender||'').toLowerCase()==='male'?'male':'';
+
+  // Image
+  const imgEl=document.getElementById('petModalImg');
+  if(p.photo){
+    imgEl.innerHTML=`<img class="pet-modal-img" src="${p.photo}" alt="Photo of ${p.name}" onerror="this.outerHTML='<div class=\\'pet-modal-img-placeholder\\'>${emoji(p.species)}</div>'">`;
+  }else{
+    imgEl.innerHTML=`<div class="pet-modal-img-placeholder">${emoji(p.species)}</div>`;
+  }
+
+  // Text content
+  document.getElementById('petModalName').textContent=p.name;
+  document.getElementById('petModalBreed').textContent=`${p.breed} · ${p.age||'Unknown'}`;
+
+  // Tags
+  const tagsEl=document.getElementById('petModalTags');
+  tagsEl.innerHTML=`<span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}`;
+
+  // Bio
+  const bioEl=document.getElementById('petModalBio');
+  const bio=(p.bio&&!/no story|Contact this organization/i.test(p.bio))?p.bio:'';
+  bioEl.textContent=bio;
+  bioEl.style.display=bio?'block':'none';
+
+  // Shelter info
+  document.getElementById('petModalShelter').textContent=`${s.name} · ${s.location}`;
+
+  // Action buttons
+  const actionsEl=document.getElementById('petModalActions');
+  actionsEl.innerHTML=`
+    <a class="pet-modal-btn call" href="tel:${s.phone}" onclick="event.stopPropagation()">📞 Call</a>
+    <a class="pet-modal-btn email" href="mailto:${s.email}?subject=${encodeURIComponent('Inquiry about '+p.name)}" onclick="event.stopPropagation()">✉️ Email</a>
+    <a class="pet-modal-btn adopt" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
+  `;
+
+  document.getElementById('petModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closePetModal(){
+  document.getElementById('petModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
 </script>
 </body>
 </html>
