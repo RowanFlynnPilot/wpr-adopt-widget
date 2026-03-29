@@ -20,7 +20,9 @@
  * For GitHub Actions automation, see the workflow file.
  */
 
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 const fs = require('fs');
 const path = require('path');
 
@@ -632,8 +634,13 @@ async function scrapeNlpac(browser) {
   const page = await makePage(browser);
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+    // Wait for Cloudflare challenge to resolve (if present)
+    await page.waitForFunction(
+      () => !document.title.includes('Just a moment'),
+      { timeout: 30000 }
+    ).catch(() => {});
     await new Promise(r => setTimeout(r, 3000));
-    
+
     // Get pet links from the listing page
     const petLinks = await page.evaluate(() => {
       const links = [];
@@ -660,14 +667,22 @@ async function scrapeNlpac(browser) {
       const detailPage = await makePage(browser);
       try {
         await detailPage.goto(link.href, { waitUntil: 'networkidle2', timeout: 20000 });
+        // Wait for Cloudflare challenge to resolve (if present)
+        await detailPage.waitForFunction(
+          () => !document.title.includes('Just a moment'),
+          { timeout: 15000 }
+        ).catch(() => {});
         await new Promise(r => setTimeout(r, 1000));
-        
+
         const pet = await detailPage.evaluate((pageUrl) => {
           const bodyText = document.body.innerText || '';
           if (/security service|verify you are not a bot|protect against.*bot/i.test(bodyText)) return null;
           const name = document.querySelector('h1')?.textContent?.replace(/^Meet\s+/i, '').trim() || '';
           if (!name || name.includes('www.') || name.includes('.com')) return null;
-          const img = document.querySelector('img[src*="custompages"]');
+          const img = document.querySelector('img[src*="custompages"]') ||
+                      document.querySelector('img[src*="uploads"]') ||
+                      document.querySelector('main img:not([src*="logo"]):not([src*="icon"])') ||
+                      document.querySelector('.entry-content img, article img, [class*="content"] img');
           const photo = img?.src || null;
           
           // Parse the structured info list
