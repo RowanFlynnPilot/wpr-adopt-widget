@@ -96,11 +96,13 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid var(--border);
 }
 .shelter-icon{
-  width:34px;height:34px;border-radius:8px;
+  width:38px;height:38px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
+  overflow:hidden;background:var(--sand);
 }
-.shelter-icon.marathon{background:#dce8e5}.shelter-icon.clark{background:#dce8d8}
-.shelter-icon.adams{background:#dddce8}.shelter-icon.lincoln{background:#e3e8dc}.shelter-icon.nlpac{background:#e8dce0}
+.shelter-icon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.shelter-icon.marathon{background:#f0f0f0}.shelter-icon.clark{background:#dce8d8}
+.shelter-icon.adams{background:#dddce8}.shelter-icon.lincoln{background:#fff}.shelter-icon.nlpac{background:#e8dce0}
 .shelter-name{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:600}
 .shelter-location{font-size:.78rem;color:var(--slate-light);margin-left:auto}
 .shelter-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -164,7 +166,8 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 .pet-modal-breed{font-size:.88rem;color:var(--slate);margin-bottom:10px}
 .pet-modal-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
 .pet-modal-bio{font-size:.88rem;color:#444;line-height:1.65;margin-bottom:18px}
-.pet-modal-shelter{font-size:.78rem;color:var(--slate);margin-bottom:14px;padding-top:12px;border-top:1px solid var(--border)}
+.pet-modal-shelter{font-size:.78rem;color:var(--slate);margin-bottom:14px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.pet-modal-shelter img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .pet-modal-actions{display:flex;flex-direction:column;gap:8px}
 .pet-modal-email-row{display:flex;gap:8px}
 .pet-modal-email-row .pet-modal-btn{flex:1}
@@ -354,11 +357,11 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 
 <script>
 const SHELTERS={
-  marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕',phone:'715-845-2810',email:'info@catsndogs.org'},
-  clark:{name:'Clark County Humane Society',location:'Neillsville, WI',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈',phone:'715-743-4550',email:'petshelter@email.com'},
-  adams:{name:'Adams County Humane Society',location:'Friendship, WI',website:'https://www.adamscountyhumanesociety.org/adoptable-animals.html',allPetsUrl:'https://www.adoptapet.com/shelter/76343-adams-county-humane-society-friendship-wisconsin',icon:'🐾',phone:'608-339-6700',email:'achs@adamscountyhumanesociety.org'},
-  lincoln:{name:'Lincoln County Humane Society',location:'Merrill, WI',website:'https://furrypets.com/adopt/',allPetsUrl:'https://furrypets.com/adopt/',icon:'🐶',phone:'715-536-3459',email:'Manager@furrypets.com'},
-  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡',phone:'715-443-6699',email:'info@nlpac.com'}
+  marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕',logo:'logos/marathon.svg',phone:'715-845-2810',email:'info@catsndogs.org'},
+  clark:{name:'Clark County Humane Society',location:'Neillsville, WI',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈',logo:'logos/clark.jpg',phone:'715-743-4550',email:'petshelter@email.com'},
+  adams:{name:'Adams County Humane Society',location:'Friendship, WI',website:'https://www.adamscountyhumanesociety.org/adoptable-animals.html',allPetsUrl:'https://www.adoptapet.com/shelter/76343-adams-county-humane-society-friendship-wisconsin',icon:'🐾',logo:'logos/adams.jpg',phone:'608-339-6700',email:'achs@adamscountyhumanesociety.org'},
+  lincoln:{name:'Lincoln County Humane Society',location:'Merrill, WI',website:'https://furrypets.com/adopt/',allPetsUrl:'https://furrypets.com/adopt/',icon:'🐶',logo:'logos/lincoln.png',phone:'715-536-3459',email:'Manager@furrypets.com'},
+  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡',logo:'logos/nlpac.png',phone:'715-443-6699',email:'info@nlpac.com'}
 };
 
 const pf=(type,slug,id)=>`https://www.petfinder.com/${type}/${slug}-${id}/wi/neillsville/clark-county-humane-society-wi34/details/`;
@@ -587,7 +590,7 @@ function section(key){
 
   return`<div class="shelter-section" data-shelter="${key}">
     <div class="shelter-label">
-      <div class="shelter-icon ${key}">${s.icon}</div>
+      <div class="shelter-icon ${key}">${s.logo?`<img src="${s.logo}" alt="${s.name} logo">`:s.icon}</div>
       <div class="shelter-meta"><span class="shelter-name">${s.name}</span><a href="${s.website}" target="_blank" rel="noopener">Visit Website →</a></div>
       <span class="shelter-location">${s.location}</span>
     </div>
@@ -715,7 +718,7 @@ function openPetModal(pid){
   bioEl.style.display=bio?'block':'none';
 
   // Shelter info
-  document.getElementById('petModalShelter').textContent=`${s.name} · ${s.location}`;
+  document.getElementById('petModalShelter').innerHTML=`${s.logo?`<img src="${s.logo}" alt="">`:''}<span>${s.name} · ${s.location}</span>`;
 
   // Action buttons
   const actionsEl=document.getElementById('petModalActions');
