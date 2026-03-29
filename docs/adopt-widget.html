@@ -175,6 +175,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 .pet-modal-btn:hover{filter:brightness(.92)}
 .pet-modal-btn.call{background:#e8f4f1;color:var(--teal-dark)}
 .pet-modal-btn.email{background:#e8f0f4;color:#2c5f7c}
+.pet-modal-btn.gmail{background:#fce8e6;color:#c5221f}
 .pet-modal-btn.adopt{background:var(--teal);color:#fff}
 .pet-tag{
   padding:2px 8px;border-radius:100px;font-size:.68rem;
@@ -707,9 +708,13 @@ function openPetModal(pid){
 
   // Action buttons
   const actionsEl=document.getElementById('petModalActions');
+  const emailSubject=encodeURIComponent('Inquiry about '+p.name);
+  const emailBody=encodeURIComponent('Hi, I\'m interested in learning more about '+p.name+' that I saw on the Wausau Pilot & Review adoptable pets page. Could you please provide more information?\n\nThank you!');
+  const gmailUrl=`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(s.email)}&su=${emailSubject}&body=${emailBody}`;
   actionsEl.innerHTML=`
     <a class="pet-modal-btn call" href="tel:${s.phone}" onclick="event.stopPropagation()">📞 Call</a>
-    <a class="pet-modal-btn email" href="mailto:${s.email}?subject=${encodeURIComponent('Inquiry about '+p.name)}" onclick="event.stopPropagation()">✉️ Email</a>
+    <a class="pet-modal-btn email" href="mailto:${s.email}?subject=${emailSubject}&body=${emailBody}" onclick="event.stopPropagation()">✉️ Email</a>
+    <a class="pet-modal-btn gmail" href="${gmailUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📧 Gmail</a>
     <a class="pet-modal-btn adopt" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
   `;
 

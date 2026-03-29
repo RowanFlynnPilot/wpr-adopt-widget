@@ -320,6 +320,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           }
           // Strip common intro prefixes like "Here's what the humans have to say about me:"
           let bio = out ? out.replace(/^Here'?s what the humans have to say about me:?\s*/i, '').trim() : '';
+          // Fix backtick apostrophes (Adoptapet uses ` instead of ')
+          bio = bio.replace(/`/g, "'");
           bio = bio ? bio.substring(0, 400) : '';
 
           // === BREED EXTRACTION (multiple strategies, ordered by reliability) ===
