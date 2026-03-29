@@ -252,18 +252,30 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           const petId = petUrl.match(/\/pet\/(\d+)/)?.[1] || '';
           const nameFromAlt = rawHtml.match(new RegExp(`${petId}[\\s\\S]{0,500}?Photo of ([^"<]+)`, 'i'));
           const nameFromTitle = rawHtml.match(new RegExp(`Photo of ([^"<]+)[\\s\\S]{0,500}?${petId}`, 'i'));
-          const name = (nameFromAlt?.[1] || nameFromTitle?.[1] || '').trim();
+          let name = (nameFromAlt?.[1] || nameFromTitle?.[1] || '').trim();
 
-          if (name && name.length < 50) {
-            allPets.push({
-              name,
-              breed: '',
-              details: '',
-              photo: null,
-              url: petUrl
-            });
-            console.log(`    + ${name} (from HTML fallback)`);
+          // Fallback: extract name from URL slug (e.g., /pet/12345-wausau-wisconsin-bichon-frise-mix)
+          if (!name || name.length >= 50) {
+            const slugMatch = petUrl.match(/\/pet\/\d+-(?:[a-z]+-)+?([a-z]+(?:-[a-z]+)*)-mix$/i) ||
+                              petUrl.match(/\/pet\/\d+-[a-z]+-[a-z]+-(.+)/i);
+            // Try to get the pet name from the slug before the city name
+            const fullSlug = petUrl.match(/\/pet\/\d+-(.+)/)?.[1] || '';
+            const parts = fullSlug.split('-');
+            // URL format: {city}-{state}-{breed-or-name}... First word before city is often the name
+            // But many URLs are like: wausau-wisconsin-cat or wausau-wisconsin-bichon-frise-mix
+            // Best effort: we'll add it with empty name and let the bio-fetcher get the real name from the detail page
+            name = '';
           }
+
+          // Add pet even without name — bio fetcher will get name from detail page
+          allPets.push({
+            name: name || '',
+            breed: '',
+            details: '',
+            photo: null,
+            url: petUrl
+          });
+          console.log(`    + ${name || '(unnamed)'} (from HTML fallback)`);
         }
       }
     } catch (err) {
@@ -297,7 +309,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         });
         await new Promise(r => setTimeout(r, 1000)); // wait for expansion
 
-        const { bio: pageBio, breed: pageBreed } = await bioPage.evaluate(() => {
+        const petHasName = !!pet.name;
+        const { bio: pageBio, breed: pageBreed, pageName, pagePhoto } = await bioPage.evaluate((pet_has_name) => {
           const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information|^\s*Read\s*more\s*$|^\s*Read\s*less\s*$/i;
 
           // Strategy 1: Look for "Here's what the humans have to say" heading and grab text after it
@@ -367,11 +380,38 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           // Filter out nav text pollution (e.g. "Breed 101" → "101")
           if (/^\d+$/.test(breed) || breed.length < 3) breed = '';
 
-          return { bio, breed };
-        });
+          // Extract name from page if we don't have one
+          let pageName = '';
+          if (!pet_has_name) {
+            // Try h1 or page title: "Wausau, WI - Domestic Shorthair. Meet Franklin"
+            const h1 = document.querySelector('h1');
+            if (h1) pageName = h1.textContent.replace(/^Meet\s+/i, '').trim();
+            if (!pageName) {
+              const titleMatch = document.title.match(/Meet\s+(.+?)(?:\s*[-–|]|\s*$)/i);
+              if (titleMatch) pageName = titleMatch[1].trim();
+            }
+            if (!pageName) {
+              const ogTitle = document.querySelector('meta[property="og:title"]')?.content || '';
+              const ogMatch = ogTitle.match(/Meet\s+(.+?)(?:\s*[-–|]|\s*$)/i);
+              if (ogMatch) pageName = ogMatch[1].trim();
+            }
+          }
+
+          // Extract photo from detail page
+          let pagePhoto = null;
+          const mainImg = document.querySelector('img.pet-image, img[alt^="Photo of"], [class*="pet"] img[src*="adoptapet"]');
+          if (mainImg && mainImg.src && !/new-badge|placeholder/i.test(mainImg.src)) {
+            pagePhoto = mainImg.src;
+          }
+
+          return { bio, breed, pageName, pagePhoto };
+        }, petHasName);
         const generic = /Cared for by|Ask About Me|Humane Society of|This pet has no story|no story.*Contact this organization/i;
         pet.bio = (pageBio && !generic.test(pageBio) && pageBio.length >= 50) ? pageBio : '';
         if (pageBreed) pet.breedFromPage = pageBreed;
+        // Fill in missing name/photo from detail page (for HTML fallback pets)
+        if (!pet.name && pageName) pet.name = pageName;
+        if (!pet.photo && pagePhoto) pet.photo = pagePhoto;
       } catch (err) {
         pet.bio = '';
       }
@@ -381,6 +421,9 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     }
   }
   
+  // Filter out pets that still have no name after all extraction attempts
+  allPets = allPets.filter(p => p.name && p.name.length > 0);
+
   // Transform to standard format
   return allPets.map(p => {
     const raw = (p.details || '').trim();
