@@ -536,6 +536,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 const _petStore={};
 let _petId=0;
 
+// Detect newly found/stray pets without full profiles
+function isNewArrival(p){return /^Found\b|^Stray\b/i.test(p.name||'')}
+const NEW_ARRIVAL_BIO='Recent addition — more information coming soon! Contact the shelter for details.';
+
 function card(p,shelterKey){
   const sc=getAnimalType(p.species);
   const gc=(p.gender||'').toLowerCase()==='female'?'female':(p.gender||'').toLowerCase()==='male'?'male':'';
@@ -552,7 +556,7 @@ function card(p,shelterKey){
     ${img}<div class="pet-card-body">
     <div class="pet-card-name">${p.name}</div>
     <div class="pet-card-breed">${p.breed} · ${p.age||'Unknown'}</div>
-    ${p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${p.bio.replace(/\x60/g,"'")}</div>`:''}
+    ${isNewArrival(p)?`<div class="pet-card-bio" style="font-style:italic">${NEW_ARRIVAL_BIO}</div>`:p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${p.bio.replace(/\x60/g,"'")}</div>`:''}
     <div class="pet-card-tags"><span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}</div>
     </div>
     <div class="pet-card-footer"><span></span>
@@ -699,7 +703,14 @@ function openPetModal(pid){
 
   // Bio (fix backtick apostrophes from Adoptapet)
   const bioEl=document.getElementById('petModalBio');
-  const bio=(p.bio&&!/no story|Contact this organization/i.test(p.bio))?p.bio.replace(/`/g,"'"):'';
+  let bio='';
+  if(isNewArrival(p)){
+    bio=NEW_ARRIVAL_BIO;
+    bioEl.style.fontStyle='italic';
+  }else{
+    bio=(p.bio&&!/no story|Contact this organization/i.test(p.bio))?p.bio.replace(/`/g,"'"):'';
+    bioEl.style.fontStyle='normal';
+  }
   bioEl.textContent=bio;
   bioEl.style.display=bio?'block':'none';
 
