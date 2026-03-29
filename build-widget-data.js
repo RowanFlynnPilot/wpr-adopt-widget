@@ -287,18 +287,36 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       const bioPage = await makePage(browser);
       try {
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
-        await new Promise(r => setTimeout(r, 1500));
+        await new Promise(r => setTimeout(r, 3000)); // longer wait for React/Next.js hydration
         const { bio: pageBio, breed: pageBreed } = await bioPage.evaluate(() => {
-          const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b/i;
-          const paras = [...document.querySelectorAll('main p, article p, [class*="content"] p, [class*="description"] p')];
+          const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information/i;
+
+          // Strategy 1: Look for "Here's what the humans have to say" heading and grab text after it
           let out = '';
-          for (const para of paras) {
-            const t = para.textContent.trim().replace(/\s+/g, ' ');
-            if (t.length < 50) continue;
-            if (skip.test(t) || t.includes('adoptapet.com')) continue;
-            if (/Cared for by|Ask About Me/.test(t)) continue;
-            out += (out ? ' ' : '') + t;
-            if (out.length >= 350) break;
+          const allEls = [...document.querySelectorAll('h2, h3, h4, [class*="heading"], [class*="title"]')];
+          const storyHeading = allEls.find(el => /humans have to say|my story|about me/i.test(el.textContent));
+          if (storyHeading) {
+            let next = storyHeading.nextElementSibling;
+            while (next && !/^H[1-4]$/i.test(next.tagName)) {
+              const t = next.textContent.trim().replace(/\s+/g, ' ');
+              if (t.length > 20 && !skip.test(t) && !t.includes('adoptapet.com')) {
+                out += (out ? ' ' : '') + t;
+              }
+              if (out.length >= 350) break;
+              next = next.nextElementSibling;
+            }
+          }
+
+          // Strategy 2: Fallback to scanning paragraphs and text-heavy divs
+          if (!out) {
+            const paras = [...document.querySelectorAll('main p, article p, [class*="content"] p, [class*="description"] p, [class*="story"] p, [class*="bio"] p, main div > p, section p')];
+            for (const para of paras) {
+              const t = para.textContent.trim().replace(/\s+/g, ' ');
+              if (t.length < 50) continue;
+              if (skip.test(t) || t.includes('adoptapet.com')) continue;
+              out += (out ? ' ' : '') + t;
+              if (out.length >= 350) break;
+            }
           }
           const bio = out ? out.substring(0, 400) : '';
 
@@ -336,7 +354,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
 
           return { bio, breed };
         });
-        const generic = /Cared for by|Ask About Me|Humane Society of/i;
+        const generic = /Cared for by|Ask About Me|Humane Society of|This pet has no story|no story.*Contact this organization/i;
         pet.bio = (pageBio && !generic.test(pageBio) && pageBio.length >= 50) ? pageBio : '';
         if (pageBreed) pet.breedFromPage = pageBreed;
       } catch (err) {

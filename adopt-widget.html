@@ -478,7 +478,7 @@ function card(p){
     ${img}<div class="pet-card-body">
     <div class="pet-card-name">${p.name}</div>
     <div class="pet-card-breed">${p.breed} · ${p.age||'Unknown'}</div>
-    ${p.bio?`<div class="pet-card-bio">${p.bio}</div>`:''}
+    ${p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${p.bio}</div>`:''}
     <div class="pet-card-tags"><span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}</div>
     </div>
     <div class="pet-card-footer"><span></span>
