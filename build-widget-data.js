@@ -544,6 +544,16 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
           await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
           await new Promise(r => setTimeout(r, 2000));
 
+          // Dismiss cookie consent banner (Petfinder uses OneTrust)
+          await bioPage.evaluate(() => {
+            const reject = document.querySelector('#onetrust-reject-all-handler, [id*="reject"], .onetrust-close-btn-handler');
+            if (reject) reject.click();
+            // Also try generic cookie dismiss buttons
+            const dismiss = [...document.querySelectorAll('button')].find(b => /reject|decline|close|dismiss|got it/i.test(b.textContent) && b.offsetParent);
+            if (dismiss) dismiss.click();
+          });
+          await new Promise(r => setTimeout(r, 500));
+
           // Click "Read More" / "Show More" if present
           await bioPage.evaluate(() => {
             const candidates = [...document.querySelectorAll('button, a, span, [role="button"]')];
@@ -553,21 +563,44 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
           await new Promise(r => setTimeout(r, 800));
 
           const bio = await bioPage.evaluate(() => {
-            // Petfinder story section: look for paragraphs in the pet description area
-            const skip = /Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$/i;
-            // Try data-testid or common Petfinder selectors first
-            const storyEl = document.querySelector('[data-testid="pet-story"], [class*="story"], [class*="description"], [class*="about"]');
+            // Skip cookie/legal text, site boilerplate, and navigation
+            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$|sponsored|purina/i;
+
+            // Strategy 1: Look for Petfinder's pet story/description section
+            // Petfinder uses specific data attributes and class patterns for pet stories
+            const storyEl = document.querySelector(
+              '[data-testid="pet-story"], [data-testid="pet-description"], ' +
+              '[class*="pet-story"], [class*="pet_story"], [class*="petStory"]'
+            );
             if (storyEl) {
               const t = storyEl.textContent.trim().replace(/\s+/g, ' ');
-              if (t.length > 50 && !skip.test(t)) return t.substring(0, 1500);
+              if (t.length > 50 && !junk.test(t)) return t.substring(0, 1500);
             }
-            // Fallback: scan paragraphs
-            const paras = [...document.querySelectorAll('main p, article p, section p, [class*="content"] p')];
+
+            // Strategy 2: Look for heading like "Willow's Story" / "About" and grab text after it
+            const headings = [...document.querySelectorAll('h2, h3, h4')];
+            const storyHeading = headings.find(h => /story|about/i.test(h.textContent) && h.textContent.length < 60);
+            if (storyHeading) {
+              let out = '';
+              let next = storyHeading.nextElementSibling;
+              while (next && !/^H[1-4]$/i.test(next.tagName)) {
+                const t = next.textContent.trim().replace(/\s+/g, ' ');
+                if (t.length > 30 && !junk.test(t)) {
+                  out += (out ? ' ' : '') + t;
+                }
+                if (out.length >= 1500) break;
+                next = next.nextElementSibling;
+              }
+              if (out.length >= 50) return out.substring(0, 1500);
+            }
+
+            // Strategy 3: Fallback to paragraphs, but strictly filter junk
+            const paras = [...document.querySelectorAll('main p, article p')];
             let out = '';
             for (const para of paras) {
               const t = para.textContent.trim().replace(/\s+/g, ' ');
               if (t.length < 50) continue;
-              if (skip.test(t) || /petfinder\.com|adoptapet\.com/.test(t)) continue;
+              if (junk.test(t)) continue;
               out += (out ? ' ' : '') + t;
               if (out.length >= 1500) break;
             }
