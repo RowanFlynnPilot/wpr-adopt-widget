@@ -288,8 +288,17 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       try {
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
         await new Promise(r => setTimeout(r, 3000)); // longer wait for React/Next.js hydration
+
+        // Click "Read more" to expand truncated bios
+        await bioPage.evaluate(() => {
+          const candidates = [...document.querySelectorAll('button, a, span, [role="button"]')];
+          const readMore = candidates.find(el => /^\s*Read\s*more\s*$/i.test(el.textContent));
+          if (readMore) readMore.click();
+        });
+        await new Promise(r => setTimeout(r, 1000)); // wait for expansion
+
         const { bio: pageBio, breed: pageBreed } = await bioPage.evaluate(() => {
-          const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information/i;
+          const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information|^\s*Read\s*more\s*$|^\s*Read\s*less\s*$/i;
 
           // Strategy 1: Look for "Here's what the humans have to say" heading and grab text after it
           let out = '';
@@ -318,8 +327,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
               if (out.length >= 1500) break;
             }
           }
-          // Strip common intro prefixes like "Here's what the humans have to say about me:"
+          // Strip common intro prefixes and artifacts
           let bio = out ? out.replace(/^Here'?s what the humans have to say about me:?\s*/i, '').trim() : '';
+          // Remove "Read more" / "Read less" text that may have been captured
+          bio = bio.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Read\s*less\s*$/i, '').trim();
           // Fix backtick apostrophes (Adoptapet uses ` instead of ')
           bio = bio.replace(/`/g, "'");
           bio = bio ? bio.substring(0, 1500) : '';
