@@ -509,19 +509,19 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
     console.log(`  Found ${pets.length} pets`);
     if (pets.length === 0) saveDiag(`${shelterKey}-petfinder`, await page.content());
     await page.close();
-    
-    return pets.map(p => {
+
+    const parsed = pets.map(p => {
       // Parse alt text: "Harvey, Adoptable, Adult Male Australian Cattle Dog / Blue Heeler."
       const parts = p.altText.split(',').map(s => s.trim());
-      const descriptor = parts[2] || '';  
+      const descriptor = parts[2] || '';
       const ageMatch = descriptor.match(/(Baby|Puppy|Kitten|Young|Adult|Senior)/i);
       const genderMatch = descriptor.match(/(Male|Female)/i);
       const breedPart = descriptor.replace(/(Baby|Puppy|Kitten|Young|Adult|Senior|Male|Female)/gi, '').trim();
       const speciesPart = parts.length > 2 ? parts[parts.length - 1].replace('.', '').trim() : '';
-      
-      const iscat = p.url.includes('/cat/') || speciesPart.toLowerCase().includes('domestic') || 
+
+      const iscat = p.url.includes('/cat/') || speciesPart.toLowerCase().includes('domestic') ||
                     speciesPart.toLowerCase().includes('shorthair') || speciesPart.toLowerCase().includes('longhair');
-      
+
       return {
         name: p.name,
         species: iscat ? 'Cat' : 'Dog',
@@ -533,7 +533,61 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
         url: p.url
       };
     });
-    
+
+    // Fetch bios from each pet's Petfinder detail page
+    if (parsed.length > 0) {
+      console.log(`  Fetching bios for ${parsed.length} Petfinder pets...`);
+      for (let i = 0; i < parsed.length; i++) {
+        const pet = parsed[i];
+        const bioPage = await makePage(browser);
+        try {
+          await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
+          await new Promise(r => setTimeout(r, 2000));
+
+          // Click "Read More" / "Show More" if present
+          await bioPage.evaluate(() => {
+            const candidates = [...document.querySelectorAll('button, a, span, [role="button"]')];
+            const readMore = candidates.find(el => /^\s*(Read|Show)\s*more\s*$/i.test(el.textContent));
+            if (readMore) readMore.click();
+          });
+          await new Promise(r => setTimeout(r, 800));
+
+          const bio = await bioPage.evaluate(() => {
+            // Petfinder story section: look for paragraphs in the pet description area
+            const skip = /Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$/i;
+            // Try data-testid or common Petfinder selectors first
+            const storyEl = document.querySelector('[data-testid="pet-story"], [class*="story"], [class*="description"], [class*="about"]');
+            if (storyEl) {
+              const t = storyEl.textContent.trim().replace(/\s+/g, ' ');
+              if (t.length > 50 && !skip.test(t)) return t.substring(0, 1500);
+            }
+            // Fallback: scan paragraphs
+            const paras = [...document.querySelectorAll('main p, article p, section p, [class*="content"] p')];
+            let out = '';
+            for (const para of paras) {
+              const t = para.textContent.trim().replace(/\s+/g, ' ');
+              if (t.length < 50) continue;
+              if (skip.test(t) || /petfinder\.com|adoptapet\.com/.test(t)) continue;
+              out += (out ? ' ' : '') + t;
+              if (out.length >= 1500) break;
+            }
+            return out ? out.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Read\s*less\s*$/i, '').trim().substring(0, 1500) : '';
+          });
+
+          if (bio && bio.length >= 50) {
+            pet.bio = bio.replace(/`/g, "'");
+          }
+        } catch (err) {
+          // Skip bio on error
+        }
+        await bioPage.close();
+        if ((i + 1) % 5 === 0) console.log(`    Bios: ${i + 1}/${parsed.length}`);
+        await new Promise(r => setTimeout(r, 600));
+      }
+    }
+
+    return parsed;
+
   } catch (err) {
     console.error(`  Error: ${err.message}`);
     await page.close();
