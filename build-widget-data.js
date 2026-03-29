@@ -388,9 +388,13 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     if (age) age = age.replace(/\s*(Merrill|Wausau|Friendship|,?\s*WI|Wisconsin)$/i, '').trim();
 
     let photo = p.photo;
-    // Filter out Adoptapet's "New!" placeholder badge (shown when shelter hasn't uploaded a photo)
-    if (photo && /new-badge|placeholder|fallback/i.test(photo)) photo = null;
+    // Filter out Adoptapet's "New!" badge SVGs (not pet photos)
+    if (photo && /new-badge/i.test(photo)) photo = null;
+    // Filter placeholder/fallback URLs only if they don't end with a real pet image ID
+    // Cloudinary d_Fallback-Photo_Dog-v3.png is a default-image directive, NOT the photo itself
+    if (photo && /placeholder/i.test(photo) && !/\/\d{7,}(?:\?|$)/.test(photo)) photo = null;
     if (photo && photo.includes('adoptapet.com')) {
+      // Extract the numeric pet image ID from the end of the Cloudinary URL
       const idMatch = photo.match(/\/(\d{7,})(?:\?|$)/);
       if (idMatch) {
         photo = `https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/${idMatch[1]}`;
@@ -770,12 +774,17 @@ async function main() {
     'adams'
   );
   
-  // Lincoln County — Adoptapet (they list on adoptapet.com; furrypets.com is dynamic/unreliable)
-  data.shelters.lincoln = await scrapeAdoptapet(
+  // Lincoln County — scrape furrypets.com directly (primary), merge with Adoptapet (fallback)
+  const lincolnDirect = await scrapeLincoln(browser);
+  const lincolnAdoptapet = await scrapeAdoptapet(
     browser,
     '66070-lincoln-county-humane-society-merrill-wisconsin',
     'lincoln'
   );
+  // Merge: prefer direct scrape results, add any Adoptapet-only pets
+  const lincolnUrls = new Set(lincolnDirect.map(p => p.url));
+  const adoptapetOnly = lincolnAdoptapet.filter(p => !lincolnUrls.has(p.url));
+  data.shelters.lincoln = [...lincolnDirect, ...adoptapetOnly];
   
   // New Life Pet Adoption Center — Direct HTML scrape
   data.shelters.nlpac = await scrapeNlpac(browser);
