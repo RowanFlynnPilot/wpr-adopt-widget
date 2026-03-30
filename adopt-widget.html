@@ -544,9 +544,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 const _petStore={};
 let _petId=0;
 
-// Detect newly found/stray pets without full profiles
-function isNewArrival(p){return /^Found\b|^Stray\b/i.test(p.name||'')}
-const NEW_ARRIVAL_BIO='Recent addition — more information coming soon! Contact the shelter for details.';
+// Detect pets without full profiles (found/stray names, or missing both photo and bio)
+function isNewArrival(p){
+  if(/^Found\b|^Stray\b|^Dog\s*\d*$|^Cat\s*\d*$|^Kitten\s*\d*$|^Puppy\s*\d*$/i.test(p.name||'')) return true;
+  const hasBio=p.bio&&!/no story|Contact this organization/i.test(p.bio);
+  if(!p.photo&&!hasBio) return true;
+  return false;
+}
+const NEW_ARRIVAL_BIO='Recently arrived. More information coming soon!';
 
 function card(p,shelterKey){
   const sc=getAnimalType(p.species);
