@@ -634,11 +634,41 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
           await new Promise(r => setTimeout(r, 800));
 
           const bio = await bioPage.evaluate(() => {
-            // Skip cookie/legal text, site boilerplate, and navigation
-            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$|sponsored|purina|unknown compatibility|compatibility with other|This pet has unknown/i;
+            // Skip cookie/legal text, site boilerplate — but NOT the word "Petfinder" in normal sentences
+            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Start Your Inquiry|^Share$|^Print$|sponsored|purina|unknown compatibility|compatibility with other|This pet has unknown|Manage Consent|Strictly Necessary/i;
 
-            // Strategy 1: Look for Petfinder's pet story/description section
-            // Petfinder uses specific data attributes and class patterns for pet stories
+            // Strategy 1: Look for "[Name]'s Story" heading (most reliable on Petfinder)
+            const headings = [...document.querySelectorAll('h2, h3, h4')];
+            const storyHeading = headings.find(h => /story/i.test(h.textContent) && h.textContent.length < 60 && !/compatibility/i.test(h.textContent));
+            if (storyHeading) {
+              // Get the parent section's visible text, then clip before junk starts
+              const section = storyHeading.parentElement;
+              if (section) {
+                // Find the visible <p> with the story text (skip invisible ones)
+                const allPs = [...section.querySelectorAll('p')];
+                const visibleP = allPs.find(p => {
+                  const style = window.getComputedStyle(p);
+                  return style.display !== 'none' && style.visibility !== 'hidden' && style.height !== '0px' && p.offsetHeight > 0;
+                });
+                if (visibleP) {
+                  // Get just the text nodes and inline element text, not nested block elements
+                  let bioText = '';
+                  const walker = document.createTreeWalker(visibleP, NodeFilter.SHOW_TEXT);
+                  while (walker.nextNode()) {
+                    const t = walker.currentNode.textContent.trim();
+                    if (t) bioText += (bioText ? ' ' : '') + t;
+                  }
+                  bioText = bioText.replace(/\s+/g, ' ').trim();
+                  // Cut before any junk text sneaks in
+                  const junkIdx = bioText.search(/Please note|Start Your Inquiry|More About Us|Adoption Application|bit\.ly\//i);
+                  if (junkIdx > 0) bioText = bioText.substring(0, junkIdx).trim();
+                  bioText = bioText.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Show\s*less\s*$/i, '').trim();
+                  if (bioText.length >= 50) return bioText.substring(0, 1500);
+                }
+              }
+            }
+
+            // Strategy 2: data-testid selectors
             const storyEl = document.querySelector(
               '[data-testid="pet-story"], [data-testid="pet-description"], ' +
               '[class*="pet-story"], [class*="pet_story"], [class*="petStory"]'
@@ -648,12 +678,11 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
               if (t.length > 50 && !junk.test(t)) return t.substring(0, 1500);
             }
 
-            // Strategy 2: Look for heading like "Willow's Story" / "About" and grab text after it
-            const headings = [...document.querySelectorAll('h2, h3, h4')];
-            const storyHeading = headings.find(h => /story|about/i.test(h.textContent) && h.textContent.length < 60);
-            if (storyHeading) {
+            // Strategy 3: "About [Name]" heading
+            const aboutHeading = headings.find(h => /about/i.test(h.textContent) && h.textContent.length < 60);
+            if (aboutHeading) {
               let out = '';
-              let next = storyHeading.nextElementSibling;
+              let next = aboutHeading.nextElementSibling;
               while (next && !/^H[1-4]$/i.test(next.tagName)) {
                 const t = next.textContent.trim().replace(/\s+/g, ' ');
                 if (t.length > 30 && !junk.test(t)) {
@@ -662,10 +691,10 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
                 if (out.length >= 1500) break;
                 next = next.nextElementSibling;
               }
-              if (out.length >= 50) return out.substring(0, 1500);
+              if (out.length >= 50) return out.replace(/\s*Read\s*more\s*$/i, '').substring(0, 1500);
             }
 
-            // Strategy 3: Fallback to paragraphs, but strictly filter junk
+            // Strategy 4: Fallback to paragraphs
             const paras = [...document.querySelectorAll('main p, article p')];
             let out = '';
             for (const para of paras) {
