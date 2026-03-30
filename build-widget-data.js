@@ -420,9 +420,19 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
 
           // Extract photo from detail page
           let pagePhoto = null;
-          const mainImg = document.querySelector('img.pet-image, img[alt^="Photo of"], [class*="pet"] img[src*="adoptapet"]');
-          if (mainImg && mainImg.src && !/new-badge|placeholder/i.test(mainImg.src)) {
-            pagePhoto = mainImg.src;
+          // Try multiple selectors — Adoptapet uses different markup across pages
+          const imgCandidates = [
+            document.querySelector('img.pet-image'),
+            document.querySelector('img[alt^="Photo of"]'),
+            document.querySelector('[class*="pet"] img[src*="adoptapet"]'),
+            document.querySelector('img[src*="media.adoptapet.com"][src*="upload"]'),
+            document.querySelector('main img[src*="adoptapet"]'),
+          ].filter(Boolean);
+          for (const img of imgCandidates) {
+            if (img.src && !/new-badge|placeholder|svg/i.test(img.src) && /\d{7,}/.test(img.src)) {
+              pagePhoto = img.src;
+              break;
+            }
           }
 
           return { bio, breed, pageName, pagePhoto };
