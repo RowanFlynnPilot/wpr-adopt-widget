@@ -186,14 +186,20 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       if (!result.hasNextPage) break;
 
       const prevRangeStart = result.rangeStart;
+      // Try clicking next page — use aria-label first (most reliable for React), then text content
       const clicked = await page.evaluate((n) => {
-        const candidates = [...document.querySelectorAll('button, a, [role="button"], [aria-label]')];
+        // Strategy 1: aria-label="Page N" (Adoptapet's React pagination)
+        const byAria = document.querySelector(`[aria-label="Page ${n}"]`);
+        if (byAria) { byAria.click(); return 'aria'; }
+        // Strategy 2: button/link with text content matching page number
+        const candidates = [...document.querySelectorAll('button, a, [role="button"]')];
         const byNum = candidates.find(el => el.textContent.trim() === String(n) && !el.disabled);
-        if (byNum) { byNum.click(); return true; }
+        if (byNum) { byNum.click(); return 'num'; }
+        // Strategy 3: "Next" button
         const byNext = candidates.find(el =>
           /^next$/i.test(el.textContent.trim()) || (el.getAttribute('aria-label') || '').toLowerCase().includes('next')
         );
-        if (byNext && !byNext.disabled) { byNext.click(); return true; }
+        if (byNext && !byNext.disabled) { byNext.click(); return 'next'; }
         return false;
       }, result.nextPageNum);
 
@@ -201,6 +207,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         console.log('    Could not click next page, stopping');
         break;
       }
+      console.log(`    Clicked page ${result.nextPageNum} via ${clicked}`);
 
       await new Promise(r => setTimeout(r, 2500));
       try {
@@ -213,6 +220,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           prevRangeStart
         );
       } catch {
+        // Page didn't update — try scrolling to trigger re-render
+        await page.evaluate(() => window.scrollTo(0, 0));
         await new Promise(r => setTimeout(r, 3000));
       }
 
@@ -385,18 +394,28 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           // Extract name from page if we don't have one
           let pageName = '';
           if (!pet_has_name) {
-            // Try h1 or page title: "Wausau, WI - Domestic Shorthair. Meet Franklin"
+            // Try h1 or page title: "My name is Mars!" or "Meet Franklin"
             const h1 = document.querySelector('h1');
-            if (h1) pageName = h1.textContent.replace(/^Meet\s+/i, '').trim();
-            if (!pageName) {
+            if (h1) {
+              pageName = h1.textContent
+                .replace(/^My name is\s+/i, '')
+                .replace(/^Meet\s+/i, '')
+                .replace(/!$/, '')
+                .trim();
+            }
+            if (!pageName || /oops|something.*gone wrong|error|not found/i.test(pageName)) {
+              pageName = '';
               const titleMatch = document.title.match(/Meet\s+(.+?)(?:\s*[-–|]|\s*$)/i);
               if (titleMatch) pageName = titleMatch[1].trim();
             }
-            if (!pageName) {
+            if (!pageName || /oops|something.*gone wrong|error|not found/i.test(pageName)) {
+              pageName = '';
               const ogTitle = document.querySelector('meta[property="og:title"]')?.content || '';
               const ogMatch = ogTitle.match(/Meet\s+(.+?)(?:\s*[-–|]|\s*$)/i);
               if (ogMatch) pageName = ogMatch[1].trim();
             }
+            // Reject error page names
+            if (/oops|something.*gone wrong|error|not found|page.*not/i.test(pageName)) pageName = '';
           }
 
           // Extract photo from detail page
@@ -423,8 +442,12 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     }
   }
   
-  // Filter out pets that still have no name after all extraction attempts
-  allPets = allPets.filter(p => p.name && p.name.length > 0);
+  // Filter out pets with no name or error page names
+  allPets = allPets.filter(p => {
+    if (!p.name || p.name.length === 0) return false;
+    if (/oops|something.*gone wrong|error|not found|page.*not/i.test(p.name)) return false;
+    return true;
+  });
 
   // Transform to standard format
   return allPets.map(p => {
@@ -499,8 +522,11 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     if (isCat) species = 'Cat';
     else if (isOther) species = 'Other';
 
+    // Clean up name: strip "My name is X!" prefix from Adoptapet detail pages
+    let cleanName = (p.name || '').replace(/^My name is\s+/i, '').replace(/!$/, '').trim();
+
     return {
-      name: p.name,
+      name: cleanName,
       species,
       breed: breed || 'Unknown',
       age: age || 'Unknown',
