@@ -229,8 +229,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   // the page's raw HTML/script data. Adoptapet is a Next.js React app — after JS
   // hydration, pet cards may be re-rendered with fewer visible than the server-
   // rendered HTML contained. This fallback catches pets embedded in RSC payloads.
-  if (allPets.length <= 3) {
-    console.log(`  [${shelterKey}] Only ${allPets.length} pets from cards — trying HTML fallback...`);
+  // Trigger fallback if we got less than half the expected total (pagination likely failed)
+  const needsFallback = totalExpected > 0 ? allPets.length < totalExpected * 0.5 : allPets.length <= 3;
+  if (needsFallback) {
+    console.log(`  [${shelterKey}] Only ${allPets.length} pets from cards (expected ${totalExpected || '?'}) — trying HTML fallback...`);
     const fallbackPage = await makePage(browser);
     try {
       await fallbackPage.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
@@ -607,7 +609,7 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
 
           const bio = await bioPage.evaluate(() => {
             // Skip cookie/legal text, site boilerplate, and navigation
-            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$|sponsored|purina/i;
+            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Petfinder|Start Your Inquiry|adopting.*pet|^Share$|^Print$|sponsored|purina|unknown compatibility|compatibility with other|This pet has unknown/i;
 
             // Strategy 1: Look for Petfinder's pet story/description section
             // Petfinder uses specific data attributes and class patterns for pet stories
@@ -650,7 +652,7 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
             return out ? out.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Read\s*less\s*$/i, '').trim().substring(0, 1500) : '';
           });
 
-          if (bio && bio.length >= 50) {
+          if (bio && bio.length >= 50 && !/unknown compatibility|This pet has unknown/i.test(bio)) {
             pet.bio = bio.replace(/`/g, "'");
           }
         } catch (err) {
