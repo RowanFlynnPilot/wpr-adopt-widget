@@ -586,7 +586,19 @@ function card(p,shelterKey){
 
 function section(key){
   const s=SHELTERS[key];
-  let pets=(PET_DATA[key]||[]);
+  let pets=(PET_DATA[key]||[]).slice();
+
+  // Sort: longest-listed first (lower Adoptapet ID = older listing), new arrivals last
+  pets.sort((a,b)=>{
+    const aNew=isNewArrival(a)?1:0, bNew=isNewArrival(b)?1:0;
+    if(aNew!==bNew) return aNew-bNew; // new arrivals to bottom
+    // Extract numeric pet ID from Adoptapet URLs (lower = older = higher priority)
+    const aId=parseInt((a.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
+    const bId=parseInt((b.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
+    if(aId&&bId) return aId-bId; // lower ID = listed longer = appears first
+    return 0;
+  });
+
   // Apply animal type filter
   if(activeAnimal!=='all'){
     pets=pets.filter(p=>getAnimalType(p.species)===activeAnimal);
