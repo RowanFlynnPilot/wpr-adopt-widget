@@ -58,11 +58,17 @@ async function makePage(browser) {
 }
 
 // ─── ADOPTAPET SCRAPER ───
-// Adoptapet uses client-side pagination (Next/numbered buttons). URL ?page=N is ignored,
-// so we must use one page, scrape, click next, wait for update, repeat.
+// Adoptapet uses client-side pagination. The shelter page shows 12 pets/page but
+// /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
+const SHELTER_POSTAL = { '77626': '54401', '76343': '53934', '66070': '54452' };
+
 async function scrapeAdoptapet(browser, shelterId, shelterKey) {
+  const numericId = shelterId.match(/^(\d+)/)?.[1] || '';
+  const postalCode = SHELTER_POSTAL[numericId] || '';
+  // Prefer /pet-search URL (42 per page) over shelter page (12 per page)
+  const searchUrl = postalCode ? `https://www.adoptapet.com/pet-search?radius=50&postalCode=${postalCode}&awos[0]=${numericId}&filterMode=all` : '';
   const baseUrl = `https://www.adoptapet.com/shelter/${shelterId}`;
-  const url = `${baseUrl}/available-pets`;
+  const url = searchUrl || `${baseUrl}/available-pets`;
   console.log(`\n[${shelterKey}] Scraping Adoptapet: ${url}`);
 
   const page = await makePage(browser);
@@ -243,8 +249,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   if (needsFallback) {
     console.log(`  [${shelterKey}] Only ${allPets.length} pets from cards (expected ${totalExpected || '?'}) — trying HTML fallback...`);
     const fallbackPage = await makePage(browser);
+    // Use shelter page for fallback (different HTML structure, may have more embedded URLs)
+    const fallbackUrl = `${baseUrl}/available-pets`;
     try {
-      await fallbackPage.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+      await fallbackPage.goto(fallbackUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       await new Promise(r => setTimeout(r, 3000));
       const rawHtml = await fallbackPage.content();
       saveDiag(`${shelterKey}-fallback`, rawHtml);
