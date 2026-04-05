@@ -652,6 +652,7 @@ function render(){
       render();
     }
   }
+  reportHeight();
 }
 
 function toggleGrid(id,btn){
@@ -762,14 +763,27 @@ function openPetModal(pid){
 
   document.getElementById('petModal').classList.add('open');
   document.body.style.overflow='hidden';
+  reportHeight();
 }
 
 function closePetModal(){
   document.getElementById('petModal').classList.remove('open');
   document.body.style.overflow='';
+  reportHeight();
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
+
+// ═══ IFRAME AUTO-RESIZE ═══
+// Report widget height to parent window for iframe embedding
+function reportHeight(){
+  if(window.parent!==window){
+    window.parent.postMessage({type:'wpr-adopt-widget-resize',height:document.documentElement.scrollHeight},'*');
+  }
+}
+const _resizeObs=new ResizeObserver(reportHeight);
+_resizeObs.observe(document.documentElement);
+window.addEventListener('load',reportHeight);
 </script>
 </body>
 </html>
