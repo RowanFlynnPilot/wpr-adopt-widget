@@ -134,18 +134,17 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 
 /* ─── Pet Detail Modal ─── */
 .pet-modal-overlay{
-  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
   background:rgba(0,0,0,.55);z-index:1000;
-  justify-content:center;align-items:center;padding:20px;
+  justify-content:center;align-items:flex-start;padding:20px;
+  overflow-y:auto;
   animation:modalFadeIn .2s ease;
 }
-/* In iframe: use absolute positioning so the iframe can expand to fit the modal */
-.in-iframe .pet-modal-overlay{position:absolute;bottom:auto;min-height:100%}
 .pet-modal-overlay.open{display:flex}
 @keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
 .pet-modal{
   background:var(--card-bg);border-radius:14px;max-width:460px;width:100%;
-  max-height:90vh;overflow-y:auto;position:relative;
+  margin:auto;position:relative;
   box-shadow:0 20px 60px rgba(0,0,0,.3);animation:modalSlideUp .25s ease;
 }
 @keyframes modalSlideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
@@ -766,16 +765,17 @@ function openPetModal(pid){
     <a class="pet-modal-btn adopt" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
   `;
 
-  document.getElementById('petModal').classList.add('open');
-  document.body.style.overflow='hidden';
-  // In iframe: scroll to top so modal is visible, then report height
-  if(window.parent!==window) window.scrollTo(0,0);
+  const overlay=document.getElementById('petModal');
+  overlay.classList.add('open');
+  overlay.scrollTop=0;
+  // Only lock body scroll when NOT in iframe (iframe handles its own scrolling)
+  if(window.parent===window) document.body.style.overflow='hidden';
   setTimeout(reportHeight,50);
 }
 
 function closePetModal(){
   document.getElementById('petModal').classList.remove('open');
-  document.body.style.overflow='';
+  if(window.parent===window) document.body.style.overflow='';
   reportHeight();
 }
 
@@ -785,12 +785,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
 // Report widget height to parent window for iframe embedding
 function reportHeight(){
   if(window.parent!==window){
-    // When modal is open, report enough height to show it; otherwise report scroll height
-    const modal=document.getElementById('petModal');
-    const modalOpen=modal&&modal.classList.contains('open');
-    const height=modalOpen
-      ?Math.max(document.documentElement.scrollHeight, modal.scrollHeight+40)
-      :document.documentElement.scrollHeight;
+    const height=document.documentElement.scrollHeight;
     window.parent.postMessage({type:'wpr-adopt-widget-resize',height:height},'*');
   }
 }
