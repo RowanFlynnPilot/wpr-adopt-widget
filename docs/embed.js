@@ -35,7 +35,6 @@
   iframe.style.cssText = [
     'width:100%',
     'border:none',
-    'overflow:hidden',
     'min-height:600px',
     'max-width:' + maxWidth + 'px',
     'margin:0 auto',
@@ -45,17 +44,16 @@
 
   container.appendChild(iframe);
 
-  // Listen for height updates from the widget
+  // Listen for messages from the widget
   window.addEventListener('message', function (e) {
-    if (e.data && e.data.type === 'wpr-adopt-widget-resize' && typeof e.data.height === 'number') {
+    if (!e.data) return;
+    // Auto-resize iframe height
+    if (e.data.type === 'wpr-adopt-widget-resize' && typeof e.data.height === 'number') {
       iframe.style.height = e.data.height + 'px';
     }
-  });
-
-  // Scroll iframe into view when user interacts (e.g., modal opens)
-  iframe.addEventListener('load', function () {
-    iframe.contentWindow.addEventListener('scroll', function () {
-      // noop — iframe scroll is handled internally
-    });
+    // Scroll iframe to top when modal opens
+    if (e.data.type === 'wpr-adopt-widget-scroll-top') {
+      iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 })();

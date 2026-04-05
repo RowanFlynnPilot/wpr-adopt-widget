@@ -141,6 +141,8 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   animation:modalFadeIn .2s ease;
 }
 .pet-modal-overlay.open{display:flex}
+/* In iframe: use absolute positioning so overlay covers full document height */
+.in-iframe .pet-modal-overlay{position:absolute;height:auto;min-height:100vh}
 @keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
 .pet-modal{
   background:var(--card-bg);border-radius:14px;max-width:460px;width:100%;
@@ -768,8 +770,13 @@ function openPetModal(pid){
   const overlay=document.getElementById('petModal');
   overlay.classList.add('open');
   overlay.scrollTop=0;
-  // Only lock body scroll when NOT in iframe (iframe handles its own scrolling)
-  if(window.parent===window) document.body.style.overflow='hidden';
+  window.scrollTo(0,0);
+  if(window.parent===window){
+    document.body.style.overflow='hidden';
+  } else {
+    // Tell parent page to scroll iframe into view at top
+    window.parent.postMessage({type:'wpr-adopt-widget-scroll-top'},'*');
+  }
   setTimeout(reportHeight,50);
 }
 
