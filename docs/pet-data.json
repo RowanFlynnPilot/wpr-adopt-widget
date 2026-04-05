@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-05T07:02:04.230Z",
+  "lastUpdated": "2026-04-05T12:52:03.786Z",
   "shelters": {
     "marathon": [
       {
@@ -593,16 +593,6 @@
         "url": "https://www.adoptapet.com/pet/47612828-wausau-wisconsin-american-pit-bull-terrier-mix"
       },
       {
-        "name": "Misa",
-        "species": "Dog",
-        "breed": "American Pit Bull Terrier",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296102257",
-        "url": "https://www.adoptapet.com/pet/47612829-wausau-wisconsin-american-pit-bull-terrier-mix"
-      },
-      {
         "name": "Henry VIII *Barn Cat*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -611,6 +601,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1279031350",
         "url": "https://www.adoptapet.com/pet/46908095-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Misa",
+        "species": "Dog",
+        "breed": "American Pit Bull Terrier",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296102257",
+        "url": "https://www.adoptapet.com/pet/47612829-wausau-wisconsin-american-pit-bull-terrier-mix"
       }
     ],
     "clark": [
@@ -974,7 +974,7 @@
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296132797",
-        "url": "https://www.adoptapet.com/pet/47616794-friendship-wisconsin-great-pyrenees-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47616794-friendship-wisconsin-great-pyrenees-mix"
       },
       {
         "name": "Mara",
@@ -1034,7 +1034,7 @@
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296439964",
-        "url": "https://www.adoptapet.com/pet/47616795-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47616795-friendship-wisconsin-australian-cattle-dog-mix"
       }
     ],
     "lincoln": [
