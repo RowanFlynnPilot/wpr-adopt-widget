@@ -139,6 +139,8 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   justify-content:center;align-items:center;padding:20px;
   animation:modalFadeIn .2s ease;
 }
+/* In iframe: use absolute positioning so the iframe can expand to fit the modal */
+.in-iframe .pet-modal-overlay{position:absolute;bottom:auto;min-height:100%}
 .pet-modal-overlay.open{display:flex}
 @keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
 .pet-modal{
@@ -361,6 +363,9 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 </div>
 
 <script>
+// Detect iframe embedding and add class for CSS adjustments
+if(window.parent!==window)document.documentElement.classList.add('in-iframe');
+
 const SHELTERS={
   marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',address:'7001 Packer Dr, Wausau, WI 54401',hours:'Mon, Tue, Fri, Sat: 12–5 PM · Thu: 12–7 PM · Wed, Sun: Closed',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕',logo:'logos/marathon.svg',phone:'715-845-2810',email:'info@catsndogs.org',mapsQuery:'Humane+Society+of+Marathon+County+Wausau+WI'},
   clark:{name:'Clark County Humane Society',location:'Neillsville, WI',address:'W3926 State Hwy 73, Neillsville, WI 54456',hours:'Mon, Wed, Fri, Sat: 12–3 PM',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈',logo:'logos/clark.jpg',phone:'715-743-4550',email:'petshelter@email.com',mapsQuery:'Clark+County+Humane+Society+Neillsville+WI'},
@@ -763,7 +768,9 @@ function openPetModal(pid){
 
   document.getElementById('petModal').classList.add('open');
   document.body.style.overflow='hidden';
-  reportHeight();
+  // In iframe: scroll to top so modal is visible, then report height
+  if(window.parent!==window) window.scrollTo(0,0);
+  setTimeout(reportHeight,50);
 }
 
 function closePetModal(){
@@ -778,7 +785,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
 // Report widget height to parent window for iframe embedding
 function reportHeight(){
   if(window.parent!==window){
-    window.parent.postMessage({type:'wpr-adopt-widget-resize',height:document.documentElement.scrollHeight},'*');
+    // When modal is open, report enough height to show it; otherwise report scroll height
+    const modal=document.getElementById('petModal');
+    const modalOpen=modal&&modal.classList.contains('open');
+    const height=modalOpen
+      ?Math.max(document.documentElement.scrollHeight, modal.scrollHeight+40)
+      :document.documentElement.scrollHeight;
+    window.parent.postMessage({type:'wpr-adopt-widget-resize',height:height},'*');
   }
 }
 const _resizeObs=new ResizeObserver(reportHeight);

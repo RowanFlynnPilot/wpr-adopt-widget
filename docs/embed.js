@@ -51,4 +51,11 @@
       iframe.style.height = e.data.height + 'px';
     }
   });
+
+  // Scroll iframe into view when user interacts (e.g., modal opens)
+  iframe.addEventListener('load', function () {
+    iframe.contentWindow.addEventListener('scroll', function () {
+      // noop — iframe scroll is handled internally
+    });
+  });
 })();
