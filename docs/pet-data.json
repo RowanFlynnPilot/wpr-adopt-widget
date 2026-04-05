@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-04T22:18:02.835Z",
+  "lastUpdated": "2026-04-05T02:08:57.703Z",
   "shelters": {
     "marathon": [
       {
@@ -43,16 +43,6 @@
         "url": "https://www.adoptapet.com/pet/46433021-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
-        "name": "Thia",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
-        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
-      },
-      {
         "name": "Ivy",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -71,6 +61,16 @@
         "bio": "My name is Road Trip. I am ready to hit the road on my way to the rest of my life. I came in with a litter of kittens that have all moved on, so I am officially an empty nester. I would like to enjoy the rest of my time with a new family cuddling and lounging around. Would you like to take an adventure with me? Come visit me at the shelter.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294610239",
         "url": "https://www.adoptapet.com/pet/45954902-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Thia",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
+        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
       },
       {
         "name": "Bunyan Burger",
@@ -103,14 +103,14 @@
         "url": "https://www.adoptapet.com/pet/47592817-wausau-wisconsin-cat"
       },
       {
-        "name": "Patch",
-        "species": "Dog",
-        "breed": "Hound (Unknown Type)",
+        "name": "Coven",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
         "age": "Unknown",
-        "gender": "Male",
-        "bio": "Hey there, my name is Patch! I made my way to HSMC as a stray and unfortunately my human never called about me, I was sad for a little bit, but time to move on and find a home for myself. I am a happy and excited boy and ready for anything! I love other dogs, but I have energy and might be a little bit much for some dogs. I would love an active home where I get to go out on long walks or hikes. What do you think? I am the kind of guy you are looking to add into your home?",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191074",
-        "url": "https://www.adoptapet.com/pet/47055397-wausau-wisconsin-hound-unknown-type-mix"
+        "gender": "Female",
+        "bio": "Coven here! I was a scared little kitten caught in a live trap and brought to HSMC. I slowly learned that humans are okay and I can learn to trust them. I think I am now ready to find my home with humans. I need someone who understands that I am scared and I will take time to learn to trust. I will do best in a calm and quiet home without young children. If you think you have the time and patience to allow a shy girl like me to come around, then come and visit me!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294376579",
+        "url": "https://www.adoptapet.com/pet/46021207-wausau-wisconsin-cat"
       },
       {
         "name": "Puck",
@@ -123,14 +123,14 @@
         "url": "https://www.adoptapet.com/pet/47631318-wausau-wisconsin-cat"
       },
       {
-        "name": "Coven",
-        "species": "Cat",
-        "breed": "Domestic Longhair",
+        "name": "Patch",
+        "species": "Dog",
+        "breed": "Hound (Unknown Type)",
         "age": "Unknown",
-        "gender": "Female",
-        "bio": "Coven here! I was a scared little kitten caught in a live trap and brought to HSMC. I slowly learned that humans are okay and I can learn to trust them. I think I am now ready to find my home with humans. I need someone who understands that I am scared and I will take time to learn to trust. I will do best in a calm and quiet home without young children. If you think you have the time and patience to allow a shy girl like me to come around, then come and visit me!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294376579",
-        "url": "https://www.adoptapet.com/pet/46021207-wausau-wisconsin-cat"
+        "gender": "Male",
+        "bio": "Hey there, my name is Patch! I made my way to HSMC as a stray and unfortunately my human never called about me, I was sad for a little bit, but time to move on and find a home for myself. I am a happy and excited boy and ready for anything! I love other dogs, but I have energy and might be a little bit much for some dogs. I would love an active home where I get to go out on long walks or hikes. What do you think? I am the kind of guy you are looking to add into your home?",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191074",
+        "url": "https://www.adoptapet.com/pet/47055397-wausau-wisconsin-hound-unknown-type-mix"
       },
       {
         "name": "Verdi",
