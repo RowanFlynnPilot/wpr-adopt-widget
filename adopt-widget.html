@@ -141,8 +141,12 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   animation:modalFadeIn .2s ease;
 }
 .pet-modal-overlay.open{display:flex}
-/* In iframe: use absolute positioning so overlay covers full document height */
-.in-iframe .pet-modal-overlay{position:absolute;height:auto;min-height:100vh}
+/* In iframe: overlay covers full document, modal positioned dynamically via JS */
+.in-iframe .pet-modal-overlay{
+  position:absolute;height:auto;min-height:100%;
+  align-items:flex-start;
+}
+.in-iframe .pet-modal{margin:0 auto}
 @keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
 .pet-modal{
   background:var(--card-bg);border-radius:14px;max-width:460px;width:100%;
@@ -772,17 +776,38 @@ function openPetModal(pid){
   overlay.scrollTop=0;
   if(window.parent===window){
     document.body.style.overflow='hidden';
+  } else {
+    // In iframe: ask parent for viewport position so we can place modal where user can see it
+    window.parent.postMessage({type:'wpr-adopt-widget-modal-open'},'*');
   }
   setTimeout(reportHeight,50);
 }
 
 function closePetModal(){
   document.getElementById('petModal').classList.remove('open');
+  // Reset modal position
+  const modal=document.querySelector('.pet-modal');
+  if(modal) modal.style.marginTop='';
   if(window.parent===window) document.body.style.overflow='';
   reportHeight();
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
+
+// ═══ IFRAME MODAL POSITIONING ═══
+// Listen for viewport info from parent to position modal where user can see it
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.type==='wpr-adopt-widget-viewport'){
+    const modal=document.querySelector('.pet-modal');
+    const overlay=document.getElementById('petModal');
+    if(modal&&overlay&&overlay.classList.contains('open')){
+      // e.data.offsetTop = how far the top of the iframe is above/below the viewport top
+      // Negative = iframe top is above viewport (user scrolled past it)
+      const scrollOffset=Math.max(0, -e.data.offsetTop) + 20; // 20px padding
+      modal.style.marginTop=scrollOffset+'px';
+    }
+  }
+});
 
 // ═══ IFRAME AUTO-RESIZE ═══
 // Report widget height to parent window for iframe embedding

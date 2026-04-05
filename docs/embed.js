@@ -51,5 +51,14 @@
     if (e.data.type === 'wpr-adopt-widget-resize' && typeof e.data.height === 'number') {
       iframe.style.height = e.data.height + 'px';
     }
+    // Modal opened — send viewport position so widget can place modal where user can see it
+    if (e.data.type === 'wpr-adopt-widget-modal-open') {
+      var rect = iframe.getBoundingClientRect();
+      iframe.contentWindow.postMessage({
+        type: 'wpr-adopt-widget-viewport',
+        offsetTop: rect.top,          // how far iframe top is from viewport top
+        viewportHeight: window.innerHeight
+      }, '*');
+    }
   });
 })();
