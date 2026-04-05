@@ -51,9 +51,5 @@
     if (e.data.type === 'wpr-adopt-widget-resize' && typeof e.data.height === 'number') {
       iframe.style.height = e.data.height + 'px';
     }
-    // Scroll iframe to top when modal opens
-    if (e.data.type === 'wpr-adopt-widget-scroll-top') {
-      iframe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   });
 })();
