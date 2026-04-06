@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T13:03:43.955Z",
+  "lastUpdated": "2026-04-06T18:54:53.068Z",
   "shelters": {
     "marathon": [
       {
@@ -221,16 +221,6 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1297128916",
         "url": "https://www.adoptapet.com/pet/47659026-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Short Rib",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "Hi there, I'm Short Rib! I'm a handsome guy that is here at HSMC waiting for you to adopt me! I'm a playful guy that loves my toys and would be a very fun addition to any home! Come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1291529531",
-        "url": "https://www.adoptapet.com/pet/47351294-wausau-wisconsin-cat"
       },
       {
         "name": "Kee Kee",
@@ -635,16 +625,6 @@
         "url": "https://www.petfinder.com/dog/willow-2fbd15e5-d34c-45ae-8ac1-d27951e41350/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Cleo",
-        "species": "Dog",
-        "breed": "Husky.",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Meet Cleo! Cleo came to CCHS as a stray towards the beginning of September from the Neillsville area, before being adopted out for a short time and brought back for, well, being a dog! This happy Husky is about 5 1/2 years old and weighs roughly 58.8lbs currently. Cleo is the biggest cuddle buddy you could ask for! She loves to be by your side through any adventure you may have to endure! Her only fault is that she sheds a little too much, but what husky doesn't! Cleo is quite the communicator! In typical Husky fashion, she is not afraid to voice her thoughts and feelings! While she knows how to get along with other dogs, she's a little picky when it comes to who she considers a bestie. Cleo would make an excellent addition to just about any family but would most likely do better with older kids. With any rescue, training and socialization are incredibly important to the success of the dog. Apply for Cleo today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/9c42cf4a-781b-4178-a505-893d2ce91da7/image/9c30a752-008a-4904-a3a1-a6e2ec3040b4.jpg",
-        "url": "https://www.petfinder.com/dog/cleo-9c42cf4a-781b-4178-a505-893d2ce91da7/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Herman",
         "species": "Dog",
         "breed": "Mixed Breed.",
@@ -745,16 +725,6 @@
         "url": "https://www.petfinder.com/dog/oscar-ee54d8a1-65d6-42ae-aab7-432d59419088/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Duke",
-        "species": "Dog",
-        "breed": "Weimaraner.",
-        "age": "Young",
-        "gender": "Male",
-        "bio": "Meet Duke! Duke came to CCHS as an owner surrender towards the beginning of this March after some unexpected life changes occurred. This handsome Weimaraner is about 4 years old and weighs roughly 112lbs currently. Duke is a proper gentleman! He loves to be active and would benefit from a furever family that shares that love for the outdoors! Don't worry though, he always takes the time to make sure everyone stays accounted for! With any rescue, training and socialization is incredibly important to the success of the dog. Apply for Duke today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/b8fd59fe-6715-45a1-89b5-7a2a5b90ff37/image/6e80e788-5171-4518-be5d-945d5451d2e1.jpg",
-        "url": "https://www.petfinder.com/dog/duke-b8fd59fe-6715-45a1-89b5-7a2a5b90ff37/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Bailey",
         "species": "Dog",
         "breed": "Mixed Breed.",
@@ -795,6 +765,16 @@
         "url": "https://www.petfinder.com/dog/kayce-d1d685cb-c512-4fec-a86b-b69c9e5405d6/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
+        "name": "Duke",
+        "species": "Dog",
+        "breed": "Weimaraner.",
+        "age": "Young",
+        "gender": "Male",
+        "bio": "Meet Duke! Duke came to CCHS as an owner surrender towards the beginning of this March after some unexpected life changes occurred. This handsome Weimaraner is about 4 years old and weighs roughly 112lbs currently. Duke is a proper gentleman! He loves to be active and would benefit from a furever family that shares that love for the outdoors! Don't worry though, he always takes the time to make sure everyone stays accounted for! With any rescue, training and socialization is incredibly important to the success of the dog. Apply for Duke today!",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/b8fd59fe-6715-45a1-89b5-7a2a5b90ff37/image/6e80e788-5171-4518-be5d-945d5451d2e1.jpg",
+        "url": "https://www.petfinder.com/dog/duke-b8fd59fe-6715-45a1-89b5-7a2a5b90ff37/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
         "name": "Clover",
         "species": "Dog",
         "breed": "Black Labrador Retriever.",
@@ -823,16 +803,6 @@
         "bio": "Meet Percy! Percy came to CCHS as a stray from the Longwood area towards the beginning of March. This sweet Hound mix is about 6 months old and weighs roughly 50.5lbs currently. Percy is a total ham! He has a goofy personality and a love for giving kisses! We aren't entirely certain what his exact breed makeup is, but we can tell you he is 100% Happy to be Involved! With any rescue, training and socialization are incredibly important to the success of the pup. Apply for Percy today!",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/4a3daa4e-e404-40d8-89f4-ef65987844b5/image/310ee7ab-e5b8-47fa-b110-127cb919ac46.jpg",
         "url": "https://www.petfinder.com/dog/percy-4a3daa4e-e404-40d8-89f4-ef65987844b5/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Sally",
-        "species": "Dog",
-        "breed": "Australian Shepherd.",
-        "age": "Young",
-        "gender": "Female",
-        "bio": "Meet Sally! Sally came to CCHS as an owner surrender when a sudden life change occurred and the owner was left with too many dogs. This bashful Aussie mix was originally adopted out at just a few months old and is now about 1 year and 5 months old and weighs roughly 27.7lbs. Sally is a little bit of a shy gal! She knows how to get along with anyone and everyone, but she does need to check her syllabus over twice before she'll lose the side eye. While we aren't entirely certain what her exact breed makeup is, we can tell you she is 100% Skeptical Burnt Croissant! With any rescue, training and socialization are incredibly important to the success of the pup. Apply for Sally today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/d3693327-4f19-4815-9d14-56cd815f31a9/image/882b7692-52e0-4eb8-89cb-7ee35531f38f.jpg",
-        "url": "https://www.petfinder.com/dog/sally-d3693327-4f19-4815-9d14-56cd815f31a9/wi/neillsville/clark-county-humane-society-wi34/details/"
       }
     ],
     "adams": [
@@ -967,16 +937,6 @@
         "url": "https://www.adoptapet.com/pet/47064566-friendship-wisconsin-cat"
       },
       {
-        "name": "Simmy",
-        "species": "Dog",
-        "breed": "Great Pyrenees / Mixed Breed (Medium)",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296132797",
-        "url": "https://www.adoptapet.com/pet/47616794-friendship-wisconsin-great-pyrenees-mixed-breed-medium-mix"
-      },
-      {
         "name": "Mara",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1014,7 +974,7 @@
         "gender": "Female",
         "bio": "Ada has been growing up in the shelter. While other kittens were snuggling on couches, chasing their own tails, and murdering pesky stray socks, Ada has been patiently waiting for her forever home.She’s a shy girl who takes her time deciding you’re one of the good ones, but once you are, it’s the sweetest honor. Ada will need a patient adopter who understands that the best companions just need the opportunity to thrive.She also needs to be in a home with other cats. Feline friends help her feel safe and show her the ropes. A confident kitty companion could make all the difference in helping Ada blossom.Growing up in a shelter isn’t what we want for her. Ada deserves someone who believes she’s worth the wait.If you have a calm home, a kind heart, and a kitty looking for a friend, Ada just might be your girl.Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292179717",
-        "url": "https://www.adoptapet.com/pet/47064543-friendship-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/47064543-friendship-cat"
       },
       {
         "name": "Lucy",
