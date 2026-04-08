@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-08T07:13:59.884Z",
+  "lastUpdated": "2026-04-08T13:15:06.320Z",
   "shelters": {
     "marathon": [
       {
@@ -10,7 +10,7 @@
         "gender": "Female",
         "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
       },
       {
         "name": "Road Trip",
@@ -78,7 +78,7 @@
         "breed": "Hound (Unknown Type)",
         "age": "Unknown",
         "gender": "Male",
-        "bio": "Hey there, my name is Patch! I made my way to HSMC as a stray and unfortunately my human never called about me, I was sad for a little bit, but time to move on and find a home for myself. I am a happy and excited boy and ready for anything! I love other dogs, but I have energy and might be a little bit much for some dogs. I would love an active home where I get to go out on long walks or hikes. What do you think? I am the kind of guy you are looking to add into your home?",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191074",
         "url": "https://www.adoptapet.com/pet/47055397-wausau-wisconsin-hound-unknown-type-mix"
       },
@@ -283,16 +283,6 @@
         "url": "https://www.adoptapet.com/pet/47548251-wausau-wisconsin-cat"
       },
       {
-        "name": "Knox",
-        "species": "Dog",
-        "breed": "German Shepherd Dog",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "All around me are dogs who are at different stages of acclimating to shelter life; some are brave and make it look easy and some are just trying to right the world that has been turned upside down. Here's the thing, I'm having a hard time. The people I used to love, the dog I used to be, the life I used to know; all of that's gone and I've had to start over new. I tell you this so that you know to take things slow and give me grace when we meet; I've never had to do this before. I'm a loyal and independent girl who would prefer to be the only pet in a quiet household. I need only a few things but very consistently; food/water, love and exercise. Maybe you too have been through a difficult time and felt misunderstood? I'm hoping you're the person who can give me everything that I need and that I may return the favor, too.Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295540087",
-        "url": "https://www.adoptapet.com/pet/47593433-wausau-wisconsin-german-shepherd-dog-mix"
-      },
-      {
         "name": "Mullet",
         "species": "Dog",
         "breed": "Border Collie",
@@ -313,14 +303,14 @@
         "url": "https://www.adoptapet.com/pet/47615367-wausau-wisconsin-cat"
       },
       {
-        "name": "Snowy",
-        "species": "Other",
-        "breed": "New Zealand",
+        "name": "Knox",
+        "species": "Dog",
+        "breed": "German Shepherd Dog",
         "age": "Unknown",
         "gender": "Female",
-        "bio": "Hi there, I'm Snowy. I'm ready to hop into your life and start anew in your home! I'm a friendly bun that would love a family that has plenty of time to spend with me. I enjoy being pet and would make an excellent addition to your home. Come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296494317",
-        "url": "https://www.adoptapet.com/pet/47625385-wausau-wisconsin-rabbit"
+        "bio": "All around me are dogs who are at different stages of acclimating to shelter life; some are brave and make it look easy and some are just trying to right the world that has been turned upside down. Here's the thing, I'm having a hard time. The people I used to love, the dog I used to be, the life I used to know; all of that's gone and I've had to start over new. I tell you this so that you know to take things slow and give me grace when we meet; I've never had to do this before. I'm a loyal and independent girl who would prefer to be the only pet in a quiet household. I need only a few things but very consistently; food/water, love and exercise. Maybe you too have been through a difficult time and felt misunderstood? I'm hoping you're the person who can give me everything that I need and that I may return the favor, too.Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295540087",
+        "url": "https://www.adoptapet.com/pet/47593433-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
         "name": "Twy",
@@ -331,6 +321,16 @@
         "bio": "Hey there, you can call me Twy! When I'm not serving customers at Café Tropical, you'll find me at HSMC looking for a new family! I'm just a small town girl with a sweet personality and big dreams. I'm social, patient and great at making new friends- just ask David and Alexis! See you soon?",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295016419",
         "url": "https://www.adoptapet.com/pet/47570834-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Snowy",
+        "species": "Other",
+        "breed": "New Zealand",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "Hi there, I'm Snowy. I'm ready to hop into your life and start anew in your home! I'm a friendly bun that would love a family that has plenty of time to spend with me. I enjoy being pet and would make an excellent addition to your home. Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296494317",
+        "url": "https://www.adoptapet.com/pet/47625385-wausau-wisconsin-rabbit"
       },
       {
         "name": "Buttercup *Bonded Pair*",
@@ -877,6 +877,16 @@
         "url": "https://www.adoptapet.com/pet/47270658-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
+        "name": "Madame",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335041",
+        "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
+      },
+      {
         "name": "Torve",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -905,16 +915,6 @@
         "bio": "Meet Hennessey! She's 1 year old and shy at first meet, but she's secretly a world-class snuggler. Give her a little time to warm up and she’ll reward you by melting into your arms like she was made to be held. Her favorite hobby? Curling up against your chest, nuzzling under your chin, and purring until she forgets all her worries.Did we mention she drools when she’s extra happy? That’s not a flaw. That’s premium, top-shelf affection.So today, we’re telling Hennessey:You are beautiful.You are uniquely you.You are snuggly perfection.Now all she needs is a human to tell her that every day.Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292179898",
         "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Madame",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335041",
-        "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
       },
       {
         "name": "Kit-Kat",
@@ -952,7 +952,7 @@
         "breed": "Domestic Shorthair",
         "age": "Unknown",
         "gender": "Male",
-        "bio": "Meet Buddy: professional grump face, certified sweetheart.At just 1.5 years old, Buddy has perfected the art of looking mildly inconvenienced while secretly being an absolute softie. He’s cat-friendly, enjoys a peaceful vibe, and prefers to seek out affection on his own terms.Not much of a toy enthusiast, but give this guy a sunny spot and he’ll happily clock in for a full day of sunbathing. Low maintenance, high charm.Buddy is on the hunt for a comfy home where he can lounge, love, and judge you just a little (affectionately, of course).Less",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292179780",
         "url": "https://www.adoptapet.com/pet/47064566-friendship-wisconsin-cat"
       },
