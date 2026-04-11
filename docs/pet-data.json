@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-11T12:52:05.592Z",
+  "lastUpdated": "2026-04-11T18:40:04.722Z",
   "shelters": {
     "marathon": [
       {
@@ -373,16 +373,6 @@
         "url": "https://www.adoptapet.com/pet/47375212-wausau-wisconsin-bichon-frise-mix"
       },
       {
-        "name": "Biscuit",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "Hey there! My name is Biscuit. I work hard all day long making biscuits, which is how I got my name. I came to HSMC due to no fault of my own and now I am ready to find my permanent home. I am active, playful and affectionate. If you think you can give a sweet boy like me a home and provide me with a lap to snuggle up on, then I think we might be the purrfect match!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298162973",
-        "url": "https://www.adoptapet.com/pet/47701028-wausau-wisconsin-cat"
-      },
-      {
         "name": "Buttercup *Bonded Pair*",
         "species": "Dog",
         "breed": "American Bulldog",
@@ -390,7 +380,7 @@
         "gender": "Female",
         "bio": "Hellllooooo out there! My name is Buttercup and there are a few things you should know before you fall in love with me. 1. I'm a package deal- I was surrendered to the shelter with my mom and when I leave here, I'm taking her with me. 2. I tend to be a little on the dramatic side and am not afraid to cause a scene. 3. Cats are not my friends, I cannot go to a home with cats. 4. This is the face that could be greeting you every time you come home...",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1198387973",
-        "url": "https://www.adoptapet.com/pet/43104949-wausau-wisconsin-american-bulldog-mix"
+        "url": "https://www.adoptapet.com/pet/43104949-wausau-american-bulldog-mix"
       },
       {
         "name": "Terracotta",
@@ -433,16 +423,6 @@
         "url": "https://www.adoptapet.com/pet/47582930-wausau-wisconsin-cat"
       },
       {
-        "name": "Spiderman",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Unknown",
-        "gender": "Male",
-        "bio": "Hi there, I'm Spiderman! I'm a handsome guy that is here at HSMC looking for a new place to call my home! I'm very talkative, and I absolutely love people! I'd be great in a home where I'm getting ALL of the attention! Come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191195",
-        "url": "https://www.adoptapet.com/pet/47243590-wausau-wisconsin-cat"
-      },
-      {
         "name": "Basket",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -451,16 +431,6 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1297250976",
         "url": "https://www.adoptapet.com/pet/47663250-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Topknot",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "My name is Topknot and I'm flirty and fun. HSMC is my temporary home; I know that you'll be head over paws for me the moment we meet! I'm a social gal with a soft coat, a motor that's always runnin' and dreams of happily ever after with someone like you. I'm kid, cat and dog friendly, too! Sounds like this is meant to be!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296102246",
-        "url": "https://www.adoptapet.com/pet/47615365-wausau-wisconsin-cat"
       },
       {
         "name": "Nutella",
@@ -473,14 +443,14 @@
         "url": "https://www.adoptapet.com/pet/45327963-wausau-cat"
       },
       {
-        "name": "Ice Rink *Barn Cat*",
+        "name": "Topknot",
         "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "breed": "Domestic Mediumhair",
         "age": "Unknown",
-        "gender": "Male",
-        "bio": "Are you looking for a barn cat? My name is Ice Rink and I am in search of a working home! You can apply for me today.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296269106",
-        "url": "https://www.adoptapet.com/pet/47622790-wausau-wisconsin-cat"
+        "gender": "Female",
+        "bio": "My name is Topknot and I'm flirty and fun. HSMC is my temporary home; I know that you'll be head over paws for me the moment we meet! I'm a social gal with a soft coat, a motor that's always runnin' and dreams of happily ever after with someone like you. I'm kid, cat and dog friendly, too! Sounds like this is meant to be!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296102246",
+        "url": "https://www.adoptapet.com/pet/47615365-wausau-wisconsin-cat"
       },
       {
         "name": "Mia",
@@ -541,6 +511,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298445414",
         "url": "https://www.adoptapet.com/pet/47709204-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Ice Rink *Barn Cat*",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "Are you looking for a barn cat? My name is Ice Rink and I am in search of a working home! You can apply for me today.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296269106",
+        "url": "https://www.adoptapet.com/pet/47622790-wausau-wisconsin-cat"
       },
       {
         "name": "Willa",
@@ -997,6 +977,16 @@
         "url": "https://www.adoptapet.com/pet/47270658-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
+        "name": "Madame",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "Unknown",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335041",
+        "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
+      },
+      {
         "name": "Torve",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1027,16 +1017,6 @@
         "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
       },
       {
-        "name": "Madame",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "Unknown",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335041",
-        "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
-      },
-      {
         "name": "Kit-Kat",
         "species": "Cat",
         "breed": "Domestic Mediumhair",
@@ -1057,16 +1037,6 @@
         "url": "https://www.adoptapet.com/pet/47568514-friendship-wisconsin-cat"
       },
       {
-        "name": "Suzie",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "Unknown",
-        "gender": "Unknown",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335197",
-        "url": "https://www.adoptapet.com/pet/47188243-friendship-wisconsin-mixed-breed-medium-mix"
-      },
-      {
         "name": "Buddy",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1077,14 +1047,14 @@
         "url": "https://www.adoptapet.com/pet/47064566-friendship-wisconsin-cat"
       },
       {
-        "name": "Mara",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "name": "Suzie",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
         "age": "Unknown",
-        "gender": "Female",
+        "gender": "Unknown",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296194026",
-        "url": "https://www.adoptapet.com/pet/47619469-friendship-wisconsin-cat"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1288335197",
+        "url": "https://www.adoptapet.com/pet/47188243-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Ada",
@@ -1114,7 +1084,7 @@
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296439964",
-        "url": "https://www.adoptapet.com/pet/47616795-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47616795-friendship-wisconsin-australian-cattle-dog-mix"
       }
     ],
     "lincoln": [
