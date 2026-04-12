@@ -581,7 +581,7 @@ function card(p,shelterKey){
   return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;openPetModal('${pid}')" title="Learn more about ${p.name}">
     ${img}<div class="pet-card-body">
     <div class="pet-card-name">${p.name}</div>
-    <div class="pet-card-breed">${p.breed} · ${p.age||'Unknown'}</div>
+    <div class="pet-card-breed">${p.breed}${p.age?' · '+p.age:''}</div>
     ${isNewArrival(p)?`<div class="pet-card-bio" style="font-style:italic">${NEW_ARRIVAL_BIO}</div>`:p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${p.bio.replace(/\x60/g,"'")}</div>`:''}
     <div class="pet-card-tags"><span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}</div>
     </div>
@@ -734,7 +734,7 @@ function openPetModal(pid){
 
   // Text content
   document.getElementById('petModalName').textContent=p.name;
-  document.getElementById('petModalBreed').textContent=`${p.breed} · ${p.age||'Unknown'}`;
+  document.getElementById('petModalBreed').textContent=`${p.breed}${p.age?' · '+p.age:''}`;
 
   // Tags
   const tagsEl=document.getElementById('petModalTags');

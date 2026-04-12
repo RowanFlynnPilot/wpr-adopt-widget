@@ -329,7 +329,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         await new Promise(r => setTimeout(r, 1000)); // wait for expansion
 
         const petHasName = !!pet.name;
-        const { bio: pageBio, breed: pageBreed, pageName, pagePhoto } = await bioPage.evaluate((pet_has_name) => {
+        const { bio: pageBio, breed: pageBreed, pageName, pagePhoto, pageAge, pageGender } = await bioPage.evaluate((pet_has_name) => {
           const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information|^\s*Read\s*more\s*$|^\s*Read\s*less\s*$/i;
 
           // Strategy 1: Look for "Here's what the humans have to say" heading and grab text after it
@@ -406,6 +406,23 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           // Filter out nav text pollution (e.g. "Breed 101" → "101")
           if (/^\d+$/.test(breed) || breed.length < 3) breed = '';
 
+          // Extract age and gender from dt/dd pairs (Adoptapet "My basic info" section)
+          let pageAge = '', pageGender = '';
+          for (const dt of dtEls) {
+            const label = dt.textContent.trim().toLowerCase();
+            const dd = dt.nextElementSibling;
+            if (!dd || dd.tagName !== 'DD') continue;
+            const val = dd.textContent.trim().replace(/\s+/g, ' ');
+            if (label === 'age' && val) pageAge = val;
+            if (label === 'sex' && val) pageGender = val.split(/\s/)[0]; // "Male" or "Female"
+          }
+          // Also try og:description: "Pictures of X a Domestic Shorthair for adoption in Wausau, WI. ... 1 year old Male."
+          if (!pageAge) {
+            const ogDesc = document.querySelector('meta[property="og:description"]')?.content || '';
+            const ageMatch = ogDesc.match(/(\d+\s*(?:year|yr|month|mo|week|wk)s?\s*(?:old)?)/i);
+            if (ageMatch) pageAge = ageMatch[1].replace(/\s*old/i,'').trim();
+          }
+
           // Extract name from page if we don't have one
           let pageName = '';
           if (!pet_has_name) {
@@ -450,7 +467,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             }
           }
 
-          return { bio, breed, pageName, pagePhoto };
+          return { bio, breed, pageName, pagePhoto, pageAge, pageGender };
         }, petHasName);
         const generic = /Cared for by|Ask About Me|Humane Society of|This pet has no story|no story.*Contact this organization/i;
         pet.bio = (pageBio && !generic.test(pageBio) && pageBio.length >= 50) ? pageBio : '';
@@ -458,6 +475,9 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         // Fill in missing name/photo from detail page (for HTML fallback pets)
         if (!pet.name && pageName) pet.name = pageName;
         if (!pet.photo && pagePhoto) pet.photo = pagePhoto;
+        // Fill in age/gender from detail page if missing from card scrape
+        if (pageAge) pet.ageFromPage = pageAge;
+        if (pageGender) pet.genderFromPage = pageGender;
       } catch (err) {
         pet.bio = '';
       }
@@ -554,8 +574,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       name: cleanName,
       species,
       breed: breed || 'Unknown',
-      age: age || 'Unknown',
-      gender: gender || 'Unknown',
+      age: age || p.ageFromPage || '',
+      gender: gender || p.genderFromPage || '',
       bio: (p.bio || '').trim().substring(0, 1500) || '',
       photo,
       url: p.url
