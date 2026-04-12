@@ -60,7 +60,7 @@ async function makePage(browser) {
 // ─── ADOPTAPET SCRAPER ───
 // Adoptapet uses client-side pagination. The shelter page shows 12 pets/page but
 // /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
-const SHELTER_POSTAL = { '77626': '54401', '76343': '53934', '66070': '54452' };
+const SHELTER_POSTAL = { '77626': '54401', '76343': '53934', '66070': '54452', '151032': '54401' };
 
 async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const numericId = shelterId.match(/^(\d+)/)?.[1] || '';
@@ -1041,14 +1041,21 @@ async function main() {
   
   // New Life Pet Adoption Center — plain HTTP scrape (avoids Cloudflare bot detection)
   data.shelters.nlpac = await scrapeNlpac();
-  
+
+  // Fetch Foster and Rescue — Adoptapet (dogs only, foster-based rescue in Wausau)
+  data.shelters.fetch = await scrapeAdoptapet(
+    browser,
+    '151032-fetch-foster-and-rescue-inc-wausau-wisconsin',
+    'fetch'
+  );
+
   await browser.close();
-  
+
   // Cross-shelter dedup: Adoptapet cross-lists pets across nearby shelters.
-  // Remove duplicates so the same pet doesn't appear under both Marathon and Lincoln.
-  // Priority order: marathon > clark > adams > lincoln > nlpac (keep first occurrence)
+  // Remove duplicates so the same pet doesn't appear under both Marathon and Fetch.
+  // Priority order: marathon > clark > adams > lincoln > nlpac > fetch (keep first occurrence)
   const seenUrls = new Set();
-  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac'];
+  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac', 'fetch'];
   for (const key of shelterOrder) {
     if (!data.shelters[key]) continue;
     const before = data.shelters[key].length;

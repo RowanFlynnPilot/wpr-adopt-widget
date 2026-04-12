@@ -102,7 +102,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 }
 .shelter-icon img{width:100%;height:100%;object-fit:contain;padding:3px}
 .shelter-icon.marathon{background:#f0f0f0}.shelter-icon.clark{background:#dce8d8}
-.shelter-icon.adams{background:#dddce8}.shelter-icon.lincoln{background:#fff}.shelter-icon.nlpac{background:#e8dce0}
+.shelter-icon.adams{background:#dddce8}.shelter-icon.lincoln{background:#fff}.shelter-icon.nlpac{background:#e8dce0}.shelter-icon.fetch{background:#f5efe6}
 .shelter-name{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:600}
 .shelter-location{font-size:.78rem;color:var(--slate-light);margin-left:auto}
 .shelter-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -320,6 +320,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
         <button class="filter-btn" data-filter="adams">Adams County</button>
         <button class="filter-btn" data-filter="lincoln">Lincoln County</button>
         <button class="filter-btn" data-filter="nlpac">New Life PAC</button>
+        <button class="filter-btn" data-filter="fetch">Fetch Rescue</button>
       </div>
     </div>
     <div>
@@ -344,6 +345,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
       <a class="shelter-link-pill" href="https://www.adamscountyhumanesociety.org/adoptable-animals.html" target="_blank" rel="noopener">🏠 Adams County HS</a>
       <a class="shelter-link-pill" href="https://furrypets.com/adopt/" target="_blank" rel="noopener">🏠 Lincoln County HS</a>
       <a class="shelter-link-pill" href="https://www.nlpac.com/pets" target="_blank" rel="noopener">🏠 New Life PAC</a>
+      <a class="shelter-link-pill" href="https://www.fetchfosterandrescue.com/adoptabledogs" target="_blank" rel="noopener">🏠 Fetch Rescue</a>
     </div>
     <p class="powered-by">A community project by <a href="https://wausaupilotandreview.com" target="_blank" rel="noopener">Wausau Pilot &amp; Review</a></p>
   </div>
@@ -376,7 +378,8 @@ const SHELTERS={
   clark:{name:'Clark County Humane Society',location:'Neillsville, WI',address:'W3926 State Hwy 73, Neillsville, WI 54456',hours:'Mon, Wed, Fri, Sat: 12–3 PM',website:'https://www.cchs-petshelter.org/pet-adoption',allPetsUrl:'https://www.petfinder.com/search/pets-for-adoption/?shelterRescue=b0662b13-cf18-4c5e-b38c-8ddc93f98516&distance=anywhere',icon:'🐈',logo:'logos/clark.jpg',phone:'715-743-4550',email:'petshelter@email.com',mapsQuery:'Clark+County+Humane+Society+Neillsville+WI'},
   adams:{name:'Adams County Humane Society',location:'Friendship, WI',address:'1982 11th Ave, Friendship, WI 53934',hours:'Mon–Fri: 12–4 PM · Sat: 11 AM–2 PM',website:'https://www.adamscountyhumanesociety.org/adoptable-animals.html',allPetsUrl:'https://www.adoptapet.com/shelter/76343-adams-county-humane-society-friendship-wisconsin',icon:'🐾',logo:'logos/adams.jpg',phone:'608-339-6700',email:'achs@adamscountyhumanesociety.org',mapsQuery:'Adams+County+Humane+Society+Friendship+WI'},
   lincoln:{name:'Lincoln County Humane Society',location:'Merrill, WI',address:'310 N Memorial Dr, Merrill, WI 54452',hours:'Mon, Tue, Thu–Sat: 12–4 PM · Sun: 12–2 PM',website:'https://furrypets.com/adopt/',allPetsUrl:'https://furrypets.com/adopt/',icon:'🐶',logo:'logos/lincoln.png',phone:'715-536-3459',email:'Manager@furrypets.com',mapsQuery:'Lincoln+County+Humane+Society+Merrill+WI'},
-  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',address:'125 Cattail Ave, Marathon, WI 54448',hours:'Mon–Sat: 10 AM–3 PM',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡',logo:'logos/nlpac.png',phone:'715-443-6699',email:'info@nlpac.com',mapsQuery:'New+Life+Pet+Adoption+Center+Marathon+WI'}
+  nlpac:{name:'New Life Pet Adoption Center',location:'Marathon, WI',address:'125 Cattail Ave, Marathon, WI 54448',hours:'Mon–Sat: 10 AM–3 PM',website:'https://www.nlpac.com/pets',allPetsUrl:'https://www.nlpac.com/pets',icon:'🏡',logo:'logos/nlpac.png',phone:'715-443-6699',email:'info@nlpac.com',mapsQuery:'New+Life+Pet+Adoption+Center+Marathon+WI'},
+  fetch:{name:'Fetch Foster and Rescue',location:'Wausau, WI',address:'Foster-based — Wausau, WI',hours:'Foster-based — by appointment',website:'https://www.fetchfosterandrescue.com/adoptabledogs',allPetsUrl:'https://www.adoptapet.com/shelter/151032/available-pets',icon:'🐕',logo:'logos/fetch.png',phone:'',email:'',mapsQuery:'Fetch+Foster+and+Rescue+Wausau+WI'}
 };
 
 const pf=(type,slug,id)=>`https://www.petfinder.com/${type}/${slug}-${id}/wi/neillsville/clark-county-humane-society-wi34/details/`;
@@ -761,12 +764,13 @@ function openPetModal(pid){
   const emailBody=encodeURIComponent('Hi, I\'m interested in learning more about '+p.name+' that I saw on the Wausau Pilot & Review adoptable pets page. Could you please provide more information?\n\nThank you!');
   const gmailUrl=`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(s.email)}&su=${emailSubject}&body=${emailBody}`;
   const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${s.mapsQuery}`;
+  const shortName=s.name.replace(/Humane Society of |Humane Society| Pet Adoption Center| Foster and Rescue/gi,'').trim();
   actionsEl.innerHTML=`
-    <a class="pet-modal-btn call" href="tel:${s.phone}" onclick="event.stopPropagation()">📞 Call ${s.name.replace(/Humane Society of |Humane Society| Pet Adoption Center/gi,'').trim()}</a>
-    <div class="pet-modal-email-row">
+    ${s.phone?`<a class="pet-modal-btn call" href="tel:${s.phone}" onclick="event.stopPropagation()">📞 Call ${shortName}</a>`:''}
+    ${s.email?`<div class="pet-modal-email-row">
       <a class="pet-modal-btn outlook" href="mailto:${s.email}?subject=${emailSubject}&body=${emailBody}" onclick="event.stopPropagation()">✉️ Outlook</a>
       <a class="pet-modal-btn gmail" href="${gmailUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📧 Gmail</a>
-    </div>
+    </div>`:''}
     <a class="pet-modal-btn directions" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 Get Directions</a>
     <a class="pet-modal-btn adopt" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
   `;
