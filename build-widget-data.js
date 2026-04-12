@@ -363,6 +363,13 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           let bio = out ? out.replace(/^Here'?s what the humans have to say about me:?\s*/i, '').trim() : '';
           // Remove "Read more" / "Read less" text that may have been captured
           bio = bio.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Read\s*less\s*$/i, '').trim();
+          // Strip trailing structured info (rescues append apply links, stats, boilerplate)
+          bio = bio.replace(/\s*Apply here:.*$/is, '').trim();
+          bio = bio.replace(/\s*(?:Name|DOB|Weight|Breed|Sex|Altered|Adoption(?:\s*Fee)?|Good with\s*(?:Cats|Dogs|Kids)|Special Requirements|Fetch Foster)\s*:.*$/is, '').trim();
+          bio = bio.replace(/\s*##\d+##.*$/i, '').trim();
+          bio = bio.replace(/\s*\*?Positive reinforcement\s+ob.*$/is, '').trim();
+          bio = bio.replace(/\s*Fetch Foster and Rescue Inc is a 501.*$/i, '').trim();
+          bio = bio.replace(/\s*Anyone who provides proof of completed.*$/is, '').trim();
           // Fix backtick apostrophes (Adoptapet uses ` instead of ')
           bio = bio.replace(/`/g, "'");
           bio = bio ? bio.substring(0, 1500) : '';
