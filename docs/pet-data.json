@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-19T02:26:21.115Z",
+  "lastUpdated": "2026-04-19T07:14:54.623Z",
   "shelters": {
     "marathon": [
       {
         "name": "Princess",
         "species": "Dog",
         "breed": "German Shepherd Dog",
-        "age": "",
+        "age": "4 years 11 months old, Adult",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
         "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
       },
@@ -606,9 +606,9 @@
         "name": "String Cheese *Barn Cat*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "7 months old, Young",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hi friends! My name is String Cheese and I'm hoping you pull me away from the shelter and put me to work at your shed or barn. I'm used to fending for myself and would be happy to take care of the rodent control on your property.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295883002",
         "url": "https://www.adoptapet.com/pet/47605315-wausau-wisconsin-cat"
       },
@@ -650,7 +650,7 @@
         "breed": "Mixed Breed.",
         "age": "Adult",
         "gender": "Female",
-        "bio": "Head back to the Petfinder home page or use the menu above. You can also contact us if you think you've reached this page in error.",
+        "bio": "Meet Missy! Missy came to CCHS as a stray a couple of times in November, and after being reclaimed the first time, her owners decided to not reclaim her when she came in the second time after multiple attempts to contact them. This sweet girl is about 5 years and 4 months old and weighs roughly 46lbs currently. Missy is a total baby! She may have some scars, but we assure you this sweet girl is nothing but smiles and tail wags when it comes to being loved on! We can't guarantee perfection as this big baby as seen some things, but with a gentle hand and a bit of patience we can guarantee undying love and loyalty! Missy has been known to do well with other dogs, but we will require meet and greets on site to make sure the pups approve of each other before making that journey home. We aren't entirely certain what her exact breed makeup is, but we can tell you she is 100% Snuggable House Hippo! With any rescue, training and socialization are incredibly important to the success of the dog. Apply for Missy today!",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f720d730-62e7-4913-a0a4-68f0acdfd3be/image/aa8919e9-0a1f-435a-ae44-7795e1cebb4c.jpg",
         "url": "https://www.petfinder.com/dog/missy-f720d730-62e7-4913-a0a4-68f0acdfd3be/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
@@ -660,7 +660,7 @@
         "breed": "Australian Cattle Dog / Blue Heeler.",
         "age": "Puppy",
         "gender": "Male",
-        "bio": "",
+        "bio": "Meet Bart! Bart came to CCHS with his 7 siblings towards the very end of December from a local farm, and is now the last of the bunch looking for his furever home. This lively Heeler mix is about 21 weeks old and weighs roughly 18lbs currently. Bart is such a goofball! He can be a little awkward in his approach but he's hoping his adorable looks can distract you from that! While we aren't entirely certain what his exact breed makeup is, we can tell you he is 100% North American Look-at-Dem-Ears! With any puppy, training and socialization are incredibly important to the success to the pup. Apply for Bart today!",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/345e5121-c866-46b6-bef1-eee737811447/image/f5ac656c-6e5c-456e-a000-671d12c3890e.jpg",
         "url": "https://www.petfinder.com/dog/bart-345e5121-c866-46b6-bef1-eee737811447/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
@@ -877,16 +877,6 @@
         "url": "https://www.adoptapet.com/pet/47064555-friendship-wisconsin-cat"
       },
       {
-        "name": "Kit-Kat",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "10 years 1 month old, Senior",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836105",
-        "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
-      },
-      {
         "name": "Madame",
         "species": "Cat",
         "breed": "Domestic Mediumhair",
@@ -895,6 +885,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836122",
         "url": "https://www.adoptapet.com/pet/47298908-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Kit-Kat",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "10 years 1 month old, Senior",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836105",
+        "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
       },
       {
         "name": "Joey",
@@ -1150,16 +1150,6 @@
         "bio": "Meet Butterscotch! Butterscotch is a sweet 20.2-pound hound mix with the perfect blend of cuddly and independent energy . She *loves* being snuggled and will happily curl up with you when it’s time to relax , but when she’s in the mood to play, she’s always excited to have a furry friend by her side . She enjoys a little “me time” now and then , but don’t be fooled—this girl also knows how to have fun! Crunchy treats are her absolute favorite , and she’s a big fan of car rides , making her a wonderful companion for adventures big or small. If you’re looking for a loving pup who can balance playtime, cuddles, and independence, Butterscotch might just be your perfect match You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1281666146",
         "url": "https://www.adoptapet.com/pet/47019012-wausau-wisconsin-hound-unknown-type-mix"
-      },
-      {
-        "name": "Pepper",
-        "species": "Dog",
-        "breed": "Blue Heeler",
-        "age": "4 years 4 months old, Adult",
-        "gender": "Female",
-        "bio": "Hi, I’m Pepper!I’m a sweet girl with a gentle heart and a playful spirit — and I have so much love to share.I love a good game of fetch just as much as I love curling up for a cozy snuggle session. Whether we’re running around outside or settling in for quiet time, I’m happiest just being by your side.I get along with everyone — people, kids, dogs, even cats. If you’ve got a heartbeat, I probably want to be your friend.I’ll be honest — I do take a little time to warm up to new humans. I just like to make sure you’re safe and kind. But once I decide you’re my person, I give you my whole heart.If you’re looking for a loyal companion who loves to play and cuddle, I think we might be a perfect match. I have so much love to give, and I can’t wait to share it with a forever family of my own.I’m fully potty trained and kennel trained, though I’d much rather be curled up next to you on the couch or snuggled in bed. At heart, I’m a playful girl who loves structure but absolutely adores being close to my people. Important things to know about me: I had a mast cell tumor removed from my front right leg back in January. I am fully healed and show no signs of physical damage. You can apply for this pup at: https://www.fetchfosterandrescue.com/adopt",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287090982",
-        "url": "https://www.adoptapet.com/pet/47245939-wausau-wisconsin-blue-heeler"
       }
     ]
   }
