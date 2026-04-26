@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-26T13:00:02.205Z",
+  "lastUpdated": "2026-04-26T18:48:54.919Z",
   "shelters": {
     "marathon": [
       {
@@ -10,7 +10,7 @@
         "gender": "Female",
         "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
         "name": "Verdi",
@@ -523,6 +523,16 @@
         "url": "https://www.adoptapet.com/pet/47800776-wausau-wisconsin-cat"
       },
       {
+        "name": "Jojo",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "12 years old, Senior",
+        "gender": "Female",
+        "bio": "My name is Jojo and I'm so easy to love. My story took a few twists and turns before landing me at the shelter and looking for a new home but I think this is the best place for me. The other dogs in the kennel tell me that this is where dogs come to get adopted and gosh, that just sounds like a wonderful thing. I'm a sucker for attention, a big fan of belly rubs and other pets aren't a problem for me. The best part? I'll fit perfectly in your lap and I'll never leave your heart.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300864945",
+        "url": "https://www.adoptapet.com/pet/47718340-wausau-wisconsin-chihuahua-mix"
+      },
+      {
         "name": "Terracotta",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -543,16 +553,6 @@
         "url": "https://www.adoptapet.com/pet/43104949-wausau-american-bulldog-mix"
       },
       {
-        "name": "Jojo",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "12 years old, Senior",
-        "gender": "Female",
-        "bio": "My name is Jojo and I'm so easy to love. My story took a few twists and turns before landing me at the shelter and looking for a new home but I think this is the best place for me. The other dogs in the kennel tell me that this is where dogs come to get adopted and gosh, that just sounds like a wonderful thing. I'm a sucker for attention, a big fan of belly rubs and other pets aren't a problem for me. The best part? I'll fit perfectly in your lap and I'll never leave your heart.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300864945",
-        "url": "https://www.adoptapet.com/pet/47718340-wausau-wisconsin-chihuahua-mix"
-      },
-      {
         "name": "Baked Beans",
         "species": "Dog",
         "breed": "Labrador Retriever",
@@ -566,7 +566,7 @@
         "name": "Lake",
         "species": "Dog",
         "breed": "Terrier (Unknown Type, Medium)",
-        "age": "1 year 6 months old, Adult",
+        "age": "",
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/PDP-NoPetPhoto_Dog.png",
@@ -990,7 +990,7 @@
         "name": "Panda Bear",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "7 years 9 months old, Adult",
+        "age": "",
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1286843173",
@@ -1027,6 +1027,16 @@
         "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
       },
       {
+        "name": "Sandy",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "6 years 5 months old, Adult",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300956644",
+        "url": "https://www.adoptapet.com/pet/47818017-friendship-chihuahua-mix"
+      },
+      {
         "name": "Valencia",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1035,16 +1045,6 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300904302",
         "url": "https://www.adoptapet.com/pet/47815811-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Sandy",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "6 years 5 months old, Adult",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300956644",
-        "url": "https://www.adoptapet.com/pet/47818017-friendship-wisconsin-chihuahua-mix"
       },
       {
         "name": "Suzie",
