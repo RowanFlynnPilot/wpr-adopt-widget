@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-05-01T02:46:04.910Z",
+  "lastUpdated": "2026-05-01T08:08:10.537Z",
   "shelters": {
     "marathon": [
       {
         "name": "Princess",
         "species": "Dog",
         "breed": "German Shepherd Dog",
-        "age": "4 years 11 months old, Adult",
+        "age": "",
         "gender": "Female",
-        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
+        "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
         "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
       },
@@ -33,16 +33,6 @@
         "url": "https://www.adoptapet.com/pet/46853844-wausau-wisconsin-cat"
       },
       {
-        "name": "Ivy",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "11 months old, Young",
-        "gender": "Female",
-        "bio": "Hi there, I'm Ivy! I'm a fun loving girl that is here at HSMC looking for a new place to call home. I'm very playful, adorable and ready to be YOURS! Come see me soon!*Ivy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Ivy please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595304",
-        "url": "https://www.adoptapet.com/pet/47243591-wausau-wisconsin-cat"
-      },
-      {
         "name": "Thia",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -51,6 +41,16 @@
         "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!*Thia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Thia please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
         "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Ivy",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "11 months old, Young",
+        "gender": "Female",
+        "bio": "Hi there, I'm Ivy! I'm a fun loving girl that is here at HSMC looking for a new place to call home. I'm very playful, adorable and ready to be YOURS! Come see me soon!*Ivy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Ivy please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595304",
+        "url": "https://www.adoptapet.com/pet/47243591-wausau-wisconsin-cat"
       },
       {
         "name": "Pablo",
@@ -93,16 +93,6 @@
         "url": "https://www.adoptapet.com/pet/47221360-wausau-wisconsin-belgian-malinois-mix"
       },
       {
-        "name": "Juggle *Barn Cat*",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "I'm not a lap cat, I'm a working cat and there's a difference. I want to be outside in my element, hunting for food and keeping your shed or barn free of mice and other pests. Do you have a job for me?",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290592624",
-        "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
-      },
-      {
         "name": "Puck *Barn Cat*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -111,6 +101,16 @@
         "bio": "My name is Puck and I'm hoping to get back to the only life I've ever known, wild and free. If you're looking for a working cat for your barn or shop, you know where to find me!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296480299",
         "url": "https://www.adoptapet.com/pet/47631318-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Juggle *Barn Cat*",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "I'm not a lap cat, I'm a working cat and there's a difference. I want to be outside in my element, hunting for food and keeping your shed or barn free of mice and other pests. Do you have a job for me?",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290592624",
+        "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
       },
       {
         "name": "Jake",
@@ -276,9 +276,9 @@
         "name": "Murray",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "2 years 1 month old, Adult",
         "gender": "Male",
-        "bio": "",
+        "bio": "Hi there, I'm Murray! I'm a handsome guy that is here at HSMC looking for a new home. I'm a great cat that came from a home that just had wayyyyyyyyyy too many of us cats. So now I'm looking for a calmer home where I can get more attention devoted to me. I'd be great in a home with other cats and am very outgoing and friendly. Come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300137922",
         "url": "https://www.adoptapet.com/pet/47783435-wausau-wisconsin-cat"
       },
@@ -353,16 +353,6 @@
         "url": "https://www.adoptapet.com/pet/47824355-wausau-wisconsin-cat"
       },
       {
-        "name": "Twy",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "7 months old, Young",
-        "gender": "Female",
-        "bio": "Hey there, you can call me Twy! When I'm not serving customers at Café Tropical, you'll find me at HSMC looking for a new family! I'm just a small town girl with a sweet personality and big dreams. I'm social, patient and great at making new friends- just ask David and Alexis! See you soon?*Twy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Twy please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295016419",
-        "url": "https://www.adoptapet.com/pet/47570834-wausau-wisconsin-cat"
-      },
-      {
         "name": "Dovey",
         "species": "Dog",
         "breed": "Labrador Retriever",
@@ -391,6 +381,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302266361",
         "url": "https://www.adoptapet.com/pet/47874152-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Twy",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "7 months old, Young",
+        "gender": "Female",
+        "bio": "Hey there, you can call me Twy! When I'm not serving customers at Café Tropical, you'll find me at HSMC looking for a new family! I'm just a small town girl with a sweet personality and big dreams. I'm social, patient and great at making new friends- just ask David and Alexis! See you soon?*Twy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Twy please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295016419",
+        "url": "https://www.adoptapet.com/pet/47570834-wausau-wisconsin-cat"
       },
       {
         "name": "Sassy",
@@ -456,9 +456,9 @@
         "name": "Buttercup *Bonded Pair*",
         "species": "Dog",
         "breed": "American Bulldog",
-        "age": "",
+        "age": "8 years old, Senior",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hellllooooo out there! My name is Buttercup and there are a few things you should know before you fall in love with me. 1. I'm a package deal- I was surrendered to the shelter with my mom and when I leave here, I'm taking her with me. 2. I tend to be a little on the dramatic side and am not afraid to cause a scene. 3. Cats are not my friends, I cannot go to a home with cats. 4. This is the face that could be greeting you every time you come home...",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1198387973",
         "url": "https://www.adoptapet.com/pet/43104949-wausau-american-bulldog-mix"
       },
@@ -950,7 +950,7 @@
         "name": "Aphrodite",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "2 months old, Kitten",
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1300904337",
@@ -1125,9 +1125,9 @@
         "name": "Turbo",
         "species": "Dog",
         "breed": "Hound (Unknown Type)",
-        "age": "",
+        "age": "7 years 10 months old, Adult",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hi, I'm Turbo, but don't let the name fool you! I'm currently accepting applications for the position of 'Permanent Human Companion'. My qualifications include: expert-level napping skills (especially on the couch), a strong work ethic when it comes to belly rubs, and a proven ability to make you laugh with my dramatic snorts and dramatic sighs. Dislikes include: sudden loud noises, riding in the car, being left out of the snack loop, and having my naps interrupted. Strengths: cuddles, loyalty, and a healthy appreciation for naps. I'm looking for a home with a comfy couch, a reliable source of treats, and a human who understands that sometimes, a dog just needs to be left alone (to nap, of course).\"You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1197720483",
         "url": "https://www.adoptapet.com/pet/43382729-wausau-wisconsin-hound-unknown-type"
       },
@@ -1222,16 +1222,6 @@
         "url": "https://www.adoptapet.com/pet/42975073-wausau-wisconsin-shepherd-unknown-type-mix"
       },
       {
-        "name": "Rowdy (fka Buddy)",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
-        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
-      },
-      {
         "name": "Bailey fka Quinn",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1255,11 +1245,21 @@
         "name": "Butterscotch",
         "species": "Dog",
         "breed": "Hound (Unknown Type)",
-        "age": "",
+        "age": "6 months old, Puppy",
         "gender": "Female",
-        "bio": "",
+        "bio": "Meet Butterscotch! Butterscotch is a sweet 20.2-pound hound mix with the perfect blend of cuddly and independent energy . She *loves* being snuggled and will happily curl up with you when it’s time to relax , but when she’s in the mood to play, she’s always excited to have a furry friend by her side . She enjoys a little “me time” now and then , but don’t be fooled—this girl also knows how to have fun! Crunchy treats are her absolute favorite , and she’s a big fan of car rides , making her a wonderful companion for adventures big or small. If you’re looking for a loving pup who can balance playtime, cuddles, and independence, Butterscotch might just be your perfect match You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1281666146",
         "url": "https://www.adoptapet.com/pet/47019012-wausau-wisconsin-hound-unknown-type-mix"
+      },
+      {
+        "name": "Rowdy (fka Buddy)",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
+        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
       }
     ]
   }
