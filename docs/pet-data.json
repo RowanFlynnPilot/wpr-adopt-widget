@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-04T13:52:22.810Z",
+  "lastUpdated": "2026-05-04T19:24:57.477Z",
   "shelters": {
     "marathon": [
       {
@@ -10,7 +10,7 @@
         "gender": "Female",
         "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-german-shepherd-dog-mix"
       },
       {
         "name": "Verdi",
@@ -251,6 +251,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303082939",
         "url": "https://www.adoptapet.com/pet/47906870-wausau-wisconsin-cat"
+      },
+      {
+        "name": "60920828",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/PDP-NoPetPhoto_Cat.png",
+        "url": "https://www.adoptapet.com/pet/47917726-wausau-wisconsin-cat"
       },
       {
         "name": "Honey",
@@ -500,7 +510,7 @@
         "gender": "Female",
         "bio": "HI there, I'm Terracotta! I'm a sweet girl that is here at HSMC as a stray. I'm a great cat that loves attention but can be a little shy until I get to know you! Come visit me soon!*Terracotta is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Terracotta please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191234",
-        "url": "https://www.adoptapet.com/pet/45397819-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45397819-wausau-cat"
       },
       {
         "name": "Corwyn",
@@ -601,16 +611,6 @@
         "bio": "Hey there, I'm Soul! I'm a loving girl that is here to spin you a tune and make you love me. And you wanna know a fun fact about me? I have NO tail! Yep, that's right, I have no tail whatsoever aren't I so special? I'm a great cat that loves people and am super snuggly. Come visit me soon at the City of Schofield Municipal Center!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1272985058",
         "url": "https://www.adoptapet.com/pet/46359613-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Bandita",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "11 months old, Young",
-        "gender": "Female",
-        "bio": "Hey there, I'm Bandita! I'm a super adorable gal that is here and ready to be adopted into my forever home! I'm a great cat that gets along well with other cats and would be a purrfect fit in just about any home! Come visit me soon!*Bandita is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Bandita please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595249",
-        "url": "https://www.adoptapet.com/pet/47323290-wausau-wisconsin-cat"
       },
       {
         "name": "Siridean",
@@ -957,16 +957,6 @@
         "url": "https://www.adoptapet.com/pet/47077860-friendship-cat"
       },
       {
-        "name": "Rogue",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "1 month old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110448",
-        "url": "https://www.adoptapet.com/pet/47911674-friendship-wisconsin-cat"
-      },
-      {
         "name": "Fauna",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -975,6 +965,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110474",
         "url": "https://www.adoptapet.com/pet/47911679-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Rogue",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "1 month old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110448",
+        "url": "https://www.adoptapet.com/pet/47911674-friendship-wisconsin-cat"
       },
       {
         "name": "Maisie",
@@ -1007,16 +1007,6 @@
         "url": "https://www.adoptapet.com/pet/47637090-friendship-wisconsin-cat"
       },
       {
-        "name": "Magik",
-        "species": "Cat",
-        "breed": "American Shorthair",
-        "age": "1 month old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110469",
-        "url": "https://www.adoptapet.com/pet/47911675-friendship-wisconsin-cat"
-      },
-      {
         "name": "Jubilee",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1025,6 +1015,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110467",
         "url": "https://www.adoptapet.com/pet/47911673-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Magik",
+        "species": "Cat",
+        "breed": "American Shorthair",
+        "age": "1 month old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110469",
+        "url": "https://www.adoptapet.com/pet/47911675-friendship-wisconsin-cat"
       },
       {
         "name": "Kit-Kat",
@@ -1047,26 +1047,6 @@
         "url": "https://www.adoptapet.com/pet/47871192-friendship-wisconsin-cat"
       },
       {
-        "name": "Flora",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 months old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110472",
-        "url": "https://www.adoptapet.com/pet/47911680-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Mystique",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 month old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110465",
-        "url": "https://www.adoptapet.com/pet/47911678-friendship-wisconsin-cat"
-      },
-      {
         "name": "Joey",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1077,6 +1057,16 @@
         "url": "https://www.adoptapet.com/pet/47568514-friendship-wisconsin-cat"
       },
       {
+        "name": "Flora",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110472",
+        "url": "https://www.adoptapet.com/pet/47911680-friendship-wisconsin-cat"
+      },
+      {
         "name": "Storm",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1085,6 +1075,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303120645",
         "url": "https://www.adoptapet.com/pet/47912085-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Mystique",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 month old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110465",
+        "url": "https://www.adoptapet.com/pet/47911678-friendship-wisconsin-cat"
       },
       {
         "name": "Suzie",
@@ -1225,9 +1225,9 @@
         "name": "Sid",
         "species": "Dog",
         "breed": "Husky",
-        "age": "",
+        "age": "6 years 10 months old, Adult",
         "gender": "Male",
-        "bio": "",
+        "bio": "Hello! My name is Sid and I'm currently in the market for a new best friend!! I love cuddles and hanging out with my people while we go on fun adventures. If it were up to me I would be glued to your side all the time.... However, I know that's not always possible, so when needed I'm perfectly happy to chill on my own in my kennel. I may be a bit picky about dog friends but I sure do love hanging out with people!In addition to cuddles and following you around the house, I also enjoy going on lots of outdoor adventures! Running around in the snow and going for long hikes are the best!! I also like playing training/mental stimulation games to wear me out when the weather doesn't allow for a lot of time outside. I learn fast and am eager to please my people, I just need a patient and gentle friend to teach me.So if you're also in the market for a new best friend to go on adventures with and then cuddle up with at the end of the day then I'm your guy and you should apply to adopt me today!!You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1278195631",
         "url": "https://www.adoptapet.com/pet/46871242-wausau-wisconsin-husky-mix"
       },
@@ -1254,10 +1254,10 @@
       {
         "name": "Daisy",
         "species": "Dog",
-        "breed": "Shih Tzu Bichon Frise",
-        "age": "",
+        "breed": "Shih Tzu / Bichon Frise",
+        "age": "10 years 5 months old, Senior",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hi, we're Daisy and Bella. We have found ourselves being surrendered to rescue because our parents had to go to assisted living. We were very well cared for and loved! Therfore, we would LOVE a home together if possible. We do well with older children, and we even have cats at our foster home! We like to play with our foster siblings and LOVE walks. We'd love a home where we can cuddle or chill on the couch with you. No worries leaving us at home, Daisy will even give you her biggest smile when you return! You can apply for us at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1174929698",
         "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix"
       },
@@ -1275,9 +1275,9 @@
         "name": "Ireland",
         "species": "Dog",
         "breed": "Maltese",
-        "age": "",
+        "age": "7 years 1 month old, Adult",
         "gender": "Female",
-        "bio": "",
+        "bio": "Hi! I'm Ireland, a 7 year old Maltese recently released from a life of breeding and let me tell ya, this side of the grass is definitely greener! I love people and my foster families pups. Oh and toys? Those things are so cool! I also get the zoomies, so catch me if you can!Due to my breed and size, respectful older children are preferred. I would also love another dog in the home so I have someone to show me the ropes and to play with. I mean, house training is going great, but just relaxing, being a normal dog is something I gotta get use to! You can apply for this pup at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295376248",
         "url": "https://www.adoptapet.com/pet/47586257-wausau-wisconsin-maltese"
       },
