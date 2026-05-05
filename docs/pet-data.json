@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T08:04:35.633Z",
+  "lastUpdated": "2026-05-05T19:14:37.427Z",
   "shelters": {
     "marathon": [
       {
@@ -463,16 +463,6 @@
         "url": "https://www.adoptapet.com/pet/47838148-wausau-wisconsin-terrier-unknown-type-medium-mix"
       },
       {
-        "name": "Patches",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years 1 month old, Adult",
-        "gender": "Female",
-        "bio": "Hey there, I'm Patches! I'm a sweet girl that is here looking for a new home! I'm active, playful and great with other cats so I'm pretty much the purrfect package! Come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1301825066",
-        "url": "https://www.adoptapet.com/pet/47854693-wausau-wisconsin-cat"
-      },
-      {
         "name": "Baked Beans",
         "species": "Dog",
         "breed": "Labrador Retriever",
@@ -481,6 +471,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/PDP-NoPetPhoto_Dog.png",
         "url": "https://www.adoptapet.com/pet/47831911-wausau-wisconsin-labrador-retriever-mix"
+      },
+      {
+        "name": "Patches",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 years 1 month old, Adult",
+        "gender": "Female",
+        "bio": "Hey there, I'm Patches! I'm a sweet girl that is here looking for a new home! I'm active, playful and great with other cats so I'm pretty much the purrfect package! Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1301825066",
+        "url": "https://www.adoptapet.com/pet/47854693-wausau-wisconsin-cat"
       },
       {
         "name": "Terracotta",
@@ -513,16 +513,6 @@
         "url": "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat"
       },
       {
-        "name": "Sir Lancelot",
-        "species": "Dog",
-        "breed": "Terrier (Unknown Type, Medium)",
-        "age": "4 years 8 months old, Adult",
-        "gender": "Male",
-        "bio": "Aren't I just the cutest little thing you ever did see?! My name is Sir Lancelot but once I'm yours, you can call me whatever you'd like as long as I can call you mine! I'm a timid but happy boy who is just looking to get the most out of this life. Someone broke my trust and I've been working hard to rebuild but some days are harder than others. I'm a little quirky but totally adorable and I can't wait to spend the rest of my life loving you. I'm friendly with other pets and I'm more than ready to be the best dog you've ever had, I'll just need a little help along the way.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302774868",
-        "url": "https://www.adoptapet.com/pet/38893937-wausau-wisconsin-terrier-unknown-type-medium-mix"
-      },
-      {
         "name": "Valestin",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -531,6 +521,16 @@
         "bio": "Hi there, I'm Valestin! I'm a handsome guy that wandered his way into HSMC after going on an adventure. I've decided it's time to settle down and find a family to call my own, so please adopt me! I'm playful, outgoing and ready to be yours! Let's adventure together!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295292877",
         "url": "https://www.adoptapet.com/pet/47582930-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Oblivion",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 years 1 month old, Adult",
+        "gender": "Male",
+        "bio": "Oblivion here, what's your name? I'm a playful cat who is in need of a friend and a place to call home. I've been left behind and had my heart broken in the past so forgive me if I don't give my trust easily. What do you say we get to know each other better?",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302820355",
+        "url": "https://www.adoptapet.com/pet/47604609-wausau-wisconsin-cat"
       },
       {
         "name": "Aurick",
@@ -553,14 +553,14 @@
         "url": "https://www.adoptapet.com/pet/47897947-wausau-wisconsin-cat"
       },
       {
-        "name": "Oblivion",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years 1 month old, Adult",
+        "name": "Sir Lancelot",
+        "species": "Dog",
+        "breed": "Terrier (Unknown Type, Medium)",
+        "age": "4 years 8 months old, Adult",
         "gender": "Male",
-        "bio": "Oblivion here, what's your name? I'm a playful cat who is in need of a friend and a place to call home. I've been left behind and had my heart broken in the past so forgive me if I don't give my trust easily. What do you say we get to know each other better?",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302820355",
-        "url": "https://www.adoptapet.com/pet/47604609-wausau-wisconsin-cat"
+        "bio": "Aren't I just the cutest little thing you ever did see?! My name is Sir Lancelot but once I'm yours, you can call me whatever you'd like as long as I can call you mine! I'm a timid but happy boy who is just looking to get the most out of this life. Someone broke my trust and I've been working hard to rebuild but some days are harder than others. I'm a little quirky but totally adorable and I can't wait to spend the rest of my life loving you. I'm friendly with other pets and I'm more than ready to be the best dog you've ever had, I'll just need a little help along the way.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302774868",
+        "url": "https://www.adoptapet.com/pet/38893937-wausau-wisconsin-terrier-unknown-type-medium-mix"
       },
       {
         "name": "Ludwig",
@@ -663,16 +663,6 @@
         "url": "https://www.adoptapet.com/pet/47897065-wausau-wisconsin-cat"
       },
       {
-        "name": "Archie",
-        "species": "Dog",
-        "breed": "Cardigan Welsh Corgi / Jack Russell Terrier",
-        "age": "4 years old, Adult",
-        "gender": "Male",
-        "bio": "My name is Archie and I'm here for the party. I'm a high energy guy who never quits and I sure hope that you can keep up. I LOVE toys (tug and fetch are my favorite) but I think you would be number one on my priority list. I'm playful with other dogs, unbothered by cats and ready to get out of this kennel and into your life. Ready, set...let's go!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302774697",
-        "url": "https://www.adoptapet.com/pet/47897066-wausau-wisconsin-cardigan-welsh-corgi-jack-russell-terrier-mix"
-      },
-      {
         "name": "Fish",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -700,7 +690,7 @@
         "breed": "Mixed Breed.",
         "age": "Adult",
         "gender": "Female",
-        "bio": "Meet Missy! Missy came to CCHS as a stray a couple of times in November, and after being reclaimed the first time, her owners decided to not reclaim her when she came in the second time after multiple attempts to contact them. This sweet girl is about 5 years and 8 months old and weighs roughly 42.4lbs currently. Missy is a total baby! She may have some scars, but we assure you this sweet girl is nothing but smiles and tail wags when it comes to being loved on! We can't guarantee perfection as this big baby as seen some things, but with a gentle hand and a bit of patience we can guarantee undying love and loyalty! Missy has been known to do well with other dogs but will need a meet and greets on site to make sure the pups approve of each other before making that journey home. We aren't entirely certain what her exact breed makeup is, but we can tell you she is 100% Snuggable House Hippo! With any rescue, training and socialization are incredibly important to the success of the dog. Apply for Missy today!",
+        "bio": "",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f720d730-62e7-4913-a0a4-68f0acdfd3be/image/aa8919e9-0a1f-435a-ae44-7795e1cebb4c.jpg",
         "url": "https://www.petfinder.com/dog/missy-adoption-fee-sponsored-f720d730-62e7-4913-a0a4-68f0acdfd3be/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
@@ -743,16 +733,6 @@
         "bio": "Meet Oscar! Oscar came to CCHS as an owner surrender after his owner had unfortunately passed. This handsome mixed breed is about 2 years old and weighs roughly 55.6lbs currently. Oscar is a total goofball! He admittedly will do just about anything to be told he's a good boy! We aren't entirely certain what his exact breed makeup is, but we can tell you he is 100% North American House Hippo! With any rescue, training and socialization are incredibly important to the success of the pup. Apply for Oscar today!",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/ee54d8a1-65d6-42ae-aab7-432d59419088/image/3e543c3a-d50d-4edb-8be0-104ec57e4d79.jpg",
         "url": "https://www.petfinder.com/dog/oscar-adoption-fee-sponsored-ee54d8a1-65d6-42ae-aab7-432d59419088/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Thor",
-        "species": "Dog",
-        "breed": "Australian Cattle Dog / Blue Heeler.",
-        "age": "Puppy",
-        "gender": "Male",
-        "bio": "Meet Thor! Thor came to CCHS as an owner surrender after his owner had to take on caring for their family member. This handsome Red Heeler mix is about 1 year old and weighs roughly 28.5lbs currently. Thor is a total loverboy! He has a friendly demeanor and is down for any adventure! Thor would benefit from an active family that can help burn off some of that energy he has! With any rescue, training and socialization are incredibly important to the success of the dog. Apply for Thor today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f2bc350a-2d9d-4cf6-b9f2-d4783b2379bc/image/d60b70cd-2f99-4056-84e3-d2371bee7316.jpg",
-        "url": "https://www.petfinder.com/dog/thor-f2bc350a-2d9d-4cf6-b9f2-d4783b2379bc/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
         "name": "Honey",
@@ -815,26 +795,6 @@
         "url": "https://www.petfinder.com/dog/lea-63b56beb-b7ee-4cf5-b6f1-8b353c07ec91/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Smokey",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Meet Smokey! Smokey came to CCHS as an owner surrender with 2 other cats after their owner decided that their home was no longer the safest place for them. This handsome guy is about 4 and a half years old and weighs roughly 12.1lbs currently. Smokey is a bit of a bashful boy! He has the most gorgeous blue eyes, but it takes a few pats before he'll around and bat them at you! Smokey has a very friendly demeanor, so while he doesn't always seek out affection first, he'll never turn it away! Smokey is currently residing in our Kitty City with a multitude of other feline friends. Apply for Smokey today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/345de66d-1587-464d-80fb-540379756e53/image/ac8e16ba-1e02-47bc-8aad-e83e9d4d054b.jpg",
-        "url": "https://www.petfinder.com/cat/smokey-345de66d-1587-464d-80fb-540379756e53/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Venus",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Meet Venus! Venus came to CCHS as an owner surrender with 2 other cats after their owner decided that their home was no longer the safest place for them. This beautiful gal is about 4 and a half years old and weighs roughly 9lbs currently. Venus is a bit of a sheepish gal! She has been a little stressed since getting to the shelter and has taken to self-regulating herself in Kitty City. However, once you find her hideout she is more than happy to welcome the attention! Venus would benefit from a furever family that understands that she will need a little time for her personality to blossom. Venus is currently residing in our Kitty City with a multitude of other feline friends. Apply for Venus today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/e4b15587-9fc5-4e94-a88e-4080154df137/image/5e863e51-72b2-4436-b99d-86c7dbd0d50d.jpg",
-        "url": "https://www.petfinder.com/cat/venus-e4b15587-9fc5-4e94-a88e-4080154df137/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Tiny",
         "species": "Cat",
         "breed": "Domestic Short Hair.",
@@ -885,6 +845,16 @@
         "url": "https://www.petfinder.com/cat/o-malley-needs-to-be-adopted-w-littermate-40e13f18-ff69-4576-a911-030ab10079e8/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
+        "name": "Ella",
+        "species": "Dog",
+        "breed": "Mixed Breed.",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Meet Ella! Ella came to CCHS as a stray from the Sherwood township area earlier this April. This gorgeous gal is about 5 years old and weighs roughly 59.8lbs currently. Ella is such a well-behaved lovergirl! She is all smiles all the time and absolutely loves to steal kisses whenever she can! We don't know terribly much about her past, but we can tell you she is looking towards the future with the same brightness we see in her eyes every day! While we aren't entirely certain what her exact breed makeup is, we can tell you she is 100% Happy to be Involved! With any rescue, training and socialization are incredibly important to the success of the pup. Apply for Ella today!",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f1b43bd7-b56f-485b-ba0b-d388f141e9fd/image/15de0b49-3bc8-4c91-9b38-a3ddbbb05c13.jpg",
+        "url": "https://www.petfinder.com/dog/ella-f1b43bd7-b56f-485b-ba0b-d388f141e9fd/wi/neillsville/clark-county-humane-society-wi34/details/"
+      },
+      {
         "name": "Erin (Needs to be Adopted w/Littermate)",
         "species": "Cat",
         "breed": "Domestic Short Hair.",
@@ -905,24 +875,24 @@
         "url": "https://www.petfinder.com/cat/diedre-needs-to-be-adopted-w-littermate-4820c162-6412-4edf-9b16-3a935e411b1d/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Einstein (Adoption Fee Sponsored!)",
-        "species": "Dog",
-        "breed": "Poodle.",
-        "age": "Senior",
-        "gender": "Male",
-        "bio": "Meet Einstein! Einstein came to CCHS as an owner surrender after the owner's living situation changed and they could no longer provide for him. This handsome Doodle is about 8 years old and weighs roughly 93.5lbs currently. Einstein is a charming fellow! He still has his wits about him in his older age and is looking for a furever family that understands that only a lot of nonsense will be tolerated! This dapper guy loves to stay active and would benefit from a furever family that shares his love for adventure! With any rescue, training and socialization are incredibly important to the success of the pup. Apply for Einstein today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/056395ed-e892-486d-8c68-6637578d1a07/image/e48742ed-e9be-4e28-8134-40949b3edf6d.jpg",
-        "url": "https://www.petfinder.com/dog/einstein-adoption-fee-sponsored-056395ed-e892-486d-8c68-6637578d1a07/wi/neillsville/clark-county-humane-society-wi34/details/"
+        "name": "Venus",
+        "species": "Cat",
+        "breed": "Domestic Short Hair.",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Meet Venus! Venus came to CCHS as an owner surrender with 2 other cats after their owner decided that their home was no longer the safest place for them. This beautiful gal is about 4 and a half years old and weighs roughly 9lbs currently. Venus is a bit of a sheepish gal! She has been a little stressed since getting to the shelter and has taken to self-regulating herself in Kitty City. However, once you find her hideout she is more than happy to welcome the attention! Venus would benefit from a furever family that understands that she will need a little time for her personality to blossom. Venus is currently residing in our Kitty City with a multitude of other feline friends. Apply for Venus today!",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/e4b15587-9fc5-4e94-a88e-4080154df137/image/5e863e51-72b2-4436-b99d-86c7dbd0d50d.jpg",
+        "url": "https://www.petfinder.com/cat/venus-e4b15587-9fc5-4e94-a88e-4080154df137/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Soup",
-        "species": "Dog",
-        "breed": "Australian Cattle Dog / Blue Heeler.",
-        "age": "Puppy",
-        "gender": "Female",
-        "bio": "Meet Soup! Soup came to CCHS with her 2 siblings towards the very beginning of April from a local farm. This gorgeous Heeler mix is about 10 weeks old and weighs roughly 16.1lbs currently. Soup has a friendly demeanor and a smile that doesn't quit! She loves to be where the people are and will pull out all the stops to keep the snuggles going for as long as possible! We aren't entirely certain what her exact breed makeup is, but we can tell you she is 100% Life of the Party! With any puppy, training and socialization are incredibly important to the success of the pup. Apply for Soup today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/95c8303e-28ac-49d9-b567-31e559231025/image/cdb0168a-bed3-4951-8a3f-bc14f80b0ddf.jpg",
-        "url": "https://www.petfinder.com/dog/soup-95c8303e-28ac-49d9-b567-31e559231025/wi/neillsville/clark-county-humane-society-wi34/details/"
+        "name": "Smokey",
+        "species": "Cat",
+        "breed": "Domestic Short Hair.",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Meet Smokey! Smokey came to CCHS as an owner surrender with 2 other cats after their owner decided that their home was no longer the safest place for them. This handsome guy is about 4 and a half years old and weighs roughly 12.1lbs currently. Smokey is a bit of a bashful boy! He has the most gorgeous blue eyes, but it takes a few pats before he'll around and bat them at you! Smokey has a very friendly demeanor, so while he doesn't always seek out affection first, he'll never turn it away! Smokey is currently residing in our Kitty City with a multitude of other feline friends. Apply for Smokey today!",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/345de66d-1587-464d-80fb-540379756e53/image/ac8e16ba-1e02-47bc-8aad-e83e9d4d054b.jpg",
+        "url": "https://www.petfinder.com/cat/smokey-345de66d-1587-464d-80fb-540379756e53/wi/neillsville/clark-county-humane-society-wi34/details/"
       }
     ],
     "adams": [
@@ -1047,16 +1017,6 @@
         "url": "https://www.adoptapet.com/pet/47911680-friendship-wisconsin-cat"
       },
       {
-        "name": "Mystique",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 month old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110465",
-        "url": "https://www.adoptapet.com/pet/47911678-friendship-wisconsin-cat"
-      },
-      {
         "name": "Storm",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1065,6 +1025,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303120645",
         "url": "https://www.adoptapet.com/pet/47912085-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Mystique",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 month old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303110465",
+        "url": "https://www.adoptapet.com/pet/47911678-friendship-wisconsin-cat"
       },
       {
         "name": "Suzie",
@@ -1152,14 +1122,14 @@
         "url": "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium"
       },
       {
-        "name": "Mars",
+        "name": "Fortune",
         "species": "Dog",
-        "breed": "Pit Bull Terrier",
-        "age": "1 year 8 months old, Adult",
-        "gender": "Female",
-        "bio": "Hello! Miss Mars here, already begging you for more attention! I absolutely love pets and scratches and cuddles. I’m a big ol’ couch hippo and I’d love to watch all of your favorite shows with you, especially if there’s going to be snackies. Give me something to chew on and I swear I won’t go for your shoes, pinky promise. Unless you leave me home alone, unkenneled, then I might have a little taste. What?! Don’t knock it until you try it!As much as I have enjoyed my time with my foster sister, I want to be the star so if you have another dog, it’s just not meant to be. Kitties are chill though! I’ve been in foster care for most of my life, and while I’ve loved my time with my foster fam, I’m really want to find my forever person. Come meet me and let’s play! I’ll even show you a trick or two!You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1260783251",
-        "url": "https://www.adoptapet.com/pet/46129342-wausau-wisconsin-pit-bull-terrier-mix"
+        "breed": "Shepherd (Unknown Type)",
+        "age": "4 years 7 months old, Adult",
+        "gender": "Male",
+        "bio": "Hey Ladies… Fortune Here (But my friends just call me Handsome)",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1179505318",
+        "url": "https://www.adoptapet.com/pet/42975074-wausau-wisconsin-shepherd-unknown-type-mix"
       },
       {
         "name": "Milo",
@@ -1172,14 +1142,14 @@
         "url": "https://www.adoptapet.com/pet/42944393-wausau-wisconsin-chihuahua"
       },
       {
-        "name": "Fortune",
+        "name": "Mars",
         "species": "Dog",
-        "breed": "Shepherd (Unknown Type)",
-        "age": "4 years 7 months old, Adult",
-        "gender": "Male",
-        "bio": "Hey Ladies… Fortune Here (But my friends just call me Handsome)",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1179505318",
-        "url": "https://www.adoptapet.com/pet/42975074-wausau-wisconsin-shepherd-unknown-type-mix"
+        "breed": "Pit Bull Terrier",
+        "age": "1 year 8 months old, Adult",
+        "gender": "Female",
+        "bio": "Hello! Miss Mars here, already begging you for more attention! I absolutely love pets and scratches and cuddles. I’m a big ol’ couch hippo and I’d love to watch all of your favorite shows with you, especially if there’s going to be snackies. Give me something to chew on and I swear I won’t go for your shoes, pinky promise. Unless you leave me home alone, unkenneled, then I might have a little taste. What?! Don’t knock it until you try it!As much as I have enjoyed my time with my foster sister, I want to be the star so if you have another dog, it’s just not meant to be. Kitties are chill though! I’ve been in foster care for most of my life, and while I’ve loved my time with my foster fam, I’m really want to find my forever person. Come meet me and let’s play! I’ll even show you a trick or two!You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1260783251",
+        "url": "https://www.adoptapet.com/pet/46129342-wausau-wisconsin-pit-bull-terrier-mix"
       },
       {
         "name": "Turbo",
@@ -1229,7 +1199,7 @@
         "gender": "Female",
         "bio": "Hi, we're Daisy and Bella. We have found ourselves being surrendered to rescue because our parents had to go to assisted living. We were very well cared for and loved! Therfore, we would LOVE a home together if possible. We do well with older children, and we even have cats at our foster home! We like to play with our foster siblings and LOVE walks. We'd love a home where we can cuddle or chill on the couch with you. No worries leaving us at home, Daisy will even give you her biggest smile when you return! You can apply for us at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1174929698",
-        "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix"
+        "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-mix"
       },
       {
         "name": "Frank fka Finch",
@@ -1272,16 +1242,6 @@
         "url": "https://www.adoptapet.com/pet/42975073-wausau-wisconsin-shepherd-unknown-type-mix"
       },
       {
-        "name": "Rowdy (fka Buddy)",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
-        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
-      },
-      {
         "name": "Bailey fka Quinn",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1310,6 +1270,16 @@
         "bio": "Meet Butterscotch! Butterscotch is a sweet 20.2-pound hound mix with the perfect blend of cuddly and independent energy . She *loves* being snuggled and will happily curl up with you when it’s time to relax , but when she’s in the mood to play, she’s always excited to have a furry friend by her side . She enjoys a little “me time” now and then , but don’t be fooled—this girl also knows how to have fun! Crunchy treats are her absolute favorite , and she’s a big fan of car rides , making her a wonderful companion for adventures big or small. If you’re looking for a loving pup who can balance playtime, cuddles, and independence, Butterscotch might just be your perfect match You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1281666146",
         "url": "https://www.adoptapet.com/pet/47019012-wausau-wisconsin-hound-unknown-type-mix"
+      },
+      {
+        "name": "Rowdy (fka Buddy)",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
+        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
       }
     ]
   }
