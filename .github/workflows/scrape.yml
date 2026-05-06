@@ -1,7 +1,11 @@
 name: Scrape Pets
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # Run twice daily at 8 AM and 8 PM Central Time
+    # 13:00 UTC = 8 AM CDT (7 AM CST during winter)
+    # 01:00 UTC = 8 PM CDT previous day (7 PM CST during winter)
+    - cron: '0 13 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:
 permissions:
   contents: write
