@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-16T04:31:46.319Z",
+  "lastUpdated": "2026-05-16T14:21:06.112Z",
   "shelters": {
     "marathon": [
       {
@@ -253,26 +253,6 @@
         "url": "https://www.adoptapet.com/pet/47067069-wausau-wisconsin-chow-chow-mix"
       },
       {
-        "name": "Khajit",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years 1 month old, Adult",
-        "gender": "Male",
-        "bio": "Khajit here, reporting for duty! I'm up to the task of being your new cat and am purring just thinking about the possibility. I'm sweet, soft and curious, too! I came to the shelter as a stray so not much is known about my past but I'm betting I can have a beautiful future with you.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302791566",
-        "url": "https://www.adoptapet.com/pet/47604608-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Safia",
-        "species": "Dog",
-        "breed": "German Shepherd Dog",
-        "age": "1 year old, Young",
-        "gender": "Female",
-        "bio": "Woof! My name is Safia and I'm hoping to be the girl of your shelter dog dreams. I came to the shelter without a name or collar. I thought my stay would be short and I'd be back at home but here I am, looking for my second chance. I'm a high energy and assertive girl who would do best in an active home with breed experience. Stuffed toys are my fave and the jury is still out as to whether cats are friend or foe. Want to come over to my place? My address is 7001 Packer Drive in Wausau!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303640256",
-        "url": "https://www.adoptapet.com/pet/47819760-wausau-wisconsin-german-shepherd-dog-mix"
-      },
-      {
         "name": "Posey",
         "species": "Dog",
         "breed": "Pug",
@@ -291,6 +271,26 @@
         "bio": "Ready to send a love letter to your next barn cat? Well, I'm Mailbox and I'm ready to catch all of your mice!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298391955",
         "url": "https://www.adoptapet.com/pet/47709205-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Khajit",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 years 1 month old, Adult",
+        "gender": "Male",
+        "bio": "Khajit here, reporting for duty! I'm up to the task of being your new cat and am purring just thinking about the possibility. I'm sweet, soft and curious, too! I came to the shelter as a stray so not much is known about my past but I'm betting I can have a beautiful future with you.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302791566",
+        "url": "https://www.adoptapet.com/pet/47604608-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Safia",
+        "species": "Dog",
+        "breed": "German Shepherd Dog",
+        "age": "1 year old, Young",
+        "gender": "Female",
+        "bio": "Woof! My name is Safia and I'm hoping to be the girl of your shelter dog dreams. I came to the shelter without a name or collar. I thought my stay would be short and I'd be back at home but here I am, looking for my second chance. I'm a high energy and assertive girl who would do best in an active home with breed experience. Stuffed toys are my fave and the jury is still out as to whether cats are friend or foe. Want to come over to my place? My address is 7001 Packer Drive in Wausau!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303640256",
+        "url": "https://www.adoptapet.com/pet/47819760-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
         "name": "Porter",
@@ -660,7 +660,7 @@
         "gender": "Female",
         "bio": "My name is Nutella and I just want you to know that I'm trying my very best to be brave. I've taken it slow and steady on the road to adoption and I can't wait until it leads me home to you. I'm mostly overwhelmed in the shelter environment and have been very timid and shy. Staff have been patient and I hope that you will be, too. I would do best in a quiet home where I can be myself and truly blossom. I don't think I would mind the company of other cats or a lazy dog. Maybe you can make all of my dreams come true?*Nutella is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Nutella please visit https://www.starrynightcatcafe.com/visitLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1297128965",
-        "url": "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45327963-wausau-cat"
       },
       {
         "name": "Jake 2",
@@ -1077,16 +1077,6 @@
         "url": "https://www.adoptapet.com/pet/47064562-friendship-wisconsin-cat"
       },
       {
-        "name": "Margot",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 years 1 month old, Adult",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296611564",
-        "url": "https://www.adoptapet.com/pet/47637090-friendship-wisconsin-cat"
-      },
-      {
         "name": "Pedro",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1095,6 +1085,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298658684",
         "url": "https://www.adoptapet.com/pet/47721229-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Margot",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 years 1 month old, Adult",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296611564",
+        "url": "https://www.adoptapet.com/pet/47637090-friendship-wisconsin-cat"
       },
       {
         "name": "Magik",
@@ -1107,16 +1107,6 @@
         "url": "https://www.adoptapet.com/pet/47911675-friendship-wisconsin-cat"
       },
       {
-        "name": "Kit-Kat",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "10 years 2 months old, Senior",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836105",
-        "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
-      },
-      {
         "name": "Joey",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1125,6 +1115,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836103",
         "url": "https://www.adoptapet.com/pet/47568514-friendship-wisconsin-cat"
+      },
+      {
+        "name": "Kit-Kat",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "10 years 2 months old, Senior",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298836105",
+        "url": "https://www.adoptapet.com/pet/47524577-friendship-wisconsin-cat"
       },
       {
         "name": "Jules",
@@ -1174,7 +1174,7 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298666070",
-        "url": "https://www.adoptapet.com/pet/47637089-friendship-wisconsin-terrier-unknown-type-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47637089-friendship-terrier-unknown-type-medium-mix"
       },
       {
         "name": "Vinnie",
@@ -1206,7 +1206,7 @@
         "gender": "Female",
         "bio": "Meet Mouse! She is a nice girl who can be shy at first but is a real sweetheart once she is comfortable! She is great with other cats and would be great in a calmer home!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1267383758",
-        "url": "https://www.adoptapet.com/pet/46414814-merrill-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/46414814-merrill-cat"
       }
     ],
     "nlpac": [],
@@ -1309,7 +1309,7 @@
         "gender": "Female",
         "bio": "Hi, we're Daisy and Bella. We have found ourselves being surrendered to rescue because our parents had to go to assisted living. We were very well cared for and loved! Therfore, we would LOVE a home together if possible. We do well with older children, and we even have cats at our foster home! We like to play with our foster siblings and LOVE walks. We'd love a home where we can cuddle or chill on the couch with you. No worries leaving us at home, Daisy will even give you her biggest smile when you return! You can apply for us at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1174929698",
-        "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-mix"
+        "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix"
       },
       {
         "name": "Frank fka Finch",
@@ -1332,6 +1332,16 @@
         "url": "https://www.adoptapet.com/pet/47586257-wausau-wisconsin-maltese"
       },
       {
+        "name": "Rowdy (fka Buddy)",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
+        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
+      },
+      {
         "name": "Cookie",
         "species": "Dog",
         "breed": "Shepherd (Unknown Type)",
@@ -1352,16 +1362,6 @@
         "url": "https://www.adoptapet.com/pet/42856670-wausau-wisconsin-shih-tzu-bichon-frise-mix"
       },
       {
-        "name": "Rowdy (fka Buddy)",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
-        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
-      },
-      {
         "name": "Bailey fka Quinn",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1372,16 +1372,6 @@
         "url": "https://www.adoptapet.com/pet/46428190-wausau-wisconsin-mixed-breed-medium-mix"
       },
       {
-        "name": "Butterscotch",
-        "species": "Dog",
-        "breed": "Hound (Unknown Type)",
-        "age": "7 months old, Puppy",
-        "gender": "Female",
-        "bio": "Meet Butterscotch! Butterscotch is a sweet 20.2-pound hound mix with the perfect blend of cuddly and independent energy . She *loves* being snuggled and will happily curl up with you when it’s time to relax , but when she’s in the mood to play, she’s always excited to have a furry friend by her side . She enjoys a little “me time” now and then , but don’t be fooled—this girl also knows how to have fun! Crunchy treats are her absolute favorite , and she’s a big fan of car rides , making her a wonderful companion for adventures big or small. If you’re looking for a loving pup who can balance playtime, cuddles, and independence, Butterscotch might just be your perfect match You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1281666146",
-        "url": "https://www.adoptapet.com/pet/47019012-wausau-wisconsin-hound-unknown-type-mix"
-      },
-      {
         "name": "Niche",
         "species": "Dog",
         "breed": "Shiba Inu",
@@ -1390,6 +1380,16 @@
         "bio": "Do you even look around at your family and think'Is someone missing?'Maybe there is a Shiba shaped hole in your heart?Well, you can fill that niche, with me - Niche!I'm a generally happy lady who enjoys sprinting in the snow and chasing my Shiba friends.I'm still learning to trust humans, but I find women much less intimidating. As much as Sir Foster insists he isn't gonna eat me, I just don't believe that to be true.Ms Foster gives good neck scratches, but I have to be in the mood for them.I don't mind my kennel and I think I like the car. But I love a quite corner to nap as well as some I door space to pace. I also enjoy hoarding my toys (socks and underwear are included in 'toys') in my bed.I'm still learning about being a dog. I have to practice being on a leash and being more social with humans. Once I trust you, I'll be a great pal!My fosters loves Shibas but recommend people read up on the breed. We are notoriously stubborn, independent and my sis and I have already proven to be escape artists. But we are worth it!You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1289708301",
         "url": "https://www.adoptapet.com/pet/47355378-wausau-wisconsin-shiba-inu"
+      },
+      {
+        "name": "Butterscotch",
+        "species": "Dog",
+        "breed": "Hound (Unknown Type)",
+        "age": "7 months old, Puppy",
+        "gender": "Female",
+        "bio": "Meet Butterscotch! Butterscotch is a sweet 20.2-pound hound mix with the perfect blend of cuddly and independent energy . She *loves* being snuggled and will happily curl up with you when it’s time to relax , but when she’s in the mood to play, she’s always excited to have a furry friend by her side . She enjoys a little “me time” now and then , but don’t be fooled—this girl also knows how to have fun! Crunchy treats are her absolute favorite , and she’s a big fan of car rides , making her a wonderful companion for adventures big or small. If you’re looking for a loving pup who can balance playtime, cuddles, and independence, Butterscotch might just be your perfect match You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1281666146",
+        "url": "https://www.adoptapet.com/pet/47019012-wausau-wisconsin-hound-unknown-type-mix"
       }
     ]
   }
