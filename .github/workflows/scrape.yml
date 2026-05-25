@@ -25,6 +25,10 @@ jobs:
           git config user.email "bot@wausaupilotandreview.com"
           mkdir -p docs
           cp pet-data.json docs/pet-data.json
+          # Mirror widget HTML + logos into docs/ so GitHub Pages always serves
+          # the latest version. Root files are the source of truth.
+          cp adopt-widget.html docs/adopt-widget.html
+          cp -r logos docs/
           date -u > docs/update-log.txt
           git add -A
           git commit -m "🐾 Update pet data" || true
