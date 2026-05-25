@@ -60,7 +60,14 @@ async function makePage(browser) {
 // ─── ADOPTAPET SCRAPER ───
 // Adoptapet uses client-side pagination. The shelter page shows 12 pets/page but
 // /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
-const SHELTER_POSTAL = { '77626': '54401', '76343': '53934', '66070': '54452', '151032': '54401' };
+const SHELTER_POSTAL = {
+  '77626': '54401',  // Marathon
+  '76343': '53934',  // Adams
+  '66070': '54452',  // Lincoln
+  '151032': '54401', // Fetch (Wausau)
+  '20247': '54494',  // South Wood County HS (Wisconsin Rapids)
+  '96724': '54449',  // Marshfield Area Pet Shelter
+};
 
 async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const numericId = shelterId.match(/^(\d+)/)?.[1] || '';
@@ -773,241 +780,120 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
   }
 }
 
-// ─── FURRYPETS SCRAPER (Lincoln County) ───
-// Their WordPress site loads pets dynamically, needs full JS execution
-async function scrapeLincoln(browser) {
-  const PAGES = [
-    { url: 'https://furrypets.com/adopt/adopt-dogs/', species: 'Dog', age: 'Adult' },
-    { url: 'https://furrypets.com/adopt/adopt-puppies/', species: 'Dog', age: 'Puppy' },
-    { url: 'https://furrypets.com/adopt/adopt-cats/', species: 'Cat', age: 'Adult' },
-    { url: 'https://furrypets.com/adopt/adopt-kittens/', species: 'Cat', age: 'Kitten' },
-  ];
-  
-  let allPets = [];
-  
-  for (const pg of PAGES) {
-    console.log(`\n[lincoln] Scraping: ${pg.url}`);
-    const page = await browser.newPage();
-    
-    try {
-      await page.goto(pg.url, { waitUntil: 'networkidle2', timeout: 45000 });
-      
-      // Wait for content to load
-      await new Promise(r => setTimeout(r, 8000));
-      
-      // Scroll to trigger lazy loading
-      await page.evaluate(async () => {
-        for (let i = 0; i < document.body.scrollHeight; i += 300) {
-          window.scrollTo(0, i);
-          await new Promise(r => setTimeout(r, 100));
-        }
-      });
-      await new Promise(r => setTimeout(r, 3000));
-      
-      const pets = await page.evaluate((species, age) => {
-        const results = [];
-        const seen = new Set();
-        
-        // Try all strategies: portfolio posts, articles, cards, image galleries
-        const selectors = [
-          '.fusion-portfolio-post',
-          'article',
-          '.post-card',
-          '[class*="pet"]',
-          'figure',
-          '.gallery-item',
-          '.wp-block-image'
-        ];
-        
-        for (const sel of selectors) {
-          document.querySelectorAll(sel).forEach(el => {
-            const img = el.querySelector('img:not([src*="logo"])');
-            const titleEl = el.querySelector('h2, h3, h4, .entry-title');
-            const link = el.querySelector('a[href]');
-            const desc = el.querySelector('p, .entry-content, .excerpt');
-            
-            const name = (titleEl?.textContent || img?.alt || '').trim().replace(/\d+$/, '').trim();
-            if (name && name.length > 1 && name.length < 60 && !seen.has(name)) {
-              seen.add(name);
-              const src = img?.src || img?.dataset?.src || '';
-              if (src && !src.includes('data:image/gif') && !src.includes('logo')) {
-                results.push({
-                  name,
-                  species,
-                  breed: '',
-                  age,
-                  gender: '',
-                  bio: (desc?.textContent || '').trim().substring(0, 1500),
-                  photo: src,
-                  url: link?.href || ''
-                });
-              }
-            }
-          });
-          if (results.length > 0) break;  // Use first successful strategy
-        }
-        
-        // Fallback: grab content images with alt text
-        if (results.length === 0) {
-          document.querySelectorAll('img').forEach(img => {
-            const src = img.src || '';
-            if (src.includes('wp-content/uploads') && !src.includes('logo') && !src.includes('data:image')) {
-              const name = (img.alt || '').trim().replace(/\d+$/, '').trim();
-              if (name && name.length > 1 && !seen.has(name)) {
-                seen.add(name);
-                results.push({
-                  name,
-                  species,
-                  breed: '',
-                  age,
-                  gender: '',
-                  bio: '',
-                  photo: src,
-                  url: img.closest('a')?.href || ''
-                });
-              }
-            }
-          });
-        }
-        
-        return results;
-      }, pg.species, pg.age);
-      
-      console.log(`  Found ${pets.length} pets`);
-      allPets.push(...pets);
-      
-    } catch (err) {
-      console.error(`  Error: ${err.message}`);
-    }
-    
-    await page.close();
-  }
-  
-  // Deduplicate
-  const unique = new Map();
-  allPets.forEach(p => { if (!unique.has(p.name)) unique.set(p.name, p); });
-  return Array.from(unique.values());
-}
-
-
 // ─── NLPAC SCRAPER (New Life Pet Adoption Center) ───
-// Uses plain HTTP fetch instead of Puppeteer to avoid Cloudflare bot detection.
-// The site serves pet data in plain HTML — no JS execution needed.
-async function scrapeNlpac() {
+// Uses Puppeteer + stealth because the site now sits behind Cloudflare's
+// "Just a moment..." challenge, which blocks plain HTTP fetches.
+async function scrapeNlpac(browser) {
   const url = 'https://www.nlpac.com/pets';
-  console.log(`\n[nlpac] Scraping (HTTP): ${url}`);
+  console.log(`\n[nlpac] Scraping: ${url}`);
 
-  const https = require('https');
-
-  function fetchPage(pageUrl) {
-    return new Promise((resolve, reject) => {
-      const req = https.get(pageUrl, {
-        headers: {
-          'User-Agent': USER_AGENT,
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.9',
-        }
-      }, (res) => {
-        // Follow redirects
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          const redirect = new URL(res.headers.location, pageUrl).href;
-          fetchPage(redirect).then(resolve).catch(reject);
-          return;
-        }
-        let data = '';
-        res.on('data', chunk => data += chunk);
-        res.on('end', () => resolve(data));
-      });
-      req.on('error', reject);
-      req.setTimeout(20000, () => { req.destroy(); reject(new Error('Timeout')); });
-    });
-  }
-
+  const listPage = await makePage(browser);
+  let listHtml = '';
   try {
-    const html = await fetchPage(url);
+    await listPage.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+    // Cloudflare challenge can take a few seconds to clear after the JS runs
+    await new Promise(r => setTimeout(r, 5000));
+    listHtml = await listPage.content();
 
-    // Check for Cloudflare block
-    if (html.includes('Just a moment') || html.includes('cf-browser-verification')) {
-      console.log('  [nlpac] Cloudflare blocked HTTP request, saving diagnostic');
-      saveDiag('nlpac-list', html);
+    if (/Just a moment|cf-browser-verification|challenge-platform/i.test(listHtml)) {
+      // Wait a bit longer for CF to clear, then retry
+      await new Promise(r => setTimeout(r, 8000));
+      listHtml = await listPage.content();
+    }
+
+    if (/Just a moment|cf-browser-verification|challenge-platform/i.test(listHtml)) {
+      console.log('  [nlpac] Cloudflare did not clear — saving diagnostic');
+      saveDiag('nlpac-list', listHtml);
+      await listPage.close();
       return [];
     }
-
-    // Extract pet links: /q/pets/petname
-    const linkMatches = html.match(/href="(\/q\/pets\/[^"]+)"/g) || [];
-    const petPaths = [...new Set(
-      linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
-    )];
-
-    console.log(`  Found ${petPaths.length} pet links, fetching details...`);
-    if (petPaths.length === 0) {
-      saveDiag('nlpac-list', html);
-      return [];
-    }
-
-    const allPets = [];
-    for (const petPath of petPaths) {
-      const petUrl = `https://www.nlpac.com${petPath}`;
-      try {
-        const petHtml = await fetchPage(petUrl);
-
-        // Skip Cloudflare-blocked pages
-        if (petHtml.includes('Just a moment')) continue;
-
-        // Extract name from <h1> (often "Meet Petname" or just "Petname")
-        const nameMatch = petHtml.match(/<h1[^>]*>(.*?)<\/h1>/i);
-        let name = (nameMatch?.[1] || '').replace(/<[^>]+>/g, '').replace(/^Meet\s+/i, '').trim();
-        if (!name || name.includes('www.') || name.includes('.com')) continue;
-
-        // Extract photo: look for custompages image
-        const photoMatch = petHtml.match(/src="(https?:\/\/[^"]*custompages[^"]*)"/i);
-        const photo = photoMatch?.[1] || null;
-
-        // Extract structured info from <li> elements: "Key: Value"
-        const info = {};
-        const liMatches = petHtml.match(/<li[^>]*>(.*?)<\/li>/gi) || [];
-        for (const li of liMatches) {
-          const text = li.replace(/<[^>]+>/g, '').trim();
-          const kvMatch = text.match(/^(.+?):\s*(.+)$/);
-          if (kvMatch) info[kvMatch[1].trim()] = kvMatch[2].trim();
-        }
-
-        // Extract bio: find paragraphs with substantial text
-        let bio = '';
-        const paraMatches = petHtml.match(/<p[^>]*>(.*?)<\/p>/gi) || [];
-        for (const p of paraMatches) {
-          const text = p.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
-          if (text.length > 50 && !bio && !/Contact|©|PayPal|security service/i.test(text)) {
-            bio = text.substring(0, 1500);
-          }
-        }
-
-        const animalType = info['Animal Type'] || '';
-        const breed = info['Breed'] || '';
-        const age = info['Age'] || '';
-
-        let species = 'Dog';
-        if (animalType.toLowerCase().includes('cat')) species = 'Cat';
-        else if (/guinea|hamster|rabbit|ferret|bird/i.test(animalType + ' ' + breed)) species = 'Other';
-
-        const pet = { name, species, breed, age, gender: '', bio, photo, url: petUrl };
-        console.log(`    ${name} (${species}) - ${breed}${photo ? '' : ' [no photo]'}`);
-        allPets.push(pet);
-
-        // Small delay between requests to be polite
-        await new Promise(r => setTimeout(r, 500));
-      } catch (err) {
-        console.error(`    Error on ${petUrl}: ${err.message}`);
-      }
-    }
-
-    console.log(`  [nlpac] TOTAL: ${allPets.length} pets`);
-    return allPets;
-
   } catch (err) {
-    console.error(`  Error: ${err.message}`);
+    console.error(`  Error loading listing: ${err.message}`);
+    try { saveDiag('nlpac-list', await listPage.content()); } catch (_) {}
+    await listPage.close();
     return [];
   }
+
+  // Extract pet links: /q/pets/petname
+  const linkMatches = listHtml.match(/href="(\/q\/pets\/[^"]+)"/g) || [];
+  const petPaths = [...new Set(
+    linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
+  )];
+  await listPage.close();
+
+  console.log(`  Found ${petPaths.length} pet links, fetching details...`);
+  if (petPaths.length === 0) {
+    saveDiag('nlpac-list', listHtml);
+    return [];
+  }
+
+  const allPets = [];
+  for (const petPath of petPaths) {
+    const petUrl = `https://www.nlpac.com${petPath}`;
+    const petPage = await makePage(browser);
+    try {
+      await petPage.goto(petUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+      await new Promise(r => setTimeout(r, 2500));
+      const petHtml = await petPage.content();
+
+      // Skip Cloudflare-blocked pages
+      if (/Just a moment|cf-browser-verification/i.test(petHtml)) {
+        await petPage.close();
+        continue;
+      }
+
+      // Extract name from <h1> (often "Meet Petname" or just "Petname")
+      const nameMatch = petHtml.match(/<h1[^>]*>(.*?)<\/h1>/i);
+      let name = (nameMatch?.[1] || '').replace(/<[^>]+>/g, '').replace(/^Meet\s+/i, '').trim();
+      if (!name || name.includes('www.') || name.includes('.com')) {
+        await petPage.close();
+        continue;
+      }
+
+      // Extract photo: look for custompages image
+      const photoMatch = petHtml.match(/src="(https?:\/\/[^"]*custompages[^"]*)"/i);
+      const photo = photoMatch?.[1] || null;
+
+      // Extract structured info from <li> elements: "Key: Value"
+      const info = {};
+      const liMatches = petHtml.match(/<li[^>]*>(.*?)<\/li>/gi) || [];
+      for (const li of liMatches) {
+        const text = li.replace(/<[^>]+>/g, '').trim();
+        const kvMatch = text.match(/^(.+?):\s*(.+)$/);
+        if (kvMatch) info[kvMatch[1].trim()] = kvMatch[2].trim();
+      }
+
+      // Extract bio: find paragraphs with substantial text
+      let bio = '';
+      const paraMatches = petHtml.match(/<p[^>]*>(.*?)<\/p>/gi) || [];
+      for (const p of paraMatches) {
+        const text = p.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
+        if (text.length > 50 && !bio && !/Contact|©|PayPal|security service/i.test(text)) {
+          bio = text.substring(0, 1500);
+        }
+      }
+
+      const animalType = info['Animal Type'] || '';
+      const breed = info['Breed'] || '';
+      const age = info['Age'] || '';
+      const gender = info['Gender'] || info['Sex'] || '';
+
+      let species = 'Dog';
+      if (animalType.toLowerCase().includes('cat')) species = 'Cat';
+      else if (/guinea|hamster|rabbit|ferret|bird/i.test(animalType + ' ' + breed)) species = 'Other';
+
+      const pet = { name, species, breed, age, gender, bio, photo, url: petUrl };
+      console.log(`    ${name} (${species}) - ${breed}${photo ? '' : ' [no photo]'}`);
+      allPets.push(pet);
+    } catch (err) {
+      console.error(`    Error on ${petUrl}: ${err.message}`);
+    }
+    await petPage.close();
+    await new Promise(r => setTimeout(r, 400));
+  }
+
+  console.log(`  [nlpac] TOTAL: ${allPets.length} pets`);
+  return allPets;
 }
 
 // ─── MAIN ───
@@ -1054,20 +940,17 @@ async function main() {
     'adams'
   );
   
-  // Lincoln County — scrape furrypets.com directly (primary), merge with Adoptapet (fallback)
-  const lincolnDirect = await scrapeLincoln(browser);
-  const lincolnAdoptapet = await scrapeAdoptapet(
+  // Lincoln County — Adoptapet only.
+  // furrypets.com no longer lists individual pets (moved to "application-first" model),
+  // so the previous direct scrape was a dead path.
+  data.shelters.lincoln = await scrapeAdoptapet(
     browser,
     '66070-lincoln-county-humane-society-merrill-wisconsin',
     'lincoln'
   );
-  // Merge: prefer direct scrape results, add any Adoptapet-only pets
-  const lincolnUrls = new Set(lincolnDirect.map(p => p.url));
-  const adoptapetOnly = lincolnAdoptapet.filter(p => !lincolnUrls.has(p.url));
-  data.shelters.lincoln = [...lincolnDirect, ...adoptapetOnly];
-  
-  // New Life Pet Adoption Center — plain HTTP scrape (avoids Cloudflare bot detection)
-  data.shelters.nlpac = await scrapeNlpac();
+
+  // New Life Pet Adoption Center — Puppeteer required (Cloudflare blocks plain HTTP)
+  data.shelters.nlpac = await scrapeNlpac(browser);
 
   // Fetch Foster and Rescue — Adoptapet (dogs only, foster-based rescue in Wausau)
   data.shelters.fetch = await scrapeAdoptapet(
@@ -1076,13 +959,27 @@ async function main() {
     'fetch'
   );
 
+  // South Wood County Humane Society — Wisconsin Rapids (Adoptapet)
+  data.shelters.southwood = await scrapeAdoptapet(
+    browser,
+    '20247-south-wood-county-humane-society-wisconsin-rapids-wisconsin',
+    'southwood'
+  );
+
+  // Marshfield Area Pet Shelter — Marshfield (Adoptapet)
+  data.shelters.marshfield = await scrapeAdoptapet(
+    browser,
+    '96724-marshfield-area-pet-shelter-marshfield-wisconsin',
+    'marshfield'
+  );
+
   await browser.close();
 
   // Cross-shelter dedup: Adoptapet cross-lists pets across nearby shelters.
   // Remove duplicates so the same pet doesn't appear under both Marathon and Fetch.
   // Priority order: marathon > clark > adams > lincoln > nlpac > fetch (keep first occurrence)
   const seenUrls = new Set();
-  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac', 'fetch'];
+  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac', 'fetch', 'southwood', 'marshfield'];
   for (const key of shelterOrder) {
     if (!data.shelters[key]) continue;
     const before = data.shelters[key].length;
@@ -1095,6 +992,23 @@ async function main() {
     if (removed > 0) console.log(`  [dedup] Removed ${removed} cross-listed pets from ${key}`);
   }
   
+  // Health check: classify each shelter as ok / low / failed so a silent outage
+  // shows up in the JSON instead of just looking like a quiet day.
+  // EXPECTED_MIN = a floor below which we treat the result as suspicious. Tuned
+  // from observed steady-state counts; lincoln intentionally low (1 listing).
+  const EXPECTED_MIN = {
+    marathon: 20, clark: 10, adams: 5, lincoln: 1, nlpac: 3, fetch: 5,
+    southwood: 10, marshfield: 3
+  };
+  data.scrape_status = {};
+  for (const [key, pets] of Object.entries(data.shelters)) {
+    const count = pets.length;
+    let status = 'ok';
+    if (count === 0) status = 'failed';
+    else if (count < (EXPECTED_MIN[key] ?? 1)) status = 'low';
+    data.scrape_status[key] = { count, status, expected_min: EXPECTED_MIN[key] ?? 1 };
+  }
+
   // Summary
   console.log('\n╔══════════════════════════════════════════════════╗');
   console.log('║  RESULTS                                        ║');
@@ -1103,11 +1017,17 @@ async function main() {
   for (const [key, pets] of Object.entries(data.shelters)) {
     const dogs = pets.filter(p => p.species === 'Dog').length;
     const cats = pets.filter(p => p.species === 'Cat').length;
-    console.log(`║  ${key.padEnd(12)} ${String(pets.length).padStart(3)} pets (${dogs} dogs, ${cats} cats)`.padEnd(51) + '║');
+    const mark = data.scrape_status[key].status === 'ok' ? ' ' :
+                 data.scrape_status[key].status === 'low' ? '!' : 'X';
+    console.log(`║ ${mark}${key.padEnd(11)} ${String(pets.length).padStart(3)} pets (${dogs} dogs, ${cats} cats)`.padEnd(51) + '║');
     total += pets.length;
   }
   console.log('╠══════════════════════════════════════════════════╣');
   console.log(`║  TOTAL: ${total} pets`.padEnd(51) + '║');
+  const failed = Object.entries(data.scrape_status).filter(([,s]) => s.status === 'failed').map(([k]) => k);
+  const low = Object.entries(data.scrape_status).filter(([,s]) => s.status === 'low').map(([k]) => k);
+  if (failed.length) console.log(`║  FAILED: ${failed.join(', ')}`.padEnd(51) + '║');
+  if (low.length) console.log(`║  LOW:    ${low.join(', ')}`.padEnd(51) + '║');
   console.log('╚══════════════════════════════════════════════════╝');
   
   // Write output
