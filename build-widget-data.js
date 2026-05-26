@@ -834,14 +834,27 @@ async function scrapeNlpac(browser) {
     const petPage = await makePage(browser);
     try {
       await petPage.goto(petUrl, { waitUntil: 'networkidle2', timeout: 30000 });
-      await new Promise(r => setTimeout(r, 2500));
-
-      // Quick CF check — the real challenge page has this exact title
-      const title = await petPage.title();
-      if (/^Just a moment/i.test(title)) {
-        console.log(`    [nlpac] CF challenge on ${petPath} — waiting 6s more`);
-        await new Promise(r => setTimeout(r, 6000));
+      // Cloudflare often greets detail pages with the "Just a moment..."
+      // challenge page. Actively poll for the title to change rather than
+      // guessing how long the verification will take.
+      try {
+        await petPage.waitForFunction(
+          () => !/^Just a moment/i.test(document.title),
+          { timeout: 25000, polling: 500 }
+        );
+      } catch (_) {
+        // Timed out — page is still challenged. Save diag and skip.
+        if (!firstFailureSaved) {
+          firstFailureSaved = true;
+          const html = await petPage.content();
+          saveDiag(`nlpac-pet-${petPath.split('/').pop()}-cf-stuck`, html);
+          console.log(`    [nlpac] CF challenge did not clear on ${petPath} after 25s — diagnostic saved`);
+        }
+        await petPage.close();
+        continue;
       }
+      // Settle after the challenge clears so the SPA hydrates
+      await new Promise(r => setTimeout(r, 1500));
 
       // DOM-based extraction (post-JS render). More robust than HTML regex
       // because pet pages have structured content with nested tags inside <h1>.
