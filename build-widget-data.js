@@ -819,19 +819,23 @@ async function scrapeNlpac(browser) {
   const petPaths = [...new Set(
     linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
   )];
-  await listPage.close();
 
   console.log(`  Found ${petPaths.length} pet links, fetching details...`);
   if (petPaths.length === 0) {
     saveDiag('nlpac-list', listHtml);
+    await listPage.close();
     return [];
   }
 
+  // Reuse the listing page for all detail visits. New pages get fresh
+  // browser contexts → fresh Cloudflare challenge each time. Reusing the
+  // same page preserves the cf_clearance cookie + browser fingerprint so
+  // CF treats subsequent navigations as the same already-verified visitor.
+  const petPage = listPage;
   const allPets = [];
   let firstFailureSaved = false;
   for (const petPath of petPaths) {
     const petUrl = `https://www.nlpac.com${petPath}`;
-    const petPage = await makePage(browser);
     try {
       await petPage.goto(petUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       // Cloudflare often greets detail pages with the "Just a moment..."
@@ -850,7 +854,6 @@ async function scrapeNlpac(browser) {
           saveDiag(`nlpac-pet-${petPath.split('/').pop()}-cf-stuck`, html);
           console.log(`    [nlpac] CF challenge did not clear on ${petPath} after 25s — diagnostic saved`);
         }
-        await petPage.close();
         continue;
       }
       // Settle after the challenge clears so the SPA hydrates
@@ -898,7 +901,6 @@ async function scrapeNlpac(browser) {
           saveDiag(`nlpac-pet-${petPath.split('/').pop()}`, html);
           console.log(`    [nlpac] No name extracted for ${petPath} (h1 was "${data.name}") — diagnostic saved`);
         }
-        await petPage.close();
         continue;
       }
 
@@ -917,9 +919,9 @@ async function scrapeNlpac(browser) {
     } catch (err) {
       console.error(`    Error on ${petUrl}: ${err.message}`);
     }
-    await petPage.close();
     await new Promise(r => setTimeout(r, 400));
   }
+  await petPage.close();
 
   console.log(`  [nlpac] TOTAL: ${allPets.length} pets`);
   return allPets;
