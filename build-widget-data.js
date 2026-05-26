@@ -795,13 +795,13 @@ async function scrapeNlpac(browser) {
     await new Promise(r => setTimeout(r, 5000));
     listHtml = await listPage.content();
 
-    if (/Just a moment|cf-browser-verification|challenge-platform/i.test(listHtml)) {
+    if (/Just a moment\.\.\.|cf-browser-verification|cf_chl_opt/i.test(listHtml)) {
       // Wait a bit longer for CF to clear, then retry
       await new Promise(r => setTimeout(r, 8000));
       listHtml = await listPage.content();
     }
 
-    if (/Just a moment|cf-browser-verification|challenge-platform/i.test(listHtml)) {
+    if (/Just a moment\.\.\.|cf-browser-verification|cf_chl_opt/i.test(listHtml)) {
       console.log('  [nlpac] Cloudflare did not clear — saving diagnostic');
       saveDiag('nlpac-list', listHtml);
       await listPage.close();
@@ -836,8 +836,9 @@ async function scrapeNlpac(browser) {
       await new Promise(r => setTimeout(r, 2500));
       const petHtml = await petPage.content();
 
-      // Skip Cloudflare-blocked pages
-      if (/Just a moment|cf-browser-verification/i.test(petHtml)) {
+      // Skip Cloudflare-blocked pages (literal challenge title only — the
+      // cdn-cgi/challenge-platform script appears on every page post-challenge)
+      if (/Just a moment\.\.\.|cf-browser-verification|cf_chl_opt/i.test(petHtml)) {
         await petPage.close();
         continue;
       }
