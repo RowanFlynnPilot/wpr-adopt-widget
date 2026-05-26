@@ -828,63 +828,78 @@ async function scrapeNlpac(browser) {
   }
 
   const allPets = [];
+  let firstFailureSaved = false;
   for (const petPath of petPaths) {
     const petUrl = `https://www.nlpac.com${petPath}`;
     const petPage = await makePage(browser);
     try {
       await petPage.goto(petUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       await new Promise(r => setTimeout(r, 2500));
-      const petHtml = await petPage.content();
 
-      // Skip Cloudflare-blocked pages (literal challenge title only — the
-      // cdn-cgi/challenge-platform script appears on every page post-challenge)
-      if (/Just a moment\.\.\.|cf-browser-verification|cf_chl_opt/i.test(petHtml)) {
-        await petPage.close();
-        continue;
+      // Quick CF check — the real challenge page has this exact title
+      const title = await petPage.title();
+      if (/^Just a moment/i.test(title)) {
+        console.log(`    [nlpac] CF challenge on ${petPath} — waiting 6s more`);
+        await new Promise(r => setTimeout(r, 6000));
       }
 
-      // Extract name from <h1> (often "Meet Petname" or just "Petname")
-      const nameMatch = petHtml.match(/<h1[^>]*>(.*?)<\/h1>/i);
-      let name = (nameMatch?.[1] || '').replace(/<[^>]+>/g, '').replace(/^Meet\s+/i, '').trim();
-      if (!name || name.includes('www.') || name.includes('.com')) {
-        await petPage.close();
-        continue;
-      }
+      // DOM-based extraction (post-JS render). More robust than HTML regex
+      // because pet pages have structured content with nested tags inside <h1>.
+      const data = await petPage.evaluate(() => {
+        const text = el => el ? el.textContent.trim().replace(/\s+/g, ' ') : '';
 
-      // Extract photo: look for custompages image
-      const photoMatch = petHtml.match(/src="(https?:\/\/[^"]*custompages[^"]*)"/i);
-      const photo = photoMatch?.[1] || null;
+        // Name: prefer h1 text content (handles nested tags). Strip "Meet"/"!"
+        let name = text(document.querySelector('h1'));
+        name = name.replace(/^Meet\s+/i, '').replace(/!+$/, '').trim();
 
-      // Extract structured info from <li> elements: "Key: Value"
-      const info = {};
-      const liMatches = petHtml.match(/<li[^>]*>(.*?)<\/li>/gi) || [];
-      for (const li of liMatches) {
-        const text = li.replace(/<[^>]+>/g, '').trim();
-        const kvMatch = text.match(/^(.+?):\s*(.+)$/);
-        if (kvMatch) info[kvMatch[1].trim()] = kvMatch[2].trim();
-      }
+        // Structured info: every "Key: Value" <li> on the page
+        const info = {};
+        document.querySelectorAll('li').forEach(li => {
+          const t = li.textContent.trim().replace(/\s+/g, ' ');
+          const m = t.match(/^([A-Za-z][A-Za-z ]+?):\s*(.+)$/);
+          if (m && m[2].length < 200) info[m[1].trim()] = m[2].trim();
+        });
 
-      // Extract bio: find paragraphs with substantial text
-      let bio = '';
-      const paraMatches = petHtml.match(/<p[^>]*>(.*?)<\/p>/gi) || [];
-      for (const p of paraMatches) {
-        const text = p.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
-        if (text.length > 50 && !bio && !/Contact|©|PayPal|security service/i.test(text)) {
-          bio = text.substring(0, 1500);
+        // Photo: any custompages image (NLPAC's CDN), prefer larger ones
+        let photo = null;
+        const imgs = [...document.querySelectorAll('img')]
+          .map(i => i.src)
+          .filter(s => s && /custompages/i.test(s) && !/logo|nav|icon/i.test(s));
+        if (imgs.length) photo = imgs[0];
+
+        // Bio: first substantial paragraph that isn't site-chrome
+        let bio = '';
+        const junk = /Contact|©|PayPal|security service|powered by|cookie|privacy/i;
+        for (const p of document.querySelectorAll('p, .description, .bio')) {
+          const t = p.textContent.trim().replace(/\s+/g, ' ');
+          if (t.length > 50 && !junk.test(t)) { bio = t.substring(0, 1500); break; }
         }
+
+        return { name, info, photo, bio };
+      });
+
+      if (!data.name || data.name.includes('www.') || data.name.includes('.com')) {
+        if (!firstFailureSaved) {
+          firstFailureSaved = true;
+          const html = await petPage.content();
+          saveDiag(`nlpac-pet-${petPath.split('/').pop()}`, html);
+          console.log(`    [nlpac] No name extracted for ${petPath} (h1 was "${data.name}") — diagnostic saved`);
+        }
+        await petPage.close();
+        continue;
       }
 
-      const animalType = info['Animal Type'] || '';
-      const breed = info['Breed'] || '';
-      const age = info['Age'] || '';
-      const gender = info['Gender'] || info['Sex'] || '';
+      const animalType = data.info['Animal Type'] || '';
+      const breed = data.info['Breed'] || '';
+      const age = data.info['Age'] || '';
+      const gender = data.info['Gender'] || data.info['Sex'] || '';
 
       let species = 'Dog';
       if (animalType.toLowerCase().includes('cat')) species = 'Cat';
       else if (/guinea|hamster|rabbit|ferret|bird/i.test(animalType + ' ' + breed)) species = 'Other';
 
-      const pet = { name, species, breed, age, gender, bio, photo, url: petUrl };
-      console.log(`    ${name} (${species}) - ${breed}${photo ? '' : ' [no photo]'}`);
+      const pet = { name: data.name, species, breed, age, gender, bio: data.bio, photo: data.photo, url: petUrl };
+      console.log(`    ${data.name} (${species}) - ${breed}${data.photo ? '' : ' [no photo]'}`);
       allPets.push(pet);
     } catch (err) {
       console.error(`    Error on ${petUrl}: ${err.message}`);
