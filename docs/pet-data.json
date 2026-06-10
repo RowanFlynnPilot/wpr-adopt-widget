@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-06-09T15:53:28.849Z",
+  "lastUpdated": "2026-06-10T05:23:07.068Z",
   "shelters": {
     "marathon": [
-      {
-        "name": "Princess",
-        "species": "Dog",
-        "breed": "German Shepherd Dog",
-        "age": "5 years old, Adult",
-        "gender": "Female",
-        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
-      },
       {
         "name": "Verdi",
         "species": "Cat",
@@ -21,16 +11,6 @@
         "bio": "Hi there, I'm Verdi! I'm a fun loving lady that is here at HSMC looking for a new place to call home, and let me tell you - I'm a little picky! I'm a diva, and I'm not afraid to say it. I'm not a big fan of being picked up or held, but will curl up in your lap on my own terms - I just like to be in charge. I love to be spoiled and would be best as an only pet. If you think I could be the diva of my dreams then come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1251615330",
         "url": "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Juggle *Barn Cat*",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "I'm not a lap cat, I'm a working cat and there's a difference. I want to be outside in my element, hunting for food and keeping your shed or barn free of mice and other pests. Do you have a job for me?",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290592624",
-        "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
       },
       {
         "name": "Thia",
@@ -43,14 +23,14 @@
         "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
       },
       {
-        "name": "Ivy",
+        "name": "Juggle *Barn Cat*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "1 year old, Young",
-        "gender": "Female",
-        "bio": "Hi there, I'm Ivy! I'm a fun loving girl that is here at HSMC looking for a new place to call home. I'm very playful, adorable and ready to be YOURS! Come see me soon!*Ivy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Ivy please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595304",
-        "url": "https://www.adoptapet.com/pet/47243591-wausau-wisconsin-cat"
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "I'm not a lap cat, I'm a working cat and there's a difference. I want to be outside in my element, hunting for food and keeping your shed or barn free of mice and other pests. Do you have a job for me?",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290592624",
+        "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
       },
       {
         "name": "Puck *Barn Cat*",
@@ -61,6 +41,26 @@
         "bio": "My name is Puck and I'm hoping to get back to the only life I've ever known, wild and free. If you're looking for a working cat for your barn or shop, you know where to find me!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1296480299",
         "url": "https://www.adoptapet.com/pet/47631318-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Princess",
+        "species": "Dog",
+        "breed": "German Shepherd Dog",
+        "age": "5 years old, Adult",
+        "gender": "Female",
+        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+      },
+      {
+        "name": "Ivy",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year old, Young",
+        "gender": "Female",
+        "bio": "Hi there, I'm Ivy! I'm a fun loving girl that is here at HSMC looking for a new place to call home. I'm very playful, adorable and ready to be YOURS! Come see me soon!*Ivy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Ivy please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595304",
+        "url": "https://www.adoptapet.com/pet/47243591-wausau-wisconsin-cat"
       },
       {
         "name": "Klaus *Barn Cat*",
@@ -133,16 +133,6 @@
         "url": "https://www.adoptapet.com/pet/47898592-wausau-wisconsin-cat"
       },
       {
-        "name": "Karuka",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 1 month old, Young",
-        "gender": "Female",
-        "bio": "Hello, my name is Karuka. I am a professional chatterbox, retired mama and belly-rub enthusiast. I came from a crowded home and then raised my 5 kittens. I am an outgoing girl who likes to know what is going on at all times. I'll follow you around the house and tell you all about my day. I am not big on being picked up, but will roll over for belly rubs all day long. I get along with other cats and dogs, and respectful kids. I am looking for a forever home where I can relax, chat with my people, soak up affection and finally enjoy life after motherhood. You'll find me at the City of Schofield Municipal Center!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303881835",
-        "url": "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat"
-      },
-      {
         "name": "Bluey",
         "species": "Other",
         "breed": "Parakeet - Other",
@@ -151,6 +141,16 @@
         "bio": "My name is Bluey! I am here with my 2 friends. A wonderful family helped us out of a situation and now we are ready for our forever home together. Our ages and history are unknown. It's all okay though, the future is bright and that is what we are looking forward to! Is your home too quiet? We can help! We like to make noise whether we are singing ourselves or making music with our toys. Come and meet us!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307225787",
         "url": "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird"
+      },
+      {
+        "name": "Karuka",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 1 month old, Young",
+        "gender": "Female",
+        "bio": "Hello, my name is Karuka. I am a professional chatterbox, retired mama and belly-rub enthusiast. I came from a crowded home and then raised my 5 kittens. I am an outgoing girl who likes to know what is going on at all times. I'll follow you around the house and tell you all about my day. I am not big on being picked up, but will roll over for belly rubs all day long. I get along with other cats and dogs, and respectful kids. I am looking for a forever home where I can relax, chat with my people, soak up affection and finally enjoy life after motherhood. You'll find me at the City of Schofield Municipal Center!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303881835",
+        "url": "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat"
       },
       {
         "name": "Penny",
@@ -190,17 +190,7 @@
         "gender": "Male",
         "bio": "Hey there, I'm Pablo! I'm a sweet boy that is here at HSMC looking for a new place to call home. I'm active, playful and super loving so you should come meet soon! I've lived with another cat before and done well so I think I could again! Come visit me soon!*Pablo is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Pablo please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1262779377",
-        "url": "https://www.adoptapet.com/pet/45671126-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Sauce",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 month old, Kitten",
-        "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310474321",
-        "url": "https://www.adoptapet.com/pet/48243395-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45671126-wausau-cat"
       },
       {
         "name": "Boone",
@@ -211,6 +201,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Dog-v3.png",
         "url": "https://www.adoptapet.com/pet/48247903-wausau-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Sauce",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 month old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310474321",
+        "url": "https://www.adoptapet.com/pet/48243395-wausau-wisconsin-cat"
       },
       {
         "name": "Buoy",
@@ -273,16 +273,6 @@
         "url": "https://www.adoptapet.com/pet/47604608-wausau-wisconsin-cat"
       },
       {
-        "name": "Porter",
-        "species": "Dog",
-        "breed": "American Pit Bull Terrier",
-        "age": "7 years 1 month old, Senior",
-        "gender": "Female",
-        "bio": "Hi friends! My name is Porter and I'm hoping to be the center of your whole world. I was found as a stray and turned over to the shelter but no owner ever called. I guess that means I'm in the market for a new owner and from what I can tell so far, I've come to the right place! There's not much I love more than stuffies and sunshine, but I'd be happy to add you to my list of favorite things. I'm social with other dogs but would need to find the right fit if I were to share my home with one. Cats and small children are a deal breaker for me. I'm ready to live a life I'm proud of with someone who will love me forever and I've got my paws crossed that someone is Y-O-U!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480913",
-        "url": "https://www.adoptapet.com/pet/47853874-wausau-wisconsin-american-pit-bull-terrier-mix"
-      },
-      {
         "name": "Pepper *Bonded Pair*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -301,6 +291,16 @@
         "bio": "Hi there, I'm Olive! I'm a sweet little lady that is hoping you will just fall in love with me! I'm very playful, snuggly and sweet so you will just love me! I'd be a great fit with other cats too! Come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304466687",
         "url": "https://www.adoptapet.com/pet/47972360-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Porter",
+        "species": "Dog",
+        "breed": "American Pit Bull Terrier",
+        "age": "7 years 1 month old, Senior",
+        "gender": "Female",
+        "bio": "Hi friends! My name is Porter and I'm hoping to be the center of your whole world. I was found as a stray and turned over to the shelter but no owner ever called. I guess that means I'm in the market for a new owner and from what I can tell so far, I've come to the right place! There's not much I love more than stuffies and sunshine, but I'd be happy to add you to my list of favorite things. I'm social with other dogs but would need to find the right fit if I were to share my home with one. Cats and small children are a deal breaker for me. I'm ready to live a life I'm proud of with someone who will love me forever and I've got my paws crossed that someone is Y-O-U!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480913",
+        "url": "https://www.adoptapet.com/pet/47853874-wausau-wisconsin-american-pit-bull-terrier-mix"
       },
       {
         "name": "Mr Winkles",
@@ -343,16 +343,6 @@
         "url": "https://www.adoptapet.com/pet/48218021-wausau-wisconsin-cat"
       },
       {
-        "name": "Baby Girl",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "15 years old, Senior",
-        "gender": "Female",
-        "bio": "Hi there, I'm Baby Girl. I know what you're thinking, how is a sweet elder feline like me in a shelter? Well, my people were moving and couldn't take me with, that's how. I'm a sweet girl that loves people and that gets along well with other cats. I'd be a purrfect fit in a quieter home who has lots of time to spend with me during my golden years. If you think I could be the cat for you come visit me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304716185",
-        "url": "https://www.adoptapet.com/pet/47982789-wausau-wisconsin-cat"
-      },
-      {
         "name": "Jensen",
         "species": "Dog",
         "breed": "Husky",
@@ -361,6 +351,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Dog-v3.png",
         "url": "https://www.adoptapet.com/pet/48243392-wausau-wisconsin-husky-mix"
+      },
+      {
+        "name": "Baby Girl",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "15 years old, Senior",
+        "gender": "Female",
+        "bio": "Hi there, I'm Baby Girl. I know what you're thinking, how is a sweet elder feline like me in a shelter? Well, my people were moving and couldn't take me with, that's how. I'm a sweet girl that loves people and that gets along well with other cats. I'd be a purrfect fit in a quieter home who has lots of time to spend with me during my golden years. If you think I could be the cat for you come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304716185",
+        "url": "https://www.adoptapet.com/pet/47982789-wausau-wisconsin-cat"
       },
       {
         "name": "Til",
@@ -490,7 +490,7 @@
         "gender": "Female",
         "bio": "Hellllooooo out there! My name is Buttercup and there are a few things you should know before you fall in love with me. 1. I'm a package deal- I was surrendered to the shelter with my mom and when I leave here, I'm taking her with me. 2. I tend to be a little on the dramatic side and am not afraid to cause a scene. 3. Cats are not my friends, I cannot go to a home with cats. 4. This is the face that could be greeting you every time you come home...",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1198387973",
-        "url": "https://www.adoptapet.com/pet/43104949-wausau-american-bulldog-mix"
+        "url": "https://www.adoptapet.com/pet/43104949-wausau-wisconsin-american-bulldog-mix"
       },
       {
         "name": "Terracotta",
@@ -540,7 +540,7 @@
         "gender": "Female",
         "bio": "My name is Nutella and I just want you to know that I'm trying my very best to be brave. I've taken it slow and steady on the road to adoption and I can't wait until it leads me home to you. I'm mostly overwhelmed in the shelter environment and have been very timid and shy. Staff have been patient and I hope that you will be, too. I would do best in a quiet home where I can be myself and truly blossom. I don't think I would mind the company of other cats or a lazy dog. Maybe you can make all of my dreams come true?*Nutella is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Nutella please visit https://www.starrynightcatcafe.com/visitLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1297128965",
-        "url": "https://www.adoptapet.com/pet/45327963-wausau-cat"
+        "url": "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat"
       },
       {
         "name": "Ludwig",
@@ -636,7 +636,7 @@
         "name": "Jake 2",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "2 years 2 months old, Adult",
+        "age": "2 years 3 months old, Adult",
         "gender": "Male",
         "bio": "Don't worry, you're not seeing double, there are two Jakes here! They call me Jake 2 and if you ask me, I'm the one you should adopt! I'm a shy guy but this tough exterior melts quickly once I get to know you. I'm happiest in the company of other cats and am used to an adult only home but am open to exploring other options. Come on in, we'll talk about it.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480899",
@@ -671,16 +671,6 @@
         "bio": "Hi there, I'm Siridean! I'm a sweet girl that made her way to HSMC as a stray. But, I know I'll soon be leaving with my forever family! I'm petite, adorable and ready to move in with you! Come visit me soon!*Siridean is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Siridean please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294837399",
         "url": "https://www.adoptapet.com/pet/46860816-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Bandita",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year old, Young",
-        "gender": "Female",
-        "bio": "Hey there, I'm Bandita! I'm a super adorable gal that is here and ready to be adopted into my forever home! I'm a great cat that gets along well with other cats and would be a purrfect fit in just about any home! Come visit me soon!*Bandita is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Bandita please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294595249",
-        "url": "https://www.adoptapet.com/pet/47323290-wausau-wisconsin-cat"
       },
       {
         "name": "Misa",
@@ -778,9 +768,29 @@
         "breed": "Domestic Shorthair",
         "age": "1 year old, Young",
         "gender": "Male",
-        "bio": "",
+        "bio": "Hey there, I'm Marston! I'm a friendly fella that is in need of a place to call home. I used to run the streets with a gang of other cats, but now I'm ready to settle down and find my true calling with my forever family. I'm a loving guy that loves people and that just can't wait to find a home. Come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311359503",
         "url": "https://www.adoptapet.com/pet/48141093-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Flappy Wingston",
+        "species": "Other",
+        "breed": "Pigeon",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311622126",
+        "url": "https://www.adoptapet.com/pet/48293285-wausau-wisconsin-bird"
+      },
+      {
+        "name": "Cassiopeia",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "3 years old, Adult",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311622132",
+        "url": "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat"
       }
     ],
     "clark": [
@@ -790,7 +800,7 @@
         "breed": "Mixed Breed.",
         "age": "Adult",
         "gender": "Female",
-        "bio": "",
+        "bio": "Meet Missy! Missy came to CCHS as a stray a couple of times in November, and after being reclaimed the first time, her owners decided to not reclaim her when she came in the second time after multiple attempts to contact them. This sweet girl is about 5 years and 8 months old and weighs roughly 42.4lbs currently. Missy is a total baby! She may have some scars, but we assure you this sweet girl is nothing but smiles and tail wags when it comes to being loved on! We can't guarantee perfection as this big baby as seen some things, but with a gentle hand and a bit of patience we can guarantee undying love and loyalty! Missy has been known to do well with other dogs but will need a meet and greets on site to make sure the pups approve of each other before making that journey home. We aren't entirely certain what her exact breed makeup is, but we can tell you she is 100% Snuggable House Hippo! With any rescue, training and socialization are incredibly important to the success of the dog. Apply for Missy today!",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f720d730-62e7-4913-a0a4-68f0acdfd3be/image/17fa5219-031b-49a4-85b7-e5d555e86080.jpg",
         "url": "https://www.petfinder.com/dog/missy-adoption-fee-sponsored-f720d730-62e7-4913-a0a4-68f0acdfd3be/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
@@ -1030,7 +1040,7 @@
         "breed": "Domestic Short Hair.",
         "age": "Kitten",
         "gender": "Female",
-        "bio": "Meet our adorable little Alfalfa. Alfalfa was born here from our cat Florence. Alfalfa is a tiny bundle of energy with a heart full of wonder. She is all black with the cutest little pure white tip on her tail! She is everything kittens should be — playful, curious, and always ready to turn anything into a toy. Whether she's chasing shadows, pouncing on crinkle balls, or tumbling over each other in a fit of silliness, this baby bring joy to every moment. Alfalfa is also wonderfully affectionate, happy to curl up for snuggles once playtime winds down. If you’re looking for a kitten who will fill your home with laughter, love, and a little bit of mischief, she's the one for you! Apply today to seal the deal.",
+        "bio": "Head back to the Petfinder home page or use the menu above. You can also contact us if you think you've reached this page in error.",
         "photo": "https://dbw3zep4prcju.cloudfront.net/animal/237caa92-8089-4f51-97a0-f548f2ed97d3/image/69ce598c-70dd-4a67-80ba-88971c745fac.jpg",
         "url": "https://www.petfinder.com/cat/alfalfa-237caa92-8089-4f51-97a0-f548f2ed97d3/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
@@ -1084,7 +1094,7 @@
         "gender": "Male",
         "bio": "Magnus is very shy and will need a patient adopter and quiet home to come out of his shell.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307832320",
-        "url": "https://www.adoptapet.com/pet/48123925-friendship-wisconsin-jack-russell-terrier-mix"
+        "url": "https://www.adoptapet.com/pet/48123925-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix"
       },
       {
         "name": "Pika",
@@ -1094,7 +1104,7 @@
         "gender": "Female",
         "bio": "The first thing people notice about Pika is that she is a senior cat, but once you meet her and she has warmed up to you, you'd never believe it.This sweet girl has had a rough life so far and she wears her fear in her gaze. She takes a fair bit to warm up, but she is learning what love is every day. She still gets scared and is easily overstimulated, so she would need someone patient and calm who will not overwhelm her as she continues to open up.She enjoys gentle belly rubs, pets on her head and shoulders (NOT her rump!), and being spoken to with soothing words of encouragement. She will give affectionate headbutts and even enjoys the rare kiss on her noggin.She is known to lash out when startled, overwhelmed, or overstimulated, but is otherwise a very gentle sweetheart. She just needs someone who will respect her peace as she overcomes years of trauma and learns how to trust. Is that somebody you?Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1292148716",
-        "url": "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/47360764-friendship-cat"
       },
       {
         "name": "Kane",
@@ -1133,7 +1143,7 @@
         "age": "2 years old, Adult",
         "gender": "Male",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309337407",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311597657",
         "url": "https://www.adoptapet.com/pet/48191708-friendship-wisconsin-dachshund-basset-hound-mix"
       },
       {
@@ -1144,17 +1154,7 @@
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1298658684",
-        "url": "https://www.adoptapet.com/pet/47721229-friendship-wisconsin-cat"
-      },
-      {
-        "name": "Tyson",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "6 months old, Puppy",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309323775",
-        "url": "https://www.adoptapet.com/pet/48191354-friendship-wisconsin-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47721229-friendship-cat"
       },
       {
         "name": "Falkor",
@@ -1165,6 +1165,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309315125",
         "url": "https://www.adoptapet.com/pet/48191029-friendship-wisconsin-mixed-breed-large-mix"
+      },
+      {
+        "name": "Tyson",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "6 months old, Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309323775",
+        "url": "https://www.adoptapet.com/pet/48191354-friendship-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Jules",
@@ -1184,7 +1194,7 @@
         "gender": "Male",
         "bio": "Ziggy is very shy and will need a patient adopter and quiet home to come out of his shell.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307832318",
-        "url": "https://www.adoptapet.com/pet/48123924-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/48123924-friendship-wisconsin-jack-russell-terrier-mix"
       },
       {
         "name": "Tasha",
@@ -1214,7 +1224,7 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307832474",
-        "url": "https://www.adoptapet.com/pet/47637089-friendship-wisconsin-terrier-unknown-type-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47637089-friendship-terrier-unknown-type-medium-mix"
       },
       {
         "name": "Fjord",
@@ -1329,7 +1339,7 @@
         "gender": "Male",
         "bio": "Ello again...In case you forgot, I'm Gretzky. I've been in foster care for a long time now and I've really got a good schedule down. I'll tell you about it if you want....First I wake up and am excited to go potty outside. It's one of my favorite times and I may bark or nip your butt with excitement. Don't worry, I'm not /that/ excited. I just really have to pee.Then I come inside and lay on my beddy. It's my favorite spot. Unfortunately, I'm what my foster calls 'a babe magnet.' This means my canine and feline roommates will come to snuggle in my beddy with me, even in very warm temperatures. I don't understand it either. So we spend the next several hours rotating beddies until lunch, when we go back outside.Much sleeping is had. And snacks.Then the garage door opens and my room mates and I loose our collective minds because foster M'mam is home! I love her.And it means we get to do the best thing ever: walkies. I love pooping when I'm on a leash. I love walking. I don't need to smell anything, I don't care. I just like to walk. Especially in the woods!Sometimes we will see people on our walk. It makes me very nervous. Sometimes they will ask to pet me. I tell them 'No Thank You' by desperately trying to get away from them. Then I am edgy the rest of the walk. What if they secretly pop out of a bush to pet me?? Sometimes my foster M'mam will lock me in the bathroom and pet me. I've gotten used to this strange habit, but I don't really like it.Then, after food smells (someti",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1124575559",
-        "url": "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium"
       },
       {
         "name": "Fortune",
@@ -1342,16 +1352,6 @@
         "url": "https://www.adoptapet.com/pet/42975074-wausau-wisconsin-shepherd-unknown-type-mix"
       },
       {
-        "name": "Bluey",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "6 months old, Young",
-        "gender": "Female",
-        "bio": "The best way to describe Bluey is a TON of fun packed into a 22 lb package. This little peanut is a high energy girl who loves life and lives it to the fullest. Bluey loves other dogs and would do best in a hone with a fur sibling who loves a good wrestling match, game of chase or tug of war. Bluey is small, mighty and fiesty so any fur sibling will have to be good with her being in their face, egging them on to play. Bluey is shy to warm up to new people but rest assured, she loves her foster humans and comes happily running when called, all excited to get loving from her humans. Shes ok with car rides, is good with the resident cat and was good with her foster parents young nephews when they visited. Shes house trained, kennel trained and walks fine on a leash. Her favorite foods are peanut butter and broccoli and she loves a good chew bone. If your looking for a pint size, fun loving pup, Bluey might just be the girl for you!You can apply for this pup at: https://www.fetchfosterandrescue.com/adopt",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304405954",
-        "url": "https://www.adoptapet.com/pet/47969416-wausau-wisconsin-mixed-breed-medium-mix"
-      },
-      {
         "name": "Caesar",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1360,6 +1360,16 @@
         "bio": "**COURTESY POST**Meet Caesar! Caesar is a big, lovable boy with an even bigger heart. This handsome Mastiff/Great Dane/Lab/Pit mix tips the scales at 88 lbs — but don’t let his size fool you. He’s a gentle giant who gets along beautifully with kids, dogs, cats, and people of all kinds.Caesar comes fully ready for his forever home: neutered, up-to-date on all vaccinations (including kennel cough), house trained, and crate trained. No medical or behavioral concerns — just a sweet, well-rounded pup looking for someone to love.He’s got a moderate-to-high energy level, so he’d thrive with a family that enjoys walks, playtime, or just an active lifestyle. He does tend to be a little cautious around men at first, but with patience and consistency, he warms right up. He just wants to know he’s safe — and once he does, he’ll be your most loyal companion.If you’re looking for a big, beautiful, good-natured dog who fits right into family life, Caesar might just be your perfect match. Apply today — we have a feeling it’ll be love at first sight. You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309346951",
         "url": "https://www.adoptapet.com/pet/48192023-wausau-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Bluey",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "6 months old, Young",
+        "gender": "Female",
+        "bio": "The best way to describe Bluey is a TON of fun packed into a 22 lb package. This little peanut is a high energy girl who loves life and lives it to the fullest. Bluey loves other dogs and would do best in a hone with a fur sibling who loves a good wrestling match, game of chase or tug of war. Bluey is small, mighty and fiesty so any fur sibling will have to be good with her being in their face, egging them on to play. Bluey is shy to warm up to new people but rest assured, she loves her foster humans and comes happily running when called, all excited to get loving from her humans. Shes ok with car rides, is good with the resident cat and was good with her foster parents young nephews when they visited. Shes house trained, kennel trained and walks fine on a leash. Her favorite foods are peanut butter and broccoli and she loves a good chew bone. If your looking for a pint size, fun loving pup, Bluey might just be the girl for you!You can apply for this pup at: https://www.fetchfosterandrescue.com/adopt",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304405954",
+        "url": "https://www.adoptapet.com/pet/47969416-wausau-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Turbo",
@@ -1492,16 +1502,6 @@
         "url": "https://www.adoptapet.com/pet/47355378-wausau-wisconsin-shiba-inu"
       },
       {
-        "name": "Scott (4)",
-        "species": "Dog",
-        "breed": "Beagle",
-        "age": "1 year 1 month old, Adult",
-        "gender": "Male",
-        "bio": "'Ello friends! I'm Scott, a boy who is in search of a very patient home as I learn what it's like to simply \"dog.\" You may see that I sometimes act like a puppy even though I'm not. So, while I navigate what's acceptable behavior and not, I need someone who is patient and understanding with their responses as I don't want to be reliving my rough past. Keep away is one of my favorite games whether you like it or not. My foster mom is trying to teach me that I can't steal socks, dishtowels, blankets, shampoo bottles or anything that I feel is fair game. Boring!Anywho, I would really love a home that has another dog for me to learn and grow with. As I'm still adjusting to this change, I've been working through some resource guarding with my high priority chew treats. So in other words, I may need someone who knows how to handle that and can be patient, especially if there's other dogs in the home. Something to also make note of is that I don't really understand personal space, so I may be in your bubble or my dog sibling's bubble without seeing an issue. My foster mom says I have \"selective hearing\" cause sometimes I can just zone her right out. I hear it's a beagle thing, but it could also be because I'm still taking in all these noises and smells. It's confusing, exciting and a bit scary at times. So, bare with me. Speaking of that, I've learned how to go up stairs, but going down still makes me feel a little leery. I'll sleep in my kennel all night, but during the day, I woul",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310538360",
-        "url": "https://www.adoptapet.com/pet/48246026-wausau-wisconsin-beagle"
-      },
-      {
         "name": "Zoey",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1510,19 +1510,19 @@
         "bio": "COURTESY POSTHi there, I’m Zoey, and I’m about to turn 1 year old on June 28th! I’m a 46.6 lb bundle of energy, love, and laughs, and I’m looking for my forever family!My Personality:I am affectionate, playful, and (if I do say so myself) pretty hilarious. I’ve gotten really good at being loving and I’m currently perfecting my cuddling technique. I promise I will make you smile every single day. I’d do best with an active family who loves to play and keep up with my fun-loving spirit!Life With Me: I’m fully housebroken — I totally know the drill! I love kids! I get super excited and may jump up and give you lots of kisses — I’m still in my puppy phase, but I’m getting better every day! I love other dogs, especially ones who can match my energy — I live for a good game of chase! Smaller animals may need a slow introduction — I’m not aggressive, I’m just VERY enthusiastic! Cats: I promise I mean no harm, but my size and energy can be a lot. A slow introduction with a gate works great and my current family’s cat and I actually play through the gate!I’m already turning into such a great dog — I just need the right family to grow with. Could that be yours?You can apply for me at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311403115",
         "url": "https://www.adoptapet.com/pet/48283622-wausau-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Scott (4)",
+        "species": "Dog",
+        "breed": "Beagle",
+        "age": "1 year 1 month old, Adult",
+        "gender": "Male",
+        "bio": "'Ello friends! I'm Scott, a boy who is in search of a very patient home as I learn what it's like to simply \"dog.\" You may see that I sometimes act like a puppy even though I'm not. So, while I navigate what's acceptable behavior and not, I need someone who is patient and understanding with their responses as I don't want to be reliving my rough past. Keep away is one of my favorite games whether you like it or not. My foster mom is trying to teach me that I can't steal socks, dishtowels, blankets, shampoo bottles or anything that I feel is fair game. Boring!Anywho, I would really love a home that has another dog for me to learn and grow with. As I'm still adjusting to this change, I've been working through some resource guarding with my high priority chew treats. So in other words, I may need someone who knows how to handle that and can be patient, especially if there's other dogs in the home. Something to also make note of is that I don't really understand personal space, so I may be in your bubble or my dog sibling's bubble without seeing an issue. My foster mom says I have \"selective hearing\" cause sometimes I can just zone her right out. I hear it's a beagle thing, but it could also be because I'm still taking in all these noises and smells. It's confusing, exciting and a bit scary at times. So, bare with me. Speaking of that, I've learned how to go up stairs, but going down still makes me feel a little leery. I'll sleep in my kennel all night, but during the day, I woul",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310538360",
+        "url": "https://www.adoptapet.com/pet/48246026-wausau-wisconsin-beagle"
       }
     ],
     "southwood": [
-      {
-        "name": "Remy",
-        "species": "Dog",
-        "breed": "Husky / Shiba Inu",
-        "age": "3 years 10 months old, Adult",
-        "gender": "Male",
-        "bio": "Meet Remy — a bright eyed Husky with a big voice!This handsome boy is full of curiosity—he loves exploring every new scent, sound, and corner of the world around him. He loves to chase after a ball for hours, running and wagging his tail, ready for 'just one more throw.' He enjoys taking a splash in the pool in the hot summer heat. He's smart and energetic and thrives when he has both mental and physical activity to keep him engaged. If you love a pup with personality and expression, you'll adore Remy! Does not do the best with cats or children. Unknown with other dogs.Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1250718716",
-        "url": "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-husky-mix"
-      },
       {
         "name": "Adam *Diabetic, In Foster*",
         "species": "Cat",
@@ -1532,6 +1532,16 @@
         "bio": "Adam is a handsome senior gentleman that would love a forever home to relax, unwind, and receive lots of love and give it in return! Adam was brought to us as a stray, and we soon realized that Adam was dealing with unmanaged diabetes. Adam has responded to his insulin very well and is back on track, and is ready for a home that is willing to help him be healthy and happy! Adam needs to be on a low-carb diet (this is easy, and we can give you a list of good foods that ARE NOT expensive!) and he also needs to eat only twice a day, and receive his insulin 30 minutes after each meal. Because his diabetes went unmanaged for an unknown length of time before he arrived to us, he does walk a bit flat on his back legs. This has gotten better now that his diabetes is managed, but he may always walk a little funny. Adam uses the litter box just fine and has no issues! He is an older gentleman though, and may need some minor help with grooming and brushing. Adam is so, so sweet and has so much love to give - please consider letting him into your heart and he will love you back tenfold!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294183225",
         "url": "https://www.adoptapet.com/pet/47360527-wisconsin-rapids-wisconsin-cat"
+      },
+      {
+        "name": "Remy",
+        "species": "Dog",
+        "breed": "Husky / Shiba Inu",
+        "age": "3 years 10 months old, Adult",
+        "gender": "Male",
+        "bio": "Meet Remy — a bright eyed Husky with a big voice!This handsome boy is full of curiosity—he loves exploring every new scent, sound, and corner of the world around him. He loves to chase after a ball for hours, running and wagging his tail, ready for 'just one more throw.' He enjoys taking a splash in the pool in the hot summer heat. He's smart and energetic and thrives when he has both mental and physical activity to keep him engaged. If you love a pup with personality and expression, you'll adore Remy! Does not do the best with cats or children. Unknown with other dogs.Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1250718716",
+        "url": "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-husky-mix"
       },
       {
         "name": "Vanilla Bean/Agatha",
@@ -1550,18 +1560,8 @@
         "age": "1 month old, Kitten",
         "gender": "Female",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311603879",
         "url": "https://www.adoptapet.com/pet/48141943-wisconsin-rapids-wisconsin-cat"
-      },
-      {
-        "name": "Loki",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 years 1 month old, Adult",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1304285722",
-        "url": "https://www.adoptapet.com/pet/47964035-wisconsin-rapids-wisconsin-cat"
       },
       {
         "name": "Salt Shaker",
@@ -1594,16 +1594,6 @@
         "url": "https://www.adoptapet.com/pet/48118719-wisconsin-rapids-wisconsin-cat"
       },
       {
-        "name": "Zara",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "4 years 3 months old, Adult",
-        "gender": "Female",
-        "bio": "Meet Zara!Zara is a beautiful 4-year-old mixed breed girl with a heart full of sunshine and a love for the great outdoors. If there’s fresh air involved, Zara is happy! Whether she’s going for a walk, exploring new scents, or simply relaxing outside in the pens watching the world go by, being outside is her absolute favorite place to be.She has a playful side too — give her a tennis ball and she’s in heaven! While she may eventually “redecorate” it by chewing it up here and there, that’s all part of the fun in her book. It’s safe to say tennis balls don’t stand a chance against this happy girl.Fun Fact- She does amazing in vehicles! Unknown with other dogs, cats, or other small animalsLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303082031",
-        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
-      },
-      {
         "name": "Isabelle AKA Izzy",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1612,6 +1602,16 @@
         "bio": "Meet Izzy—Our Sweet Angel! Izzy is a sweet mixed-breed girl who absolutely loves being around people. If you’re looking for a dog who enjoys spending time with her humans, Izzy will happily be right by your side soaking up attention and affection.She has a playful side too! Izzy loves toys—especially balls—and is always ready for a lively game of fetch or playtime. At the shelter, she also enjoys having playdates with her best friend Chica (also up for adoption!) and showing off her happy, social personality.Izzy would make a wonderful companion for someone looking for a loving, playful dog who enjoys both fun and friendship. Izzy has done well as a dog at the shelter. Unknown with cats and other small animals.Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1289362180",
         "url": "https://www.adoptapet.com/pet/47297409-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Zara",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "4 years 3 months old, Adult",
+        "gender": "Female",
+        "bio": "Meet Zara!Zara is a beautiful 4-year-old mixed breed girl with a heart full of sunshine and a love for the great outdoors. If there’s fresh air involved, Zara is happy! Whether she’s going for a walk, exploring new scents, or simply relaxing outside in the pens watching the world go by, being outside is her absolute favorite place to be.She has a playful side too — give her a tennis ball and she’s in heaven! While she may eventually “redecorate” it by chewing it up here and there, that’s all part of the fun in her book. It’s safe to say tennis balls don’t stand a chance against this happy girl.Fun Fact- She does amazing in vehicles! Unknown with other dogs, cats, or other small animalsLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303082031",
+        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Willie",
@@ -1654,6 +1654,16 @@
         "url": "https://www.adoptapet.com/pet/47997847-wisconsin-rapids-wisconsin-cat"
       },
       {
+        "name": "Lemonades",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 7 months old, Adult",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311517492",
+        "url": "https://www.adoptapet.com/pet/48288891-wisconsin-rapids-wisconsin-cat"
+      },
+      {
         "name": "Digit",
         "species": "Dog",
         "breed": "Golden Retriever",
@@ -1692,6 +1702,16 @@
         "bio": "Meet Mars!This one-year-old handsome guy is ready for his forever home! Mars loves car rides, walks, and being by your side wherever you go. He's house-trained, knows his basic commands, and an expert at napping. Mars does best with people who respect his spaces—he prefers head and chin pets as he can be a little sensitive when petted around his hips/tail area. Because of this, he'd be a better fit for a home with older kids. He enjoys other dogs and loves to play.Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295242096",
         "url": "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-labrador-retriever-mix"
+      },
+      {
+        "name": "61157621",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311603881",
+        "url": "https://www.adoptapet.com/pet/48293107-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Blossom * Hydrolyzed Protein D",
@@ -1786,6 +1806,16 @@
         "url": "https://www.adoptapet.com/pet/48205911-marshfield-wisconsin-cat"
       },
       {
+        "name": "Tiny",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "10 months old, Young",
+        "gender": "Female",
+        "bio": "If you've been looking for a calm and quiet pup, then keep on looking! My name is Tiny and I'm about 10 months old! Don't let my name fool you—I am a wild and crazy gal packed into a mighty 12-pound body! I'm a happy-go-lucky pup with a big voice and a lot of energy, but I'm still a youngster, so that's to be expected, right?! I absolutely love hanging out with my favorite people and especially the other dogs at the shelter, so I would make a fantastic companion for another canine friend. I can also be an independent gal, though, because I love to run fast zoomies around the yard and investigate all the smells. If you're looking for a fun-loving girl who can make you laugh or keep your current pup occupied, then look no further! Apply to visit me today and I'll see you soon!NOTE: every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered, blood tested and microchipped. If old enough, they receive routine vaccinations.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311646337",
+        "url": "https://www.adoptapet.com/pet/48295189-marshfield-wisconsin-mixed-breed-medium-mix"
+      },
+      {
         "name": "Moore",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1826,16 +1856,6 @@
         "url": "https://www.adoptapet.com/pet/48205237-marshfield-wisconsin-cat"
       },
       {
-        "name": "Rocky",
-        "species": "Dog",
-        "breed": "German Shepherd Dog / Husky",
-        "age": "6 years 5 months old, Adult",
-        "gender": "Male",
-        "bio": "Hi there! I'm Rocky, a handsome 6-year-old German Shepherd/Husky mix with a heart as big as my smile. I was surrendered to the shelter when my previous owner had some life changes, and I’ll be honest—it was a pretty challenging time for me at first. I wasn't quite sure what to think of my new surroundings, but the people here have been so kind. While it took me a little while to warm up and realize I was safe, my sweet and gentle personality is finally starting to surface.Now that I’m feeling more comfortable, I’ve been busy showing off my skills. I love playing with my squeaky toys, I’m a total pro on a leash, and I consider myself a professional couch snuggler. I’m very curious about other dogs at the shelter, but due to my lack of social skills, I would do best as an only pet. Because I’m a bit of a sensitive soul, older kiddos who can appreciate my nature would suit me best. I have so much affection to give, but I will need a little time and patience to adjust to a new home and routine. If you’re searching for a smart, loyal, and loving companion, I’m your boy! Apply to meet me today!Every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee has been waived in the hopes of finding me a new home soon.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307134811",
-        "url": "https://www.adoptapet.com/pet/48008911-marshfield-wisconsin-german-shepherd-dog-husky-mix"
-      },
-      {
         "name": "Espurr",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1849,7 +1869,7 @@
   },
   "scrape_status": {
     "marathon": {
-      "count": 78,
+      "count": 79,
       "status": "ok",
       "expected_min": 20
     },
@@ -1879,7 +1899,7 @@
       "expected_min": 5
     },
     "southwood": {
-      "count": 22,
+      "count": 23,
       "status": "ok",
       "expected_min": 10
     },
