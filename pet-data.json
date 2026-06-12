@@ -1,17 +1,7 @@
 {
-  "lastUpdated": "2026-06-12T16:43:27.192Z",
+  "lastUpdated": "2026-06-12T17:36:29.822Z",
   "shelters": {
     "marathon": [
-      {
-        "name": "Princess",
-        "species": "Dog",
-        "breed": "German Shepherd Dog",
-        "age": "5 years old, Adult",
-        "gender": "Female",
-        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
-      },
       {
         "name": "Verdi",
         "species": "Cat",
@@ -21,6 +11,16 @@
         "bio": "Hi there, I'm Verdi! I'm a fun loving lady that is here at HSMC looking for a new place to call home, and let me tell you - I'm a little picky! I'm a diva, and I'm not afraid to say it. I'm not a big fan of being picked up or held, but will curl up in your lap on my own terms - I just like to be in charge. I love to be spoiled and would be best as an only pet. If you think I could be the diva of my dreams then come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1251615330",
         "url": "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Thia",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 3 months old, Young",
+        "gender": "Female",
+        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!*Thia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Thia please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
+        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
       },
       {
         "name": "Juggle *Barn Cat*",
@@ -33,14 +33,14 @@
         "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
       },
       {
-        "name": "Thia",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 3 months old, Young",
+        "name": "Princess",
+        "species": "Dog",
+        "breed": "German Shepherd Dog",
+        "age": "5 years old, Adult",
         "gender": "Female",
-        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!*Thia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Thia please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
-        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
+        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
       },
       {
         "name": "Ivy",
@@ -113,16 +113,6 @@
         "url": "https://www.adoptapet.com/pet/47898592-wausau-wisconsin-cat"
       },
       {
-        "name": "Karuka",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 1 month old, Young",
-        "gender": "Female",
-        "bio": "Hello, my name is Karuka. I am a professional chatterbox, retired mama and belly-rub enthusiast. I came from a crowded home and then raised my 5 kittens. I am an outgoing girl who likes to know what is going on at all times. I'll follow you around the house and tell you all about my day. I am not big on being picked up, but will roll over for belly rubs all day long. I get along with other cats and dogs, and respectful kids. I am looking for a forever home where I can relax, chat with my people, soak up affection and finally enjoy life after motherhood. You'll find me at the City of Schofield Municipal Center!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303881835",
-        "url": "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat"
-      },
-      {
         "name": "Bluey",
         "species": "Other",
         "breed": "Parakeet - Other",
@@ -131,6 +121,16 @@
         "bio": "My name is Bluey! I am here with my 2 friends. A wonderful family helped us out of a situation and now we are ready for our forever home together. Our ages and history are unknown. It's all okay though, the future is bright and that is what we are looking forward to! Is your home too quiet? We can help! We like to make noise whether we are singing ourselves or making music with our toys. Come and meet us!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307225787",
         "url": "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird"
+      },
+      {
+        "name": "Karuka",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 1 month old, Young",
+        "gender": "Female",
+        "bio": "Hello, my name is Karuka. I am a professional chatterbox, retired mama and belly-rub enthusiast. I came from a crowded home and then raised my 5 kittens. I am an outgoing girl who likes to know what is going on at all times. I'll follow you around the house and tell you all about my day. I am not big on being picked up, but will roll over for belly rubs all day long. I get along with other cats and dogs, and respectful kids. I am looking for a forever home where I can relax, chat with my people, soak up affection and finally enjoy life after motherhood. You'll find me at the City of Schofield Municipal Center!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303881835",
+        "url": "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat"
       },
       {
         "name": "Penny",
@@ -1399,7 +1399,128 @@
         "url": "https://www.adoptapet.com/pet/46414814-merrill-wisconsin-cat"
       }
     ],
-    "nlpac": [],
+    "nlpac": [
+      {
+        "name": "Breckie",
+        "species": "Dog",
+        "breed": "American Eskimo Dog",
+        "age": "",
+        "gender": "Male",
+        "bio": "Breckie is a male American Eskimo.",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/48684/8A92992F-img_7034.jpeg",
+        "url": "https://www.nlpac.com/q/pets/breckie"
+      },
+      {
+        "name": "Bianca",
+        "species": "Cat",
+        "breed": "Domestic Short Hair - gray and white",
+        "age": "",
+        "gender": "Female",
+        "bio": "Bianca is a female DSH.",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/86309/0C7BF5F2-img_7047.jpeg",
+        "url": "https://www.nlpac.com/q/pets/bianca"
+      },
+      {
+        "name": "Brie",
+        "species": "Dog",
+        "breed": "Golden Retriever",
+        "age": "",
+        "gender": "Female",
+        "bio": "Brie is a female golden mix",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/91175/0EE37B7D-img_7583.jpeg",
+        "url": "https://www.nlpac.com/q/pets/brie"
+      },
+      {
+        "name": "Gia",
+        "species": "Dog",
+        "breed": "Poodle",
+        "age": "",
+        "gender": "Female",
+        "bio": "Gia is a female poodle",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/92298/5A1ABEC7-img_1568.jpeg",
+        "url": "https://www.nlpac.com/q/pets/gia"
+      },
+      {
+        "name": "Lady",
+        "species": "Dog",
+        "breed": "Pit Bull Terrier",
+        "age": "",
+        "gender": "Female",
+        "bio": "Lady is a female pit mix",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/91410/7B2D0A95-img_7603.jpeg",
+        "url": "https://www.nlpac.com/q/pets/lady"
+      },
+      {
+        "name": "Luna",
+        "species": "Other",
+        "breed": "Guinea Pig",
+        "age": "",
+        "gender": "Female",
+        "bio": "Luna is a female Guinea pig",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/91072/3ECABB13-img_7534.jpeg",
+        "url": "https://www.nlpac.com/q/pets/luna"
+      },
+      {
+        "name": "Mac",
+        "species": "Dog",
+        "breed": "Retriever",
+        "age": "",
+        "gender": "Male",
+        "bio": "Mac is a male Retriever mix.",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/35270/486A83C7-2b_aa0f06ce1616.jpeg",
+        "url": "https://www.nlpac.com/q/pets/mac"
+      },
+      {
+        "name": "Mario",
+        "species": "Cat",
+        "breed": "Domestic Short Hair - gray and white",
+        "age": "",
+        "gender": "Male",
+        "bio": "Mario is a male DSH",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/92754/5A13C938-img_1579.jpeg",
+        "url": "https://www.nlpac.com/q/pets/mario"
+      },
+      {
+        "name": "Nala",
+        "species": "Other",
+        "breed": "Guinea Pig",
+        "age": "",
+        "gender": "Female",
+        "bio": "Luna is a female Guinea pig",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/91073/3F0618A7-img_7537.jpeg",
+        "url": "https://www.nlpac.com/q/pets/nala"
+      },
+      {
+        "name": "Ninja",
+        "species": "Cat",
+        "breed": "Tortoiseshell",
+        "age": "",
+        "gender": "Female",
+        "bio": "Ninja is a female Tortioseshell.",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/74313/3DBAD1F3-bb_b5c075eeee48.jpeg",
+        "url": "https://www.nlpac.com/q/pets/ninja"
+      },
+      {
+        "name": "Opal",
+        "species": "Dog",
+        "breed": "Maltese",
+        "age": "",
+        "gender": "Female",
+        "bio": "Opal is a female Maltese",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/92299/D0BFD6BA-img_7722.jpeg",
+        "url": "https://www.nlpac.com/q/pets/opal"
+      },
+      {
+        "name": "Tonio",
+        "species": "Dog",
+        "breed": "Shepherd",
+        "age": "",
+        "gender": "Male",
+        "bio": "Tonio is a male shepherd",
+        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/91101/A31BC283-img_1416.jpeg",
+        "url": "https://www.nlpac.com/q/pets/tonio1"
+      }
+    ],
     "fetch": [
       {
         "name": "Gretzky",
@@ -1896,16 +2017,6 @@
         "url": "https://www.adoptapet.com/pet/48043010-marshfield-wisconsin-cat"
       },
       {
-        "name": "Petunia",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium) / Australian Shepherd",
-        "age": "7 months old, Young",
-        "gender": "Female",
-        "bio": "Hi, I'm Petunia, a sweet 7-month-old girl! I'm only about 20 lbs right now, so I'm going to grow up to be a smaller-ish dog—the perfect size for just about any adventure. It can take a bit of time for me to warm up to people and new environments, but you know what? I discovered another little dog at the shelter who also needs a home, and we became best friends instantly! We love to zoom around outside together, and after we wear ourselves out, we take a nice nap and do it all over again. Being that I can be a little shy at first, I would truly thrive in a home with another dog to learn from, hang out with, and show me the ropes. My friends here tell me I'm really cute and really smart, and I'm doing great learning my doggie manners. I do have one little puppy confession, though—I still need a bit of help finishing up my potty training! Want to give a sweet, social pup a chance at a perfect life? Apply to visit me today!Every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141518",
-        "url": "https://www.adoptapet.com/pet/48318781-marshfield-wisconsin-mixed-breed-medium-mix"
-      },
-      {
         "name": "Fancy",
         "species": "Cat",
         "breed": "Domestic Longhair",
@@ -1914,6 +2025,16 @@
         "bio": "Hi there! I’m Fancy, an 8-year-young beauty looking for my next chapter. I recently had to leave my previous home, so I’m very eager to find a cozy spot where I truly belong again. Don't let the 'senior' label fool you—I’m in my prime! I’m the perfect balance of a calm companion who loves watching birds by the window, and a playful spirit who still enjoys batting toys around when the mood strikes. I’d love to be the center of your world, but I might be open to a roommate down the road. Ready to bring some elegance into your life? Apply to visit me!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141521",
         "url": "https://www.adoptapet.com/pet/48318782-marshfield-wisconsin-cat"
+      },
+      {
+        "name": "Petunia",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium) / Australian Shepherd",
+        "age": "7 months old, Young",
+        "gender": "Female",
+        "bio": "Hi, I'm Petunia, a sweet 7-month-old girl! I'm only about 20 lbs right now, so I'm going to grow up to be a smaller-ish dog—the perfect size for just about any adventure. It can take a bit of time for me to warm up to people and new environments, but you know what? I discovered another little dog at the shelter who also needs a home, and we became best friends instantly! We love to zoom around outside together, and after we wear ourselves out, we take a nice nap and do it all over again. Being that I can be a little shy at first, I would truly thrive in a home with another dog to learn from, hang out with, and show me the ropes. My friends here tell me I'm really cute and really smart, and I'm doing great learning my doggie manners. I do have one little puppy confession, though—I still need a bit of help finishing up my potty training! Want to give a sweet, social pup a chance at a perfect life? Apply to visit me today!Every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141518",
+        "url": "https://www.adoptapet.com/pet/48318781-marshfield-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Rio",
@@ -1932,7 +2053,7 @@
         "age": "2 months old, Kitten",
         "gender": "Female",
         "bio": "Hi! My name is Nairobi, and I’m a 2-month-old playful little girl! I was raised in a loving foster home, which means I’ve already learned all about living in a house, playing with toys, and being a good little roommate. Now that I’m back at the shelter, I’m looking for a permanent spot to land. I’m very affectionate and love to play, but I’d love it even more if I could bring a friend along. Adopting kittens in pairs means we always have a buddy for napping and wrestling—and it makes your life easier, too! Don’t forget: we are BOGO! Why settle for one kitten when you can have a matching set? Apply to visit us!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312289570",
         "url": "https://www.adoptapet.com/pet/48324878-marshfield-wisconsin-cat"
       },
       {
@@ -1996,16 +2117,6 @@
         "url": "https://www.adoptapet.com/pet/48216521-marshfield-wisconsin-cat"
       },
       {
-        "name": "Pawmi",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 months old, Kitten",
-        "gender": "Female",
-        "bio": "Hi there! I’m Pawni, a 2-month-old girl who is officially ready for my forever home! My siblings and I just moved back to the shelter after a wonderful stay in a foster home, and we are practically 'pro-snugglers' now. I’m adorable, playful, and have enough affection to go around! But here is a little kitten secret: Life is better in pairs. If you adopt me with one of my siblings, we’ll keep each other busy, learn from one another, and burn off our kitten 'zoomies' together while you're at work. Best of all? We are part of a BOGO special! That’s double the purrs for one adoption fee. Apply to meet me and my crew today!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310872336",
-        "url": "https://www.adoptapet.com/pet/48205237-marshfield-wisconsin-cat"
-      },
-      {
         "name": "Phil",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2014,6 +2125,16 @@
         "bio": "Hi, my name is Phil, and I’m a sweet three-year-old boy ready to fill your home with purrs and head boops! I consider myself a professional snuggler, and there is truly nothing I love more than an open lap and all the pets you can give. I recently got a roommate, and we have become quite the pair. We are funny, playful, and guaranteed to keep you entertained with our antics! Whether you are looking for a devoted, affectionate companion for yourself or a new best friend for your current kitty, I am your guy. Apply now so you can come meet me!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310886380",
         "url": "https://www.adoptapet.com/pet/47893485-marshfield-wisconsin-cat"
+      },
+      {
+        "name": "Pawmi",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "Hi there! I’m Pawni, a 2-month-old girl who is officially ready for my forever home! My siblings and I just moved back to the shelter after a wonderful stay in a foster home, and we are practically 'pro-snugglers' now. I’m adorable, playful, and have enough affection to go around! But here is a little kitten secret: Life is better in pairs. If you adopt me with one of my siblings, we’ll keep each other busy, learn from one another, and burn off our kitten 'zoomies' together while you're at work. Best of all? We are part of a BOGO special! That’s double the purrs for one adoption fee. Apply to meet me and my crew today!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310872336",
+        "url": "https://www.adoptapet.com/pet/48205237-marshfield-wisconsin-cat"
       },
       {
         "name": "Espurr",
@@ -2069,8 +2190,8 @@
       "expected_min": 1
     },
     "nlpac": {
-      "count": 0,
-      "status": "failed",
+      "count": 12,
+      "status": "ok",
       "expected_min": 3
     },
     "fetch": {
