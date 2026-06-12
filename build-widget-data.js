@@ -67,7 +67,7 @@ function classifySpecies(breed, url) {
   const breedLower = (breed || '').toLowerCase();
   const urlRaw = (url || '').toLowerCase();
   if (
-    /shorthair|longhair|siamese|tabby|calico|persian|bengal|ragdoll/.test(breedLower) ||
+    /short\s*hair|long\s*hair|medium\s*hair|siamese|tabby|calico|persian|bengal|ragdoll|tortoiseshell|tortie|maine coon|\bdsh\b|\bdlh\b|\bdmh\b/.test(breedLower) ||
     /\bcat\b/.test(breedLower) ||
     /-cat$|-wisconsin-cat/.test(urlRaw)
   ) return 'Cat';
@@ -832,28 +832,93 @@ async function scrapeNlpac(browser) {
     return [];
   }
 
-  // Extract pet links: /q/pets/petname
-  const linkMatches = listHtml.match(/href="(\/q\/pets\/[^"]+)"/g) || [];
-  const petPaths = [...new Set(
-    linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
-  )];
+  // Extract per-pet card data from the listing page DOM. The listing is
+  // server-rendered and carries name, breed, photo, and a short bio for
+  // every pet — enough to build complete cards even when Cloudflare blocks
+  // the detail pages (which it does aggressively for datacenter IPs like
+  // GitHub Actions runners).
+  const listingCards = await listPage.evaluate(() => {
+    const cards = [];
+    document.querySelectorAll('figure.featured-pet-widget').forEach(fig => {
+      const a = fig.querySelector('a[href*="/q/pets/"]');
+      if (!a) return;
+      const path = a.getAttribute('href');
+      const nameEl = fig.querySelector('.pet-name .text span');
+      const name = nameEl ? nameEl.textContent.trim() : '';
+      const textEl = fig.querySelector('.pet-name .text');
+      let breed = textEl ? textEl.textContent.replace(/\s+/g, ' ').trim() : '';
+      if (name && breed.startsWith(name)) breed = breed.slice(name.length).trim();
+      const bioEl = fig.querySelector('figcaption p');
+      const bio = bioEl ? bioEl.textContent.replace(/ /g, ' ').replace(/\s+/g, ' ').trim() : '';
+      let photo = null;
+      const imgDiv = fig.querySelector('.pet-img');
+      if (imgDiv) {
+        const m = (imgDiv.getAttribute('style') || '').match(/url\(['"]?([^'")]+)['"]?\)/i);
+        if (m) photo = m[1];
+      }
+      cards.push({ path, name, breed, bio, photo });
+    });
+    return cards;
+  });
 
-  console.log(`  Found ${petPaths.length} pet links, fetching details...`);
+  // Pet paths: union of listing cards and raw href regex (belt and braces
+  // in case the card markup changes)
+  const linkMatches = listHtml.match(/href="(\/q\/pets\/[^"]+)"/g) || [];
+  const petPaths = [...new Set([
+    ...listingCards.map(c => c.path),
+    ...linkMatches.map(m => m.match(/href="([^"]+)"/)?.[1]).filter(Boolean)
+  ])];
+
+  console.log(`  Found ${petPaths.length} pet links (${listingCards.length} with listing-card data), fetching details...`);
   if (petPaths.length === 0) {
     saveDiag('nlpac-list', listHtml);
     await listPage.close();
     return [];
   }
+  const cardByPath = new Map(listingCards.map(c => [c.path, c]));
+
+  // Build a complete pet object from listing-card data alone — used whenever
+  // the detail page can't be reached. Breed text like "Domestic Short Hair -
+  // gray and white" and the short bio ("Breckie is a male American Eskimo.")
+  // give us species and gender.
+  const baseFromCard = (card, petUrl) => {
+    if (!card || !card.name) return null;
+    const g = (card.bio || '').match(/\b(male|female)\b/i);
+    return {
+      name: card.name,
+      species: classifySpecies(card.breed, ''),
+      breed: card.breed || '',
+      age: '',
+      gender: g ? g[1].charAt(0).toUpperCase() + g[1].slice(1).toLowerCase() : '',
+      bio: card.bio || '',
+      photo: card.photo,
+      url: petUrl
+    };
+  };
 
   // Reuse the listing page for all detail visits. New pages get fresh
   // browser contexts → fresh Cloudflare challenge each time. Reusing the
   // same page preserves the cf_clearance cookie + browser fingerprint so
   // CF treats subsequent navigations as the same already-verified visitor.
+  // Detail visits are ENRICHMENT only: every pet already has a usable card
+  // from the listing data, so a challenged detail page downgrades gracefully
+  // instead of dropping the pet.
   const petPage = listPage;
   const allPets = [];
   let firstFailureSaved = false;
+  let consecutiveCfFailures = 0;
+  let enriched = 0, listingOnly = 0;
   for (const petPath of petPaths) {
     const petUrl = `https://www.nlpac.com${petPath}`;
+    const basePet = baseFromCard(cardByPath.get(petPath), petUrl);
+
+    // Once 3 detail pages in a row stay challenged, CF is blocking this
+    // runner — stop burning ~40s per pet and ship listing data for the rest.
+    if (consecutiveCfFailures >= 3) {
+      if (basePet) { allPets.push(basePet); listingOnly++; }
+      continue;
+    }
+
     try {
       await petPage.goto(petUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       // Cloudflare often greets detail pages with the "Just a moment..."
@@ -862,15 +927,22 @@ async function scrapeNlpac(browser) {
       try {
         await petPage.waitForFunction(
           () => !/^Just a moment/i.test(document.title),
-          { timeout: 25000, polling: 500 }
+          { timeout: 12000, polling: 500 }
         );
+        consecutiveCfFailures = 0;
       } catch (_) {
-        // Timed out — page is still challenged. Save diag and skip.
+        // Timed out — page is still challenged. Fall back to listing data.
+        consecutiveCfFailures++;
         if (!firstFailureSaved) {
           firstFailureSaved = true;
           const html = await petPage.content();
           saveDiag(`nlpac-pet-${petPath.split('/').pop()}-cf-stuck`, html);
-          console.log(`    [nlpac] CF challenge did not clear on ${petPath} after 25s — diagnostic saved`);
+          console.log(`    [nlpac] CF challenge did not clear on ${petPath} after 12s — diagnostic saved`);
+        }
+        if (basePet) {
+          allPets.push(basePet);
+          listingOnly++;
+          console.log(`    ${basePet.name} (${basePet.species}) - ${basePet.breed} [listing data only]`);
         }
         continue;
       }
@@ -919,29 +991,39 @@ async function scrapeNlpac(browser) {
           saveDiag(`nlpac-pet-${petPath.split('/').pop()}`, html);
           console.log(`    [nlpac] No name extracted for ${petPath} (h1 was "${data.name}") — diagnostic saved`);
         }
+        if (basePet) { allPets.push(basePet); listingOnly++; }
         continue;
       }
 
       const animalType = data.info['Animal Type'] || '';
-      const breed = data.info['Breed'] || '';
+      const breed = data.info['Breed'] || (basePet ? basePet.breed : '');
       const age = data.info['Age'] || '';
-      const gender = data.info['Gender'] || data.info['Sex'] || '';
+      const gender = data.info['Gender'] || data.info['Sex'] || (basePet ? basePet.gender : '');
 
-      let species = 'Dog';
+      let species;
       if (animalType.toLowerCase().includes('cat')) species = 'Cat';
+      else if (animalType.toLowerCase().includes('dog')) species = 'Dog';
       else if (/guinea|hamster|rabbit|ferret|bird/i.test(animalType + ' ' + breed)) species = 'Other';
+      else species = classifySpecies(breed, '');
 
-      const pet = { name: data.name, species, breed, age, gender, bio: data.bio, photo: data.photo, url: petUrl };
-      console.log(`    ${data.name} (${species}) - ${breed}${data.photo ? '' : ' [no photo]'}`);
+      const pet = {
+        name: data.name, species, breed, age, gender,
+        bio: data.bio || (basePet ? basePet.bio : ''),
+        photo: data.photo || (basePet ? basePet.photo : null),
+        url: petUrl
+      };
+      console.log(`    ${data.name} (${species}) - ${breed}${pet.photo ? '' : ' [no photo]'}`);
       allPets.push(pet);
+      enriched++;
     } catch (err) {
       console.error(`    Error on ${petUrl}: ${err.message}`);
+      if (basePet) { allPets.push(basePet); listingOnly++; }
     }
     await new Promise(r => setTimeout(r, 400));
   }
   await petPage.close();
 
-  console.log(`  [nlpac] TOTAL: ${allPets.length} pets`);
+  console.log(`  [nlpac] TOTAL: ${allPets.length} pets (${enriched} full detail, ${listingOnly} listing-only)`);
   return allPets;
 }
 
@@ -1152,7 +1234,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac };
 
 if (require.main === module) {
   main().catch(err => {
