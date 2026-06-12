@@ -608,6 +608,60 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   });
 }
 
+// ─── PETFINDER API ───
+// Preferred over HTML scraping when credentials exist. Get a free key at
+// https://www.petfinder.com/developers and set PETFINDER_API_KEY and
+// PETFINDER_API_SECRET as GitHub Actions secrets to activate this path.
+// Returns null when no credentials are configured; throws on API errors so
+// the caller can fall back to the HTML scraper.
+async function fetchPetfinderApi(orgId) {
+  const key = process.env.PETFINDER_API_KEY, secret = process.env.PETFINDER_API_SECRET;
+  if (!key || !secret) return null;
+  const tokenRes = await fetch('https://api.petfinder.com/v2/oauth2/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `grant_type=client_credentials&client_id=${encodeURIComponent(key)}&client_secret=${encodeURIComponent(secret)}`
+  });
+  if (!tokenRes.ok) throw new Error(`token HTTP ${tokenRes.status}`);
+  const { access_token } = await tokenRes.json();
+  const animals = [];
+  let pageUrl = `https://api.petfinder.com/v2/animals?organization=${encodeURIComponent(orgId)}&status=adoptable&limit=100`;
+  for (let page = 0; page < 5 && pageUrl; page++) {
+    const res = await fetch(pageUrl, { headers: { Authorization: `Bearer ${access_token}` } });
+    if (!res.ok) throw new Error(`animals HTTP ${res.status}`);
+    const json = await res.json();
+    animals.push(...(json.animals || []));
+    const next = json.pagination && json.pagination._links && json.pagination._links.next;
+    pageUrl = next ? `https://api.petfinder.com${next.href}` : null;
+  }
+  return animals.map(mapApiAnimal).filter(p => p.name);
+}
+
+/** Map a Petfinder API v2 animal object to the widget's standard pet shape */
+function mapApiAnimal(a) {
+  const decode = s => (s || '')
+    .replace(/&amp;/g, '&').replace(/&#0?39;|&apos;|&rsquo;/g, "'")
+    .replace(/&quot;|&ldquo;|&rdquo;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ').replace(/&#\d+;/g, '');
+  const species = a.species === 'Cat' ? 'Cat' : a.species === 'Dog' ? 'Dog' : 'Other';
+  const breeds = a.breeds || {};
+  let breed = [breeds.primary, breeds.secondary].filter(Boolean).join(' / ');
+  if (breeds.mixed && breed && !/mix/i.test(breed)) breed += ' Mix';
+  const photo = (a.photos && a.photos[0] && (a.photos[0].large || a.photos[0].medium || a.photos[0].small)) || null;
+  return {
+    name: decode(a.name).trim(),
+    species,
+    breed: breed || 'Unknown',
+    age: a.age || '',
+    gender: a.gender || '',
+    // API descriptions are truncated by Petfinder (~250 chars) — still better
+    // than nothing, and the pet's detail page has the full story.
+    bio: decode(a.description || '').trim(),
+    photo,
+    url: a.url ? a.url.split('?')[0] : ''
+  };
+}
+
 // ─── PETFINDER SCRAPER ───
 // Clark County's Petfinder page has pet cards with images and links
 async function scrapePetfinder(browser, shelterSlug, shelterKey) {
@@ -1062,12 +1116,27 @@ async function main() {
     'marathon'
   );
   
-  // Clark County — Petfinder
-  data.shelters.clark = await scrapePetfinder(
-    browser,
-    'neillsville/clark-county-humane-society-wi34',
-    'clark'
-  );
+  // Clark County — Petfinder. Official API when credentials are configured
+  // (reliable, structured data); HTML scraper otherwise or on any API error.
+  data.shelters.clark = null;
+  try {
+    const apiPets = await fetchPetfinderApi('WI34');
+    if (apiPets && apiPets.length > 0) {
+      console.log(`\n[clark] Petfinder API: ${apiPets.length} pets`);
+      data.shelters.clark = apiPets;
+    } else if (apiPets) {
+      console.log('\n[clark] Petfinder API returned 0 pets — falling back to HTML scrape');
+    }
+  } catch (err) {
+    console.log(`\n[clark] Petfinder API failed (${err.message}) — falling back to HTML scrape`);
+  }
+  if (!data.shelters.clark) {
+    data.shelters.clark = await scrapePetfinder(
+      browser,
+      'neillsville/clark-county-humane-society-wi34',
+      'clark'
+    );
+  }
   
   // Adams County — Adoptapet
   data.shelters.adams = await scrapeAdoptapet(
@@ -1150,6 +1219,8 @@ async function main() {
   }
 
 
+  computeFirstSeen(previous, data);
+
   // Health check: classify each shelter as ok / low / failed so a silent outage
   // shows up in the JSON instead of just looking like a quiet day.
   // EXPECTED_MIN = a floor below which we treat the result as suspicious. Tuned
@@ -1199,6 +1270,42 @@ async function main() {
 }
 
 /**
+ * Track when each pet first appeared so the widget can badge new arrivals
+ * and spotlight the longest-waiting animals. Persists a url → ISO-date map
+ * in pet-data.json (data.firstSeen) and stamps each pet object.
+ *
+ * Pets already listed when tracking began get null (age unknown) rather
+ * than a misleading "new" date — and that null is persisted so they never
+ * get mistaken for new arrivals later. Entries for pets that vanish are
+ * kept (scrape hiccups happen; a reappearing pet keeps its original date)
+ * unless the map balloons past 3000 entries.
+ */
+function computeFirstSeen(previous, data) {
+  const prevSeen = (previous && previous.firstSeen) || null;
+  data.firstSeen = {};
+  for (const pets of Object.values(data.shelters)) {
+    for (const pet of pets) {
+      if (!pet.url) continue;
+      let seen;
+      if (prevSeen && Object.prototype.hasOwnProperty.call(prevSeen, pet.url)) seen = prevSeen[pet.url];
+      else if (!prevSeen) seen = null; // tracking starts now; existing pets have unknown age
+      else seen = data.lastUpdated;    // genuinely new since the last run
+      data.firstSeen[pet.url] = seen;
+      if (seen) pet.firstSeen = seen;
+    }
+  }
+  if (prevSeen) {
+    for (const [url, seen] of Object.entries(prevSeen)) {
+      if (!(url in data.firstSeen) && Object.keys(data.firstSeen).length < 3000) {
+        data.firstSeen[url] = seen;
+      }
+    }
+  }
+  const newCount = Object.values(data.shelters).flat().filter(p => p.firstSeen === data.lastUpdated).length;
+  if (newCount > 0) console.log(`  [firstSeen] ${newCount} new pet(s) since last run`);
+}
+
+/**
  * Refresh the widget's baked-in fallback so it is never older than the last
  * successful build. Replaces the marker-delimited FALLBACK_DATA and
  * FALLBACK_META blocks in adopt-widget.html. The JSON is embedded inside a
@@ -1234,7 +1341,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, computeFirstSeen, fetchPetfinderApi, mapApiAnimal };
 
 if (require.main === module) {
   main().catch(err => {

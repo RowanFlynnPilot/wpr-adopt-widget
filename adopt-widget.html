@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adopt a Pet — Wausau Pilot & Review</title>
+<!-- Social share previews (Facebook/Messenger/etc. read these when a pet link is shared) -->
+<meta property="og:title" content="Adopt a Pet — Central Wisconsin Shelters">
+<meta property="og:description" content="Adoptable dogs, cats, and small animals from eight central Wisconsin shelters — updated twice daily by Wausau Pilot & Review.">
+<meta property="og:image" content="https://rowanflynnpilot.github.io/wpr-adopt-widget/logos/share-image.jpg">
+<meta property="og:url" content="https://rowanflynnpilot.github.io/wpr-adopt-widget/adopt-widget.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -139,6 +146,13 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   cursor:pointer;text-decoration:none;color:inherit;display:block;
 }
 .pet-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.pet-card{position:relative}
+.new-badge{
+  position:absolute;top:8px;left:8px;z-index:1;
+  background:var(--teal);color:#fff;font-size:.66rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.04em;
+  padding:3px 9px;border-radius:100px;box-shadow:0 1px 4px rgba(0,0,0,.25);
+}
 .pet-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 20%;background:var(--sand);display:block}
 .pet-card-img-placeholder{
   width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
@@ -291,6 +305,32 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 }
 .share-menu a:hover{background:var(--teal-bg)}
 .share-wrap{position:relative}
+/* Native share (Instagram & more) only shows where the Web Share API exists (phones/tablets) */
+.share-menu a.share-native{display:none}
+.can-native-share .share-menu a.share-native{display:flex}
+
+/* ─── LONGEST-WAITING SPOTLIGHT ─── */
+.spotlight{
+  background:linear-gradient(135deg,var(--teal-bg) 0%,#f4f1ea 100%);
+  border:1px solid #c8e0da;border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:20px;
+}
+.spotlight-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:.95rem;font-weight:700;
+  margin-bottom:10px;color:var(--ink);
+}
+.spotlight-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:2px}
+.spotlight-card{
+  flex:1 1 0;min-width:170px;display:flex;align-items:center;gap:10px;
+  background:var(--card-bg);border:1px solid var(--border);border-radius:8px;
+  padding:8px 10px;cursor:pointer;transition:box-shadow .15s,transform .15s;
+}
+.spotlight-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.spotlight-card img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--sand)}
+.spotlight-info{min-width:0;display:flex;flex-direction:column;line-height:1.35}
+.spotlight-info strong{font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotlight-info span{font-size:.72rem;color:var(--slate);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spotlight-info em{font-size:.68rem;color:var(--teal-dark);font-style:normal;font-weight:600}
 
 @media(max-width:640px){
   .adopt-widget{padding:0 10px 28px}
@@ -404,6 +444,8 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 <script>
 // Detect iframe embedding and add class for CSS adjustments
 if(window.parent!==window)document.documentElement.classList.add('in-iframe');
+// Web Share API (phones/tablets) unlocks the "Instagram & more" share entry
+if(navigator.share)document.documentElement.classList.add('can-native-share');
 
 const SHELTERS={
   marathon:{name:'Humane Society of Marathon County',location:'Wausau, WI',address:'7001 Packer Dr, Wausau, WI 54401',hours:'Mon, Tue, Fri, Sat: 12–5 PM · Thu: 12–7 PM · Wed, Sun: Closed',website:'https://catsndogs.org/Content/Available-Pets.cfm',allPetsUrl:'https://www.adoptapet.com/shelter/77626/available-pets',icon:'🐕',logo:'logos/marathon.svg',phone:'715-845-2810',email:'info@catsndogs.org',mapsQuery:'Humane+Society+of+Marathon+County+Wausau+WI'},
@@ -584,8 +626,9 @@ function card(p,shelterKey){
   const shareSubject=encodeURIComponent(`Check out ${p.name} — adoptable pet!`);
   const shareBody=encodeURIComponent(`I found ${p.name} (${p.breed}) on the Wausau Pilot & Review adoptable pets page!\n\n${shareUrl}`);
   const smsBody=encodeURIComponent(`Check out ${p.name} (${p.breed}) — adoptable! ${shareUrl}`);
+  const isNew=p.firstSeen&&(Date.now()-new Date(p.firstSeen).getTime())<8*86400000;
   return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;openPetModal('${pid}')" title="Learn more about ${esc(p.name)}">
-    ${img}<div class="pet-card-body">
+    ${isNew?'<span class="new-badge">✨ New</span>':''}${img}<div class="pet-card-body">
     <div class="pet-card-name">${esc(p.name)}</div>
     <div class="pet-card-breed">${esc(p.breed)}${p.age?' · '+esc(p.age):''}</div>
     ${isNewArrival(p)?`<div class="pet-card-bio" style="font-style:italic">${NEW_ARRIVAL_BIO}</div>`:p.bio&&!/no story|Contact this organization/i.test(p.bio)?`<div class="pet-card-bio">${esc(p.bio.replace(/\x60/g,"'"))}</div>`:''}
@@ -595,6 +638,8 @@ function card(p,shelterKey){
       <div class="share-wrap">
         <button class="share-btn" onclick="event.stopPropagation();toggleShare('${uid}')">↗ Share</button>
         <div class="share-menu" id="${uid}">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📘 Facebook</a>
+          <a href="#" class="share-native" onclick="event.preventDefault();event.stopPropagation();shareNative('${pid}')">📸 Instagram &amp; more</a>
           <a href="mailto:?subject=${shareSubject}&body=${shareBody}" onclick="event.stopPropagation()">✉️ Email</a>
           <a href="sms:?&body=${smsBody}" onclick="event.stopPropagation()">💬 Text</a>
           <a href="#" onclick="event.preventDefault();event.stopPropagation();copyLink('${shareUrl}',this)">🔗 Copy Link</a>
@@ -670,6 +715,45 @@ function countByType(type){
   return c;
 }
 
+// ═══ LONGEST-WAITING SPOTLIGHT ═══
+// The pets who've been listed the longest get a dedicated strip up top —
+// they're the ones who need the visibility boost most. Uses tracked
+// firstSeen dates once 3+ pets have them; until then falls back to
+// Adoptapet listing IDs (lower ID = listed longer).
+function spotlightHtml(){
+  if(activeShelter!=='all'||activeAnimal!=='all'||activeSearch)return'';
+  const candidates=[];
+  Object.keys(SHELTERS).forEach(k=>(PET_DATA[k]||[]).forEach(p=>{
+    if(isNewArrival(p)||!p.photo||!petIdFromUrl(p.url))return;
+    if(/More (Pets|Dogs|Cats) Available/i.test(p.name||''))return;
+    candidates.push({p,k});
+  }));
+  const tracked=candidates.filter(e=>e.p.firstSeen);
+  let pick;
+  if(tracked.length>=3){
+    tracked.sort((a,b)=>new Date(a.p.firstSeen)-new Date(b.p.firstSeen));
+    pick=tracked.slice(0,3);
+  }else{
+    const withId=candidates.filter(e=>/adoptapet\.com\/pet\/\d+/.test(e.p.url||''));
+    withId.sort((a,b)=>{
+      const ai=parseInt((a.p.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
+      const bi=parseInt((b.p.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
+      return ai-bi;
+    });
+    pick=withId.slice(0,3);
+  }
+  if(pick.length<3)return'';
+  return`<div class="spotlight"><div class="spotlight-title">🏠 Waiting the longest for a home</div><div class="spotlight-row">${
+    pick.map(e=>{
+      const pid=petIdFromUrl(e.p.url);
+      const since=e.p.firstSeen
+        ?'Waiting since '+new Date(e.p.firstSeen).toLocaleDateString('en-US',{month:'short',day:'numeric'})
+        :SHELTERS[e.k].location;
+      return`<div class="spotlight-card" onclick="openPetModal('${pid}')" title="Learn more about ${esc(e.p.name)}"><img src="${esc(e.p.photo)}" alt="Photo of ${esc(e.p.name)}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="spotlight-info"><strong>${esc(e.p.name)}</strong><span>${esc(e.p.breed)}</span><em>${since}</em></div></div>`;
+    }).join('')
+  }</div></div>`;
+}
+
 function render(){
   const keys=activeShelter==='all'?Object.keys(SHELTERS):[activeShelter];
   const total=countByType(activeAnimal);
@@ -679,6 +763,7 @@ function render(){
   const updatedTs=DATA_META.lastUpdated?fmtDateTime(DATA_META.lastUpdated):'';
   contentEl.innerHTML=
     `<div class="status-banner">🐾 ${bannerText}. Click any pet for full details.${updatedTs?`<span class="banner-updated"> · Updated ${updatedTs}</span>`:''}</div>`+
+    spotlightHtml()+
     keys.map(section).join('');
   // Hide "Other" filter button when no "other" animals exist in current shelter scope
   const otherBtn=document.querySelector('#animalFilter .filter-btn[data-type="other"]');
@@ -766,6 +851,33 @@ function copyLink(url,el){
 }
 // Close share menus when clicking outside
 document.addEventListener('click',e=>{if(!e.target.closest('.share-wrap'))document.querySelectorAll('.share-menu.open').forEach(m=>m.classList.remove('open'))});
+
+// Native share sheet (mobile) — the route to Instagram, Messenger, WhatsApp,
+// etc. Instagram has no web share URL, so the OS share sheet is the only way
+// a website can hand a pet to it. When the platform supports file sharing we
+// attach the pet's photo, which lets Instagram Stories/DM carry the picture.
+async function shareNative(pid){
+  document.querySelectorAll('.share-menu.open').forEach(m=>m.classList.remove('open'));
+  const entry=_petStore[pid];
+  if(!entry||!navigator.share)return;
+  const p=entry.pet;
+  const shareUrl=`${WIDGET_SHARE_BASE}#pet/${pid}`;
+  const text=`Meet ${p.name}, a ${p.breed} looking for a forever home in central Wisconsin!`;
+  try{
+    if(p.photo&&navigator.canShare){
+      const res=await fetch(p.photo,{mode:'cors'});
+      if(res.ok){
+        const blob=await res.blob();
+        const file=new File([blob],(p.name||'pet').replace(/[^a-z0-9]/gi,'-').toLowerCase()+'.jpg',{type:blob.type||'image/jpeg'});
+        if(navigator.canShare({files:[file]})){
+          await navigator.share({files:[file],title:`Adopt ${p.name}!`,text:`${text} ${shareUrl}`});
+          return;
+        }
+      }
+    }
+  }catch(_){/* image share unavailable — fall through to link share */}
+  try{await navigator.share({title:`Adopt ${p.name}!`,text,url:shareUrl})}catch(_){/* user cancelled the sheet */}
+}
 
 // ═══ PET DETAIL MODAL ═══
 function openPetModal(pid,opts){

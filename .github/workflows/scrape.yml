@@ -22,7 +22,13 @@ jobs:
       - uses: actions/checkout@v6
       - run: npm install
       - run: npx puppeteer browsers install chrome
+      # Petfinder official API activates when these secrets are configured
+      # (free key: https://www.petfinder.com/developers); HTML scraping
+      # remains the fallback either way.
       - run: node build-widget-data.js
+        env:
+          PETFINDER_API_KEY: ${{ secrets.PETFINDER_API_KEY }}
+          PETFINDER_API_SECRET: ${{ secrets.PETFINDER_API_SECRET }}
       - name: Push results
         run: |
           git config user.name "WPR Pet Bot"
