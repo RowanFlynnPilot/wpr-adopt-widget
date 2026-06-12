@@ -9,13 +9,17 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  issues: write
+# Never run two scrapes at once — overlapping runs would race on the git push
+concurrency:
+  group: scrape-pets
+  cancel-in-progress: false
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6
-      - run: ls -la
-      - run: cat package.json
       - run: npm install
       - run: npx puppeteer browsers install chrome
       - run: node build-widget-data.js
@@ -32,4 +36,31 @@ jobs:
           date -u > docs/update-log.txt
           git add -A
           git commit -m "🐾 Update pet data" || true
-          git push --force origin main
+          # Rebase instead of force-push so a manual commit landed mid-run isn't clobbered
+          git pull --rebase origin main
+          git push origin main
+      # Runs AFTER the push so healthy shelters still publish; a failed or
+      # stale shelter turns the run red and triggers the alert step below.
+      - name: Health check
+        run: node check-scrape-health.js
+      - name: Alert — open issue when scrapes fail
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Pet scraper failure: one or more shelters need attention"
+          EXISTING=$(gh issue list --state open --search "Pet scraper failure in:title" --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            echo "Open alert issue #$EXISTING already exists — not creating another."
+            exit 0
+          fi
+          DETAILS=$(node check-scrape-health.js 2>&1 || true)
+          gh issue create --title "$TITLE" --body "The scheduled scrape run failed its health check.
+
+          \`\`\`
+          $DETAILS
+          \`\`\`
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          Check the \`docs/diag-*.html\` snapshots to see what the blocked pages returned. This issue was opened automatically by the scrape workflow; close it once scrapes are healthy again."

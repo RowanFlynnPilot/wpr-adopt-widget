@@ -57,6 +57,29 @@ async function makePage(browser) {
   return page;
 }
 
+/**
+ * Classify species from breed and listing URL ONLY — never from the pet's
+ * name or free-text details. A Pit Bull named "Finch" or a dog named "Bunny"
+ * must not be classified as a bird/small-animal. Adoptapet URL slugs are
+ * {id}-{city}-{state}-{breed}, so the URL carries breed info but not names.
+ */
+function classifySpecies(breed, url) {
+  const breedLower = (breed || '').toLowerCase();
+  const urlRaw = (url || '').toLowerCase();
+  if (
+    /shorthair|longhair|siamese|tabby|calico|persian|bengal|ragdoll/.test(breedLower) ||
+    /\bcat\b/.test(breedLower) ||
+    /-cat$|-wisconsin-cat/.test(urlRaw)
+  ) return 'Cat';
+  // Rat Terrier is a dog breed — strip before small-animal keyword matching
+  const text = `${breedLower} ${urlRaw.replace(/-/g, ' ')}`.replace(/\brat terriers?\b/g, '');
+  if (
+    /\b(rats?|mouse|mice|hamsters?|guinea pigs?|cavy|rabbits?|bunny|bunnies|ferrets?|gerbils?|hedgehogs?|chinchillas?|lizards?|reptiles?|turtles?|tortoises?|snakes?|geckos?|parakeets?|cockatiels?|parrots?|birds?|finch|finches|canary|canaries|rodents?)\b/.test(text) ||
+    /small animal/.test(text)
+  ) return 'Other';
+  return 'Dog';
+}
+
 // ─── ADOPTAPET SCRAPER ───
 // Adoptapet uses client-side pagination. The shelter page shows 12 pets/page but
 // /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
@@ -139,7 +162,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             // If name looks like concatenated blob (e.g. "AdaDomestic ShorthairFemale, 11 mos"), take only the pet name part
             if (name.length > 35 || /Domestic|Shorthair|Longhair|Female|Male|Friendship|,?\s*\d+\s*(?:yr|mo|wk)/i.test(name)) {
               const cleaned = name.replace(/(Domestic\s*)?(Shorthair|Longhair|Mediumhair)?\s*(Male|Female).*$/i, '').trim();
-              name = (cleaned || name.substring(0, 30)).trim();
+              // Truncate at a word boundary so we don't ship names like "Blossom * Hydrolyzed Protein D"
+              let cut = name.substring(0, 30);
+              if (name.length > 30 && cut.includes(' ')) cut = cut.substring(0, cut.lastIndexOf(' '));
+              name = (cleaned || cut).trim();
             }
           }
           let breed = textLines[1] || '';
@@ -316,6 +342,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const unique = new Map();
   allPets.forEach(p => { if (!unique.has(p.url)) unique.set(p.url, p); });
   allPets = Array.from(unique.values());
+
+  // Pure-numeric "names" are scrape artifacts (animal IDs like "61157621") —
+  // clear them so the bio fetcher recovers the real name from the detail page.
+  allPets.forEach(p => { if (/^\d+$/.test((p.name || '').trim())) p.name = ''; });
 
   // Fetch bio from each pet's detail page (Adoptapet lists only name/breed/age on listing)
   if (allPets.length > 0) {
@@ -494,9 +524,10 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     }
   }
   
-  // Filter out pets with no name or error page names
+  // Filter out pets with no name, error page names, or numeric ID names
   allPets = allPets.filter(p => {
     if (!p.name || p.name.length === 0) return false;
+    if (/^\d+$/.test(p.name.trim())) return false;
     if (/oops|something.*gone wrong|error|not found|page.*not/i.test(p.name)) return false;
     return true;
   });
@@ -559,20 +590,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
       }
     }
 
-    const lowerAll = `${breed} ${p.name} ${raw} ${(p.url || '')}`.toLowerCase();
-
-    const isCat =
-      /shorthair|longhair|siamese|tabby|calico|persian|bengal|ragdoll/.test(
-        (breed || '').toLowerCase()
-      ) || /-cat$|-wisconsin-cat/.test(p.url || '');
-
-    const isOther = /rat|mouse|mice|hamster|guinea|cavy|rabbit|bunny|ferret|gerbil|hedgehog|chinchilla|lizard|reptile|turtle|tortoise|snake|gecko|parakeet|cockatiel|parrot|bird|finch|canary|small animal|rodent/.test(
-      lowerAll
-    );
-
-    let species = 'Dog';
-    if (isCat) species = 'Cat';
-    else if (isOther) species = 'Other';
+    const species = classifySpecies(breed, p.url);
 
     // Clean up name: strip "My name is X!" prefix from Adoptapet detail pages
     let cleanName = (p.name || '').replace(/^My name is\s+/i, '').replace(/!$/, '').trim();
@@ -949,6 +967,11 @@ async function main() {
     lastUpdated: new Date().toISOString(),
     shelters: {}
   };
+
+  // Previous run's output — used to carry forward last-known-good listings
+  // when a scrape comes back empty (bot block, layout change, site outage).
+  let previous = null;
+  try { previous = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')); } catch (_) {}
   
   // Marathon County — Adoptapet
   data.shelters.marathon = await scrapeAdoptapet(
@@ -1022,7 +1045,29 @@ async function main() {
     const removed = before - data.shelters[key].length;
     if (removed > 0) console.log(`  [dedup] Removed ${removed} cross-listed pets from ${key}`);
   }
-  
+
+  // Carry forward last-known-good listings when a scrape returns nothing.
+  // An empty result almost always means a bot block or layout change, not an
+  // empty shelter — yesterday's real pets beat months-old hardcoded fallback.
+  // Carried data expires after MAX_STALE_DAYS so adopted pets don't linger.
+  const MAX_STALE_DAYS = 14;
+  const staleSince = {};
+  for (const key of Object.keys(data.shelters)) {
+    if (data.shelters[key].length > 0) continue;
+    const prevPets = previous && previous.shelters && previous.shelters[key];
+    if (!Array.isArray(prevPets) || prevPets.length === 0) continue;
+    const since = (previous.scrape_status && previous.scrape_status[key] && previous.scrape_status[key].staleSince) || previous.lastUpdated;
+    const ageDays = (Date.now() - new Date(since).getTime()) / 86400000;
+    if (!since || isNaN(ageDays) || ageDays > MAX_STALE_DAYS) {
+      console.log(`  [carry] ${key}: scrape returned 0 and last good data is too old to reuse`);
+      continue;
+    }
+    data.shelters[key] = prevPets;
+    staleSince[key] = since;
+    console.log(`  [carry] ${key}: scrape returned 0 — carried forward ${prevPets.length} pets from last good run (stale since ${since})`);
+  }
+
+
   // Health check: classify each shelter as ok / low / failed so a silent outage
   // shows up in the JSON instead of just looking like a quiet day.
   // EXPECTED_MIN = a floor below which we treat the result as suspicious. Tuned
@@ -1035,9 +1080,11 @@ async function main() {
   for (const [key, pets] of Object.entries(data.shelters)) {
     const count = pets.length;
     let status = 'ok';
-    if (count === 0) status = 'failed';
+    if (staleSince[key]) status = 'stale';
+    else if (count === 0) status = 'failed';
     else if (count < (EXPECTED_MIN[key] ?? 1)) status = 'low';
     data.scrape_status[key] = { count, status, expected_min: EXPECTED_MIN[key] ?? 1 };
+    if (staleSince[key]) data.scrape_status[key].staleSince = staleSince[key];
   }
 
   // Summary
@@ -1048,8 +1095,7 @@ async function main() {
   for (const [key, pets] of Object.entries(data.shelters)) {
     const dogs = pets.filter(p => p.species === 'Dog').length;
     const cats = pets.filter(p => p.species === 'Cat').length;
-    const mark = data.scrape_status[key].status === 'ok' ? ' ' :
-                 data.scrape_status[key].status === 'low' ? '!' : 'X';
+    const mark = { ok: ' ', low: '!', stale: '~' }[data.scrape_status[key].status] || 'X';
     console.log(`║ ${mark}${key.padEnd(11)} ${String(pets.length).padStart(3)} pets (${dogs} dogs, ${cats} cats)`.padEnd(51) + '║');
     total += pets.length;
   }
@@ -1057,28 +1103,60 @@ async function main() {
   console.log(`║  TOTAL: ${total} pets`.padEnd(51) + '║');
   const failed = Object.entries(data.scrape_status).filter(([,s]) => s.status === 'failed').map(([k]) => k);
   const low = Object.entries(data.scrape_status).filter(([,s]) => s.status === 'low').map(([k]) => k);
+  const stale = Object.entries(data.scrape_status).filter(([,s]) => s.status === 'stale').map(([k]) => k);
   if (failed.length) console.log(`║  FAILED: ${failed.join(', ')}`.padEnd(51) + '║');
   if (low.length) console.log(`║  LOW:    ${low.join(', ')}`.padEnd(51) + '║');
+  if (stale.length) console.log(`║  STALE:  ${stale.join(', ')}`.padEnd(51) + '║');
   console.log('╚══════════════════════════════════════════════════╝');
   
   // Write output
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2));
   console.log(`\n✅ Saved to ${OUTPUT_FILE}`);
 
-  // Inject built data into widget HTML so Lincoln (and all shelters) show live data without needing pet-data.json
-  const widgetPath = path.join(__dirname, 'adopt-widget.html');
-  if (fs.existsSync(widgetPath)) {
-    let html = fs.readFileSync(widgetPath, 'utf8');
-    const inject = 'const PET_DATA=' + JSON.stringify(data.shelters) + ';';
-    const replaced = html.replace(/const PET_DATA=\{[\s\S]*?  \]\n\};/, inject);
-    if (replaced !== html) {
-      fs.writeFileSync(widgetPath, replaced);
-      console.log('✅ Injected pet data into adopt-widget.html');
-    }
-  }
+  injectIntoWidget(data, path.join(__dirname, 'adopt-widget.html'));
 }
 
-main().catch(err => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+/**
+ * Refresh the widget's baked-in fallback so it is never older than the last
+ * successful build. Replaces the marker-delimited FALLBACK_DATA and
+ * FALLBACK_META blocks in adopt-widget.html. The JSON is embedded inside a
+ * <script> tag, so "<" is escaped to keep a literal "</script>" in a pet bio
+ * from terminating the script element.
+ */
+function injectIntoWidget(data, widgetPath) {
+  if (!fs.existsSync(widgetPath)) return;
+  const html = fs.readFileSync(widgetPath, 'utf8');
+  const embed = obj => JSON.stringify(obj).replace(/</g, '\\u003c');
+  const blocks = [
+    {
+      name: 'FALLBACK_DATA',
+      re: /\/\*FALLBACK_DATA_START\*\/[\s\S]*?\/\*FALLBACK_DATA_END\*\//,
+      text: `/*FALLBACK_DATA_START*/\nconst FALLBACK_DATA=${embed(data.shelters)};\n/*FALLBACK_DATA_END*/`
+    },
+    {
+      name: 'FALLBACK_META',
+      re: /\/\*FALLBACK_META_START\*\/[\s\S]*?\/\*FALLBACK_META_END\*\//,
+      text: `/*FALLBACK_META_START*/\nconst FALLBACK_META=${embed({ lastUpdated: data.lastUpdated, scrape_status: data.scrape_status })};\n/*FALLBACK_META_END*/`
+    }
+  ];
+  let out = html;
+  for (const { name, re, text } of blocks) {
+    if (!re.test(out)) {
+      console.warn(`⚠️  ${name} markers not found in adopt-widget.html — fallback NOT refreshed`);
+      return;
+    }
+    // Replacement via function so "$" sequences in pet bios aren't treated as substitution patterns
+    out = out.replace(re, () => text);
+  }
+  fs.writeFileSync(widgetPath, out);
+  console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
+}
+
+module.exports = { classifySpecies, injectIntoWidget };
+
+if (require.main === module) {
+  main().catch(err => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}
