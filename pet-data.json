@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-06-13T05:23:34.271Z",
+  "lastUpdated": "2026-06-13T14:58:18.390Z",
   "shelters": {
     "marathon": [
+      {
+        "name": "Princess",
+        "species": "Dog",
+        "breed": "German Shepherd Dog",
+        "age": "5 years old, Adult",
+        "gender": "Female",
+        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
+        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+      },
       {
         "name": "Verdi",
         "species": "Cat",
@@ -11,16 +21,6 @@
         "bio": "Hi there, I'm Verdi! I'm a fun loving lady that is here at HSMC looking for a new place to call home, and let me tell you - I'm a little picky! I'm a diva, and I'm not afraid to say it. I'm not a big fan of being picked up or held, but will curl up in your lap on my own terms - I just like to be in charge. I love to be spoiled and would be best as an only pet. If you think I could be the diva of my dreams then come visit me soon!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1251615330",
         "url": "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Thia",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 3 months old, Young",
-        "gender": "Female",
-        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!*Thia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Thia please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
-        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
       },
       {
         "name": "Juggle *Barn Cat*",
@@ -33,14 +33,14 @@
         "url": "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat"
       },
       {
-        "name": "Princess",
-        "species": "Dog",
-        "breed": "German Shepherd Dog",
-        "age": "5 years old, Adult",
+        "name": "Thia",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 3 months old, Young",
         "gender": "Female",
-        "bio": "Hi humans! My name is Princess. I thought I had a forever home but it just wouldn't stick so I'm back in these kennels once again. Here's what you should know- I'm a sweet and playful girl who deserves the forever kind of love. It's looking like I'll be happiest as the only dog in the home and the jury is still out when it comes to me having any future friendships with cats. I think we'll have to learn the rest about each other as we go- are you in?!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1241945547",
-        "url": "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix"
+        "bio": "Hi there, I'm Thia! I'm a sweet girl that came to HSMC after being found as a stray. I'm a very loving girl that loves people and that would be a purrfect fit in any home! Come visit me soon!*Thia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Thia please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294550057",
+        "url": "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat"
       },
       {
         "name": "Ivy",
@@ -113,16 +113,6 @@
         "url": "https://www.adoptapet.com/pet/47898592-wausau-wisconsin-cat"
       },
       {
-        "name": "Bluey",
-        "species": "Other",
-        "breed": "Parakeet - Other",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "My name is Bluey! I am here with my 2 friends. A wonderful family helped us out of a situation and now we are ready for our forever home together. Our ages and history are unknown. It's all okay though, the future is bright and that is what we are looking forward to! Is your home too quiet? We can help! We like to make noise whether we are singing ourselves or making music with our toys. Come and meet us!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307225787",
-        "url": "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird"
-      },
-      {
         "name": "Karuka",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -131,6 +121,16 @@
         "bio": "Hello, my name is Karuka. I am a professional chatterbox, retired mama and belly-rub enthusiast. I came from a crowded home and then raised my 5 kittens. I am an outgoing girl who likes to know what is going on at all times. I'll follow you around the house and tell you all about my day. I am not big on being picked up, but will roll over for belly rubs all day long. I get along with other cats and dogs, and respectful kids. I am looking for a forever home where I can relax, chat with my people, soak up affection and finally enjoy life after motherhood. You'll find me at the City of Schofield Municipal Center!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303881835",
         "url": "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Bluey",
+        "species": "Other",
+        "breed": "Parakeet - Other",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "My name is Bluey! I am here with my 2 friends. A wonderful family helped us out of a situation and now we are ready for our forever home together. Our ages and history are unknown. It's all okay though, the future is bright and that is what we are looking forward to! Is your home too quiet? We can help! We like to make noise whether we are singing ourselves or making music with our toys. Come and meet us!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307225787",
+        "url": "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird"
       },
       {
         "name": "Penny",
@@ -534,17 +534,8 @@
         "gender": "Female",
         "bio": "HI there, I'm Terracotta! I'm a sweet girl that is here at HSMC as a stray. I'm a great cat that loves attention but can be a little shy until I get to know you! Come visit me soon!*Terracotta is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Terracotta please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1287191234",
-        "url": "https://www.adoptapet.com/pet/45397819-wausau-cat"
-      },
-      {
-        "name": "Mia",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 years 3 months old, Adult",
-        "gender": "Female",
-        "bio": "Hi there, I'm Mia! I'm a sweet girl that was surrendered to HSMC due to no fault of my own. There were just too many of us felines in the home! I'm a quiet girl that loves attention and would make an excellent fit in just about any home! I'd be a great fit in a home with other cats as well! Come visit me soon!*Mia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Mia please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294565270",
-        "url": "https://www.adoptapet.com/pet/47551408-wausau-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/45397819-wausau-wisconsin-cat",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Valestin",
@@ -555,6 +546,16 @@
         "bio": "Hi there, I'm Valestin! I'm a handsome guy that wandered his way into HSMC after going on an adventure. I've decided it's time to settle down and find a family to call my own, so please adopt me! I'm playful, outgoing and ready to be yours! Let's adventure together!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1295292877",
         "url": "https://www.adoptapet.com/pet/47582930-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Mia",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 years 3 months old, Adult",
+        "gender": "Female",
+        "bio": "Hi there, I'm Mia! I'm a sweet girl that was surrendered to HSMC due to no fault of my own. There were just too many of us felines in the home! I'm a quiet girl that loves attention and would make an excellent fit in just about any home! I'd be a great fit in a home with other cats as well! Come visit me soon!*Mia is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Mia please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1294565270",
+        "url": "https://www.adoptapet.com/pet/47551408-wausau-wisconsin-cat"
       },
       {
         "name": "Oblivion",
@@ -587,16 +588,6 @@
         "url": "https://www.adoptapet.com/pet/47898593-wausau-wisconsin-cat"
       },
       {
-        "name": "Sassy",
-        "species": "Dog",
-        "breed": "Husky",
-        "age": "3 years 11 months old, Adult",
-        "gender": "Female",
-        "bio": "Where are all of my strong, independent girlies at? My name is Sassy and it fits; I like to keep my inner circle small and would prefer to be your one and only. I've had my fair share of homes and transitions so I'm hoping to find the one that sticks. Adventurous adults are my vibe, small children or dogs that share my home not so much. I know my forever is out there and I just can't wait to find it.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480970",
-        "url": "https://www.adoptapet.com/pet/47563343-wausau-wisconsin-husky-mix"
-      },
-      {
         "name": "Magnet",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -615,6 +606,16 @@
         "bio": "My name is Blu and I'm looking for a fresh start. My life has taken some unexpected turns and I'm in the camp that says it's about the destination and not journey. Here's to hoping that all of the roads I've traveled thus far will lead me straight to you. I'm a smart and confident guy who is selective when it comes to other dogs and should not be placed with small dogs or cats. I know a handful of tricks that I'll gladly show you in exchange for a treat and I'm looking forward to the long walks and talks we'll share. I can't wait to love everything about you.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480932",
         "url": "https://www.adoptapet.com/pet/47699350-wausau-wisconsin-german-shepherd-dog-mix"
+      },
+      {
+        "name": "Sassy",
+        "species": "Dog",
+        "breed": "Husky",
+        "age": "3 years 11 months old, Adult",
+        "gender": "Female",
+        "bio": "Where are all of my strong, independent girlies at? My name is Sassy and it fits; I like to keep my inner circle small and would prefer to be your one and only. I've had my fair share of homes and transitions so I'm hoping to find the one that sticks. Adventurous adults are my vibe, small children or dogs that share my home not so much. I know my forever is out there and I just can't wait to find it.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307480970",
+        "url": "https://www.adoptapet.com/pet/47563343-wausau-wisconsin-husky-mix"
       },
       {
         "name": "Greeney",
@@ -778,16 +779,6 @@
         "url": "https://www.adoptapet.com/pet/47964993-wausau-wisconsin-cat"
       },
       {
-        "name": "Air Fryer",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 1 month old, Young",
-        "gender": "Female",
-        "bio": "I came to HSMC as a very shy girl. It has taken me a long time to come out of my shell, but I have and I am now ready to make new friend and find my for human(s). I am still shy, but I am sweet. I do love attention and I enjoy playing with toys. I will do best in a calmer environment without young children. Do you think you have room in your heart for a girl like me?*Air Fryer is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Air Fryer please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310583038",
-        "url": "https://www.adoptapet.com/pet/48247902-wausau-wisconsin-cat"
-      },
-      {
         "name": "Benson",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -796,6 +787,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Dog-v3.png",
         "url": "https://www.adoptapet.com/pet/48247904-wausau-wisconsin-mixed-breed-medium-mix"
+      },
+      {
+        "name": "Air Fryer",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 1 month old, Young",
+        "gender": "Female",
+        "bio": "I came to HSMC as a very shy girl. It has taken me a long time to come out of my shell, but I have and I am now ready to make new friend and find my for human(s). I am still shy, but I am sweet. I do love attention and I enjoy playing with toys. I will do best in a calmer environment without young children. Do you think you have room in your heart for a girl like me?*Air Fryer is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Air Fryer please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310583038",
+        "url": "https://www.adoptapet.com/pet/48247902-wausau-wisconsin-cat"
       },
       {
         "name": "Astrology *Barn Cat*",
@@ -1166,16 +1167,6 @@
         "url": "https://www.adoptapet.com/pet/48191708-friendship-wisconsin-dachshund-mix"
       },
       {
-        "name": "Maverick",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 months old, Kitten",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311901027",
-        "url": "https://www.adoptapet.com/pet/48307228-friendship-wisconsin-cat"
-      },
-      {
         "name": "Kane",
         "species": "Dog",
         "breed": "Great Pyrenees / Mixed Breed (Medium)",
@@ -1184,6 +1175,16 @@
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309323772",
         "url": "https://www.adoptapet.com/pet/48191357-friendship-wisconsin-great-pyrenees-mix"
+      },
+      {
+        "name": "Maverick",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 months old, Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311901027",
+        "url": "https://www.adoptapet.com/pet/48307228-friendship-wisconsin-cat"
       },
       {
         "name": "Ice",
@@ -1243,7 +1244,8 @@
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1302200612",
-        "url": "https://www.adoptapet.com/pet/47871192-friendship-cat"
+        "url": "https://www.adoptapet.com/pet/47871192-friendship-wisconsin-cat",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Ziggy",
@@ -1304,7 +1306,8 @@
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309315160",
-        "url": "https://www.adoptapet.com/pet/48191032-friendship-wisconsin-terrier-unknown-type-medium-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/48191032-friendship-wisconsin-terrier-unknown-type-medium-mix",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Molly",
@@ -1600,7 +1603,8 @@
         "gender": "Male",
         "bio": "Hey! I’m Walter! I’ve been with Fetch for awhile now, and I’m STILL looking for my forever family. Let me reintroduce myself: I’m a happy boy who likes to be a part of what’s going on. Whether we’re making dinner, you’re showering, or doing laundry - doesn’t matter to me as long as we’re together. I can supervise any project you got goin on! I am always excited to show you what I have. I am kennel/crate trained and I know to do my business outside! I’m strong, like you can tell I work out and all that. I know how to walk nicely on a leash but sometimes I seriously forget it’s even attached, this nose of mine is soooo powerful it’s crazy. I am special, my foster mom says it all the time. Just to make sure I get enough love and attention, it would be best if I am the only “good boy” in my forever home. I run like a graceful rhino and my white hair is so silky soft you won’t be able to resist loving on me. I have gotten myself into a couple situations and I really want to leave my troubled past behind me and move forward with people who get me. People who know tell me that I need structure and leadership: if you let me be the pack leader, I will take advantage of that situation. I love training and learning, my foster mom is kick butt cool at it, she has lots more information for you since I am sooo special, so apply and let’s get this party started!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/641060138",
-        "url": "https://www.adoptapet.com/pet/35226946-wausau-wisconsin-pit-bull-terrier-basset-hound-mix"
+        "url": "https://www.adoptapet.com/pet/35226946-wausau-pit-bull-terrier-mix",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Daisy",
@@ -1633,16 +1637,6 @@
         "url": "https://www.adoptapet.com/pet/47586257-wausau-wisconsin-maltese"
       },
       {
-        "name": "Rowdy (fka Buddy)",
-        "species": "Dog",
-        "breed": "Chihuahua",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
-        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
-      },
-      {
         "name": "Cookie",
         "species": "Dog",
         "breed": "Shepherd (Unknown Type)",
@@ -1661,6 +1655,16 @@
         "bio": "Hi, we're Daisy and Bella. We have found ourselves being surrendered to rescue because our parents had to go to assisted living. We were very well cared for and loved! Therfore, we would LOVE a home together if possible. We do well with older children, and we even have cats at our foster home! We like to play with our foster siblings and LOVE walks. We'd love a home where we can cuddle or chill on the couch with you. No worries leaving us at home, Daisy will even give you her biggest smile when you return! You can apply for us at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1174929725",
         "url": "https://www.adoptapet.com/pet/42856670-wausau-wisconsin-shih-tzu-bichon-frise-mix"
+      },
+      {
+        "name": "Rowdy (fka Buddy)",
+        "species": "Dog",
+        "breed": "Chihuahua",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hi, I’m Rowdy – The Snuggle King, Ice Cream Connoisseur, and Bone Bandit Extraordinaire",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1227053293",
+        "url": "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix"
       },
       {
         "name": "Niche",
@@ -1702,7 +1706,8 @@
         "gender": "Male",
         "bio": "Meet Remy — a bright eyed Husky with a big voice!This handsome boy is full of curiosity—he loves exploring every new scent, sound, and corner of the world around him. He loves to chase after a ball for hours, running and wagging his tail, ready for 'just one more throw.' He enjoys taking a splash in the pool in the hot summer heat. He's smart and energetic and thrives when he has both mental and physical activity to keep him engaged. If you love a pup with personality and expression, you'll adore Remy! Does not do the best with cats or children. Unknown with other dogs.Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1250718716",
-        "url": "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-shiba-inu-mix"
+        "url": "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-husky-mix",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Adam *Diabetic, In Foster*",
@@ -1923,7 +1928,8 @@
         "gender": "Female",
         "bio": "Gentle, sweet, and serene—Blossom is the kind of cat who brings calm wherever she goes. This lovely girl enjoys quiet moments, soft pets, and cozy naps in sunny spots. She may take a little time to open up, but once she trusts you, her affectionate nature truly blooms.Blossom has a chronic upper respiratory infection (URI), which means she might have the occasional sniffle, but it doesn’t keep her from enjoying life at her own peaceful pace. Blossom also has some food sensitivities, and feeding her the wrong food will cause her skin condition to flare up. We will gladly provide her adopter with a list of foods that agree with her tummy and will keep her comfortable and healthy!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1235839284",
-        "url": "https://www.adoptapet.com/pet/45018023-wisconsin-rapids-cat"
+        "url": "https://www.adoptapet.com/pet/45018023-wisconsin-rapids-wisconsin-cat",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Tank",
@@ -1985,17 +1991,8 @@
         "gender": "Female",
         "bio": "Hi, I’m Annabella! I’m a three-year-old girl who came to the shelter when my previous owner could no longer care for me. If you love the company of a 'seasoned' adult cat, I am exactly who you've been looking for. You won't find any chaotic kitten shenanigans with me—just mature, reliable affection. I am a very loving young lady who truly believes that humans are the best things on earth. I’m still figuring out how I feel about other cats, but as long as I have people to adore, I'm happy. My dream home is simple: if you have a sunny window for me to look out of and a warm lap for me to curl up in, we will be the perfect match. Apply to visit me!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310886348",
-        "url": "https://www.adoptapet.com/pet/48043010-marshfield-wisconsin-cat"
-      },
-      {
-        "name": "Fancy",
-        "species": "Cat",
-        "breed": "Domestic Longhair",
-        "age": "8 years old, Senior",
-        "gender": "Female",
-        "bio": "Hi there! I’m Fancy, an 8-year-young beauty looking for my next chapter. I recently had to leave my previous home, so I’m very eager to find a cozy spot where I truly belong again. Don't let the 'senior' label fool you—I’m in my prime! I’m the perfect balance of a calm companion who loves watching birds by the window, and a playful spirit who still enjoys batting toys around when the mood strikes. I’d love to be the center of your world, but I might be open to a roommate down the road. Ready to bring some elegance into your life? Apply to visit me!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141521",
-        "url": "https://www.adoptapet.com/pet/48318782-marshfield-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/48043010-marshfield-cat",
+        "firstSeen": "2026-06-13T14:58:18.390Z"
       },
       {
         "name": "Petunia",
@@ -2007,6 +2004,16 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141518",
         "url": "https://www.adoptapet.com/pet/48318781-marshfield-wisconsin-mixed-breed-medium-australian-shepherd-mix",
         "firstSeen": "2026-06-13T05:23:34.271Z"
+      },
+      {
+        "name": "Fancy",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
+        "age": "8 years old, Senior",
+        "gender": "Female",
+        "bio": "Hi there! I’m Fancy, an 8-year-young beauty looking for my next chapter. I recently had to leave my previous home, so I’m very eager to find a cozy spot where I truly belong again. Don't let the 'senior' label fool you—I’m in my prime! I’m the perfect balance of a calm companion who loves watching birds by the window, and a playful spirit who still enjoys batting toys around when the mood strikes. I’d love to be the center of your world, but I might be open to a roommate down the road. Ready to bring some elegance into your life? Apply to visit me!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312141521",
+        "url": "https://www.adoptapet.com/pet/48318782-marshfield-wisconsin-cat"
       },
       {
         "name": "Rio",
@@ -2069,16 +2076,6 @@
         "url": "https://www.adoptapet.com/pet/48324880-marshfield-wisconsin-cat"
       },
       {
-        "name": "Phil",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years 3 months old, Adult",
-        "gender": "Male",
-        "bio": "Hi, my name is Phil, and I’m a sweet three-year-old boy ready to fill your home with purrs and head boops! I consider myself a professional snuggler, and there is truly nothing I love more than an open lap and all the pets you can give. I recently got a roommate, and we have become quite the pair. We are funny, playful, and guaranteed to keep you entertained with our antics! Whether you are looking for a devoted, affectionate companion for yourself or a new best friend for your current kitty, I am your guy. Apply now so you can come meet me!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310886380",
-        "url": "https://www.adoptapet.com/pet/47893485-marshfield-wisconsin-cat"
-      },
-      {
         "name": "Pawmi",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2087,6 +2084,16 @@
         "bio": "Hi there! I’m Pawni, a 2-month-old girl who is officially ready for my forever home! My siblings and I just moved back to the shelter after a wonderful stay in a foster home, and we are practically 'pro-snugglers' now. I’m adorable, playful, and have enough affection to go around! But here is a little kitten secret: Life is better in pairs. If you adopt me with one of my siblings, we’ll keep each other busy, learn from one another, and burn off our kitten 'zoomies' together while you're at work. Best of all? We are part of a BOGO special! That’s double the purrs for one adoption fee. Apply to meet me and my crew today!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310872336",
         "url": "https://www.adoptapet.com/pet/48205237-marshfield-wisconsin-cat"
+      },
+      {
+        "name": "Phil",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 years 3 months old, Adult",
+        "gender": "Male",
+        "bio": "Hi, my name is Phil, and I’m a sweet three-year-old boy ready to fill your home with purrs and head boops! I consider myself a professional snuggler, and there is truly nothing I love more than an open lap and all the pets you can give. I recently got a roommate, and we have become quite the pair. We are funny, playful, and guaranteed to keep you entertained with our antics! Whether you are looking for a devoted, affectionate companion for yourself or a new best friend for your current kitty, I am your guy. Apply now so you can come meet me!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310886380",
+        "url": "https://www.adoptapet.com/pet/47893485-marshfield-wisconsin-cat"
       },
       {
         "name": "Espurr",
@@ -2121,10 +2128,10 @@
     ]
   },
   "firstSeen": {
-    "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix": null,
+    "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/47386593-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/47314482-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47243591-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47906871-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47471704-wausau-wisconsin-cat": null,
@@ -2132,8 +2139,8 @@
     "https://www.adoptapet.com/pet/47783433-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47523372-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47898592-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird": null,
     "https://www.adoptapet.com/pet/47945548-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/48096368-wausau-wisconsin-bird": null,
     "https://www.adoptapet.com/pet/48168614-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47883514-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48218018-wausau-wisconsin-cat": null,
@@ -2173,15 +2180,15 @@
     "https://www.adoptapet.com/pet/48176986-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48048586-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/43104949-wausau-wisconsin-american-bulldog-mix": "2026-06-13T05:23:34.271Z",
-    "https://www.adoptapet.com/pet/45397819-wausau-cat": null,
-    "https://www.adoptapet.com/pet/47551408-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/45397819-wausau-wisconsin-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/47582930-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/47551408-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47604609-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/45327963-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47898593-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/47563343-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/45987315-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47699350-wausau-wisconsin-german-shepherd-dog-mix": null,
+    "https://www.adoptapet.com/pet/47563343-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/48096370-wausau-wisconsin-bird": null,
     "https://www.adoptapet.com/pet/48038868-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47582929-wausau-wisconsin-cat": null,
@@ -2198,8 +2205,8 @@
     "https://www.adoptapet.com/pet/47921174-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/48214334-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47964993-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/48247902-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48247904-wausau-wisconsin-mixed-breed-medium-mix": null,
+    "https://www.adoptapet.com/pet/48247902-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48194109-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48141093-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat": null,
@@ -2236,20 +2243,20 @@
     "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/48125533-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48191708-friendship-wisconsin-dachshund-mix": null,
-    "https://www.adoptapet.com/pet/48307228-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48191357-friendship-wisconsin-great-pyrenees-mix": null,
+    "https://www.adoptapet.com/pet/48307228-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48307230-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48131489-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47721229-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48191029-friendship-wisconsin-mixed-breed-large-mix": null,
     "https://www.adoptapet.com/pet/48191354-friendship-wisconsin-mixed-breed-medium-mix": null,
-    "https://www.adoptapet.com/pet/47871192-friendship-cat": null,
+    "https://www.adoptapet.com/pet/47871192-friendship-wisconsin-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/48123924-friendship-wisconsin-jack-russell-terrier-mix": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/48191355-friendship-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48307226-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47637089-friendship-terrier-unknown-type-medium-mix": null,
     "https://www.adoptapet.com/pet/48191352-friendship-wisconsin-husky-mix": null,
-    "https://www.adoptapet.com/pet/48191032-friendship-wisconsin-terrier-unknown-type-medium-mixed-breed-medium-mix": null,
+    "https://www.adoptapet.com/pet/48191032-friendship-wisconsin-terrier-unknown-type-medium-mix": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/48131490-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48088416-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47871193-friendship-wisconsin-cat": null,
@@ -2278,17 +2285,17 @@
     "https://www.adoptapet.com/pet/46871242-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/48121710-wausau-wisconsin-blue-heeler-mix": null,
     "https://www.adoptapet.com/pet/48192024-wausau-wisconsin-pit-bull-terrier-mix": null,
-    "https://www.adoptapet.com/pet/35226946-wausau-wisconsin-pit-bull-terrier-basset-hound-mix": null,
+    "https://www.adoptapet.com/pet/35226946-wausau-pit-bull-terrier-mix": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix": null,
     "https://www.adoptapet.com/pet/46263547-wausau-wisconsin-pit-bull-terrier-mix": null,
     "https://www.adoptapet.com/pet/47586257-wausau-wisconsin-maltese": null,
-    "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix": null,
     "https://www.adoptapet.com/pet/42975073-wausau-wisconsin-shepherd-unknown-type-mix": null,
     "https://www.adoptapet.com/pet/42856670-wausau-wisconsin-shih-tzu-bichon-frise-mix": null,
+    "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix": null,
     "https://www.adoptapet.com/pet/47355378-wausau-wisconsin-shiba-inu": null,
     "https://www.adoptapet.com/pet/48246026-wausau-wisconsin-beagle": null,
     "https://www.adoptapet.com/pet/48283622-wausau-wisconsin-mixed-breed-medium-mix": null,
-    "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-shiba-inu-mix": null,
+    "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-husky-mix": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/47360527-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat": null,
@@ -2310,26 +2317,33 @@
     "https://www.adoptapet.com/pet/48319461-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47964036-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48034427-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
-    "https://www.adoptapet.com/pet/45018023-wisconsin-rapids-cat": null,
+    "https://www.adoptapet.com/pet/45018023-wisconsin-rapids-wisconsin-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/47998805-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/47975993-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48317799-wisconsin-rapids-wisconsin-german-shepherd-dog-mix": null,
     "https://www.adoptapet.com/pet/48319462-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47839705-wisconsin-rapids-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/48043010-marshfield-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/48318782-marshfield-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/48043010-marshfield-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/48318781-marshfield-wisconsin-mixed-breed-medium-australian-shepherd-mix": "2026-06-13T05:23:34.271Z",
+    "https://www.adoptapet.com/pet/48318782-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48324879-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48324878-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48043984-marshfield-cat": null,
     "https://www.adoptapet.com/pet/48261366-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48205911-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48324880-marshfield-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/47893485-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48205237-marshfield-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/47893485-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48205238-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48298688-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48324881-marshfield-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/45397819-wausau-cat": null,
+    "https://www.adoptapet.com/pet/47871192-friendship-cat": null,
+    "https://www.adoptapet.com/pet/48191032-friendship-wisconsin-terrier-unknown-type-medium-mixed-breed-medium-mix": null,
+    "https://www.adoptapet.com/pet/35226946-wausau-wisconsin-pit-bull-terrier-basset-hound-mix": null,
+    "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-shiba-inu-mix": null,
+    "https://www.adoptapet.com/pet/45018023-wisconsin-rapids-cat": null,
+    "https://www.adoptapet.com/pet/48043010-marshfield-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47966558-wausau-wisconsin-american-pit-bull-terrier-mix": null,
     "https://www.adoptapet.com/pet/48243392-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/35500226-wausau-wisconsin-cat": null,
