@@ -155,7 +155,13 @@ function esc(s) {
 
 function cleanBio(bio) {
   // Full description — no truncation; the card grows to fit.
-  return (bio || '').replace(/`/g, "'").replace(/\s+/g, ' ').trim();
+  let b = (bio || '').replace(/`/g, "'").replace(/\s+/g, ' ').trim();
+  // Drop a trailing application URL + its lead-in clause ("...apply at: https://…").
+  // It's non-clickable inside the PNG and is replaced by the snippet's real
+  // "Meet [Name] →" link. Only strips a URL at the very end, never mid-sentence.
+  b = b.replace(/\s*[^.!?]*?\bhttps?:\/\/\S+\s*$/i, '').trim();
+  b = b.replace(/\s*[:–—-]\s*$/, '').trim();
+  return b;
 }
 
 function dataUri(file) {
