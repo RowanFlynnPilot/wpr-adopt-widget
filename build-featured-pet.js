@@ -32,6 +32,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+const PAGES_BASE = 'https://rowanflynnpilot.github.io/wpr-adopt-widget';
 const DATA_FILE = path.join(ROOT, 'pet-data.json');
 const HISTORY_FILE = path.join(ROOT, 'featured-history.json');
 const SNAP_DIR = path.join(ROOT, 'docs', 'snapshots');
@@ -151,12 +152,9 @@ function esc(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-function cleanBio(bio, max = 230) {
-  let b = (bio || '').replace(/`/g, "'").replace(/\s+/g, ' ').trim();
-  if (b.length <= max) return b;
-  let cut = b.slice(0, max);
-  if (cut.includes(' ')) cut = cut.slice(0, cut.lastIndexOf(' '));
-  return cut.replace(/[.,;:!?-]+$/, '') + '…';
+function cleanBio(bio) {
+  // Full description — no truncation; the card grows to fit.
+  return (bio || '').replace(/`/g, "'").replace(/\s+/g, ' ').trim();
 }
 
 function dataUri(file) {
@@ -176,7 +174,7 @@ function buildCardHtml(cand) {
   const gender = (p.gender || '').trim();
   const genderClass = /female/i.test(gender) ? 'female' : /male/i.test(gender) ? 'male' : '';
   const ageLine = [p.breed, p.age].filter(Boolean).join('  ·  ');
-  const bio = cleanBio(p.bio) || `${esc(p.name)} is waiting at ${esc(meta.name)} for the right family to come along.`;
+  const bio = cleanBio(p.bio) || `${p.name} is waiting at ${meta.name} for the right family to come along.`;
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -189,10 +187,8 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
 .head img{width:54px;height:54px;border-radius:50%;background:#fff;object-fit:contain;flex-shrink:0;padding:2px}
 .head .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#cfeae3}
 .head .title{font-family:'Playfair Display',serif;font-size:25px;font-weight:800;color:#fff;line-height:1.1;margin-top:2px}
-.photo-wrap{position:relative;width:600px;height:372px;background:var(--sand)}
+.photo-wrap{width:600px;height:372px;background:var(--sand)}
 .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
-.badge{position:absolute;left:0;bottom:14px;background:rgba(26,26,26,.82);color:#fff;font-size:15px;font-weight:700;
-  padding:9px 18px 9px 16px;border-radius:0 100px 100px 0;box-shadow:0 2px 10px rgba(0,0,0,.3)}
 .body{padding:18px 24px 8px}
 .name{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--ink);line-height:1.05}
 .subline{font-size:16px;color:var(--slate);font-weight:600;margin-top:3px}
@@ -205,9 +201,8 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
 .shelter img{width:34px;height:34px;border-radius:7px;object-fit:contain;background:var(--sand);flex-shrink:0}
 .shelter .s-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
 .shelter .s-loc{font-size:13px;color:var(--slate)}
-.foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding:14px 24px;background:#f7f5f1;border-top:1px solid var(--border)}
-.foot .cta{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--teal-dark)}
-.foot .url{font-size:13px;font-weight:700;color:var(--slate)}
+.foot{display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;background:#f7f5f1;border-top:1px solid var(--border)}
+.foot .url{font-size:15px;font-weight:700;color:var(--teal-dark);letter-spacing:.01em}
 </style></head>
 <body>
 <div class="card" id="card">
@@ -217,7 +212,6 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
   </div>
   <div class="photo-wrap">
     <img id="petphoto" src="${esc(p.photo)}" alt="">
-    <div class="badge">${esc(tenureLabel(cand))}</div>
   </div>
   <div class="body">
     <div class="name">${esc(p.name)}</div>
@@ -233,11 +227,31 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
     </div>
   </div>
   <div class="foot">
-    <span class="cta">Meet ${esc(p.name)} →</span>
-    <span class="url">WausauPilotandReview.com</span>
+    <span class="url">More adoptable pets at WausauPilotandReview.com</span>
   </div>
 </div>
 </body></html>`;
+}
+
+/**
+ * Email-ready embed snippet: the featured PNG (clickable — wrapping an <img>
+ * in an <a> works in email, even though text drawn inside the PNG cannot be a
+ * link) plus a real "Meet [Name] →" text link below, both pointing at the
+ * pet's adoption profile. Written to a .html file the newsletter can paste in.
+ */
+function embedHtml(name, petUrl, pngUrl) {
+  const n = esc(name), u = esc(petUrl), img = esc(pngUrl);
+  return `<!-- Wausau Pilot & Review — Featured Adoptable Pet (auto-generated; paste into newsletter) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:600px;margin:0 auto;">
+  <tr><td style="text-align:center;">
+    <a href="${u}" target="_blank" style="text-decoration:none;">
+      <img src="${img}" alt="Featured adoptable pet: ${n}" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:12px;">
+    </a>
+  </td></tr>
+  <tr><td style="text-align:center;padding:12px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:19px;">
+    <a href="${u}" target="_blank" style="color:#3a7d70;font-weight:bold;text-decoration:none;">Meet ${n} &rarr;</a>
+  </td></tr>
+</table>`;
 }
 
 /** Tolerant liveness check: only reject on a definitive 404/410. */
@@ -364,15 +378,25 @@ async function main() {
     petUrl: chosen.pet.url,
     pngLatest: 'snapshots/featured-pet-latest.png',
     pngEdition: `snapshots/featured-pet-${dateStr}-${edition}.png`,
+    embedLatest: 'snapshots/featured-pet-latest.html',
+    embedEdition: `snapshots/featured-pet-${dateStr}-${edition}.html`,
   };
   fs.writeFileSync(path.join(SNAP_DIR, 'featured-pet.json'), JSON.stringify(sidecar, null, 2));
+
+  // Ready-to-paste email embed snippets (clickable image + "Meet [Name] →" link)
+  fs.writeFileSync(
+    path.join(SNAP_DIR, 'featured-pet-latest.html'),
+    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-latest.png`));
+  fs.writeFileSync(
+    path.join(SNAP_DIR, `featured-pet-${dateStr}-${edition}.html`),
+    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.png`));
 
   console.log(`\n✅ Featured: ${chosen.pet.name} (${meta.name}) — ${edition.toUpperCase()} edition`);
   console.log(`   ${editionPng}`);
   console.log(`   ${latestPng}`);
 }
 
-module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml };
+module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml };
 
 if (require.main === module) {
   main().catch(err => { console.error('Fatal error:', err); process.exit(1); });
