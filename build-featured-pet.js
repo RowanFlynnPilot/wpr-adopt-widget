@@ -388,6 +388,11 @@ async function main() {
     pngEdition: `snapshots/featured-pet-${dateStr}-${edition}.png`,
     embedLatest: 'snapshots/featured-pet-latest.html',
     embedEdition: `snapshots/featured-pet-${dateStr}-${edition}.html`,
+    // Absolute URLs — read these directly from newsletter automation (no path stitching)
+    pngLatestUrl: `${PAGES_BASE}/snapshots/featured-pet-latest.png`,
+    pngEditionUrl: `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.png`,
+    embedLatestUrl: `${PAGES_BASE}/snapshots/featured-pet-latest.html`,
+    embedEditionUrl: `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.html`,
   };
   fs.writeFileSync(path.join(SNAP_DIR, 'featured-pet.json'), JSON.stringify(sidecar, null, 2));
 
