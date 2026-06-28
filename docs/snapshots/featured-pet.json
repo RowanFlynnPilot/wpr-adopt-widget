@@ -1,17 +1,21 @@
 {
-  "generatedAt": "2026-06-28T22:17:28.830Z",
+  "generatedAt": "2026-06-28T22:27:39.801Z",
   "edition": "pm",
-  "name": "Bella",
+  "name": "Cookie",
   "species": "Dog",
-  "breed": "Shih Tzu / Bichon Frise",
-  "age": "12 years 1 month old, Senior",
+  "breed": "Shepherd (Unknown Type)",
+  "age": "4 years 9 months old, Adult",
   "shelter": "fetch",
   "shelterName": "Fetch Foster and Rescue",
   "tenureDays": null,
   "tenureSource": "pre-tracking-veteran",
-  "petUrl": "https://www.adoptapet.com/pet/42856670-wausau-wisconsin-shih-tzu-bichon-frise-mix",
+  "petUrl": "https://www.adoptapet.com/pet/42975073-wausau-wisconsin-shepherd-unknown-type-mix",
   "pngLatest": "snapshots/featured-pet-latest.png",
   "pngEdition": "snapshots/featured-pet-2026-06-28-pm.png",
   "embedLatest": "snapshots/featured-pet-latest.html",
-  "embedEdition": "snapshots/featured-pet-2026-06-28-pm.html"
+  "embedEdition": "snapshots/featured-pet-2026-06-28-pm.html",
+  "pngLatestUrl": "https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-latest.png",
+  "pngEditionUrl": "https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-2026-06-28-pm.png",
+  "embedLatestUrl": "https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-latest.html",
+  "embedEditionUrl": "https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-2026-06-28-pm.html"
 }
