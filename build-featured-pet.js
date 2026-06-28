@@ -33,6 +33,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const PAGES_BASE = 'https://rowanflynnpilot.github.io/wpr-adopt-widget';
+const TOOL_URL = 'https://wausaupilotandreview.com/pet-finder/'; // the full adoptable-pets tool
 const DATA_FILE = path.join(ROOT, 'pet-data.json');
 const HISTORY_FILE = path.join(ROOT, 'featured-history.json');
 const SNAP_DIR = path.join(ROOT, 'docs', 'snapshots');
@@ -189,7 +190,7 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
 .head .title{font-family:'Playfair Display',serif;font-size:25px;font-weight:800;color:#fff;line-height:1.1;margin-top:2px}
 .photo-wrap{width:600px;height:372px;background:var(--sand)}
 .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
-.body{padding:18px 24px 8px}
+.body{padding:18px 24px 22px}
 .name{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--ink);line-height:1.05}
 .subline{font-size:16px;color:var(--slate);font-weight:600;margin-top:3px}
 .tags{display:flex;gap:7px;margin-top:11px}
@@ -201,8 +202,6 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
 .shelter img{width:34px;height:34px;border-radius:7px;object-fit:contain;background:var(--sand);flex-shrink:0}
 .shelter .s-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
 .shelter .s-loc{font-size:13px;color:var(--slate)}
-.foot{display:flex;align-items:center;justify-content:center;margin-top:16px;padding:15px 24px;background:#f7f5f1;border-top:1px solid var(--border)}
-.foot .url{font-size:15px;font-weight:700;color:var(--teal-dark);letter-spacing:.01em}
 </style></head>
 <body>
 <div class="card" id="card">
@@ -226,9 +225,6 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
       <div><div class="s-name">${esc(meta.name)}</div><div class="s-loc">${esc(meta.location)}</div></div>
     </div>
   </div>
-  <div class="foot">
-    <span class="url">More adoptable pets at WausauPilotandReview.com</span>
-  </div>
 </div>
 </body></html>`;
 }
@@ -236,11 +232,14 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
 /**
  * Email-ready embed snippet: the featured PNG (clickable — wrapping an <img>
  * in an <a> works in email, even though text drawn inside the PNG cannot be a
- * link) plus a real "Meet [Name] →" text link below, both pointing at the
- * pet's adoption profile. Written to a .html file the newsletter can paste in.
+ * link) followed by two real text links below it:
+ *   1. "Meet [Name] →"           → the pet's individual adoption listing
+ *   2. "View all adoptable pets →" → the full WP&R pet-finder tool
+ * Written to a .html file the newsletter can paste in.
  */
 function embedHtml(name, petUrl, pngUrl) {
-  const n = esc(name), u = esc(petUrl), img = esc(pngUrl);
+  const n = esc(name), u = esc(petUrl), img = esc(pngUrl), tool = esc(TOOL_URL);
+  const link = 'color:#3a7d70;font-weight:bold;text-decoration:none;';
   return `<!-- Wausau Pilot & Review — Featured Adoptable Pet (auto-generated; paste into newsletter) -->
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:600px;margin:0 auto;">
   <tr><td style="text-align:center;">
@@ -248,8 +247,11 @@ function embedHtml(name, petUrl, pngUrl) {
       <img src="${img}" alt="Featured adoptable pet: ${n}" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:12px;">
     </a>
   </td></tr>
-  <tr><td style="text-align:center;padding:12px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:19px;">
-    <a href="${u}" target="_blank" style="color:#3a7d70;font-weight:bold;text-decoration:none;">Meet ${n} &rarr;</a>
+  <tr><td style="text-align:center;padding:14px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:19px;">
+    <a href="${u}" target="_blank" style="${link}">Meet ${n} &rarr;</a>
+  </td></tr>
+  <tr><td style="text-align:center;padding:6px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;">
+    <a href="${tool}" target="_blank" style="${link}">View all adoptable pets &rarr;</a>
   </td></tr>
 </table>`;
 }
