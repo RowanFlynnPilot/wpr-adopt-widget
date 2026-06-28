@@ -658,7 +658,10 @@ function mapApiAnimal(a) {
     // than nothing, and the pet's detail page has the full story.
     bio: decode(a.description || '').trim(),
     photo,
-    url: a.url ? a.url.split('?')[0] : ''
+    url: a.url ? a.url.split('?')[0] : '',
+    // Real listing date — powers absolute "long-stay" tenure in the
+    // featured-pet newsletter snapshot. Only present via the API path.
+    publishedAt: a.published_at || null
   };
 }
 

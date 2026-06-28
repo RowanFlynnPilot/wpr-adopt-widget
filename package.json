@@ -4,8 +4,8 @@
   "description": "Scrapes adoptable pet data from central Wisconsin shelters for the Wausau Pilot & Review adoption widget",
   "scripts": {
     "scrape:lincoln": "node scrape-lincoln.js",
-    "scrape:all": "node scrape-all.js",
-    "build-widget-data": "node build-widget-data.js"
+    "build-widget-data": "node build-widget-data.js",
+    "build-featured-pet": "node build-featured-pet.js"
   },
   "dependencies": {
     "puppeteer": "^23.0.0",

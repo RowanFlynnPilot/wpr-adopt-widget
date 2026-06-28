@@ -1,0 +1,44 @@
+name: Featured Pet Snapshot
+
+# Renders ONE long-stay adoptable pet to a PNG for the daily email
+# newsletters (email clients strip the live iframe widget, so a static
+# image is the only reliable embed). Reads the pet-data.json committed by
+# the main "Scrape Pets" workflow — it does not re-scrape.
+#
+# Two editions a day so the morning and afternoon newsletters feature
+# different animals:
+#   11:00 UTC = 6 AM CDT (5 AM CST) — AM edition
+#   21:00 UTC = 4 PM CDT (3 PM CST) — PM edition
+on:
+  schedule:
+    - cron: '0 11 * * *'
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: featured-pet
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: npm install
+      - run: npx puppeteer browsers install chrome
+      # Always work from the freshest committed data
+      - run: git pull --rebase origin main
+      - run: node build-featured-pet.js
+      - name: Commit and push
+        run: |
+          git config user.name "WPR Pet Bot"
+          git config user.email "bot@wausaupilotandreview.com"
+          git add docs/snapshots featured-history.json
+          if ! git diff --cached --quiet; then
+            git commit -m "🖼️ Featured pet snapshot"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No snapshot changes."
+          fi

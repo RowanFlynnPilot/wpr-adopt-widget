@@ -63,6 +63,9 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 | `package.json` | Dependencies: `puppeteer ^23.0.0`. Scripts: `build-widget-data`, `scrape:lincoln`, `scrape:all`. |
 | `.github/workflows/scrape.yml` | GitHub Actions workflow. Runs twice daily (8 AM / 8 PM Central) or on manual dispatch. Installs Chrome, runs scraper, commits + pushes results, then runs a health gate that fails the run (and auto-opens a GitHub issue) if any shelter scrape failed. |
 | `check-scrape-health.js` | CI health gate. Reads `scrape_status` from `pet-data.json`; exits non-zero on any `failed` or `stale` shelter so outages can't go unnoticed. |
+| `build-featured-pet.js` | **Newsletter snapshot generator.** Picks one long-stay pet from `pet-data.json` and renders a branded ~600px card to PNG (rendered @2×) for embedding in the daily email newsletters. Handles rotation/dedup and writes `featured-history.json` + a metadata sidecar. |
+| `featured-history.json` | Rotation/dedup log for the featured-pet snapshot: `url → [ISO timestamps featured]`. Enforces "≤3 features per 14 days" and "different pet each edition". Pruned to 90 days. |
+| `docs/snapshots/` | Newsletter PNGs: `featured-pet-latest.png` (always newest), `featured-pet-YYYY-MM-DD-{am,pm}.png` (stable per-edition archive), and `featured-pet.json` (who's featured + metadata). |
 | `docs/` | GitHub Pages deploy directory. Contains the widget HTML, pet-data.json, update-log.txt, and diagnostic HTML snapshots. |
 | `docs/diag-*.html` | Diagnostic page snapshots saved by scrapers when results are unexpectedly low or a fallback fires. Useful for debugging anti-bot blocks or site layout changes. |
 
@@ -207,6 +210,21 @@ Steps:
 **GitHub Pages:** Serves from `main` branch `/docs` directory.
 
 ---
+
+## Featured Pet Newsletter Snapshot
+
+**Workflow:** `.github/workflows/snapshot.yml` — runs twice daily (11:00 UTC = 6 AM CT, 21:00 UTC = 4 PM CT) so the morning and afternoon email newsletters feature different animals. Reads the committed `pet-data.json` (no re-scrape) and renders a PNG via Puppeteer.
+
+**Why a PNG:** email clients (Gmail/Outlook/Apple Mail) strip iframes and JS, so the live widget can't embed. The newsletter `<img>`-embeds a hosted PNG instead. Mirrors the sibling `wpr-woodchucks-widget` snapshot pattern.
+
+**Selection** (`rankCandidates` in `build-featured-pet.js`):
+- Goal is to spotlight pets listed the longest (the "≥ 2 months" focus). Tenure uses the best signal per pet: tracked `firstSeen` date → Petfinder `publishedAt` → else the pet predates `firstSeen` tracking (began 2026-06-13) and is treated as a long-stay "veteran", ranked oldest-first by Adoptapet listing ID.
+- Tiers: (1) provably ≥ 60 days, (2) pre-tracking veterans, (3) tracked but younger. Until `firstSeen` matures past 60 days (~mid-Aug 2026), tier 1 is empty and the veterans carry the focus.
+- Rotation rules: never feature a pet more than 3× in a rolling 14 days; never repeat the immediately-previous edition's pet. Chosen pet must have a photo and pass a tolerant liveness check (only a definitive 404/410 rejects it).
+
+**Embedding in the newsletter** (note: GitHub Pages serves from `docs/`, so `docs/` is stripped from the public URL): use the per-edition URL for a stable image that won't change after send — `https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-YYYY-MM-DD-am.png` (or `-pm`). `https://rowanflynnpilot.github.io/wpr-adopt-widget/snapshots/featured-pet-latest.png` always shows the newest. `snapshots/featured-pet.json` exposes the featured pet's name/shelter/URL if the newsletter system wants to wrap the image in a link to the adoption page.
+
+**Local run:** `PUPPETEER_EXECUTABLE_PATH="C:\Program Files\Google\Chrome\Application\chrome.exe" node build-featured-pet.js` (the env var points Puppeteer at system Chrome; CI installs its own).
 
 ## Common Maintenance Tasks
 
