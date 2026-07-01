@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T15:23:58.000Z",
+  "lastUpdated": "2026-07-01T05:26:02.720Z",
   "shelters": {
     "marathon": [
       {
@@ -2749,8 +2749,9 @@
   "scrape_status": {
     "marathon": {
       "count": 96,
-      "status": "ok",
-      "expected_min": 20
+      "status": "stale",
+      "expected_min": 20,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     },
     "clark": {
       "count": 27,
@@ -2759,13 +2760,15 @@
     },
     "adams": {
       "count": 23,
-      "status": "ok",
-      "expected_min": 5
+      "status": "stale",
+      "expected_min": 5,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     },
     "lincoln": {
       "count": 1,
-      "status": "ok",
-      "expected_min": 1
+      "status": "stale",
+      "expected_min": 1,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     },
     "nlpac": {
       "count": 7,
@@ -2774,18 +2777,21 @@
     },
     "fetch": {
       "count": 16,
-      "status": "ok",
-      "expected_min": 5
+      "status": "stale",
+      "expected_min": 5,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     },
     "southwood": {
       "count": 30,
-      "status": "ok",
-      "expected_min": 10
+      "status": "stale",
+      "expected_min": 10,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     },
     "marshfield": {
       "count": 21,
-      "status": "ok",
-      "expected_min": 3
+      "status": "stale",
+      "expected_min": 3,
+      "staleSince": "2026-06-30T15:23:58.000Z"
     }
   }
 }
