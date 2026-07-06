@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-06T05:16:12.729Z",
+  "lastUpdated": "2026-07-06T16:18:14.350Z",
   "shelters": {
     "marathon": [
       {
@@ -1151,26 +1151,6 @@
         "url": "https://www.petfinder.com/dog/iris-c4f9b09e-02a0-4ade-9612-1136b8a8ddac/wi/neillsville/clark-county-humane-society-wi34/details/"
       },
       {
-        "name": "Ruby (bonded with Archie)",
-        "species": "Cat",
-        "breed": "Domestic Long Hair.",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Meet Ruby! Ruby came to us when her little human developed allergies. Ruby is beautiful with a side of mysterious and sophistication. she has medium long black hair, and beautiful green eyes. She is ready to find her new home and prove she has more to offer than just her looks, she also has a very sweet personality to seal the deal! if you're looking for a new best friend, come apply for Ruby today! Ruby came to CCHS with her best friend. Archie, and they are closely bonded. They do need to be adopted together. However, we always have a \"2-for-1\" adoption fee special on cats and kittens at CCHS, so both Ruth and Archie can be adopted together for just $50!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/1ffef75a-2830-4346-94ab-6891f6cc1a59/image/e767b1e0-f59d-45fb-b94c-1041726b38f0.jpg",
-        "url": "https://www.petfinder.com/cat/ruby-bonded-with-archie-1ffef75a-2830-4346-94ab-6891f6cc1a59/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
-        "name": "Archie (bonded with Ruby)",
-        "species": "Cat",
-        "breed": "Domestic Short Hair.",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Meet Archie! Archie came to us when his tiny human owner discovered a cat allergy. Archie is a big guy, with an even bigger heart! This handsome tabby is all about the love. Archie is first to greet you, with a big purr, and the last to leave your side. He's always up for a good rub or scratch! He is gentle with his paws and has a purr that kicks in the moment you get near him. He has a very affectionate and easygoing personality, loves cozy naps and is looking for a loyal loving companion. Big bonus: big cat= bigger cuddles! If you're ready for a best friend to give you his whole heart, Archie is ready to give you his. Apply today! Archie came to CCHS with his best friend. Ruby, and they are closely bonded. They do need to be adopted together. However, we always have a \"2-for-1\" adoption fee special on cats and kittens at CCHS, so both Archie and Ruby can be adopted together for just $50!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/97cebe40-2756-4834-8cef-ebfe7de6514d/image/fea37c2f-3c5c-4b62-8513-760ffc091036.jpg",
-        "url": "https://www.petfinder.com/cat/archie-bonded-with-ruby-97cebe40-2756-4834-8cef-ebfe7de6514d/wi/neillsville/clark-county-humane-society-wi34/details/"
-      },
-      {
         "name": "Connie",
         "species": "Dog",
         "breed": "Coonhound.",
@@ -1298,6 +1278,28 @@
         "firstSeen": "2026-06-29T16:37:22.848Z"
       },
       {
+        "name": "Alfie",
+        "species": "Cat",
+        "breed": "Domestic Short Hair.",
+        "age": "Young",
+        "gender": "Male",
+        "bio": "Meet Alfie! This handsome young guy came to us as a stray, and while his journey hasn't been the easiest, he's proving just how resilient he is. Alfie recently underwent hip surgery and is recovering well, but he'll need a family that understands his ongoing needs and is willing to give him the time and support he deserves. Don't let that fool you into thinking he's fragile, though Alfie's favorite thing in the world is people! He loves attention, affection, and being the center of your universe. Whether he's soaking up pets, following you around, or curling up nearby, Alfie is happiest when he's with his humans. If you're looking for a loving companion and have room in your heart for a special cat who's ready for a fresh start, Alfie may be the perfect match. Apply for Alfie today!",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/577555ce-3ffa-4b41-a4ea-70e1b9285c38/image/55d1f794-c0c7-4d20-9e10-a81fb59fbf73.jpg",
+        "url": "https://www.petfinder.com/cat/alfie-577555ce-3ffa-4b41-a4ea-70e1b9285c38/wi/neillsville/clark-county-humane-society-wi34/details/",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
+      },
+      {
+        "name": "Matthews",
+        "species": "Dog",
+        "breed": "Husky & Border Collie.",
+        "age": "Puppy",
+        "gender": "Male",
+        "bio": "Mathews is equal parts playful, lovable, and entertaining. This happy pup greets the world with a wagging tail and a joyful spirit that is impossible to resist. He loves people, enjoys making new friends, and is always ready for the next game or cuddle session. With his affectionate nature and fun-loving attitude, Mathews is sure to bring plenty of smiles to his future family.",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/5a87c713-68f3-4f11-b2bf-98a21820ab29/image/e40fd54b-c472-4332-883d-617bb432e7b7.jpg",
+        "url": "https://www.petfinder.com/dog/matthews-5a87c713-68f3-4f11-b2bf-98a21820ab29/wi/neillsville/clark-county-humane-society-wi34/details/",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
+      },
+      {
         "name": "Starburst",
         "species": "Dog",
         "breed": "Australian Shepherd & Bernese Mountain Dog.",
@@ -1320,26 +1322,26 @@
         "firstSeen": "2026-06-29T16:37:22.848Z"
       },
       {
-        "name": "Hoyt",
+        "name": "John",
         "species": "Dog",
-        "breed": "Husky & Border Collie.",
+        "breed": "Australian Shepherd.",
         "age": "Puppy",
         "gender": "Male",
-        "bio": "Hoyt is packed with personality and puppy charm! This playful boy is always ready to make you laugh with his goofy antics, wagging tail, and endless enthusiasm for life. Whether he's playing with toys, wrestling with his siblings, or seeking out attention, Hoyt makes every day a little brighter. He's searching for a family ready to embrace all the fun, love, and adventure that comes with raising a puppy.",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/673ed429-a654-465b-a5b9-7c0a4dc6dd87/image/19584552-0755-4b96-8a7b-a6321cdabd81.jpg",
-        "url": "https://www.petfinder.com/dog/hoyt-673ed429-a654-465b-a5b9-7c0a4dc6dd87/wi/neillsville/clark-county-humane-society-wi34/details/",
-        "firstSeen": "2026-06-29T16:37:22.848Z"
+        "bio": "Meet John, a curious and clever Australian Shepherd puppy with a bright future ahead. John is part of the Beatles litter with his siblings George, Paul, and Ringo, and he shares their playful, intelligent, and active nature. At just 8 weeks old, John is still learning everything about the world around him. Hes playful, observant, and always ready to explore new sights and sounds. Like most Aussies, he is likely to grow into a very smart, energetic dog who needs both physical exercise and mental stimulation. John will thrive in a home that is ready to invest time into training, bonding, and helping him grow into his best self. In return, he promises loyalty, affection, and endless entertainment. John is ready to step out of the band and into a forever home of his own.",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/8bfbcff7-8d25-4236-831a-3a338f5a6083/image/3f0c9573-573f-4dbb-aed3-f2acf2024572.jpg",
+        "url": "https://www.petfinder.com/dog/john-8bfbcff7-8d25-4236-831a-3a338f5a6083/wi/neillsville/clark-county-humane-society-wi34/details/",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
       },
       {
-        "name": "Ranger",
+        "name": "Macie (Adoption fee sponsored)",
         "species": "Dog",
-        "breed": "Australian Shepherd & Border Collie.",
-        "age": "Puppy",
-        "gender": "Male",
-        "bio": "Meet Ranger! If puppies could write adoption adds, Rangers would simply say \"pet me. choose me. love me. \" Ranger is an affectionate little guy with a heart as big as his puppy dog eyes. he loves attention and cuddles. when he's not soaking up all the attention he is busy enjoying all the super fun mischief that comes with being a puppy. Ranger is looking for a family to shower him with love and he will happily return it tenfold. Apply today!",
-        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/dc19a469-d67e-499e-9738-15bddd17e5b2/image/a9f617d2-4497-4e38-b898-948bf8e9a51a.jpg",
-        "url": "https://www.petfinder.com/dog/ranger-dc19a469-d67e-499e-9738-15bddd17e5b2/wi/neillsville/clark-county-humane-society-wi34/details/",
-        "firstSeen": "2026-06-20T05:19:56.000Z"
+        "breed": "Maltese.",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Macie is a gentle soul who is still learning that the world can be a safe and loving place. This sweet Maltese has had a difficult past and can be shy when meeting new people, but beneath her timid exterior is a dog who longs for kindness and companionship. With patience, understanding, and lots of love, Macie will blossom into a devoted companion. She's looking for someone willing to show her that her best days are still ahead. Macie's adoption fee is sponsored by Out of the Blue Tattoo located in Marshfield WI.",
+        "photo": "https://dbw3zep4prcju.cloudfront.net/animal/f3ef5dd6-72b2-4432-843d-88ddd14ad671/image/895dc6dd-9a9a-4efd-954e-1c781dda5f06.jpg",
+        "url": "https://www.petfinder.com/dog/macie-adoption-fee-sponsored-f3ef5dd6-72b2-4432-843d-88ddd14ad671/wi/neillsville/clark-county-humane-society-wi34/details/",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
       }
     ],
     "adams": [
@@ -1452,17 +1454,6 @@
         "firstSeen": "2026-07-02T05:02:04.359Z"
       },
       {
-        "name": "Polly",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 months old, Kitten",
-        "gender": "Female",
-        "bio": "Hi, I'm Polly! I'm a tiny tuxedo kitten with extra-special paws — I'm polydactyl, which means I have a few bonus toes that make me one-of-a-kind. At just 2 months old, I'm already spayed and ready to bring big personality to your home. I'm affectionate and full of kitten energy, so I'll keep you entertained as I explore my new world. I would love to go into a home with an existing kitty or alongside one of the other amazing kittens in the shelter!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315993313",
-        "url": "https://www.adoptapet.com/pet/48461242-friendship-wisconsin-cat",
-        "firstSeen": "2026-06-25T05:08:50.713Z"
-      },
-      {
         "name": "Ciao",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1483,6 +1474,17 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317735935",
         "url": "https://www.adoptapet.com/pet/48568751-friendship-wisconsin-cat",
         "firstSeen": "2026-07-05T14:39:11.974Z"
+      },
+      {
+        "name": "Polly",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "Hi, I'm Polly! I'm a tiny tuxedo kitten with extra-special paws — I'm polydactyl, which means I have a few bonus toes that make me one-of-a-kind. At just 2 months old, I'm already spayed and ready to bring big personality to your home. I'm affectionate and full of kitten energy, so I'll keep you entertained as I explore my new world. I would love to go into a home with an existing kitty or alongside one of the other amazing kittens in the shelter!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315993313",
+        "url": "https://www.adoptapet.com/pet/48461242-friendship-wisconsin-cat",
+        "firstSeen": "2026-06-25T05:08:50.713Z"
       },
       {
         "name": "Ziggy",
@@ -2025,16 +2027,6 @@
         "firstSeen": "2026-06-20T05:19:56.000Z"
       },
       {
-        "name": "Zara",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "4 years 4 months old, Adult",
-        "gender": "Female",
-        "bio": "Meet Zara!Zara is a beautiful 4-year-old mixed breed girl with a heart full of sunshine and a love for the great outdoors. If there’s fresh air involved, Zara is happy! Whether she’s going for a walk, exploring new scents, or simply relaxing outside in the pens watching the world go by, being outside is her absolute favorite place to be.She has a playful side too — give her a tennis ball and she’s in heaven! While she may eventually “redecorate” it by chewing it up here and there, that’s all part of the fun in her book. It’s safe to say tennis balls don’t stand a chance against this happy girl.Fun Fact- She does amazing in vehicles! Unknown with other dogs, cats, or other small animalsLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303082031",
-        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
-      },
-      {
         "name": "Willie",
         "species": "Dog",
         "breed": "St. Bernard",
@@ -2044,6 +2036,16 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1308852327",
         "url": "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix",
         "firstSeen": "2026-06-13T05:23:34.271Z"
+      },
+      {
+        "name": "Zara",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "4 years 4 months old, Adult",
+        "gender": "Female",
+        "bio": "Meet Zara!Zara is a beautiful 4-year-old mixed breed girl with a heart full of sunshine and a love for the great outdoors. If there’s fresh air involved, Zara is happy! Whether she’s going for a walk, exploring new scents, or simply relaxing outside in the pens watching the world go by, being outside is her absolute favorite place to be.She has a playful side too — give her a tennis ball and she’s in heaven! While she may eventually “redecorate” it by chewing it up here and there, that’s all part of the fun in her book. It’s safe to say tennis balls don’t stand a chance against this happy girl.Fun Fact- She does amazing in vehicles! Unknown with other dogs, cats, or other small animalsLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1303082031",
+        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Nyla",
@@ -2088,6 +2090,17 @@
         "firstSeen": "2026-06-26T05:12:52.294Z"
       },
       {
+        "name": "Eyore/Winston",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "10 months old, Young",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314963024",
+        "url": "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix",
+        "firstSeen": "2026-07-01T15:39:10.845Z"
+      },
+      {
         "name": "Paisley",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2097,17 +2110,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1305710716",
         "url": "https://www.adoptapet.com/pet/41460368-wisconsin-rapids-wisconsin-cat",
         "firstSeen": "2026-06-15T06:30:27.911Z"
-      },
-      {
-        "name": "Eyore/Winston",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "10 months old, Young",
-        "gender": "Male",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314963024",
-        "url": "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix",
-        "firstSeen": "2026-06-24T05:04:46.051Z"
       },
       {
         "name": "Moxi",
@@ -2358,15 +2360,15 @@
         "firstSeen": "2026-07-05T05:00:29.376Z"
       },
       {
-        "name": "Norman",
+        "name": "Smores",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "15 years 1 month old, Senior",
-        "gender": "Male",
-        "bio": "It takes a special kind of cat to go through a large, chaotic 20 cat abandonment event and come out singing, but that’s Norman for you! At 15 years old, the oldest of the whole group, this dignified senior is content to just watch the world go by. He is incredibly confident, wonderfully handsome, and absolutely adores head butting his favorite humans and feline friends. Norman is looking for a quiet place to land after a wild chapter, and he’s ready to bring a mountain of personality and charm into your life. He already knows he’s a catch—now he just needs an adopter who agrees! Submit an application to meet this majestic boy!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314218687",
-        "url": "https://www.adoptapet.com/pet/48413280-marshfield-wisconsin-cat",
-        "firstSeen": "2026-06-21T06:07:42.271Z"
+        "age": "1 year 2 months old, Young",
+        "gender": "Female",
+        "bio": "Hi, I’m Smores, and I’m about a year old! I came to the shelter with my tiny kitten, and I have officially finished all the hard work of raising my little one. Now, it is finally my time to retire from motherhood and start my next adventure with someone special! I absolutely adore people, and I do pretty well with other cats, too—as long as they recognize that I am a total boss lady! I am truly one of the sweetest, most affectionate little girls you will ever meet. Not to mention, I am super cute with a personality to match. If you have been looking for a lovely young lady to add a whole lot of joy to your home, then I am definitely the girl for you. Apply for a visit with me today!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317969269",
+        "url": "https://www.adoptapet.com/pet/48578145-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
       },
       {
         "name": "Muriel",
@@ -2378,6 +2380,17 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1313723203",
         "url": "https://www.adoptapet.com/pet/48390029-marshfield-wisconsin-cat",
         "firstSeen": "2026-06-18T16:27:21.218Z"
+      },
+      {
+        "name": "Norman",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "15 years 1 month old, Senior",
+        "gender": "Male",
+        "bio": "It takes a special kind of cat to go through a large, chaotic 20 cat abandonment event and come out singing, but that’s Norman for you! At 15 years old, the oldest of the whole group, this dignified senior is content to just watch the world go by. He is incredibly confident, wonderfully handsome, and absolutely adores head butting his favorite humans and feline friends. Norman is looking for a quiet place to land after a wild chapter, and he’s ready to bring a mountain of personality and charm into your life. He already knows he’s a catch—now he just needs an adopter who agrees! Submit an application to meet this majestic boy!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314218687",
+        "url": "https://www.adoptapet.com/pet/48413280-marshfield-wisconsin-cat",
+        "firstSeen": "2026-06-21T06:07:42.271Z"
       },
       {
         "name": "Cinnie Mini",
@@ -2468,6 +2481,28 @@
         "firstSeen": "2026-06-28T05:20:18.491Z"
       },
       {
+        "name": "Beatrix",
+        "species": "Dog",
+        "breed": "Beagle",
+        "age": "7 months old, Young",
+        "gender": "Female",
+        "bio": "Hi, I'm Beatrix, a sweet 7-month-old girl! I'm only about 20 pounds right now, so I'm going to grow up to be a smaller-ish dog—the perfect size for just about any adventure. For being a younger pup, I'm actually pretty chill! I love to hang out, watch the world go by, and take everything in. I'm a real snuggler, but if the mood strikes me, I'll happily pick up a toy and play. You know what else? I discovered another dog at the shelter who also needs a home, and we became best friends instantly! We love to zoom around outside together, and after we wear ourselves out, we take a nice nap and do it all over again. Because I can be a little observant, I would truly thrive in a home with another dog to learn from, hang out with, and show me the ropes. My friends here tell me I'm really cute and really smart, and I'm doing great learning my doggie manners. I do have one little puppy confession, though—I still need a bit of help finishing up my potty training! Want to give a sweet, social pup a chance at a perfect life? Apply to visit me today! Every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.O",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317944441",
+        "url": "https://www.adoptapet.com/pet/48577056-marshfield-wisconsin-beagle-mix",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
+      },
+      {
+        "name": "Nuggies",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "3 years old, Adult",
+        "gender": "Female",
+        "bio": "Hi, my name is Nuggies, and I’m a beautiful three-year-old girl! My three kittens and I were found huddled together outside by a dumpster, and we have quite a unique backstory. When we arrived smelling like fryer grease, the shelter team gave us all matching fast-food names! Now that I am all cleaned up and smelling wonderful, I am ready for my next chapter. I am truly the sweetest, most adorable mama kitty ever, and I have officially retired from motherhood. I cannot wait to find a fantastic new family of my own. And the absolute best part? I like other kitties! If you are looking for a super chill, easygoing companion who gets along great with other felines, then I am definitely the girl for you.My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317969273",
+        "url": "https://www.adoptapet.com/pet/48578146-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-06T16:18:14.350Z"
+      },
+      {
         "name": "Lita",
         "species": "Cat",
         "breed": "Domestic Mediumhair",
@@ -2499,17 +2534,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315953319",
         "url": "https://www.adoptapet.com/pet/48491648-marshfield-wisconsin-cat",
         "firstSeen": "2026-06-28T05:20:18.491Z"
-      },
-      {
-        "name": "Sue Ellen",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "1 year old, Young",
-        "gender": "Female",
-        "bio": "Hi, I'm Sue Ellen! I was found running around out in the country with my brother Rhett and sister Scarlett. Our past is a mystery, and no one came to claim us, so I'm looking forward to a brand-new start with a family who will love me! I'm a happy-go-lucky 1-year-old gal who loves everyone I meet and absolutely adores hanging out with my sister. I'm about 40 pounds, and while I'm full of love, I'm still working on my 'refined' lady manners and my leash skills. I would love to be a part of your 'pack' with a big yard to run in and maybe a canine sibling to play with. If you have the time to teach me the ropes, I promise to fill your days with smiles, laughs, and love every single day! I'm overflowing with affection and just waiting for a family who can appreciate my sweet, loyal nature. Apply to meet me today!NOTE: every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered, blood tested and microchipped. If old enough, they receive routine vaccinations.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317426804",
-        "url": "https://www.adoptapet.com/pet/48555832-marshfield-wisconsin-mixed-breed-medium-mix",
-        "firstSeen": "2026-07-04T04:38:45.749Z"
       },
       {
         "name": "Will (bonded w/Grace)",
@@ -2554,6 +2578,17 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317652150",
         "url": "https://www.adoptapet.com/pet/48565640-marshfield-wisconsin-cat",
         "firstSeen": "2026-07-05T05:00:29.376Z"
+      },
+      {
+        "name": "Sue Ellen",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "1 year old, Young",
+        "gender": "Female",
+        "bio": "Hi, I'm Sue Ellen! I was found running around out in the country with my brother Rhett and sister Scarlett. Our past is a mystery, and no one came to claim us, so I'm looking forward to a brand-new start with a family who will love me! I'm a happy-go-lucky 1-year-old gal who loves everyone I meet and absolutely adores hanging out with my sister. I'm about 40 pounds, and while I'm full of love, I'm still working on my 'refined' lady manners and my leash skills. I would love to be a part of your 'pack' with a big yard to run in and maybe a canine sibling to play with. If you have the time to teach me the ropes, I promise to fill your days with smiles, laughs, and love every single day! I'm overflowing with affection and just waiting for a family who can appreciate my sweet, loyal nature. Apply to meet me today!NOTE: every dog, cat and child will react differently to a new pet, so proper and safe introductions are always important for a smooth and successful transition.My adoption fee is $225.We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered, blood tested and microchipped. If old enough, they receive routine vaccinations.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317426804",
+        "url": "https://www.adoptapet.com/pet/48555832-marshfield-wisconsin-mixed-breed-medium-mix",
+        "firstSeen": "2026-07-04T04:38:45.749Z"
       }
     ]
   },
@@ -2667,8 +2702,6 @@
     "https://www.petfinder.com/dog/ella-f1b43bd7-b56f-485b-ba0b-d388f141e9fd/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/dog/kiara-5605ee04-248a-4dfb-b23f-71fd17acbb23/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/dog/iris-c4f9b09e-02a0-4ade-9612-1136b8a8ddac/wi/neillsville/clark-county-humane-society-wi34/details/": null,
-    "https://www.petfinder.com/cat/ruby-bonded-with-archie-1ffef75a-2830-4346-94ab-6891f6cc1a59/wi/neillsville/clark-county-humane-society-wi34/details/": null,
-    "https://www.petfinder.com/cat/archie-bonded-with-ruby-97cebe40-2756-4834-8cef-ebfe7de6514d/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/dog/connie-4c4a6885-39ee-46fe-a5e5-450e46f3c188/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/cat/florence-6f6d622a-b47a-4d9c-b8a4-7c67a7b34ed4/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/dog/reyn-355255b1-d617-4992-b1c4-1b81b53e6023/wi/neillsville/clark-county-humane-society-wi34/details/": null,
@@ -2681,10 +2714,12 @@
     "https://www.petfinder.com/cat/mercedes-f94e5dab-5f3c-44ea-87dc-7f137777f619/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-27T04:56:41.030Z",
     "https://www.petfinder.com/dog/helen-adoption-fee-sponsored-168f8b6a-d2eb-43a0-b221-9f4a36bb3325/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-02T05:02:04.359Z",
     "https://www.petfinder.com/dog/barnett-69a781ce-e6e4-47bd-b906-8cf88a3eaf3e/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-29T16:37:22.848Z",
+    "https://www.petfinder.com/cat/alfie-577555ce-3ffa-4b41-a4ea-70e1b9285c38/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-06T16:18:14.350Z",
+    "https://www.petfinder.com/dog/matthews-5a87c713-68f3-4f11-b2bf-98a21820ab29/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-06T16:18:14.350Z",
     "https://www.petfinder.com/dog/starburst-38a605d2-8c2e-4343-8a5f-223f800d4a8d/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-03T04:46:13.052Z",
     "https://www.petfinder.com/dog/skittles-170ff18f-b51e-4154-be51-6af42f8f2281/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-29T16:37:22.848Z",
-    "https://www.petfinder.com/dog/hoyt-673ed429-a654-465b-a5b9-7c0a4dc6dd87/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-29T16:37:22.848Z",
-    "https://www.petfinder.com/dog/ranger-dc19a469-d67e-499e-9738-15bddd17e5b2/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-20T05:19:56.000Z",
+    "https://www.petfinder.com/dog/john-8bfbcff7-8d25-4236-831a-3a338f5a6083/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-06T16:18:14.350Z",
+    "https://www.petfinder.com/dog/macie-adoption-fee-sponsored-f3ef5dd6-72b2-4432-843d-88ddd14ad671/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-06T16:18:14.350Z",
     "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/48123925-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/48125533-friendship-wisconsin-cat": null,
@@ -2695,9 +2730,9 @@
     "https://www.adoptapet.com/pet/48539379-friendship-wisconsin-terrier-unknown-type-medium-mixed-breed-medium-mix": "2026-07-06T05:16:12.729Z",
     "https://www.adoptapet.com/pet/48540744-friendship-wisconsin-cat": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48541024-friendship-wisconsin-cat": "2026-07-02T05:02:04.359Z",
-    "https://www.adoptapet.com/pet/48461242-friendship-wisconsin-cat": "2026-06-25T05:08:50.713Z",
     "https://www.adoptapet.com/pet/48539384-friendship-wisconsin-mixed-breed-medium-mix": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48568751-friendship-wisconsin-cat": "2026-07-05T14:39:11.974Z",
+    "https://www.adoptapet.com/pet/48461242-friendship-wisconsin-cat": "2026-06-25T05:08:50.713Z",
     "https://www.adoptapet.com/pet/48123924-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-06-16T06:36:42.503Z",
     "https://www.adoptapet.com/pet/47871192-friendship-wisconsin-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/48384368-friendship-wisconsin-cat": "2026-06-18T05:58:51.647Z",
@@ -2749,14 +2784,14 @@
     "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-shiba-inu-mix": null,
     "https://www.adoptapet.com/pet/48408548-wisconsin-rapids-wisconsin-terrier-unknown-type-medium-mix": "2026-06-20T05:19:56.000Z",
-    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix": "2026-06-13T05:23:34.271Z",
+    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48029207-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48118719-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48139033-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/31989268-wisconsin-rapids-cat": "2026-06-26T05:12:52.294Z",
+    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/41460368-wisconsin-rapids-wisconsin-cat": "2026-06-15T06:30:27.911Z",
-    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-06-24T05:04:46.051Z",
     "https://www.adoptapet.com/pet/47997847-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48288891-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/46976725-wisconsin-rapids-wisconsin-golden-retriever-mix": null,
@@ -2780,8 +2815,9 @@
     "https://www.adoptapet.com/pet/48490145-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48491649-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48565639-marshfield-wisconsin-cat": "2026-07-05T05:00:29.376Z",
-    "https://www.adoptapet.com/pet/48413280-marshfield-wisconsin-cat": "2026-06-21T06:07:42.271Z",
+    "https://www.adoptapet.com/pet/48578145-marshfield-wisconsin-cat": "2026-07-06T16:18:14.350Z",
     "https://www.adoptapet.com/pet/48390029-marshfield-wisconsin-cat": "2026-06-18T16:27:21.218Z",
+    "https://www.adoptapet.com/pet/48413280-marshfield-wisconsin-cat": "2026-06-21T06:07:42.271Z",
     "https://www.adoptapet.com/pet/48565255-marshfield-wisconsin-cat": "2026-07-05T05:00:29.376Z",
     "https://www.adoptapet.com/pet/48413283-marshfield-wisconsin-cat": "2026-06-21T06:07:42.271Z",
     "https://www.adoptapet.com/pet/48490804-marshfield-wisconsin-american-pit-bull-terrier-mix": "2026-06-28T05:20:18.491Z",
@@ -2790,14 +2826,21 @@
     "https://www.adoptapet.com/pet/48489568-marshfield-wisconsin-cat": "2026-06-27T14:27:12.573Z",
     "https://www.adoptapet.com/pet/48464386-marshfield-wisconsin-cat": "2026-06-25T15:38:07.792Z",
     "https://www.adoptapet.com/pet/48490806-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
+    "https://www.adoptapet.com/pet/48577056-marshfield-wisconsin-beagle-mix": "2026-07-06T16:18:14.350Z",
+    "https://www.adoptapet.com/pet/48578146-marshfield-wisconsin-cat": "2026-07-06T16:18:14.350Z",
     "https://www.adoptapet.com/pet/48390961-marshfield-wisconsin-cat": "2026-06-19T06:24:14.971Z",
     "https://www.adoptapet.com/pet/48411849-marshfield-wisconsin-mixed-breed-medium-mix": "2026-06-21T06:07:42.271Z",
     "https://www.adoptapet.com/pet/48491648-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
-    "https://www.adoptapet.com/pet/48555832-marshfield-wisconsin-mixed-breed-medium-mix": "2026-07-04T04:38:45.749Z",
     "https://www.adoptapet.com/pet/48490805-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48564707-marshfield-wisconsin-cat": "2026-07-05T05:00:29.376Z",
     "https://www.adoptapet.com/pet/48564706-marshfield-wisconsin-cat": "2026-07-05T05:00:29.376Z",
     "https://www.adoptapet.com/pet/48565640-marshfield-wisconsin-cat": "2026-07-05T05:00:29.376Z",
+    "https://www.adoptapet.com/pet/48555832-marshfield-wisconsin-mixed-breed-medium-mix": "2026-07-04T04:38:45.749Z",
+    "https://www.petfinder.com/cat/ruby-bonded-with-archie-1ffef75a-2830-4346-94ab-6891f6cc1a59/wi/neillsville/clark-county-humane-society-wi34/details/": null,
+    "https://www.petfinder.com/cat/archie-bonded-with-ruby-97cebe40-2756-4834-8cef-ebfe7de6514d/wi/neillsville/clark-county-humane-society-wi34/details/": null,
+    "https://www.petfinder.com/dog/hoyt-673ed429-a654-465b-a5b9-7c0a4dc6dd87/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-29T16:37:22.848Z",
+    "https://www.petfinder.com/dog/ranger-dc19a469-d67e-499e-9738-15bddd17e5b2/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-06-20T05:19:56.000Z",
+    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-06-24T05:04:46.051Z",
     "https://www.adoptapet.com/pet/38093357-wausau-wisconsin-german-shepherd-dog-mix": null,
     "https://www.adoptapet.com/pet/41741328-wausau-wisconsin-cat": "2026-06-22T06:32:54.787Z",
     "https://www.adoptapet.com/pet/47563343-wausau-wisconsin-husky-mix": null,
@@ -2832,7 +2875,6 @@
     "https://www.adoptapet.com/pet/48539376-friendship-wisconsin-mixed-breed-medium-mix": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48539378-friendship-wisconsin-jack-russell-terrier-mix": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-mix": "2026-06-14T05:54:51.597Z",
-    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/48490804-marshfield-american-pit-bull-terrier-mix": "2026-07-03T04:46:13.052Z",
     "https://www.adoptapet.com/pet/35226946-wausau-pit-bull-terrier-mix": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-mix": "2026-06-15T17:58:28.195Z",
@@ -3070,7 +3112,7 @@
       "expected_min": 10
     },
     "marshfield": {
-      "count": 24,
+      "count": 27,
       "status": "ok",
       "expected_min": 3
     }
