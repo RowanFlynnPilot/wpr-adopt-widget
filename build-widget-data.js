@@ -80,6 +80,36 @@ function classifySpecies(breed, url) {
   return 'Dog';
 }
 
+// ─── LINCOLN COUNTY: LINK-OUT CARDS ───
+// Lincoln County HS went application-first in mid-2026: their individual pets
+// are no longer listed anywhere scrapeable (Adoptapet emptied to 0 ~July 2026;
+// furrypets.com hard-403s automated access; they're not on Petfinder). Rather
+// than show a stale single pet or an empty shelter, present browse/apply
+// link-out cards so adopters can still reach them (humans aren't blocked — only
+// automation is). These are marked `placeholder` so they're excluded from
+// firstSeen tracking, "New" badges, and the featured-pet snapshot.
+const LINCOLN_LINKOUTS = [
+  {
+    name: 'Browse Adoptable Dogs', species: 'Dog',
+    breed: 'Apply to adopt at furrypets.com', age: '', gender: '',
+    bio: "Lincoln County Humane Society places dogs by application. Click to see their available dogs and start an adoption application on the shelter's website.",
+    photo: null, url: 'https://furrypets.com/adopt/adopt-dogs/', placeholder: true,
+  },
+  {
+    name: 'Browse Adoptable Cats', species: 'Cat',
+    breed: 'Apply to adopt at furrypets.com', age: '', gender: '',
+    bio: "Lincoln County Humane Society places cats and kittens by application. Click to see who's available and start an adoption application on the shelter's website.",
+    photo: null, url: 'https://furrypets.com/adopt/adopt-cats/', placeholder: true,
+  },
+];
+
+// Keep any real photo-bearing Adoptapet listing that appears, then always
+// append the link-out cards so Lincoln is never empty/stale.
+function ensureLincolnLinkouts(pets) {
+  const real = (pets || []).filter(p => p && p.photo && !p.placeholder);
+  return [...real, ...LINCOLN_LINKOUTS];
+}
+
 // ─── ADOPTAPET SCRAPER ───
 // Adoptapet uses client-side pagination. The shelter page shows 12 pets/page but
 // /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
@@ -1200,6 +1230,11 @@ async function main() {
     if (removed > 0) console.log(`  [dedup] Removed ${removed} cross-listed pets from ${key}`);
   }
 
+  // Lincoln County HS is application-first with no scrapeable individual
+  // listings — always present browse/apply link-out cards. This runs BEFORE
+  // carry-forward so Lincoln is never treated as an empty/stale outage.
+  data.shelters.lincoln = ensureLincolnLinkouts(data.shelters.lincoln);
+
   // Carry forward last-known-good listings when a scrape returns nothing.
   // An empty result almost always means a bot block or layout change, not an
   // empty shelter — yesterday's real pets beat months-old hardcoded fallback.
@@ -1227,7 +1262,8 @@ async function main() {
   // Health check: classify each shelter as ok / low / failed so a silent outage
   // shows up in the JSON instead of just looking like a quiet day.
   // EXPECTED_MIN = a floor below which we treat the result as suspicious. Tuned
-  // from observed steady-state counts; lincoln intentionally low (1 listing).
+  // from observed steady-state counts. lincoln is application-first: it always
+  // carries its 2 link-out cards, so 1 is a safe floor that never trips.
   const EXPECTED_MIN = {
     marathon: 20, clark: 10, adams: 5, lincoln: 1, nlpac: 3, fetch: 5,
     southwood: 10, marshfield: 3
@@ -1288,7 +1324,7 @@ function computeFirstSeen(previous, data) {
   data.firstSeen = {};
   for (const pets of Object.values(data.shelters)) {
     for (const pet of pets) {
-      if (!pet.url) continue;
+      if (!pet.url || pet.placeholder) continue; // skip link-out/placeholder cards
       let seen;
       if (prevSeen && Object.prototype.hasOwnProperty.call(prevSeen, pet.url)) seen = prevSeen[pet.url];
       else if (!prevSeen) seen = null; // tracking starts now; existing pets have unknown age
@@ -1344,7 +1380,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, computeFirstSeen, fetchPetfinderApi, mapApiAnimal };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS };
 
 if (require.main === module) {
   main().catch(err => {

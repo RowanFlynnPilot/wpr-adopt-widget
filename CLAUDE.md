@@ -90,11 +90,11 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 - **Shelter ID:** `76343-adams-county-humane-society-friendship-wisconsin`
 - **Method:** `scrapeAdoptapet()` (same as Marathon)
 
-### 4. Lincoln County Humane Society (`lincoln`)
-- **Source:** Adoptapet.com shelter page (migrated from furrypets.com which was unreliable)
-- **Shelter ID:** `66070-lincoln-county-humane-society-merrill-wisconsin`
-- **Method:** `scrapeAdoptapet()` (same as Marathon/Adams)
-- **Note:** `scrapeLincoln()` function still exists in the codebase for the old furrypets.com approach but is not called from `main()`
+### 4. Lincoln County Humane Society (`lincoln`) — application-first, no scrapeable feed
+- **Status:** As of ~July 2026, Lincoln has **no scrapeable individual listings anywhere.** They went "application-first" (you must apply/schedule before viewing animals). Adoptapet emptied to `0 - 0 of 0`; their own furrypets.com hard-403s automated access; they are not on Petfinder; Best Friends/Chewy pages are org-info only. This is a shelter-side process change, not a scraper bug.
+- **Handling:** `main()` still runs `scrapeAdoptapet('66070-…')` in case they ever re-list (any real photo-bearing pet is kept), then `ensureLincolnLinkouts()` always appends two `placeholder:true` "Browse Adoptable Dogs / Cats" cards linking to `furrypets.com/adopt/adopt-{dogs,cats}/`. Humans aren't blocked by the 403 — only automation is — so those links work for readers.
+- **Why link-outs:** keeps Lincoln reachable for adopters and keeps the CI health gate green (Lincoln is never empty/stale). Link-out cards are excluded from `firstSeen`, "New" badges, and the featured-pet snapshot via the `placeholder` flag.
+- **Note:** `scrapeLincoln()` (old furrypets.com scraper) still exists but is unused; furrypets.com is not scrapeable from a server IP.
 
 ### 5. New Life Pet Adoption Center (`nlpac`)
 - **Source:** nlpac.com/pets (direct HTML)
