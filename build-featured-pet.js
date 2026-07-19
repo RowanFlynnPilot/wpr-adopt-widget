@@ -43,6 +43,7 @@ const RECENT_WINDOW_DAYS = 14;
 const MAX_FEATURES_PER_WINDOW = 3;
 const LONGSTAY_DAYS = 60;            // "≥ 2 months" threshold for provable tenure
 const HISTORY_RETAIN_DAYS = 90;      // prune older history entries
+const SNAPSHOT_RETAIN_DAYS = 30;     // dated edition images/snippets older than this are deleted
 
 const SHELTER_META = {
   marathon:  { name: 'Humane Society of Marathon County', location: 'Wausau, WI',          logo: 'marathon.svg',    website: 'https://catsndogs.org' },
@@ -53,6 +54,8 @@ const SHELTER_META = {
   fetch:     { name: 'Fetch Foster and Rescue',          location: 'Wausau, WI',          logo: 'fetch.png',       website: 'https://www.fetchfosterandrescue.com' },
   southwood: { name: 'South Wood County Humane Society',  location: 'Wisconsin Rapids, WI',logo: 'southwood.jpg',   website: 'https://www.swchs.com' },
   marshfield:{ name: 'Marshfield Area Pet Shelter',       location: 'Marshfield, WI',      logo: 'marshfield.webp', website: 'https://www.marshfieldpetshelter.org' },
+  portage:   { name: 'Humane Society of Portage County',  location: 'Plover, WI',          logo: 'portage.png',     website: 'https://hspcwi.org' },
+  taylor:    { name: 'Taylor County Humane Society',      location: 'Medford, WI',         logo: 'taylor.jpg',      website: 'https://tchswi.org' },
 };
 
 // ─── SELECTION (pure, exported for tests) ───
@@ -295,9 +298,33 @@ async function renderCard(browser, cand, outPaths) {
   try { await page.evaluate(() => document.fonts && document.fonts.ready); } catch (_) {}
   if (!photoOk) { await page.close(); return false; }
   const el = await page.$('#card');
-  for (const out of outPaths) await el.screenshot({ path: out, omitBackground: true });
+  // JPEG, not PNG: the card is a photo, so JPEG is ~6× smaller (~200KB vs
+  // ~1.3MB) — better email deliverability and far less repo growth.
+  for (const out of outPaths) await el.screenshot({ path: out, type: 'jpeg', quality: 85 });
   await page.close();
   return true;
+}
+
+/**
+ * Delete dated edition files older than SNAPSHOT_RETAIN_DAYS. Sent newsletters
+ * reference the dated URLs, but nobody opens a month-old daily email — and
+ * without pruning the snapshots directory grows ~5MB/week forever.
+ * featured-pet-latest.* and featured-pet.json are never pruned.
+ */
+function pruneSnapshots(dir, now) {
+  if (!fs.existsSync(dir)) return 0;
+  let pruned = 0;
+  for (const f of fs.readdirSync(dir)) {
+    const m = f.match(/^featured-pet-(\d{4})-(\d{2})-(\d{2})-(?:am|pm)\.(?:png|jpg|html)$/);
+    if (!m) continue;
+    const age = (now - Date.UTC(+m[1], +m[2] - 1, +m[3])) / DAY;
+    if (age > SNAPSHOT_RETAIN_DAYS) {
+      fs.rmSync(path.join(dir, f), { force: true });
+      pruned++;
+    }
+  }
+  if (pruned) console.log(`  [prune] Removed ${pruned} snapshot file(s) older than ${SNAPSHOT_RETAIN_DAYS} days`);
+  return pruned;
 }
 
 // ─── MAIN ───
@@ -341,8 +368,11 @@ async function main() {
   const edition = d.getUTCHours() < 16 ? 'am' : 'pm'; // 11:00 UTC run = AM, 21:00 UTC = PM
   const dateStr = `${yyyy}-${mm}-${dd}`;
   fs.mkdirSync(SNAP_DIR, { recursive: true });
-  const latestPng = path.join(SNAP_DIR, 'featured-pet-latest.png');
-  const editionPng = path.join(SNAP_DIR, `featured-pet-${dateStr}-${edition}.png`);
+  pruneSnapshots(SNAP_DIR, now);
+  // Obsolete since the JPEG switch — remove so it can't serve a stale pet
+  fs.rmSync(path.join(SNAP_DIR, 'featured-pet-latest.png'), { force: true });
+  const latestPng = path.join(SNAP_DIR, 'featured-pet-latest.jpg');
+  const editionPng = path.join(SNAP_DIR, `featured-pet-${dateStr}-${edition}.jpg`);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -384,13 +414,15 @@ async function main() {
     tenureDays: chosen.ten.real ? chosen.ten.days : null,
     tenureSource: chosen.ten.real ? 'tracked' : 'pre-tracking-veteran',
     petUrl: chosen.pet.url,
-    pngLatest: 'snapshots/featured-pet-latest.png',
-    pngEdition: `snapshots/featured-pet-${dateStr}-${edition}.png`,
+    // Field names keep the legacy "png" prefix so existing newsletter
+    // automation reading them doesn't break — the files are JPEG now.
+    pngLatest: 'snapshots/featured-pet-latest.jpg',
+    pngEdition: `snapshots/featured-pet-${dateStr}-${edition}.jpg`,
     embedLatest: 'snapshots/featured-pet-latest.html',
     embedEdition: `snapshots/featured-pet-${dateStr}-${edition}.html`,
     // Absolute URLs — read these directly from newsletter automation (no path stitching)
-    pngLatestUrl: `${PAGES_BASE}/snapshots/featured-pet-latest.png`,
-    pngEditionUrl: `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.png`,
+    pngLatestUrl: `${PAGES_BASE}/snapshots/featured-pet-latest.jpg`,
+    pngEditionUrl: `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.jpg`,
     embedLatestUrl: `${PAGES_BASE}/snapshots/featured-pet-latest.html`,
     embedEditionUrl: `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.html`,
   };
@@ -399,17 +431,17 @@ async function main() {
   // Ready-to-paste email embed snippets (clickable image + "Meet [Name] →" link)
   fs.writeFileSync(
     path.join(SNAP_DIR, 'featured-pet-latest.html'),
-    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-latest.png`));
+    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-latest.jpg`));
   fs.writeFileSync(
     path.join(SNAP_DIR, `featured-pet-${dateStr}-${edition}.html`),
-    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.png`));
+    embedHtml(chosen.pet.name, chosen.pet.url, `${PAGES_BASE}/snapshots/featured-pet-${dateStr}-${edition}.jpg`));
 
   console.log(`\n✅ Featured: ${chosen.pet.name} (${meta.name}) — ${edition.toUpperCase()} edition`);
   console.log(`   ${editionPng}`);
   console.log(`   ${latestPng}`);
 }
 
-module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml };
+module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml, pruneSnapshots };
 
 if (require.main === module) {
   main().catch(err => { console.error('Fatal error:', err); process.exit(1); });

@@ -120,6 +120,8 @@ const SHELTER_POSTAL = {
   '151032': '54401', // Fetch (Wausau)
   '20247': '54494',  // South Wood County HS (Wisconsin Rapids)
   '96724': '54449',  // Marshfield Area Pet Shelter
+  '87863': '54467',  // Humane Society of Portage County (Plover/Stevens Point)
+  '81472': '54451',  // Taylor County WI Humane Society (Medford)
 };
 
 async function scrapeAdoptapet(browser, shelterId, shelterKey) {
@@ -1211,13 +1213,27 @@ async function main() {
     'marshfield'
   );
 
+  // Humane Society of Portage County — Plover/Stevens Point (Adoptapet)
+  data.shelters.portage = await scrapeAdoptapet(
+    browser,
+    '87863-humane-society-of-portage-county-plover-wisconsin',
+    'portage'
+  );
+
+  // Taylor County WI Humane Society — Medford (Adoptapet)
+  data.shelters.taylor = await scrapeAdoptapet(
+    browser,
+    '81472-taylor-county-wi-humane-society-medford-wisconsin',
+    'taylor'
+  );
+
   await browser.close();
 
   // Cross-shelter dedup: Adoptapet cross-lists pets across nearby shelters.
   // Remove duplicates so the same pet doesn't appear under both Marathon and Fetch.
   // Priority order: marathon > clark > adams > lincoln > nlpac > fetch (keep first occurrence)
   const seenUrls = new Set();
-  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac', 'fetch', 'southwood', 'marshfield'];
+  const shelterOrder = ['marathon', 'clark', 'adams', 'lincoln', 'nlpac', 'fetch', 'southwood', 'marshfield', 'portage', 'taylor'];
   for (const key of shelterOrder) {
     if (!data.shelters[key]) continue;
     const before = data.shelters[key].length;
@@ -1266,7 +1282,7 @@ async function main() {
   // carries its 2 link-out cards, so 1 is a safe floor that never trips.
   const EXPECTED_MIN = {
     marathon: 20, clark: 10, adams: 5, lincoln: 1, nlpac: 3, fetch: 5,
-    southwood: 10, marshfield: 3
+    southwood: 10, marshfield: 3, portage: 15, taylor: 8
   };
   data.scrape_status = {};
   for (const [key, pets] of Object.entries(data.shelters)) {
@@ -1380,7 +1396,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS };
 
 if (require.main === module) {
   main().catch(err => {
