@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-19T18:54:42.206Z",
+  "lastUpdated": "2026-07-20T04:38:49.172Z",
   "shelters": {
     "marathon": [
       {
@@ -97,7 +97,7 @@
         "name": "Cleo",
         "species": "Dog",
         "breed": "Labrador Retriever",
-        "age": "3 years old, Adult",
+        "age": "3 years 1 month old, Adult",
         "gender": "Female",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312167151",
@@ -333,7 +333,7 @@
         "name": "Davion",
         "species": "Cat",
         "breed": "Domestic Mediumhair",
-        "age": "Adult",
+        "age": "2 years old, Adult",
         "gender": "Male",
         "bio": "",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321423455",
@@ -960,26 +960,6 @@
         "firstSeen": "2026-07-17T04:10:41.108Z"
       },
       {
-        "name": "Astrology *Barn Cat*",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 1 month old, Young",
-        "gender": "Female",
-        "bio": "Looking for a good mouser? Well, your stars are in alignment because I'm the best mouser here!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309431745",
-        "url": "https://www.adoptapet.com/pet/48194109-wausau-wisconsin-cat"
-      },
-      {
-        "name": "Cassiopeia",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "3 years 1 month old, Adult",
-        "gender": "Female",
-        "bio": "Hi there, are you ready to traverse the universe with your new best friend (me!)? Well, I hope so! I'm Cassiopeia and I'm a gorgeous girl looking for a new place to land my spaceship. I'm a happy cat that loves everyone so I know we will be friends! I'm pretty out of this world, so you better come adopt me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312900980",
-        "url": "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat"
-      },
-      {
         "name": "Misa",
         "species": "Dog",
         "breed": "American Pit Bull Terrier",
@@ -1000,15 +980,24 @@
         "url": "https://www.adoptapet.com/pet/47921174-wausau-wisconsin-husky-mix"
       },
       {
-        "name": "Glamma",
-        "species": "Dog",
-        "breed": "Labrador Retriever",
-        "age": "12 years old, Senior",
+        "name": "Astrology *Barn Cat*",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 1 month old, Young",
         "gender": "Female",
-        "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Dog-v3.png",
-        "url": "https://www.adoptapet.com/pet/48548336-wausau-wisconsin-labrador-retriever-mix",
-        "firstSeen": "2026-07-03T04:46:13.052Z"
+        "bio": "Looking for a good mouser? Well, your stars are in alignment because I'm the best mouser here!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309431745",
+        "url": "https://www.adoptapet.com/pet/48194109-wausau-wisconsin-cat"
+      },
+      {
+        "name": "Cassiopeia",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "3 years 1 month old, Adult",
+        "gender": "Female",
+        "bio": "Hi there, are you ready to traverse the universe with your new best friend (me!)? Well, I hope so! I'm Cassiopeia and I'm a gorgeous girl looking for a new place to land my spaceship. I'm a happy cat that loves everyone so I know we will be friends! I'm pretty out of this world, so you better come adopt me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312900980",
+        "url": "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat"
       },
       {
         "name": "Peeves",
@@ -1055,16 +1044,6 @@
         "firstSeen": "2026-06-19T06:24:14.971Z"
       },
       {
-        "name": "Promise",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years 1 month old, Adult",
-        "gender": "Female",
-        "bio": "Hi there, I'm Promise and boy do I promise to the best kitty ever! I'm a sweet girl that came to HSMC as a stray but now I'm ready to find my forever home. I'm a lovely gal that loves attention and being around people. I'm a unique coloring, so everyone you bring over will be asking about me. Come visit me soon at Wild Birds Unlimited in Rib Mountain!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309883286",
-        "url": "https://www.adoptapet.com/pet/48214334-wausau-wisconsin-cat"
-      },
-      {
         "name": "Sidon",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1076,15 +1055,14 @@
         "firstSeen": "2026-07-10T04:56:33.289Z"
       },
       {
-        "name": "Tiger King *Barn Cat*",
+        "name": "Promise",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Hey there, I'm Tiger King and I'm ready to rock your world as your new mouser! Come adopt me soon!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315228869",
-        "url": "https://www.adoptapet.com/pet/48456487-wausau-wisconsin-cat",
-        "firstSeen": "2026-06-25T05:08:50.713Z"
+        "age": "3 years 1 month old, Adult",
+        "gender": "Female",
+        "bio": "Hi there, I'm Promise and boy do I promise to the best kitty ever! I'm a sweet girl that came to HSMC as a stray but now I'm ready to find my forever home. I'm a lovely gal that loves attention and being around people. I'm a unique coloring, so everyone you bring over will be asking about me. Come visit me soon at Wild Birds Unlimited in Rib Mountain!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1309883286",
+        "url": "https://www.adoptapet.com/pet/48214334-wausau-wisconsin-cat"
       },
       {
         "name": "Post Office *Barn Cat*",
@@ -1107,6 +1085,17 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314105535",
         "url": "https://www.adoptapet.com/pet/48405384-wausau-wisconsin-cat",
         "firstSeen": "2026-06-20T05:19:56.000Z"
+      },
+      {
+        "name": "Tiger King *Barn Cat*",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hey there, I'm Tiger King and I'm ready to rock your world as your new mouser! Come adopt me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315228869",
+        "url": "https://www.adoptapet.com/pet/48456487-wausau-wisconsin-cat",
+        "firstSeen": "2026-06-25T05:08:50.713Z"
       },
       {
         "name": "Karadec",
@@ -1460,7 +1449,7 @@
         "name": "Prue",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "3 months old, Kitten",
+        "age": "4 months old, Kitten",
         "gender": "Female",
         "bio": "My adoption fee is only $85 for the month of July!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314399985",
@@ -1521,6 +1510,39 @@
         "firstSeen": "2026-07-05T14:39:11.974Z"
       },
       {
+        "name": "Rhombus",
+        "species": "Dog",
+        "breed": "Jack Russell Terrier / Mixed Breed (Medium)",
+        "age": "2 months old, Puppy",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318645569",
+        "url": "https://www.adoptapet.com/pet/48608225-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix",
+        "firstSeen": "2026-07-13T04:33:15.254Z"
+      },
+      {
+        "name": "Buzz",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321624900",
+        "url": "https://www.adoptapet.com/pet/48731055-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
+      },
+      {
+        "name": "TinTin",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321635390",
+        "url": "https://www.adoptapet.com/pet/48731402-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
+      },
+      {
         "name": "Ziggy",
         "species": "Dog",
         "breed": "Jack Russell Terrier / Mixed Breed (Medium)",
@@ -1534,7 +1556,7 @@
         "name": "Phoebe",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "3 months old, Kitten",
+        "age": "4 months old, Kitten",
         "gender": "Female",
         "bio": "My adoption fee is only $85 for the month of July!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314400005",
@@ -1564,15 +1586,15 @@
         "firstSeen": "2026-07-19T04:23:20.212Z"
       },
       {
-        "name": "Louie",
-        "species": "Dog",
-        "breed": "American Bulldog",
-        "age": "3 years old, Adult",
+        "name": "Cricket",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
+        "age": "2 months old, Kitten",
         "gender": "Male",
         "bio": "",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321488487",
-        "url": "https://www.adoptapet.com/pet/48726034-friendship-wisconsin-american-bulldog-mix",
-        "firstSeen": "2026-07-19T14:22:15.731Z"
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321624920",
+        "url": "https://www.adoptapet.com/pet/48731058-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       },
       {
         "name": "Molly",
@@ -1614,7 +1636,19 @@
         "gender": "Male",
         "bio": "My adoption fee is only $60 for the month of July!Hi, I'm Fjord, a sleek black kitten ready for adventure! At just 4 months old, I'm already neutered and litter box trained — the hardest work is done. I'm a friendly, smart little guy who gets along great with other cats, so I'd be a perfect addition to a multi-cat household. I can't wait to explore my new home with you. Come meet me and let's start our adventure together!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1319412138",
-        "url": "https://www.adoptapet.com/pet/48088416-friendship-wisconsin-cat"
+        "url": "https://www.adoptapet.com/pet/48088416-friendship-cat",
+        "firstSeen": "2026-07-09T04:57:58.205Z"
+      },
+      {
+        "name": "Clover",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321624928",
+        "url": "https://www.adoptapet.com/pet/48731060-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       },
       {
         "name": "Caleb",
@@ -1636,6 +1670,28 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1319846307",
         "url": "https://www.adoptapet.com/pet/48568749-friendship-wisconsin-cat",
         "firstSeen": "2026-07-05T14:39:11.974Z"
+      },
+      {
+        "name": "Slate",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321624902",
+        "url": "https://www.adoptapet.com/pet/48731056-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
+      },
+      {
+        "name": "Sprout",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "2 months old, Kitten",
+        "gender": "Male",
+        "bio": "",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321624917",
+        "url": "https://www.adoptapet.com/pet/48731057-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       }
     ],
     "lincoln": [
@@ -1856,7 +1912,8 @@
         "gender": "Male",
         "bio": "Ello again...In case you forgot, I'm Gretzky. I've been in foster care for a long time now and I've really got a good schedule down. I'll tell you about it if you want....First I wake up and am excited to go potty outside. It's one of my favorite times and I may bark or nip your butt with excitement. Don't worry, I'm not /that/ excited. I just really have to pee.Then I come inside and lay on my beddy. It's my favorite spot. Unfortunately, I'm what my foster calls 'a babe magnet.' This means my canine and feline roommates will come to snuggle in my beddy with me, even in very warm temperatures. I don't understand it either. So we spend the next several hours rotating beddies until lunch, when we go back outside.Much sleeping is had. And snacks.Then the garage door opens and my room mates and I loose our collective minds because foster M'mam is home! I love her.And it means we get to do the best thing ever: walkies. I love pooping when I'm on a leash. I love walking. I don't need to smell anything, I don't care. I just like to walk. Especially in the woods!Sometimes we will see people on our walk. It makes me very nervous. Sometimes they will ask to pet me. I tell them 'No Thank You' by desperately trying to get away from them. Then I am edgy the rest of the walk. What if they secretly pop out of a bush to pet me?? Sometimes my foster M'mam will lock me in the bathroom and pet me. I've gotten used to this strange habit, but I don't really like it.Then, after food smells (someti",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1124575559",
-        "url": "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium"
+        "url": "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix",
+        "firstSeen": "2026-06-17T06:20:15.925Z"
       },
       {
         "name": "Reggie (10)",
@@ -1970,8 +2027,7 @@
         "gender": "Female",
         "bio": "Hi, we're Daisy and Bella. We have found ourselves being surrendered to rescue because our parents had to go to assisted living. We were very well cared for and loved! Therfore, we would LOVE a home together if possible. We do well with older children, and we even have cats at our foster home! We like to play with our foster siblings and LOVE walks. We'd love a home where we can cuddle or chill on the couch with you. No worries leaving us at home, Daisy will even give you her biggest smile when you return! You can apply for us at: https://www.fetchfosterandrescue.com/adopt",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1174929698",
-        "url": "https://www.adoptapet.com/pet/42856669-wausau-shih-tzu-mix",
-        "firstSeen": "2026-06-15T06:30:27.911Z"
+        "url": "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix"
       },
       {
         "name": "Panini",
@@ -2062,7 +2118,7 @@
         "name": "Vanilla Bean/Agatha",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
-        "age": "2 years 3 months old, Adult",
+        "age": "2 years 4 months old, Adult",
         "gender": "Female",
         "bio": "Meet Vanilla Bean!Vanilla Bean is the happiest girl when she’s right by your side, soaking up both your attention and a warm patch of sunlight along with fresh air. She has a calm, loving nature and truly thrives on being close to her favorite people—whether that means following you from room to room or simply settling in next to you for some quiet time. She adores getting some pets while in your company, maybe even a few kisses.Has done well with a dog previouslyUnknown with cats and other animalsLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1299360184",
@@ -2078,6 +2134,16 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318952096",
         "url": "https://www.adoptapet.com/pet/48622110-wisconsin-rapids-wisconsin-cat",
         "firstSeen": "2026-07-10T04:56:33.289Z"
+      },
+      {
+        "name": "Coral",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 year 1 month old, Young",
+        "gender": "Female",
+        "bio": "Hi! My name is Coral!I'm 1 years old!I was found as a stray and love attention!I'm not the biggest fan of being picked up but I love a good cuddle!I'm not sure yet if I get along with other animals but we can figure it out as we go!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312162893",
+        "url": "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat"
       },
       {
         "name": "Burger",
@@ -2113,16 +2179,6 @@
         "firstSeen": "2026-07-10T04:56:33.289Z"
       },
       {
-        "name": "Coral",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "1 year 1 month old, Young",
-        "gender": "Female",
-        "bio": "Hi! My name is Coral!I'm 1 years old!I was found as a stray and love attention!I'm not the biggest fan of being picked up but I love a good cuddle!I'm not sure yet if I get along with other animals but we can figure it out as we go!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312162893",
-        "url": "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat"
-      },
-      {
         "name": "KayLee AKA Peaches",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2130,8 +2186,8 @@
         "gender": "Female",
         "bio": "Hi! My name is KayLee, I also go by Peaches!I am 5 years old and came as a surrender with Sweetums AKA Bones due to no fault of our own!I'm so sweet and I get along with other cats! I'm not sure about dogs but we can figure it out!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1320408267",
-        "url": "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-wisconsin-cat",
-        "firstSeen": "2026-06-26T05:12:52.294Z"
+        "url": "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-cat",
+        "firstSeen": "2026-06-29T05:54:21.313Z"
       },
       {
         "name": "Sharpie",
@@ -2291,8 +2347,8 @@
         "gender": "Male",
         "bio": "Meet Winston!If you're looking for a best friend who knows how to have fun, Winston is your guy! This big, lovable goofball has a zest for life that's impossible not to smile about. His absolute favorite thing in the world? Water! Whether it's splashing in a kiddie pool, romping through a creek, or chasing the hose, Winston is happiest when he's getting his paws wet. Having a friend to do it with is a plus! When he is not making a splash, you will see him racing around the yard with his characteristic goofy grin, reminding everyone that life is too short not to engage in play. Despite his big size, Winston has an even bigger heart and loves sharing his joy with the people around him.Winston would thrive with a family that enjoys an active lifestyle and has room for him to stretch his legs, play, and show off his silly personality. He would do best with older children and a family that can continue working with him with his manners. If you're ready for endless laughs, outdoor adventures, and a loyal companion who's always up for fun, Winston is waiting to meet you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314963024",
-        "url": "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix",
-        "firstSeen": "2026-06-24T05:04:46.051Z"
+        "url": "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix",
+        "firstSeen": "2026-07-01T15:39:10.845Z"
       },
       {
         "name": "Digit",
@@ -2312,7 +2368,8 @@
         "gender": "Male",
         "bio": "Meet Mars!Are you looking for a loyal companion who loves daytime adventures and cozy evenings? Then Mars may be your perfect match!Mars is a handsome 1½-year-old boy who enjoys walks, car rides, and curling up for cuddles at the end of the day. He is house-trained, knows his basic commands, and has done well living with other dogs in his foster home.Mars has been making great progress with one of our trainers, where he's learning to walk politely in a heel position and build confidence when meeting new people. He has formed a strong bond with his foster family, and his trainer believes that with continued guidance, he'll become even more comfortable and confident with his new family. To help set everyone up for success, Mars's adoption includes three complimentary training sessions with his trainer. These sessions will help his adopters continue his progress, strengthen their bond, and make the transition into his new home as smooth as possible.When meeting new people, Mars appreciates a calm, respectful introduction. He enjoys gentle pets on his head and under his chin and does best with people who allow him to get comfortable at his own pace. Because of this, he would thrive in a home with older, respectful children who understand his boundaries.If you're looking for a devoted best friend who will happily join you on adventures and then snuggle up beside you at the end of the day, Mars is ready to meet you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1316963273",
-        "url": "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-wisconsin-labrador-retriever-mix"
+        "url": "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-labrador-retriever-mix",
+        "firstSeen": "2026-06-14T05:54:51.597Z"
       },
       {
         "name": "Harry Bright",
@@ -2530,8 +2587,8 @@
         "gender": "Female",
         "bio": "Hi, my name is Coachella! While some people might consider me a senior at eight years old, I prefer to think of myself as perfectly 'seasoned' and simply gorgeous—just ask me, I'll tell you! I absolutely love people, especially if they come with hands that are ready to give some prime head scritches. Other cats? Not so much! I prefer to be the undisputed queen of the castle, so if you are looking for a spectacular solo act, I am definitely the girl for you. No sharing the spotlight for this diva! If you have a free lap, plenty of affection to give, and a home ready for a loyal royalty, then I'm ready to move in. Apply for a visit with me today!My adoption fee is $50.Ask about our Seniors for Seniors program, adoption fee is only $25!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1313139358",
-        "url": "https://www.adoptapet.com/pet/48352367-marshfield-cat",
-        "firstSeen": "2026-06-28T05:20:18.491Z"
+        "url": "https://www.adoptapet.com/pet/48352367-marshfield-wisconsin-cat",
+        "firstSeen": "2026-06-15T17:58:28.195Z"
       },
       {
         "name": "Smores",
@@ -2683,7 +2740,7 @@
         "age": "3 years old, Adult",
         "gender": "Male",
         "bio": "Hi, I’m Jello, and I’m a handsome three-year-old guy! Look, I’m gonna give it to you straight: I am a total odd duck. I spent the past month behind the scenes getting myself healthy so I could finally move to the adoption floor. Now that I’m here, the folks at the shelter are truly seeing my quirky, one-of-a-kind personality shine. And you know what? They recently paired me up with a roommate named Kenny who is just as 'special' as I am! We are absolutely adorable together, and our favorite pastimes include playing, wrestling, and letting our freak flags fly! If you've been searching for a truly unique personality to brighten your days, or if you want a built-in cute companion for a kitty who needs a friend, apply to visit. Give a lovable 'weirdo' a chance!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321307689",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321567856",
         "url": "https://www.adoptapet.com/pet/48719066-marshfield-wisconsin-cat",
         "firstSeen": "2026-07-19T04:23:20.212Z"
       },
@@ -2754,17 +2811,6 @@
         "firstSeen": "2026-07-14T04:06:32.554Z"
       },
       {
-        "name": "Kenny",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 years old, Adult",
-        "gender": "Male",
-        "bio": "Hi, I’m Kenny, and I’m a handsome three-year-old guy! Look, I’m gonna give it to you straight: I am a total odd duck. I spent the past month behind the scenes getting myself healthy so I could finally move to the adoption floor. Now that I’m here, the folks at the shelter are truly seeing my quirky, one-of-a-kind personality shine. And you know what? They recently paired me up with a roommate named Jello who is just as 'special' as I am! We are absolutely adorable together, and our favorite pastimes include playing, wrestling, and letting our freak flags fly! If you've been searching for a truly unique personality to brighten your days, or if you want a built-in cute companion for a kitty who needs a friend, apply to visit. Give a lovable 'weirdo' a chance!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321307688",
-        "url": "https://www.adoptapet.com/pet/48719067-marshfield-wisconsin-cat",
-        "firstSeen": "2026-07-19T04:23:20.212Z"
-      },
-      {
         "name": "Toby (bonded w/Tempest)",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2774,6 +2820,39 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315368556",
         "url": "https://www.adoptapet.com/pet/48464386-marshfield-wisconsin-cat",
         "firstSeen": "2026-06-25T15:38:07.792Z"
+      },
+      {
+        "name": "Enoki",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "Hi, my name is Enoki, and at just 2 months old, I am already an expert at being cute, chasing toys, and purring up a storm. My siblings and I had a bit of a wild start outdoors, but now that we've tasted the good life at the shelter, we are ready for a permanent upgrade. We have plenty of love to give, but we also have plenty of energy to burn! That’s why I highly recommend checking out our BOGO special. Adopting me with one of my awesome siblings means we get a built-in wrestling partner and nap buddy, and you get a peaceful night's sleep. It’s a win-win! Apply for a visit!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321567742",
+        "url": "https://www.adoptapet.com/pet/48729036-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
+      },
+      {
+        "name": "Cremini",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Female",
+        "bio": "Hi, my name is Cremini, and at just 2 months old, I am already an expert at being cute, chasing toys, and purring up a storm. My siblings and I had a bit of a wild start outdoors, but now that we've tasted the good life at the shelter, we are ready for a permanent upgrade. We have plenty of love to give, but we also have plenty of energy to burn! That's why I highly recommend checking out our BOGO special. Adopting me with one of my awesome siblings means we get a built-in wrestling partner and nap buddy, and you get a peaceful night's sleep. It's a win-win! Apply for a visit!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321567740",
+        "url": "https://www.adoptapet.com/pet/48729035-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
+      },
+      {
+        "name": "Kenny",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 years old, Adult",
+        "gender": "Male",
+        "bio": "Hi, I’m Kenny, and I’m a handsome three-year-old guy! Look, I’m gonna give it to you straight: I am a total odd duck. I spent the past month behind the scenes getting myself healthy so I could finally move to the adoption floor. Now that I’m here, the folks at the shelter are truly seeing my quirky, one-of-a-kind personality shine. And you know what? They recently paired me up with a roommate named Jello who is just as 'special' as I am! We are absolutely adorable together, and our favorite pastimes include playing, wrestling, and letting our freak flags fly! If you've been searching for a truly unique personality to brighten your days, or if you want a built-in cute companion for a kitty who needs a friend, apply to visit. Give a lovable 'weirdo' a chance!My adoption fee is $100.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321581755",
+        "url": "https://www.adoptapet.com/pet/48719067-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-19T04:23:20.212Z"
       },
       {
         "name": "Lita",
@@ -2818,29 +2897,29 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321327550",
         "url": "https://www.adoptapet.com/pet/48719949-marshfield-wisconsin-cat",
         "firstSeen": "2026-07-19T04:23:20.212Z"
+      },
+      {
+        "name": "Shiitake",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 months old, Kitten",
+        "gender": "Male",
+        "bio": "Hi, my name is Shiitake, and at just 2 months old, I am already an expert at being cute, chasing toys, and purring up a storm. My siblings and I had a bit of a wild start outdoors, but now that we've tasted the good life at the shelter, we are ready for a permanent upgrade. We have plenty of love to give, but we also have plenty of energy to burn! That's why I highly recommend checking out our BOGO special. Adopting me with one of my awesome siblings means we get a built-in wrestling partner and nap buddy, and you get a peaceful night's sleep. It's a win-win! Apply for a visit!My adoption fee is $125.BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only.If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet.ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request.Thank you!Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321567744",
+        "url": "https://www.adoptapet.com/pet/48729037-marshfield-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       }
     ],
     "portage": [
       {
-        "name": "Tigerclaw",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "name": "Orchid",
+        "species": "Dog",
+        "breed": "Australian Shepherd",
         "age": "Adult",
-        "gender": "Male",
-        "bio": "Tigerclaw is a curious, chatty guy who would love a home to explore and snuggle, where he can be with other FeLV+ kitties, or by himself. Tigerclaw may do well with other kitties, however Tigerclaw is positive for FeLV and would need to go to a home without other kitties, or with cats who are also positive for FeLV. FeLV can be passed from cat to cat through saliva, so any mutual grooming, nose to nose contact, and shared water bowls can become sources of infection. It cannot be transmitted to people. If you would like more information about FeLV cats, please email the Adoption Team at adoption@hspcwi.org. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182204",
-        "url": "https://www.adoptapet.com/pet/48229112-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Brackenfur",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Brackenfur is a curious guy who is looking for a new home to explore! Bracken is a little shy at first, especially with fast moving hands, but if you're patient and give him time to trust you, he LOVES to be scratched, especially on his cheeks and shoulders! --- Brackenfur is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182294",
-        "url": "https://www.adoptapet.com/pet/48229116-plover-wisconsin-cat",
+        "gender": "Female",
+        "bio": "Orchid 27863 is an 8-month-old Australian Shepherd mix. Her mother is an Australian shepherd. Orchid is a bit shy when meeting new people but after a good introduction she is good to go! She loves walks and likes to sit in your lap. She is good with most dogs and might be ok with a cat if properly introduced. Orchid does not enjoy long car rides. We recommend older children for her. Orchid walks well on a leash, has started potty training and loves to play in her kiddie pool!! If you are interested in meeting/adopting Orchid, please fill out a dog adoption application on our website. www.hspcwi.org Only completed applications will be processed. Due to the high volume of applications we receive for puppies not all applications can be accepted. The approved adopter will receive a phone call to set up an appointment. Orchid's adoption fee is $150 +tax. She weighs 18#, is spayed, current on vaccines, microchipped and heartworm negative. Orchid will go home with a copy of her medical files, a collar, leash, 3 days of food, a blanket and toys.July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1320817700",
+        "url": "https://www.adoptapet.com/pet/48695672-plover-wisconsin-australian-shepherd-mix",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -2855,6 +2934,28 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
+        "name": "Brackenfur",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Brackenfur is a curious guy who is looking for a new home to explore! Bracken is a little shy at first, especially with fast moving hands, but if you're patient and give him time to trust you, he LOVES to be scratched, especially on his cheeks and shoulders! --- Brackenfur is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182294",
+        "url": "https://www.adoptapet.com/pet/48229116-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Tigerclaw",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Tigerclaw is a curious, chatty guy who would love a home to explore and snuggle, where he can be with other FeLV+ kitties, or by himself. Tigerclaw may do well with other kitties, however Tigerclaw is positive for FeLV and would need to go to a home without other kitties, or with cats who are also positive for FeLV. FeLV can be passed from cat to cat through saliva, so any mutual grooming, nose to nose contact, and shared water bowls can become sources of infection. It cannot be transmitted to people. If you would like more information about FeLV cats, please email the Adoption Team at adoption@hspcwi.org. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182204",
+        "url": "https://www.adoptapet.com/pet/48229112-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
         "name": "Caleb (Hspc Tallstar)",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2863,28 +2964,6 @@
         "bio": "Caleb is a gentle, lazy boy who'd love nothing more to hang out in your windows and soak up the sun, make lots of biscuits for you, and receive lots of gentle pets and scratches! Caleb is a little shy, but if you're patient for only a minute or two, he trusts quickly and will happily be your best buddy. Caleb loves to receive snacks, and take naps directly in his food bowl while he waits for mealtime! --- Caleb is a 2-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1316428984",
         "url": "https://www.adoptapet.com/pet/48510272-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Swish (Working Cat)",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Swish is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314650676",
-        "url": "https://www.adoptapet.com/pet/48431243-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Orchid",
-        "species": "Dog",
-        "breed": "Australian Shepherd",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Orchid 27863 is an 8-month-old Australian Shepherd mix. Her mother is an Australian shepherd. Orchid is a bit shy when meeting new people but after a good introduction she is good to go! She loves walks and likes to sit in your lap. She is good with most dogs and might be ok with a cat if properly introduced. Orchid does not enjoy long car rides. We recommend older children for her. Orchid walks well on a leash, has started potty training and loves to play in her kiddie pool!! If you are interested in meeting/adopting Orchid, please fill out a dog adoption application on our website. www.hspcwi.org Only completed applications will be processed. Due to the high volume of applications we receive for puppies not all applications can be accepted. The approved adopter will receive a phone call to set up an appointment. Orchid's adoption fee is $150 +tax. She weighs 18#, is spayed, current on vaccines, microchipped and heartworm negative. Orchid will go home with a copy of her medical files, a collar, leash, 3 days of food, a blanket and toys.July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1320817700",
-        "url": "https://www.adoptapet.com/pet/48695672-plover-wisconsin-australian-shepherd-mix",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -2921,6 +3000,39 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
+        "name": "Swish (Working Cat)",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Swish is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1314650676",
+        "url": "https://www.adoptapet.com/pet/48431243-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Sleet",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Sleet is a curious boy that is VERY playful! He also enjoys birdwatching out the windows, and chasing wand toys about until he just can't keep going. Sleet would thrive in a home with lots of space for him to run and explore and burn off some energy. Once he's worn himself out, Sleet is a lover who will sprawl out with you in bed! --- Sleet is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182603",
+        "url": "https://www.adoptapet.com/pet/48229133-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Askew (Working Cat)",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Askew is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317272804",
+        "url": "https://www.adoptapet.com/pet/48549249-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
         "name": "Chicken Noodle",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2951,28 +3063,6 @@
         "bio": "Candace is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317272780",
         "url": "https://www.adoptapet.com/pet/48549246-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Sleet",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Sleet is a curious boy that is VERY playful! He also enjoys birdwatching out the windows, and chasing wand toys about until he just can't keep going. Sleet would thrive in a home with lots of space for him to run and explore and burn off some energy. Once he's worn himself out, Sleet is a lover who will sprawl out with you in bed! --- Sleet is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182603",
-        "url": "https://www.adoptapet.com/pet/48229133-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Askew (Working Cat)",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Askew is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317272804",
-        "url": "https://www.adoptapet.com/pet/48549249-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3016,8 +3106,8 @@
         "gender": "Male",
         "bio": "This shy guy is looking for a quiet, gentle, patient home who is willing to give him the time and space to grow comfortable and brave. Once he's settled, Redtail enjoys gentle pets and playtime! There's a lap kitty hiding in this guy, he just needs someone to give him a chance to bloom! --- Redtail is a 3-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310181952",
-        "url": "https://www.adoptapet.com/pet/48229099-plover-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
+        "url": "https://www.adoptapet.com/pet/48229099-plover-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       },
       {
         "name": "Thimble",
@@ -3042,36 +3132,14 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Greystripe (Working Cat)",
-        "species": "Cat",
-        "breed": "Domestic Longhair",
-        "age": "Senior",
-        "gender": "Male",
-        "bio": "Greystripe is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182366",
-        "url": "https://www.adoptapet.com/pet/48229120-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Hot Honey",
+        "name": "Shazzam",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "Adult",
         "gender": "Male",
-        "bio": "Hot Honey is a 3-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182576",
-        "url": "https://www.adoptapet.com/pet/48229132-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Twitch (Working Cat)",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "Young",
-        "gender": "Female",
-        "bio": "Twitch is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317272516",
-        "url": "https://www.adoptapet.com/pet/48549234-plover-wisconsin-cat",
+        "bio": "This older gentleman is looking for a home that's willing to shower him with lots and lots of love and scratches. Shazzam is a slow-paced guy that would love to be your best buddy and lap kitty! Shazzam is a little unsure about other cats and may do okay with some nice, slow introductions to another low-energy kitty. Shazzam says \"no thank you!\" to kittens and dogs! --- Shazzam is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310181775",
+        "url": "https://www.adoptapet.com/pet/48229092-plover-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3086,17 +3154,6 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Maple Syrup",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Maple Syrup is a slow-paced guy looking for a quiet home where he can relax and receive lots of attention! Maple will call you over with his meows so you can scratch his chunky cheeks, and he'll really lean into those scratches until he purrs! --- Maple Syrup is a 4-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182267",
-        "url": "https://www.adoptapet.com/pet/48229115-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
         "name": "Samantha",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -3108,14 +3165,14 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Shazzam",
+        "name": "Thread",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "This older gentleman is looking for a home that's willing to shower him with lots and lots of love and scratches. Shazzam is a slow-paced guy that would love to be your best buddy and lap kitty! Shazzam is a little unsure about other cats and may do okay with some nice, slow introductions to another low-energy kitty. Shazzam says \"no thank you!\" to kittens and dogs! --- Shazzam is a 6-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310181775",
-        "url": "https://www.adoptapet.com/pet/48229092-plover-cat",
+        "age": "Young",
+        "gender": "Female",
+        "bio": "Thread is a curious, secretly-silly girl who is looking for a home that's got lots of places for her to explore, comfy blankets to snuggle in, and patient hands that are willing to let her lick you while you give her scritches! --- Thread is a 1-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310183077",
+        "url": "https://www.adoptapet.com/pet/48229151-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3130,14 +3187,25 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Honeycomb",
+        "name": "Twitch (Working Cat)",
         "species": "Cat",
-        "breed": "Domestic Shorthair",
+        "breed": "Domestic Mediumhair",
         "age": "Young",
         "gender": "Female",
-        "bio": "Honeycomb is a 1-year-old short-hair female. Her adoption fee is $0 - her fee has been waived. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182996",
-        "url": "https://www.adoptapet.com/pet/48229148-plover-wisconsin-cat",
+        "bio": "Twitch is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1317272516",
+        "url": "https://www.adoptapet.com/pet/48549234-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Greystripe (Working Cat)",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
+        "age": "Senior",
+        "gender": "Male",
+        "bio": "Greystripe is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182366",
+        "url": "https://www.adoptapet.com/pet/48229120-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3152,14 +3220,36 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Thread",
+        "name": "Maple Syrup",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Maple Syrup is a slow-paced guy looking for a quiet home where he can relax and receive lots of attention! Maple will call you over with his meows so you can scratch his chunky cheeks, and he'll really lean into those scratches until he purrs! --- Maple Syrup is a 4-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182267",
+        "url": "https://www.adoptapet.com/pet/48229115-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Honeycomb",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "Young",
         "gender": "Female",
-        "bio": "Thread is a curious, secretly-silly girl who is looking for a home that's got lots of places for her to explore, comfy blankets to snuggle in, and patient hands that are willing to let her lick you while you give her scritches! --- Thread is a 1-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310183077",
-        "url": "https://www.adoptapet.com/pet/48229151-plover-wisconsin-cat",
+        "bio": "Honeycomb is a 1-year-old short-hair female. Her adoption fee is $0 - her fee has been waived. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182996",
+        "url": "https://www.adoptapet.com/pet/48229148-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Hot Honey",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Hot Honey is a 3-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182576",
+        "url": "https://www.adoptapet.com/pet/48229132-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3185,14 +3275,14 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Mandrake",
+        "name": "Sir Didymus",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "Adult",
         "gender": "Male",
-        "bio": "Mandrake is a 2-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182630",
-        "url": "https://www.adoptapet.com/pet/48229134-plover-wisconsin-cat",
+        "bio": "This rambunctious boy is seeking a home where he can run, play, and thoroughly investigate all your windows to watch for any scallawags (aka Squirrels and Birds). Didymus is a bundle of energy and prefers to play more than snuggle, but if you're patient and allow him time to wear himself out, Didymus has a secret snuggly side! Didymus also enjoys a good treat, ESPECIALLY Churus! --- Sir Didymus is a 2-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318934771",
+        "url": "https://www.adoptapet.com/pet/48621351-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3229,14 +3319,14 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Sir Didymus",
+        "name": "Mandrake",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "Adult",
         "gender": "Male",
-        "bio": "This rambunctious boy is seeking a home where he can run, play, and thoroughly investigate all your windows to watch for any scallawags (aka Squirrels and Birds). Didymus is a bundle of energy and prefers to play more than snuggle, but if you're patient and allow him time to wear himself out, Didymus has a secret snuggly side! Didymus also enjoys a good treat, ESPECIALLY Churus! --- Sir Didymus is a 2-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318934771",
-        "url": "https://www.adoptapet.com/pet/48621351-plover-wisconsin-cat",
+        "bio": "Mandrake is a 2-year-old short-hair male cat. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pm",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182630",
+        "url": "https://www.adoptapet.com/pet/48229134-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3251,14 +3341,14 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Starfire",
+        "name": "Michigan",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Starfire is a former working cat who is working hard to be the best house cat ever! Starfire is a bit cautious still, but she's curious and loves to watch and supervise everything that's happening around her. She's still a bit unsure about receiving physical affection in the form of scratches and pets, but if given ample time to relax and grow comfortable, she will bloom into the lap kitty that we know is in there! --- Starfire is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182440",
-        "url": "https://www.adoptapet.com/pet/48229126-plover-wisconsin-cat",
+        "age": "Young",
+        "gender": "Male",
+        "bio": "Michigan is a shy (but VERY curious!) guy looking for a forever home that he can explore at his leisure! Michigan loves to hang out in comfy places like blanket tents, but eagerly pokes his head out to investigate anything new. Michigan also enjoys a good cheek and shoulder scratch, and will leeeeean into them! --- Michigan is a 1-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315153389",
+        "url": "https://www.adoptapet.com/pet/48454149-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3273,15 +3363,15 @@
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
-        "name": "Michigan",
+        "name": "Mike",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "Young",
         "gender": "Male",
-        "bio": "Michigan is a shy (but VERY curious!) guy looking for a forever home that he can explore at his leisure! Michigan loves to hang out in comfy places like blanket tents, but eagerly pokes his head out to investigate anything new. Michigan also enjoys a good cheek and shoulder scratch, and will leeeeean into them! --- Michigan is a 1-year-old short-hair male. His adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1315153389",
-        "url": "https://www.adoptapet.com/pet/48454149-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
+        "bio": "Mike is a sweet and silly boy looking for a home alongside his sister where they can hang out, play, and get lots of love and attention! Mike is bonded to his sister, Molly, and they must go to a home together. --- Mike is a 1-year-old short-hair male cat. His adoption fee is $0 - his fee has been waived. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182874",
+        "url": "https://www.adoptapet.com/pet/48229144-plover-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       },
       {
         "name": "Silverstream",
@@ -3303,6 +3393,17 @@
         "bio": "Racket is a working cat. Cats that are a part of our Working Cat Program have been chosen because they do not like to be handled or picked up. You should not have expectations that the cat will be friendly or social. There is no fee to adopt a working cat. The adopter provides food, water, medical care and a warm safe place for the cats. Our working cats are spayed or neutered, up to date on rabies and distemper and have a microchip. For more information email the Adoption Team at adoption@hspcwi.org. If you are interested in adopting a working cat, please submit an online application. When your application is approved, the Adoption Team will contact you to schedule an appointment to adopt. Here is a link to our online adoption applications www.hspcwi.org/adopt. Look for the option Outside/Working Cat Application.July 16, 2026, 8:38 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182105",
         "url": "https://www.adoptapet.com/pet/48229108-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Starfire",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Starfire is a former working cat who is working hard to be the best house cat ever! Starfire is a bit cautious still, but she's curious and loves to watch and supervise everything that's happening around her. She's still a bit unsure about receiving physical affection in the form of scratches and pets, but if given ample time to relax and grow comfortable, she will bloom into the lap kitty that we know is in there! --- Starfire is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat!July 16, 2026, 8:38 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182440",
+        "url": "https://www.adoptapet.com/pet/48229126-plover-wisconsin-cat",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -3381,8 +3482,8 @@
         "gender": "Female",
         "bio": "My name is Sable. I am a DSH female around 3 years old. I am nursing my 4 kittens and will be ready for adoption when my kittens are old enough.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1307662488",
-        "url": "https://www.adoptapet.com/pet/48116693-medford-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
+        "url": "https://www.adoptapet.com/pet/48116693-medford-wisconsin-cat",
+        "firstSeen": "2026-07-20T04:38:49.172Z"
       },
       {
         "name": "Thor",
@@ -3664,20 +3765,19 @@
     "https://www.adoptapet.com/pet/48524067-wausau-wisconsin-cat": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/48712678-wausau-wisconsin-cat": "2026-07-18T03:57:20.894Z",
     "https://www.adoptapet.com/pet/48701368-wausau-wisconsin-cat": "2026-07-17T04:10:41.108Z",
-    "https://www.adoptapet.com/pet/48194109-wausau-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47612829-wausau-wisconsin-american-pit-bull-terrier-mix": null,
     "https://www.adoptapet.com/pet/47921174-wausau-wisconsin-husky-mix": null,
-    "https://www.adoptapet.com/pet/48548336-wausau-wisconsin-labrador-retriever-mix": "2026-07-03T04:46:13.052Z",
+    "https://www.adoptapet.com/pet/48194109-wausau-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/48294043-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48394746-wausau-wisconsin-cat": "2026-06-19T06:24:14.971Z",
     "https://www.adoptapet.com/pet/48610296-wausau-wisconsin-cat": "2026-07-09T04:57:58.205Z",
     "https://www.adoptapet.com/pet/48560867-wausau-wisconsin-cat": "2026-07-04T04:38:45.749Z",
     "https://www.adoptapet.com/pet/48396820-wausau-wisconsin-cat": "2026-06-19T06:24:14.971Z",
-    "https://www.adoptapet.com/pet/48214334-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48623078-wausau-wisconsin-cat": "2026-07-10T04:56:33.289Z",
-    "https://www.adoptapet.com/pet/48456487-wausau-wisconsin-cat": "2026-06-25T05:08:50.713Z",
+    "https://www.adoptapet.com/pet/48214334-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48560868-wausau-wisconsin-cat": "2026-07-04T04:38:45.749Z",
     "https://www.adoptapet.com/pet/48405384-wausau-wisconsin-cat": "2026-06-20T05:19:56.000Z",
+    "https://www.adoptapet.com/pet/48456487-wausau-wisconsin-cat": "2026-06-25T05:08:50.713Z",
     "https://www.adoptapet.com/pet/48652106-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/48652890-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/48598710-wausau-wisconsin-cat": "2026-07-08T04:17:49.802Z",
@@ -3716,17 +3816,23 @@
     "https://www.adoptapet.com/pet/47360764-friendship-cat": null,
     "https://www.adoptapet.com/pet/48539384-friendship-wisconsin-mixed-breed-medium-mix": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48568751-friendship-wisconsin-cat": "2026-07-05T14:39:11.974Z",
+    "https://www.adoptapet.com/pet/48608225-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-07-13T04:33:15.254Z",
+    "https://www.adoptapet.com/pet/48731055-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
+    "https://www.adoptapet.com/pet/48731402-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48123924-friendship-jack-russell-terrier-mix": null,
     "https://www.adoptapet.com/pet/48384368-friendship-wisconsin-cat": "2026-06-18T05:58:51.647Z",
     "https://www.adoptapet.com/pet/48608536-friendship-wisconsin-cat": "2026-07-09T04:57:58.205Z",
     "https://www.adoptapet.com/pet/48557663-friendship-wisconsin-dachshund-mixed-breed-medium-mix": "2026-07-19T04:23:20.212Z",
-    "https://www.adoptapet.com/pet/48726034-friendship-wisconsin-american-bulldog-mix": "2026-07-19T14:22:15.731Z",
+    "https://www.adoptapet.com/pet/48731058-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48131490-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48608220-friendship-wisconsin-cat": "2026-07-09T04:57:58.205Z",
     "https://www.adoptapet.com/pet/48608219-friendship-wisconsin-cat": "2026-07-09T04:57:58.205Z",
-    "https://www.adoptapet.com/pet/48088416-friendship-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/48088416-friendship-cat": "2026-07-09T04:57:58.205Z",
+    "https://www.adoptapet.com/pet/48731060-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48125534-friendship-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48568749-friendship-wisconsin-cat": "2026-07-05T14:39:11.974Z",
+    "https://www.adoptapet.com/pet/48731056-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
+    "https://www.adoptapet.com/pet/48731057-friendship-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.nlpac.com/q/pets/breckie": null,
     "https://www.nlpac.com/q/pets/angel": "2026-07-01T15:39:10.845Z",
     "https://www.nlpac.com/q/pets/burglar": "2026-07-08T15:17:55.273Z",
@@ -3744,7 +3850,7 @@
     "https://www.nlpac.com/q/pets/tito": "2026-07-01T15:39:10.845Z",
     "https://www.nlpac.com/q/pets/tonio1": null,
     "https://www.nlpac.com/q/pets/vader": "2026-06-24T15:31:46.482Z",
-    "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium": null,
+    "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix": "2026-06-17T06:20:15.925Z",
     "https://www.adoptapet.com/pet/48373637-wausau-wisconsin-beagle": "2026-06-17T06:20:15.925Z",
     "https://www.adoptapet.com/pet/47969416-wausau-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48192023-wausau-wisconsin-mixed-breed-medium-mix": null,
@@ -3755,7 +3861,7 @@
     "https://www.adoptapet.com/pet/48725163-wausau-wisconsin-goldendoodle": "2026-07-19T14:22:15.731Z",
     "https://www.adoptapet.com/pet/48725164-wausau-wisconsin-goldendoodle": "2026-07-19T14:22:15.731Z",
     "https://www.adoptapet.com/pet/35226946-wausau-wisconsin-pit-bull-terrier-basset-hound-mix": null,
-    "https://www.adoptapet.com/pet/42856669-wausau-shih-tzu-mix": "2026-06-15T06:30:27.911Z",
+    "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix": null,
     "https://www.adoptapet.com/pet/48719150-wausau-wisconsin-goldendoodle": "2026-07-19T04:23:20.212Z",
     "https://www.adoptapet.com/pet/48440607-wausau-wisconsin-beagle": "2026-06-24T05:04:46.051Z",
     "https://www.adoptapet.com/pet/46263547-wausau-wisconsin-pit-bull-terrier-mix": null,
@@ -3766,11 +3872,11 @@
     "https://www.adoptapet.com/pet/47360527-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48622110-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
+    "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48523690-wisconsin-rapids-wisconsin-cat": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/48622115-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/48622116-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
-    "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-wisconsin-cat": "2026-06-26T05:12:52.294Z",
+    "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-cat": "2026-06-29T05:54:21.313Z",
     "https://www.adoptapet.com/pet/48526072-wisconsin-rapids-wisconsin-cat": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
@@ -3785,9 +3891,9 @@
     "https://www.adoptapet.com/pet/48288891-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/41460368-wisconsin-rapids-wisconsin-cat": "2026-06-15T06:30:27.911Z",
     "https://www.adoptapet.com/pet/48622107-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
-    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-06-24T05:04:46.051Z",
+    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/46976725-wisconsin-rapids-wisconsin-golden-retriever-mix": null,
-    "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-wisconsin-labrador-retriever-mix": null,
+    "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-labrador-retriever-mix": "2026-06-14T05:54:51.597Z",
     "https://www.adoptapet.com/pet/48622104-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/48622109-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/48622105-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
@@ -3807,7 +3913,7 @@
     "https://www.adoptapet.com/pet/48622111-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/48622108-wisconsin-rapids-wisconsin-great-dane-mix": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/48523691-wisconsin-rapids-wisconsin-terrier-unknown-type-medium-mix": "2026-07-01T15:39:10.845Z",
-    "https://www.adoptapet.com/pet/48352367-marshfield-cat": "2026-06-28T05:20:18.491Z",
+    "https://www.adoptapet.com/pet/48352367-marshfield-wisconsin-cat": "2026-06-15T17:58:28.195Z",
     "https://www.adoptapet.com/pet/48578145-marshfield-wisconsin-cat": "2026-07-06T16:18:14.350Z",
     "https://www.adoptapet.com/pet/48491649-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48660806-marshfield-wisconsin-cat": "2026-07-14T04:06:32.554Z",
@@ -3828,63 +3934,67 @@
     "https://www.adoptapet.com/pet/48660808-marshfield-wisconsin-cat": "2026-07-14T04:06:32.554Z",
     "https://www.adoptapet.com/pet/48706914-marshfield-wisconsin-cat": "2026-07-18T03:57:20.894Z",
     "https://www.adoptapet.com/pet/48660809-marshfield-wisconsin-cat": "2026-07-14T04:06:32.554Z",
-    "https://www.adoptapet.com/pet/48719067-marshfield-wisconsin-cat": "2026-07-19T04:23:20.212Z",
     "https://www.adoptapet.com/pet/48464386-marshfield-wisconsin-cat": "2026-06-25T15:38:07.792Z",
+    "https://www.adoptapet.com/pet/48729036-marshfield-wisconsin-cat": "2026-07-20T04:38:49.172Z",
+    "https://www.adoptapet.com/pet/48729035-marshfield-wisconsin-cat": "2026-07-20T04:38:49.172Z",
+    "https://www.adoptapet.com/pet/48719067-marshfield-wisconsin-cat": "2026-07-19T04:23:20.212Z",
     "https://www.adoptapet.com/pet/48390961-marshfield-cat": "2026-07-16T04:12:27.115Z",
     "https://www.adoptapet.com/pet/48555832-marshfield-wisconsin-mixed-breed-medium-mix": "2026-07-04T04:38:45.749Z",
     "https://www.adoptapet.com/pet/48491648-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48719949-marshfield-wisconsin-cat": "2026-07-19T04:23:20.212Z",
-    "https://www.adoptapet.com/pet/48229112-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229116-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48581766-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48510272-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48431243-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48729037-marshfield-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48695672-plover-wisconsin-australian-shepherd-mix": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48581766-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229116-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229112-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48510272-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48454146-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229123-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48549248-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48431243-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229133-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48549249-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48592570-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229155-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48549246-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229133-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48549249-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48242254-plover-american-bulldog-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229138-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229147-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229099-plover-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229099-plover-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48229149-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48549250-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229120-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229132-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48549234-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229100-plover-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229115-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48510273-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229092-plover-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48254770-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229148-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229129-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229100-plover-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48510273-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229151-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48254770-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48549234-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229120-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229129-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229115-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229148-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229132-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48616613-plover-wisconsin-hound-unknown-type-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229113-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229134-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48621351-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229137-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229139-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229143-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48621351-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229134-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48579146-plover-wisconsin-terrier-unknown-type-medium-mix": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48229126-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48616615-plover-wisconsin-american-bulldog-boxer-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48454149-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48616615-plover-wisconsin-american-bulldog-boxer-mix": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229144-plover-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48229121-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229108-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48229126-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229150-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48229122-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/45751838-medford-german-shepherd-dog-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48282965-medford-wisconsin-mixed-breed-medium-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48527789-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48448803-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/48116693-medford-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48116693-medford-wisconsin-cat": "2026-07-20T04:38:49.172Z",
     "https://www.adoptapet.com/pet/48527788-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48517781-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/47367116-medford-wisconsin-plott-hound": "2026-07-19T18:54:42.206Z",
@@ -3902,6 +4012,17 @@
     "https://www.adoptapet.com/pet/48714176-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/45715583-medford-wisconsin-plott-hound": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48444468-medford-wisconsin-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48548336-wausau-wisconsin-labrador-retriever-mix": "2026-07-03T04:46:13.052Z",
+    "https://www.adoptapet.com/pet/48726034-friendship-wisconsin-american-bulldog-mix": "2026-07-19T14:22:15.731Z",
+    "https://www.adoptapet.com/pet/48088416-friendship-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium": null,
+    "https://www.adoptapet.com/pet/42856669-wausau-shih-tzu-mix": "2026-06-15T06:30:27.911Z",
+    "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-wisconsin-cat": "2026-06-26T05:12:52.294Z",
+    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-06-24T05:04:46.051Z",
+    "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-wisconsin-labrador-retriever-mix": null,
+    "https://www.adoptapet.com/pet/48352367-marshfield-cat": "2026-06-28T05:20:18.491Z",
+    "https://www.adoptapet.com/pet/48229099-plover-cat": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/48116693-medford-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48634948-wausau-wisconsin-cat": "2026-07-11T04:16:41.858Z",
     "https://www.adoptapet.com/pet/48652107-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/48218021-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
@@ -3929,12 +4050,8 @@
     "https://www.petfinder.com/dog/ringo-697b6725-4fcb-4564-9575-a10090a33636/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-14T04:06:32.554Z",
     "https://www.adoptapet.com/pet/48123925-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/48125533-friendship-cat": "2026-07-12T04:27:42.260Z",
-    "https://www.adoptapet.com/pet/48088416-friendship-cat": "2026-07-09T04:57:58.205Z",
-    "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix": "2026-06-17T06:20:15.925Z",
-    "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix": null,
     "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-wisconsin-husky-shiba-inu-mix": null,
     "https://www.adoptapet.com/pet/48408548-wisconsin-rapids-wisconsin-terrier-unknown-type-medium-mix": "2026-06-20T05:19:56.000Z",
-    "https://www.adoptapet.com/pet/31989259-wisconsin-rapids-cat": "2026-06-29T05:54:21.313Z",
     "https://www.adoptapet.com/pet/48396817-wausau-wisconsin-cat": "2026-06-19T06:24:14.971Z",
     "https://www.adoptapet.com/pet/48123924-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-06-16T06:36:42.503Z",
     "https://www.adoptapet.com/pet/48582900-wausau-wisconsin-cat": "2026-07-07T04:56:47.775Z",
@@ -3947,7 +4064,6 @@
     "https://www.petfinder.com/dog/george-99066f66-d676-4876-a13d-b275a6f8265c/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-07-14T04:06:32.554Z",
     "https://www.adoptapet.com/pet/48540744-friendship-wisconsin-cat": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/45534489-wisconsin-rapids-husky-mix": "2026-06-13T14:58:18.390Z",
-    "https://www.adoptapet.com/pet/45817271-wisconsin-rapids-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/31989261-wisconsin-rapids-cat": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48413280-marshfield-wisconsin-cat": "2026-06-21T06:07:42.271Z",
     "https://www.adoptapet.com/pet/48555832-marshfield-mixed-breed-medium-mix": "2026-07-14T04:06:32.554Z",
@@ -3959,12 +4075,10 @@
     "https://www.adoptapet.com/pet/46860816-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48608223-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/48622117-wisconsin-rapids-wisconsin-rat-terrier-mix": "2026-07-13T04:33:15.254Z",
-    "https://www.adoptapet.com/pet/48352367-marshfield-wisconsin-cat": "2026-06-15T17:58:28.195Z",
     "https://www.adoptapet.com/pet/48643979-wausau-wisconsin-cat": "2026-07-12T04:27:42.260Z",
     "https://www.adoptapet.com/pet/48424373-wausau-wisconsin-cat": "2026-06-22T06:32:54.787Z",
     "https://www.adoptapet.com/pet/48623278-wausau-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/47360764-friendship-wisconsin-cat": "2026-06-13T05:23:34.271Z",
-    "https://www.adoptapet.com/pet/48608225-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/48541023-friendship-wisconsin-cat": "2026-07-02T05:02:04.359Z",
     "https://www.adoptapet.com/pet/48539377-friendship-border-collie-mix": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/31989268-wisconsin-rapids-wisconsin-cat": "2026-06-28T05:20:18.491Z",
@@ -3979,7 +4093,6 @@
     "https://www.adoptapet.com/pet/48490145-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/48648799-friendship-wisconsin-jack-russell-terrier-mixed-breed-medium-mix": "2026-07-14T04:06:32.554Z",
     "https://www.adoptapet.com/pet/47997847-wisconsin-rapids-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/46843976-wisconsin-rapids-labrador-retriever-mix": "2026-06-14T05:54:51.597Z",
     "https://www.adoptapet.com/pet/48599622-wausau-wisconsin-yorkie-yorkshire-terrier": "2026-07-08T15:17:55.273Z",
     "https://www.adoptapet.com/pet/48246025-wausau-wisconsin-beagle": null,
     "https://www.adoptapet.com/pet/35226946-wausau-pit-bull-terrier-mix": "2026-06-13T14:58:18.390Z",
@@ -4291,7 +4404,7 @@
   },
   "scrape_status": {
     "marathon": {
-      "count": 108,
+      "count": 107,
       "status": "ok",
       "expected_min": 20
     },
@@ -4301,7 +4414,7 @@
       "expected_min": 10
     },
     "adams": {
-      "count": 18,
+      "count": 24,
       "status": "ok",
       "expected_min": 5
     },
@@ -4326,12 +4439,12 @@
       "expected_min": 10
     },
     "marshfield": {
-      "count": 27,
+      "count": 30,
       "status": "ok",
       "expected_min": 3
     },
     "portage": {
-      "count": 46,
+      "count": 47,
       "status": "ok",
       "expected_min": 15
     },
