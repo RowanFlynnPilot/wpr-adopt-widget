@@ -57,6 +57,13 @@ async function makePage(browser) {
   return page;
 }
 
+/** Close a page without ever throwing — the browser may already be gone.
+ *  (An unprotected page.close() after a Chrome crash killed the whole
+ *  2026-07-26 build; nothing got published that run.) */
+async function safeClose(page) {
+  try { if (page && !page.isClosed()) await page.close(); } catch (_) {}
+}
+
 /**
  * Classify species from breed and listing URL ONLY — never from the pet's
  * name or free-text details. A Pit Bull named "Finch" or a dog named "Bunny"
@@ -302,7 +309,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     console.error(`  Error: ${err.message}`);
     try { saveDiag(`${shelterKey}-adoptapet-error`, await page.content()); } catch (_) {}
   } finally {
-    await page.close();
+    await safeClose(page);
   }
 
   // Fallback: if card-based scraping found very few results, extract pet URLs from
@@ -313,10 +320,11 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   const needsFallback = totalExpected > 0 ? allPets.length < totalExpected * 0.5 : allPets.length <= 3;
   if (needsFallback) {
     console.log(`  [${shelterKey}] Only ${allPets.length} pets from cards (expected ${totalExpected || '?'}) — trying HTML fallback...`);
-    const fallbackPage = await makePage(browser);
+    let fallbackPage = null;
     // Use shelter page for fallback (different HTML structure, may have more embedded URLs)
     const fallbackUrl = `${baseUrl}/available-pets`;
     try {
+      fallbackPage = await makePage(browser);
       await fallbackPage.goto(fallbackUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       await new Promise(r => setTimeout(r, 3000));
       const rawHtml = await fallbackPage.content();
@@ -365,7 +373,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     } catch (err) {
       console.log(`    Fallback failed: ${err.message}`);
     }
-    await fallbackPage.close();
+    await safeClose(fallbackPage);
   }
 
   console.log(`  [${shelterKey}] TOTAL: ${allPets.length} pets scraped`);
@@ -379,13 +387,16 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   // clear them so the bio fetcher recovers the real name from the detail page.
   allPets.forEach(p => { if (/^\d+$/.test((p.name || '').trim())) p.name = ''; });
 
-  // Fetch bio from each pet's detail page (Adoptapet lists only name/breed/age on listing)
+  // Fetch bio from each pet's detail page (Adoptapet lists only name/breed/age
+  // on listing). ONE page is reused for all pets — creating hundreds of pages
+  // per run destabilizes Chrome on CI runners and crashed the 2026-07-26 build.
   if (allPets.length > 0) {
     console.log(`  Fetching bios for ${allPets.length} pets...`);
+    let bioPage = null;
     for (let i = 0; i < allPets.length; i++) {
       const pet = allPets[i];
-      const bioPage = await makePage(browser);
       try {
+        if (!bioPage || bioPage.isClosed()) bioPage = await makePage(browser);
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
         await new Promise(r => setTimeout(r, 3000)); // longer wait for React/Next.js hydration
 
@@ -549,13 +560,22 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         if (pageGender) pet.genderFromPage = pageGender;
       } catch (err) {
         pet.bio = '';
+        // The page (or whole browser) may have died — drop it so the next
+        // iteration recreates it. If Chrome itself is gone, stop fetching
+        // bios and keep the listing data we already have.
+        await safeClose(bioPage);
+        bioPage = null;
+        if (!browser.connected) {
+          console.log(`    Browser connection lost — keeping listing data for remaining ${allPets.length - i - 1} pets`);
+          break;
+        }
       }
-      await bioPage.close();
       if ((i + 1) % 10 === 0) console.log(`    Bios: ${i + 1}/${allPets.length}`);
       await new Promise(r => setTimeout(r, 600));
     }
+    await safeClose(bioPage);
   }
-  
+
   // Filter out pets with no name, error page names, or numeric ID names
   allPets = allPets.filter(p => {
     if (!p.name || p.name.length === 0) return false;
@@ -738,7 +758,7 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
     
     console.log(`  Found ${pets.length} pets`);
     if (pets.length === 0) saveDiag(`${shelterKey}-petfinder`, await page.content());
-    await page.close();
+    await safeClose(page);
 
     const parsed = pets.map(p => {
       // Parse alt text: "Harvey, Adoptable, Adult Male Australian Cattle Dog / Blue Heeler."
@@ -767,10 +787,11 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
     // Fetch bios from each pet's Petfinder detail page
     if (parsed.length > 0) {
       console.log(`  Fetching bios for ${parsed.length} Petfinder pets...`);
+      let bioPage = null;
       for (let i = 0; i < parsed.length; i++) {
         const pet = parsed[i];
-        const bioPage = await makePage(browser);
         try {
+          if (!bioPage || bioPage.isClosed()) bioPage = await makePage(browser);
           await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
           await new Promise(r => setTimeout(r, 2000));
 
@@ -870,19 +891,25 @@ async function scrapePetfinder(browser, shelterSlug, shelterKey) {
             pet.bio = bio.replace(/`/g, "'");
           }
         } catch (err) {
-          // Skip bio on error
+          // Skip bio on error; recreate the page next iteration if it died
+          await safeClose(bioPage);
+          bioPage = null;
+          if (!browser.connected) {
+            console.log(`    Browser connection lost — skipping remaining ${parsed.length - i - 1} bios`);
+            break;
+          }
         }
-        await bioPage.close();
         if ((i + 1) % 5 === 0) console.log(`    Bios: ${i + 1}/${parsed.length}`);
         await new Promise(r => setTimeout(r, 600));
       }
+      await safeClose(bioPage);
     }
 
     return parsed;
 
   } catch (err) {
     console.error(`  Error: ${err.message}`);
-    await page.close();
+    await safeClose(page);
     return [];
   }
 }
@@ -911,13 +938,13 @@ async function scrapeNlpac(browser) {
     if (/Just a moment\.\.\.|cf-browser-verification|cf_chl_opt/i.test(listHtml)) {
       console.log('  [nlpac] Cloudflare did not clear — saving diagnostic');
       saveDiag('nlpac-list', listHtml);
-      await listPage.close();
+      await safeClose(listPage);
       return [];
     }
   } catch (err) {
     console.error(`  Error loading listing: ${err.message}`);
     try { saveDiag('nlpac-list', await listPage.content()); } catch (_) {}
-    await listPage.close();
+    await safeClose(listPage);
     return [];
   }
 
@@ -961,7 +988,7 @@ async function scrapeNlpac(browser) {
   console.log(`  Found ${petPaths.length} pet links (${listingCards.length} with listing-card data), fetching details...`);
   if (petPaths.length === 0) {
     saveDiag('nlpac-list', listHtml);
-    await listPage.close();
+    await safeClose(listPage);
     return [];
   }
   const cardByPath = new Map(listingCards.map(c => [c.path, c]));
@@ -1110,7 +1137,7 @@ async function scrapeNlpac(browser) {
     }
     await new Promise(r => setTimeout(r, 400));
   }
-  await petPage.close();
+  await safeClose(petPage);
 
   console.log(`  [nlpac] TOTAL: ${allPets.length} pets (${enriched} full detail, ${listingOnly} listing-only)`);
   return allPets;
@@ -1122,7 +1149,7 @@ async function main() {
   console.log('║  Wausau Pilot & Review — Pet Data Builder       ║');
   console.log('╚══════════════════════════════════════════════════╝\n');
   
-  const browser = await puppeteer.launch({
+  const launchBrowser = () => puppeteer.launch({
     headless: 'new',
     args: [
       '--no-sandbox',
@@ -1133,6 +1160,25 @@ async function main() {
       '--window-size=1280,900'
     ]
   });
+  let browser = await launchBrowser();
+
+  // A single shelter's fatal error (e.g. a Chrome crash mid-scrape, as on
+  // 2026-07-26) must not kill the whole build. Log it, publish [] for that
+  // shelter — carry-forward serves its last good data and the health gate
+  // flags it — and relaunch Chrome for the next shelter if it died.
+  const scrapeSafe = async (key, fn) => {
+    try {
+      if (!browser.connected) {
+        console.log(`\n[${key}] Browser was disconnected — relaunching Chrome`);
+        try { await browser.close(); } catch (_) {}
+        browser = await launchBrowser();
+      }
+      return await fn();
+    } catch (err) {
+      console.error(`\n[${key}] SCRAPE CRASHED: ${err.message} — continuing with remaining shelters`);
+      return [];
+    }
+  };
   
   const data = {
     lastUpdated: new Date().toISOString(),
@@ -1145,11 +1191,11 @@ async function main() {
   try { previous = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')); } catch (_) {}
   
   // Marathon County — Adoptapet
-  data.shelters.marathon = await scrapeAdoptapet(
-    browser, 
+  data.shelters.marathon = await scrapeSafe('marathon', () => scrapeAdoptapet(
+    browser,
     '77626-humane-society-of-marathon-county-wausau-wisconsin',
     'marathon'
-  );
+  ));
   
   // Clark County — Petfinder. Official API when credentials are configured
   // (reliable, structured data); HTML scraper otherwise or on any API error.
@@ -1166,68 +1212,68 @@ async function main() {
     console.log(`\n[clark] Petfinder API failed (${err.message}) — falling back to HTML scrape`);
   }
   if (!data.shelters.clark) {
-    data.shelters.clark = await scrapePetfinder(
+    data.shelters.clark = await scrapeSafe('clark', () => scrapePetfinder(
       browser,
       'neillsville/clark-county-humane-society-wi34',
       'clark'
-    );
+    ));
   }
   
   // Adams County — Adoptapet
-  data.shelters.adams = await scrapeAdoptapet(
+  data.shelters.adams = await scrapeSafe('adams', () => scrapeAdoptapet(
     browser,
     '76343-adams-county-humane-society-friendship-wisconsin',
     'adams'
-  );
+  ));
   
   // Lincoln County — Adoptapet only.
   // furrypets.com no longer lists individual pets (moved to "application-first" model),
   // so the previous direct scrape was a dead path.
-  data.shelters.lincoln = await scrapeAdoptapet(
+  data.shelters.lincoln = await scrapeSafe('lincoln', () => scrapeAdoptapet(
     browser,
     '66070-lincoln-county-humane-society-merrill-wisconsin',
     'lincoln'
-  );
+  ));
 
   // New Life Pet Adoption Center — Puppeteer required (Cloudflare blocks plain HTTP)
-  data.shelters.nlpac = await scrapeNlpac(browser);
+  data.shelters.nlpac = await scrapeSafe('nlpac', () => scrapeNlpac(browser));
 
   // Fetch Foster and Rescue — Adoptapet (dogs only, foster-based rescue in Wausau)
-  data.shelters.fetch = await scrapeAdoptapet(
+  data.shelters.fetch = await scrapeSafe('fetch', () => scrapeAdoptapet(
     browser,
     '151032-fetch-foster-and-rescue-inc-wausau-wisconsin',
     'fetch'
-  );
+  ));
 
   // South Wood County Humane Society — Wisconsin Rapids (Adoptapet)
-  data.shelters.southwood = await scrapeAdoptapet(
+  data.shelters.southwood = await scrapeSafe('southwood', () => scrapeAdoptapet(
     browser,
     '20247-south-wood-county-humane-society-wisconsin-rapids-wisconsin',
     'southwood'
-  );
+  ));
 
   // Marshfield Area Pet Shelter — Marshfield (Adoptapet)
-  data.shelters.marshfield = await scrapeAdoptapet(
+  data.shelters.marshfield = await scrapeSafe('marshfield', () => scrapeAdoptapet(
     browser,
     '96724-marshfield-area-pet-shelter-marshfield-wisconsin',
     'marshfield'
-  );
+  ));
 
   // Humane Society of Portage County — Plover/Stevens Point (Adoptapet)
-  data.shelters.portage = await scrapeAdoptapet(
+  data.shelters.portage = await scrapeSafe('portage', () => scrapeAdoptapet(
     browser,
     '87863-humane-society-of-portage-county-plover-wisconsin',
     'portage'
-  );
+  ));
 
   // Taylor County WI Humane Society — Medford (Adoptapet)
-  data.shelters.taylor = await scrapeAdoptapet(
+  data.shelters.taylor = await scrapeSafe('taylor', () => scrapeAdoptapet(
     browser,
     '81472-taylor-county-wi-humane-society-medford-wisconsin',
     'taylor'
-  );
+  ));
 
-  await browser.close();
+  try { await browser.close(); } catch (_) {}
 
   // Cross-shelter dedup: Adoptapet cross-lists pets across nearby shelters.
   // Remove duplicates so the same pet doesn't appear under both Marathon and Fetch.
