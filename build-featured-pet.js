@@ -44,6 +44,7 @@ const MAX_FEATURES_PER_WINDOW = 3;
 const LONGSTAY_DAYS = 60;            // "≥ 2 months" threshold for provable tenure
 const HISTORY_RETAIN_DAYS = 90;      // prune older history entries
 const SNAPSHOT_RETAIN_DAYS = 30;     // dated edition images/snippets older than this are deleted
+const BIO_MAX_CHARS = 420;           // bios longer than this are excerpted (~6 lines on the card)
 
 const SHELTER_META = {
   marathon:  { name: 'Humane Society of Marathon County', location: 'Wausau, WI',          logo: 'marathon.svg',    website: 'https://catsndogs.org' },
@@ -157,14 +158,52 @@ function esc(s) {
 }
 
 function cleanBio(bio) {
-  // Full description — no truncation; the card grows to fit.
   let b = (bio || '').replace(/`/g, "'").replace(/\s+/g, ' ').trim();
+  // Restore spaces lost when adjacent paragraphs were concatenated during
+  // scraping ("...not been adopted yet?Fortune is a sweet..."). Requires a
+  // lowercase/digit before the punctuation so "U.S.A" and "J.R.Smith" survive.
+  b = b.replace(/([a-z0-9])([.!?])(["')\]]?)([A-Z])/g, '$1$2$3 $4');
   // Drop a trailing application URL + its lead-in clause ("...apply at: https://…").
   // It's non-clickable inside the PNG and is replaced by the snippet's real
   // "Meet [Name] →" link. Only strips a URL at the very end, never mid-sentence.
   b = b.replace(/\s*[^.!?]*?\bhttps?:\/\/\S+\s*$/i, '').trim();
   b = b.replace(/\s*[:–—-]\s*$/, '').trim();
   return b;
+}
+
+/**
+ * Keep long shelter bios newsletter-sized. Some shelters write 1,000+ character
+ * essays, which made the card tower over the rest of the email.
+ *
+ * This EXCERPTS rather than paraphrases: it keeps as many whole sentences of
+ * the shelter's own words as fit the budget. Rewriting a pet's description
+ * risks changing claims about temperament ("good with kids", "needs a
+ * cat-free home") that adopters act on, so the words shown are always the
+ * shelter's. The trailing "…" plus the "Meet [Name] →" link under the image
+ * signal that there's more to read.
+ */
+function summarizeBio(bio, max = BIO_MAX_CHARS) {
+  const b = (bio || '').trim();
+  if (b.length <= max) return b;
+
+  // Prefer ending on a complete sentence within the budget
+  const sentences = b.match(/[^.!?]+[.!?]+["')\]]*\s*/g) || [];
+  let out = '';
+  for (const s of sentences) {
+    if ((out + s).trim().length > max) break;
+    out += s;
+  }
+  out = out.trim();
+
+  // A rambling bio with no early sentence break (or one giant sentence):
+  // hard-trim at a word boundary instead of showing almost nothing.
+  if (out.length < max * 0.55) {
+    let cut = b.slice(0, max);
+    if (cut.includes(' ')) cut = cut.slice(0, cut.lastIndexOf(' '));
+    return cut.replace(/[,;:\s-]+$/, '') + '…';
+  }
+  // Sentence-trimmed excerpts get an ellipsis too, so it's clear more exists
+  return out + ' …';
 }
 
 function dataUri(file) {
@@ -184,7 +223,7 @@ function buildCardHtml(cand) {
   const gender = (p.gender || '').trim();
   const genderClass = /female/i.test(gender) ? 'female' : /male/i.test(gender) ? 'male' : '';
   const ageLine = [p.breed, p.age].filter(Boolean).join('  ·  ');
-  const bio = cleanBio(p.bio) || `${p.name} is waiting at ${meta.name} for the right family to come along.`;
+  const bio = summarizeBio(cleanBio(p.bio)) || `${p.name} is waiting at ${meta.name} for the right family to come along.`;
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -441,7 +480,7 @@ async function main() {
   console.log(`   ${latestPng}`);
 }
 
-module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml, pruneSnapshots };
+module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml, pruneSnapshots, cleanBio, summarizeBio, BIO_MAX_CHARS };
 
 if (require.main === module) {
   main().catch(err => { console.error('Fatal error:', err); process.exit(1); });

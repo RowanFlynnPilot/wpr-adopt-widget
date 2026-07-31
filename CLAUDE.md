@@ -226,6 +226,8 @@ Steps:
 
 **Output format (since July 2026):** cards render as **JPEG** (`featured-pet-latest.jpg`, `featured-pet-YYYY-MM-DD-{am,pm}.jpg`) — ~6× smaller than the old PNGs. The JSON sidecar keeps its legacy `png*` field names (values now point at .jpg) so newsletter automation doesn't break. `pruneSnapshots()` deletes dated edition files older than 30 days each run so the snapshots directory doesn't grow forever.
 
+**Bio handling on the card:** `cleanBio()` normalizes whitespace, restores spaces lost when scraped paragraphs were concatenated (`"adopted yet?Fortune is"` → `"adopted yet? Fortune is"`, guarded so `U.S.A.` and `4.5 lbs` survive), and strips a trailing application URL. `summarizeBio()` then caps the text at `BIO_MAX_CHARS` (420, ~6 lines) by keeping whole sentences and appending an ellipsis — over half of shelter bios exceed this. It **excerpts, never paraphrases**: rewriting a pet's description risks altering temperament claims ("good with kids", "needs a cat-free home") that adopters act on, so the words on the card are always the shelter's own.
+
 **Selection** (`rankCandidates` in `build-featured-pet.js`):
 - Goal is to spotlight pets listed the longest (the "≥ 2 months" focus). Tenure uses the best signal per pet: tracked `firstSeen` date → Petfinder `publishedAt` → else the pet predates `firstSeen` tracking (began 2026-06-13) and is treated as a long-stay "veteran", ranked oldest-first by Adoptapet listing ID.
 - Tiers: (1) provably ≥ 60 days, (2) pre-tracking veterans, (3) tracked but younger. Until `firstSeen` matures past 60 days (~mid-Aug 2026), tier 1 is empty and the veterans carry the focus.
