@@ -25,10 +25,11 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
+      # Pull BEFORE npm install: node_modules is committed to this repo, so
+      # `npm install` dirties tracked files and a later rebase refuses to run.
+      - run: git pull --rebase origin main
       - run: npm install
       - run: npx puppeteer browsers install chrome
-      # Always work from the freshest committed data
-      - run: git pull --rebase origin main
       # ANTHROPIC_API_KEY enables the Claude bio rewrite (long shelter bios are
       # condensed to <=300 chars). Without it the card falls back to a
       # sentence-boundary excerpt — the snapshot still builds either way.
@@ -42,7 +43,9 @@ jobs:
           git add docs/snapshots featured-history.json
           if ! git diff --cached --quiet; then
             git commit -m "🖼️ Featured pet snapshot"
-            git pull --rebase origin main
+            # --autostash: npm install leaves tracked node_modules churn we
+            # don't want to commit, and a plain rebase aborts on a dirty tree
+            git pull --rebase --autostash origin main
             git push origin main
           else
             echo "No snapshot changes."

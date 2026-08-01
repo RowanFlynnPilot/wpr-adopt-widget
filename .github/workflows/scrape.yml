@@ -42,8 +42,10 @@ jobs:
           date -u > docs/update-log.txt
           git add -A
           git commit -m "🐾 Update pet data" || true
-          # Rebase instead of force-push so a manual commit landed mid-run isn't clobbered
-          git pull --rebase origin main
+          # Rebase instead of force-push so a manual commit landed mid-run isn't clobbered.
+          # --autostash guards against a dirty tree (node_modules is tracked in
+          # this repo, so npm install can leave churn behind).
+          git pull --rebase --autostash origin main
           git push origin main
       # Runs AFTER the push so healthy shelters still publish; a failed or
       # stale shelter turns the run red and triggers the alert step below.
