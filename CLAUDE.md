@@ -226,7 +226,12 @@ Steps:
 
 **Output format (since July 2026):** cards render as **JPEG** (`featured-pet-latest.jpg`, `featured-pet-YYYY-MM-DD-{am,pm}.jpg`) — ~6× smaller than the old PNGs. The JSON sidecar keeps its legacy `png*` field names (values now point at .jpg) so newsletter automation doesn't break. `pruneSnapshots()` deletes dated edition files older than 30 days each run so the snapshots directory doesn't grow forever.
 
-**Bio handling on the card:** `cleanBio()` normalizes whitespace, restores spaces lost when scraped paragraphs were concatenated (`"adopted yet?Fortune is"` → `"adopted yet? Fortune is"`, guarded so `U.S.A.` and `4.5 lbs` survive), and strips a trailing application URL. `summarizeBio()` then caps the text at `BIO_MAX_CHARS` (420, ~6 lines) by keeping whole sentences and appending an ellipsis — over half of shelter bios exceed this. It **excerpts, never paraphrases**: rewriting a pet's description risks altering temperament claims ("good with kids", "needs a cat-free home") that adopters act on, so the words on the card are always the shelter's own.
+**Bio handling on the card** (`BIO_MAX_CHARS` = 300):
+1. `cleanBio()` normalizes whitespace, restores spaces lost when scraped paragraphs were concatenated (`"adopted yet?Fortune is"` → `"adopted yet? Fortune is"`, guarded so `U.S.A.` and `4.5 lbs` survive), and strips a trailing application URL.
+2. `rewriteBio()` condenses anything over 300 chars via the Claude API (`claude-opus-5`, structured JSON output). **Requires the `ANTHROPIC_API_KEY` repo secret** — `.github/workflows/snapshot.yml` passes it through. Cost is a few cents/month at two runs/day.
+3. `summarizeBio()` is the fallback — keeps whole sentences up to 300 chars and appends an ellipsis.
+
+**The rewrite fails safe.** `rewriteBio()` returns `null` (→ excerpt) when there's no API key, the SDK is missing, the API errors or refuses, output is unparseable or over 300 chars, **or `retainsConstraints()` finds the rewrite dropped a restriction the shelter stated** — no-cats/no-dogs/no-kids, only-pet, experienced-home, medical needs, bonded pairs. That guard exists because a summary that reads more permissive than the shelter's own words can land an animal in the wrong home; the system prompt also forbids inventing facts or softening restrictions. Never loosen it without a good reason.
 
 **Selection** (`rankCandidates` in `build-featured-pet.js`):
 - Goal is to spotlight pets listed the longest (the "≥ 2 months" focus). Tenure uses the best signal per pet: tracked `firstSeen` date → Petfinder `publishedAt` → else the pet predates `firstSeen` tracking (began 2026-06-13) and is treated as a long-stay "veteran", ranked oldest-first by Adoptapet listing ID.

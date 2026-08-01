@@ -29,7 +29,12 @@ jobs:
       - run: npx puppeteer browsers install chrome
       # Always work from the freshest committed data
       - run: git pull --rebase origin main
+      # ANTHROPIC_API_KEY enables the Claude bio rewrite (long shelter bios are
+      # condensed to <=300 chars). Without it the card falls back to a
+      # sentence-boundary excerpt — the snapshot still builds either way.
       - run: node build-featured-pet.js
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Commit and push
         run: |
           git config user.name "WPR Pet Bot"

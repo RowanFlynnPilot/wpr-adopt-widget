@@ -8,6 +8,7 @@
     "build-featured-pet": "node build-featured-pet.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "puppeteer": "^23.0.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"

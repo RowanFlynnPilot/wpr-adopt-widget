@@ -44,7 +44,7 @@ const MAX_FEATURES_PER_WINDOW = 3;
 const LONGSTAY_DAYS = 60;            // "≥ 2 months" threshold for provable tenure
 const HISTORY_RETAIN_DAYS = 90;      // prune older history entries
 const SNAPSHOT_RETAIN_DAYS = 30;     // dated edition images/snippets older than this are deleted
-const BIO_MAX_CHARS = 420;           // bios longer than this are excerpted (~6 lines on the card)
+const BIO_MAX_CHARS = 300;           // hard cap for the bio shown on the card
 
 const SHELTER_META = {
   marathon:  { name: 'Humane Society of Marathon County', location: 'Wausau, WI',          logo: 'marathon.svg',    website: 'https://catsndogs.org' },
@@ -223,7 +223,10 @@ function buildCardHtml(cand) {
   const gender = (p.gender || '').trim();
   const genderClass = /female/i.test(gender) ? 'female' : /male/i.test(gender) ? 'male' : '';
   const ageLine = [p.breed, p.age].filter(Boolean).join('  ·  ');
-  const bio = summarizeBio(cleanBio(p.bio)) || `${p.name} is waiting at ${meta.name} for the right family to come along.`;
+  // cand.bioText is the resolved bio (Claude rewrite or excerpt); fall back to
+  // a plain excerpt so buildCardHtml stays usable on its own.
+  const bio = (cand.bioText || summarizeBio(cleanBio(p.bio)))
+    || `${p.name} is waiting at ${meta.name} for the right family to come along.`;
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -275,6 +278,137 @@ body{background:transparent;font-family:'Source Sans 3',sans-serif}
   </div>
 </div>
 </body></html>`;
+}
+
+// ─── BIO REWRITE (Claude API) ───
+
+const REWRITE_MODEL = 'claude-opus-5';
+
+const REWRITE_SYSTEM = `You condense animal-shelter adoption bios into short blurbs for a local newspaper's daily newsletter.
+
+Accuracy matters more than style: adopters act on what you write, and a wrong detail can send an animal to the wrong home.
+
+- Use ONLY facts stated in the shelter's bio. Never add traits, history, or details that aren't there.
+- Preserve every restriction or requirement the bio states, and state it just as plainly: compatibility with cats, dogs, children, or other pets; needing to be the only pet; needing an experienced, quiet, or adult-only home; medical, dietary, or mobility needs; bonded pairs that must be adopted together.
+- Never soften, hedge, or reverse a restriction. "Not good with cats" must not become "may need slow introductions with cats."
+- Keep the bio's voice: if the pet is written as speaking in first person, stay in first person; otherwise use third person.
+- Drop repetition, adoption-application instructions, contact details, and filler.
+
+Write at most 2 short sentences, under 300 characters total.`;
+
+/** Extract the JSON summary from a Messages API response, or '' if unusable. */
+function readSummary(res) {
+  if (!res || res.stop_reason === 'refusal') return '';
+  const text = (res.content || [])
+    .filter(b => b.type === 'text')
+    .map(b => b.text)
+    .join('')
+    .trim();
+  if (!text) return '';
+  try {
+    const parsed = JSON.parse(text);
+    return String(parsed.summary || '').replace(/\s+/g, ' ').trim();
+  } catch (_) {
+    return '';
+  }
+}
+
+/**
+ * Restriction guard. Each entry is [signal in the original, what the rewrite
+ * must still mention]. If the shelter flagged a constraint and the rewrite
+ * dropped it, we reject the rewrite rather than publish a bio that reads more
+ * permissive than the shelter's own words.
+ */
+const CONSTRAINT_CHECKS = [
+  [/\b(?:no|not good with|can't live with|cannot live with|free of|without)\s+(?:other\s+)?cats?\b|\bcat[- ]free\b/i, /\bcats?\b/i],
+  [/\b(?:no|not good with|can't live with|cannot live with|without)\s+(?:other\s+)?dogs?\b|\bdog[- ]free\b/i, /\bdogs?\b/i],
+  [/\b(?:no|not good with|without)\s+(?:young\s+)?(?:kids|children)\b|\badult[- ]only\b|\bolder (?:kids|children)\b/i, /\b(?:kids?|children|adult)\b/i],
+  [/\bonly (?:pet|animal|dog|cat) (?:in|of) the (?:home|house|household)\b|\bmust be the only\b|\bonly (?:pet|animal)\b/i, /\bonly\b/i],
+  [/\bexperienced (?:owner|home|adopter|handler|family)\b/i, /\bexperienced\b/i],
+  [/\b(?:diabetic|insulin|medication|medical needs|special needs|special diet|hydrolyzed)\b/i, /\b(?:diabet|insulin|medicat|medical|special|diet)/i],
+  [/\bbonded (?:pair|with|to)\b|\bmust (?:be )?(?:adopted|go) together\b/i, /\b(?:bonded|together|pair|sister|brother|both)\b/i],
+];
+
+function retainsConstraints(original, summary) {
+  for (const [signal, mustMention] of CONSTRAINT_CHECKS) {
+    if (signal.test(original) && !mustMention.test(summary)) return false;
+  }
+  return true;
+}
+
+/**
+ * Rewrite an over-long bio down to BIO_MAX_CHARS using Claude.
+ * Returns null whenever the rewrite can't be trusted or produced — the caller
+ * then falls back to summarizeBio()'s sentence-boundary excerpt, so the card
+ * always renders. Reasons for null: no API key configured, bio already short
+ * enough, API/network error, refusal, unparseable output, over-length output,
+ * or a dropped restriction (see retainsConstraints).
+ */
+async function rewriteBio(pet, bio) {
+  if (!process.env.ANTHROPIC_API_KEY) return null;
+  if (!bio || bio.length <= BIO_MAX_CHARS) return null;
+
+  let Anthropic;
+  try {
+    const mod = require('@anthropic-ai/sdk');
+    Anthropic = mod.default || mod;
+  } catch (err) {
+    console.log(`  [bio] Anthropic SDK unavailable (${err.message}) — using excerpt`);
+    return null;
+  }
+
+  try {
+    const client = new Anthropic();
+    const res = await client.messages.create(
+      {
+        model: REWRITE_MODEL,
+        max_tokens: 2000, // room for thinking (on by default) + a short answer
+        system: REWRITE_SYSTEM,
+        output_config: {
+          effort: 'medium',
+          format: {
+            type: 'json_schema',
+            schema: {
+              type: 'object',
+              properties: { summary: { type: 'string' } },
+              required: ['summary'],
+              additionalProperties: false,
+            },
+          },
+        },
+        messages: [{
+          role: 'user',
+          content: `Pet name: ${pet.name}\nBreed: ${pet.breed || 'unknown'}\n\nShelter bio:\n${bio}`,
+        }],
+      },
+      { timeout: 60000 }
+    );
+
+    const summary = readSummary(res);
+    if (!summary) {
+      console.log(`  [bio] ${pet.name}: no usable rewrite returned — using excerpt`);
+      return null;
+    }
+    if (summary.length > BIO_MAX_CHARS) {
+      console.log(`  [bio] ${pet.name}: rewrite ran long (${summary.length} chars) — using excerpt`);
+      return null;
+    }
+    if (!retainsConstraints(bio, summary)) {
+      console.log(`  [bio] ${pet.name}: rewrite dropped a stated restriction — using excerpt`);
+      return null;
+    }
+    console.log(`  [bio] ${pet.name}: rewrote ${bio.length} → ${summary.length} chars`);
+    return summary;
+  } catch (err) {
+    console.log(`  [bio] ${pet.name}: rewrite failed (${err.message}) — using excerpt`);
+    return null;
+  }
+}
+
+/** Bio to print on the card: Claude rewrite when trustworthy, else an excerpt. */
+async function resolveBio(cand) {
+  const cleaned = cleanBio(cand.pet.bio);
+  return (await rewriteBio(cand.pet, cleaned)) || summarizeBio(cleaned);
 }
 
 /**
@@ -426,6 +560,7 @@ async function main() {
         console.log(`  skip ${cand.pet.name} — listing returns 404/410`);
         continue;
       }
+      cand.bioText = await resolveBio(cand);
       if (await renderCard(browser, cand, [latestPng, editionPng])) { chosen = cand; break; }
       console.log(`  skip ${cand.pet.name} — photo failed to load`);
     }
@@ -480,7 +615,7 @@ async function main() {
   console.log(`   ${latestPng}`);
 }
 
-module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml, pruneSnapshots, cleanBio, summarizeBio, BIO_MAX_CHARS };
+module.exports = { rankCandidates, tenure, tierOf, tenureLabel, lastFeaturedUrl, isFeatureable, adoptapetId, pruneHistory, buildCardHtml, embedHtml, pruneSnapshots, cleanBio, summarizeBio, rewriteBio, resolveBio, retainsConstraints, readSummary, BIO_MAX_CHARS };
 
 if (require.main === module) {
   main().catch(err => { console.error('Fatal error:', err); process.exit(1); });
