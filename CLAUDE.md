@@ -150,6 +150,10 @@ Species classification uses keyword matching: cat breeds (shorthair, longhair, s
 
 After scraping, `main()` normalizes display text on every pet (including carried-forward ones): `fixBioSpacing()` restores spaces lost to paragraph concatenation ("adopted yet?Fortune" → "adopted yet? Fortune", guarded so "U.S.A." and "4.5 lbs" survive) and `tidyAge()` shortens verbose ages ("4 years 1 month old, Adult" → "4 yrs 1 mo"). This is the single cleanup point for all downstream consumers — widget, modal, JSON feed, newsletter.
 
+When an Adoptapet pet's shelter wrote no story ("This pet has no story" — genuinely absent, not an extraction bug; ~50 pets across Adams/Taylor/South Wood/Marathon), `synthesizeFactsBio()` fills the bio with an honest facts line built ONLY from the page's structured data — color, breed, age, sex, and "My health" badges (spayed/neutered, shots current, housetrained). Example: "Asher is a black Domestic Shorthair kitten, 3 mos old. Neutered." It never invents personality or temperament — keep it that way. NLPAC's missing bios/ages are NOT fixable in CI (Cloudflare blocks their detail pages from datacenter IPs).
+
+Accessibility: pet/spotlight cards are focusable (`tabindex=0`, `role=button`, Enter/Space opens the modal via a delegated handler that ignores inner links); the modal is `role=dialog aria-modal` with a Tab focus trap, focus moved to Close on open and restored to the opener on close.
+
 ---
 
 ## Frontend Widget
@@ -177,9 +181,11 @@ After scraping, `main()` normalizes display text on every pet (including carried
 4. Re-renders after merge
 
 ### Filters
-- **Shelter filter:** All Shelters, Marathon County, Clark County, Adams County, Lincoln County, New Life PAC
+- **Shelter filter:** one pill per shelter (all ten) + All Shelters
 - **Animal type filter:** All Animals, Dogs, Cats, Other (Other button auto-hides when no small animals exist)
-- State tracked in `activeShelter` and `activeAnimal` globals; `render()` rebuilds all DOM
+- **Age filter:** All Ages / Young / Adult / Senior — `ageGroup()` classifies both Petfinder words (Baby/Young/Adult/Senior) and numeric strings ("4 yrs 1 mo"; <1 yr young, 8+ yrs senior); unknown ages only match All Ages
+- **Gender filter:** All / Male / Female
+- State tracked in `activeShelter`/`activeAnimal`/`activeAge`/`activeGender`/`activeSearch` globals; `render()` rebuilds all DOM; all filter pills carry `aria-pressed`
 
 ### Pet Cards
 - Photo with smart cropping (`smartPosition()` — canvas-based edge detection to find focal third of image for `object-position`)

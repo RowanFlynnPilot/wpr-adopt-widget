@@ -91,6 +91,8 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 }
 .filter-btn:hover{border-color:var(--teal);color:var(--teal)}
 .filter-btn.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.filter-duo{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.filter-duo>div{display:flex;flex-direction:column;align-items:center}
 .search-wrap{position:relative;width:100%;max-width:340px}
 .search-input{
   width:100%;padding:8px 32px 8px 32px;
@@ -147,6 +149,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   cursor:pointer;text-decoration:none;color:inherit;display:block;
 }
 .pet-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.pet-card:focus-visible,.spotlight-card:focus-visible,.filter-btn:focus-visible{outline:3px solid var(--teal-dark);outline-offset:2px}
 .pet-card{position:relative}
 .new-badge{
   position:absolute;top:8px;left:8px;z-index:1;
@@ -424,6 +427,25 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
         <button class="filter-btn" data-type="other">🐾 Other</button>
       </div>
     </div>
+    <div class="filter-duo">
+      <div>
+        <div class="filter-label">Age</div>
+        <div class="filter-row" id="ageFilter">
+          <button class="filter-btn active" data-age="all">All Ages</button>
+          <button class="filter-btn" data-age="young">Young</button>
+          <button class="filter-btn" data-age="adult">Adult</button>
+          <button class="filter-btn" data-age="senior">Senior</button>
+        </div>
+      </div>
+      <div>
+        <div class="filter-label">Gender</div>
+        <div class="filter-row" id="genderFilter">
+          <button class="filter-btn active" data-gender="all">All</button>
+          <button class="filter-btn" data-gender="male">Male</button>
+          <button class="filter-btn" data-gender="female">Female</button>
+        </div>
+      </div>
+    </div>
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
       <input type="search" id="searchInput" class="search-input" placeholder="Search by name or breed…" aria-label="Search adoptable pets">
@@ -464,7 +486,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 
 <!-- Pet Detail Modal -->
 <div class="pet-modal-overlay" id="petModal" onclick="if(event.target===this)closePetModal()">
-  <div class="pet-modal">
+  <div class="pet-modal" role="dialog" aria-modal="true" aria-labelledby="petModalName">
     <button class="pet-modal-close" onclick="closePetModal()" aria-label="Close">&times;</button>
     <div id="petModalImg"></div>
     <div class="pet-modal-body">
@@ -553,7 +575,29 @@ async function loadLiveData(){
 // ═══ FILTER STATE ═══
 let activeShelter='all';
 let activeAnimal='all';
+let activeAge='all';
+let activeGender='all';
 let activeSearch='';
+
+// Classify a scraped age string into young / adult / senior ('' = unknown,
+// only matches the "All Ages" filter). Handles both Petfinder's words
+// (Baby/Young/Adult/Senior) and numeric strings like "4 yrs 1 mo".
+function ageGroup(age){
+  const a=(age||'').toLowerCase();
+  if(!a)return'';
+  if(/baby|puppy|kitten|young/.test(a))return'young';
+  if(/senior/.test(a))return'senior';
+  const yr=a.match(/(\d+)\s*yrs?/);
+  if(yr)return parseInt(yr[1],10)>=8?'senior':'adult';
+  if(/\d\s*(mos?|wks?)\b/.test(a))return'young';
+  if(/adult/.test(a))return'adult';
+  return'';
+}
+function matchesAgeGender(p){
+  if(activeAge!=='all'&&ageGroup(p.age)!==activeAge)return false;
+  if(activeGender!=='all'&&(p.gender||'').toLowerCase()!==activeGender)return false;
+  return true;
+}
 const contentEl=document.getElementById('shelterContent');
 
 // Stable ID derived from pet URL (used for hash deep-links so a refresh re-opens the modal)
@@ -679,7 +723,7 @@ function card(p,shelterKey){
   const shareBody=encodeURIComponent(`I found ${p.name} (${p.breed}) on the Wausau Pilot & Review adoptable pets page!\n\n${shareUrl}`);
   const smsBody=encodeURIComponent(`Check out ${p.name} (${p.breed}) — adoptable! ${shareUrl}`);
   const isNew=p.firstSeen&&(Date.now()-new Date(p.firstSeen).getTime())<8*86400000;
-  return`<div class="pet-card" onclick="if(event.target.closest('.share-wrap'))return;openPetModal('${pid}')" title="Learn more about ${esc(p.name)}">
+  return`<div class="pet-card" data-pid="${pid}" tabindex="0" role="button" aria-label="Learn more about ${esc(p.name)}" onclick="if(event.target.closest('.share-wrap'))return;openPetModal('${pid}')" title="Learn more about ${esc(p.name)}">
     ${isNew?'<span class="new-badge">✨ New</span>':''}${img}<div class="pet-card-body">
     <div class="pet-card-name">${esc(p.name)}</div>
     <div class="pet-card-breed">${esc(p.breed)}${p.age?' · '+esc(p.age):''}</div>
@@ -719,6 +763,11 @@ function section(key){
   if(activeAnimal!=='all'){
     pets=pets.filter(p=>getAnimalType(p.species)===activeAnimal);
   }
+  // Apply age + gender filters (placeholder link-out cards have neither, so
+  // they drop out of any narrowed view — correct, they aren't real pets)
+  if(activeAge!=='all'||activeGender!=='all'){
+    pets=pets.filter(matchesAgeGender);
+  }
   // Apply search filter (name or breed, case-insensitive)
   if(activeSearch){
     const q=activeSearch.toLowerCase();
@@ -730,8 +779,8 @@ function section(key){
   const st=DATA_META.scrapeStatus?DATA_META.scrapeStatus[key]:null;
   const emptyMsg=activeSearch
     ?`No pets matching "${esc(activeSearch)}" at this shelter.`
-    :activeAnimal!=='all'
-      ?'No '+activeAnimal+'s currently listed at this shelter.'
+    :(activeAnimal!=='all'||activeAge!=='all'||activeGender!=='all')
+      ?'No pets matching the selected filters at this shelter.'
       :st&&st.status==='failed'
         ?'We&#39;re having trouble reaching this shelter&#39;s online listings right now. Visit their website or call for current pets.'
         :'No pets currently listed online. Visit the shelter website or call for the latest.';
@@ -767,6 +816,7 @@ function countByType(type){
   keys.forEach(k=>(PET_DATA[k]||[]).forEach(p=>{
     if(p.placeholder)return; // Lincoln link-out cards aren't pets — keep the count honest
     if(type!=='all'&&getAnimalType(p.species)!==type)return;
+    if(!matchesAgeGender(p))return;
     if(q&&!((p.name||'').toLowerCase().includes(q)||(p.breed||'').toLowerCase().includes(q)))return;
     c++;
   }));
@@ -805,7 +855,7 @@ function spotlightHtml(){
         else if(days>=30)since='Waiting over a month';
         else since='Waiting since '+new Date(e.p.firstSeen).toLocaleDateString('en-US',{month:'short',day:'numeric'});
       }
-      return`<div class="spotlight-card" onclick="openPetModal('${pid}')" title="Learn more about ${esc(e.p.name)}"><img src="${esc(e.p.photo)}" alt="Photo of ${esc(e.p.name)}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="spotlight-info"><strong>${esc(e.p.name)}</strong><span>${esc(e.p.breed)}</span><em>${since}</em></div></div>`;
+      return`<div class="spotlight-card" data-pid="${pid}" tabindex="0" role="button" aria-label="Learn more about ${esc(e.p.name)}" onclick="openPetModal('${pid}')" title="Learn more about ${esc(e.p.name)}"><img src="${esc(e.p.photo)}" alt="Photo of ${esc(e.p.name)}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="spotlight-info"><strong>${esc(e.p.name)}</strong><span>${esc(e.p.breed)}</span><em>${since}</em></div></div>`;
     }).join('')
   }</div></div>`;
 }
@@ -813,8 +863,14 @@ function spotlightHtml(){
 function render(){
   const keys=activeShelter==='all'?Object.keys(SHELTERS):[activeShelter];
   const total=countByType(activeAnimal);
-  const bannerText=activeAnimal!=='all'
-    ?`Showing <strong>${total} ${activeAnimal}${total!==1?'s':''}</strong> across ${activeShelter==='all'?'all shelters':SHELTERS[activeShelter].name}`
+  const filtered=activeAnimal!=='all'||activeAge!=='all'||activeGender!=='all';
+  const what=[
+    activeAge!=='all'?activeAge:'',
+    activeGender!=='all'?activeGender:'',
+    activeAnimal!=='all'?activeAnimal+(total!==1?'s':''):(filtered?`pet${total!==1?'s':''}`:'')
+  ].filter(Boolean).join(' ');
+  const bannerText=filtered
+    ?`Showing <strong>${total} ${what}</strong> across ${activeShelter==='all'?'all shelters':SHELTERS[activeShelter].name}`
     :`<strong>${total} adoptable pets</strong> across ${activeShelter==='all'?'central Wisconsin shelters':SHELTERS[activeShelter].name}`;
   const updatedTs=DATA_META.lastUpdated?fmtDateTime(DATA_META.lastUpdated):'';
   contentEl.innerHTML=
@@ -834,6 +890,7 @@ function render(){
       render();
     }
   }
+  syncPressed();
   reportHeight();
 }
 
@@ -859,6 +916,25 @@ document.querySelectorAll('#animalFilter .filter-btn').forEach(b=>{
     b.classList.add('active');activeAnimal=b.dataset.type;render();
   });
 });
+
+// Age + gender filters
+document.querySelectorAll('#ageFilter .filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#ageFilter .filter-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');activeAge=b.dataset.age;render();
+  });
+});
+document.querySelectorAll('#genderFilter .filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#genderFilter .filter-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');activeGender=b.dataset.gender;render();
+  });
+});
+
+// Screen readers hear filter pills as toggles: mirror .active into aria-pressed
+function syncPressed(){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.setAttribute('aria-pressed',b.classList.contains('active')?'true':'false'));
+}
 
 // Search input (debounced)
 const searchInput=document.getElementById('searchInput');
@@ -1003,8 +1079,11 @@ function openPetModal(pid,opts){
   `;
 
   const overlay=document.getElementById('petModal');
+  _modalOpener=document.activeElement; // restore focus here on close
   overlay.classList.add('open');
   overlay.scrollTop=0;
+  const closeBtn=overlay.querySelector('.pet-modal-close');
+  if(closeBtn)closeBtn.focus();
   if(window.parent===window){
     document.body.style.overflow='hidden';
   } else {
@@ -1014,8 +1093,11 @@ function openPetModal(pid,opts){
   setTimeout(reportHeight,50);
 }
 
+let _modalOpener=null;
 function closePetModal(){
   document.getElementById('petModal').classList.remove('open');
+  if(_modalOpener&&document.contains(_modalOpener)){try{_modalOpener.focus()}catch(_){}}
+  _modalOpener=null;
   // Reset modal position
   const modal=document.querySelector('.pet-modal');
   if(modal) modal.style.marginTop='';
@@ -1028,6 +1110,30 @@ function closePetModal(){
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
+
+// ═══ KEYBOARD ACCESS ═══
+// Pet/spotlight cards are divs with role="button" — open on Enter/Space, but
+// only when the card itself is focused (never hijack keys on inner links).
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  const c=e.target.closest('[data-pid]');
+  if(!c||e.target!==c)return;
+  e.preventDefault();
+  openPetModal(c.dataset.pid);
+});
+
+// Focus trap: while the modal is open, Tab cycles within it
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab')return;
+  const overlay=document.getElementById('petModal');
+  if(!overlay.classList.contains('open'))return;
+  const f=[...overlay.querySelectorAll('button,a[href]')].filter(el=>el.offsetParent);
+  if(!f.length)return;
+  const first=f[0],last=f[f.length-1];
+  if(!overlay.contains(document.activeElement)){e.preventDefault();first.focus()}
+  else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+});
 
 // ═══ FROM OUR SHELTERS ON FACEBOOK ═══
 // Facebook's official Page Plugin (an iframe embed — no API key, no scraping,
@@ -1065,7 +1171,7 @@ function fbLabel(key){
 }
 function showFbPage(key){
   fbActive=key;
-  document.querySelectorAll('#fbTabs .filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.fb===key));
+  document.querySelectorAll('#fbTabs .filter-btn').forEach(b=>{b.classList.toggle('active',b.dataset.fb===key);b.setAttribute('aria-pressed',b.dataset.fb===key?'true':'false')});
   const wrap=document.getElementById('fbEmbed');
   // The Page Plugin renders at a fixed width (180–500px) — size it to fit
   const w=Math.max(180,Math.min(500,wrap.clientWidth||500));

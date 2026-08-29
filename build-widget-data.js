@@ -409,7 +409,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         await new Promise(r => setTimeout(r, 1000)); // wait for expansion
 
         const petHasName = !!pet.name;
-        const { bio: pageBio, breed: pageBreed, pageName, pagePhoto, pageAge, pageGender } = await bioPage.evaluate((pet_has_name) => {
+        const { bio: pageBio, breed: pageBreed, pageName, pagePhoto, pageAge, pageGender, pageColor, pageHealth } = await bioPage.evaluate((pet_has_name) => {
           const skip = /Cared for by|Ask About Me|Humane Society of|^Adopt\b|^Contact\b|^Share\b|^Print\b|This pet has no story|no story|Contact this organization for more information|^\s*Read\s*more\s*$|^\s*Read\s*less\s*$/i;
 
           // Strategy 1: Look for "Here's what the humans have to say" heading and grab text after it
@@ -486,8 +486,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
           // Filter out nav text pollution (e.g. "Breed 101" → "101")
           if (/^\d+$/.test(breed) || breed.length < 3) breed = '';
 
-          // Extract age and gender from dt/dd pairs (Adoptapet "My basic info" section)
-          let pageAge = '', pageGender = '';
+          // Extract age/gender/color from dt/dd pairs (Adoptapet "My basic info" section)
+          let pageAge = '', pageGender = '', pageColor = '';
           for (const dt of dtEls) {
             const label = dt.textContent.trim().toLowerCase();
             const dd = dt.nextElementSibling;
@@ -495,6 +495,24 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             const val = dd.textContent.trim().replace(/\s+/g, ' ');
             if (label === 'age' && val) pageAge = val;
             if (label === 'sex' && val) pageGender = val.split(/\s/)[0]; // "Male" or "Female"
+            if (label === 'color' && val && !/not listed/i.test(val)) pageColor = val;
+          }
+
+          // "My health" section: short badges like "Spayed/neutered", "Shots
+          // current", "Housetrained". Used to synthesize a facts line for pets
+          // whose shelter wrote no story — only recognized values, no free text.
+          const pageHealth = [];
+          const healthHead = allEls.concat([...document.querySelectorAll('h2, h3, h4')])
+            .find(el => /^\s*My health\s*$/i.test(el.textContent));
+          if (healthHead && healthHead.parentElement) {
+            const seenH = new Set();
+            for (const li of healthHead.parentElement.querySelectorAll('li')) {
+              const t = li.textContent.trim().replace(/\s+/g, ' ');
+              if (t && t.length < 40 && /spay|neuter|shots|housetrain|house-train|declaw/i.test(t) && !seenH.has(t.toLowerCase())) {
+                seenH.add(t.toLowerCase());
+                pageHealth.push(t);
+              }
+            }
           }
           // Also try og:description: "Pictures of X a Domestic Shorthair for adoption in Wausau, WI. ... 1 year old Male."
           if (!pageAge) {
@@ -547,7 +565,7 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
             }
           }
 
-          return { bio, breed, pageName, pagePhoto, pageAge, pageGender };
+          return { bio, breed, pageName, pagePhoto, pageAge, pageGender, pageColor, pageHealth };
         }, petHasName);
         const generic = /Cared for by|Ask About Me|Humane Society of|This pet has no story|no story.*Contact this organization/i;
         pet.bio = (pageBio && !generic.test(pageBio) && pageBio.length >= 50) ? pageBio : '';
@@ -558,6 +576,8 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         // Fill in age/gender from detail page if missing from card scrape
         if (pageAge) pet.ageFromPage = pageAge;
         if (pageGender) pet.genderFromPage = pageGender;
+        if (pageColor) pet.colorFromPage = pageColor;
+        if (pageHealth && pageHealth.length) pet.healthFromPage = pageHealth;
       } catch (err) {
         pet.bio = '';
         // The page (or whole browser) may have died — drop it so the next
@@ -647,17 +667,68 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
     // Clean up name: strip "My name is X!" prefix from Adoptapet detail pages
     let cleanName = (p.name || '').replace(/^My name is\s+/i, '').replace(/!$/, '').trim();
 
+    const finalAge = age || p.ageFromPage || '';
+    const finalGender = gender || p.genderFromPage || '';
+    // Shelter wrote no story → fill the card with an honest facts line built
+    // from the page's structured data instead of leaving it blank.
+    let bio = (p.bio || '').trim().substring(0, 1500) || '';
+    if (!bio) {
+      bio = synthesizeFactsBio({
+        name: cleanName, species, breed,
+        age: finalAge, gender: finalGender,
+        color: p.colorFromPage || '', health: p.healthFromPage || []
+      });
+    }
+
     return {
       name: cleanName,
       species,
       breed: breed || 'Unknown',
-      age: age || p.ageFromPage || '',
-      gender: gender || p.genderFromPage || '',
-      bio: (p.bio || '').trim().substring(0, 1500) || '',
+      age: finalAge,
+      gender: finalGender,
+      bio,
       photo,
       url: p.url
     };
   });
+}
+
+/**
+ * Factual mini-bio for pets whose shelter wrote no story ("This pet has no
+ * story" on Adoptapet — genuinely absent, not an extraction failure). Uses
+ * ONLY structured facts from the listing (color, breed, age, sex, health
+ * badges) — never invents personality or temperament.
+ * Example: "Asher is a black Domestic Shorthair kitten, 3 mos old. Neutered."
+ */
+function synthesizeFactsBio(f) {
+  if (!f || !f.name) return '';
+  const color = (f.color || '').replace(/\s*\(.*\)\s*$/, '').trim().toLowerCase();
+  const breed = f.breed && f.breed !== 'Unknown' ? f.breed : '';
+  const juvenile = /kitten|puppy|baby/i.test(f.age || '');
+  const noun = f.species === 'Cat' ? (juvenile ? 'kitten' : 'cat')
+    : f.species === 'Dog' ? (juvenile ? 'puppy' : 'dog') : 'pet';
+  const desc = [color, breed].filter(Boolean).join(' ');
+  if (!desc && !(f.health || []).length) return ''; // nothing factual to say
+
+  const ageStr = tidyAge(f.age || '');
+  const agePart = /\d/.test(ageStr) ? `, ${ageStr} old` : '';
+  const article = /^[aeiou]/i.test(desc || noun) ? 'an' : 'a';
+  let out = `${f.name} is ${article} ${desc ? desc + ' ' : ''}${noun}${agePart}.`;
+
+  const healthBits = [];
+  for (const h of f.health || []) {
+    if (/spay|neuter/i.test(h)) {
+      healthBits.push(/female/i.test(f.gender || '') ? 'Spayed' : /male/i.test(f.gender || '') ? 'Neutered' : 'Spayed/neutered');
+    } else if (/shots/i.test(h)) healthBits.push('up to date on shots');
+    else if (/housetrain|house-train/i.test(h)) healthBits.push('housetrained');
+  }
+  if (healthBits.length) {
+    const joined = healthBits.length > 2
+      ? `${healthBits.slice(0, -1).join(', ')}, and ${healthBits[healthBits.length - 1]}`
+      : healthBits.join(' and ');
+    out += ` ${joined.charAt(0).toUpperCase()}${joined.slice(1)}.`;
+  }
+  return out;
 }
 
 // ─── PETFINDER API ───
@@ -1479,7 +1550,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS, fixBioSpacing, tidyAge };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS, fixBioSpacing, tidyAge, synthesizeFactsBio };
 
 if (require.main === module) {
   main().catch(err => {
