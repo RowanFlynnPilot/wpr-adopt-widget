@@ -1,0 +1,4 @@
+# Dependencies are restored by `npm install` (package-lock.json is committed).
+# node_modules was tracked until Aug 2026 — it made every CI npm install dirty
+# the work tree, which repeatedly broke the workflows' pull --rebase step.
+node_modules/
