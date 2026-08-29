@@ -1,14 +1,14 @@
 /**
  * Wausau Pilot & Review — Adoptable Pets Data Builder
  * 
- * Scrapes/fetches pet data from all four shelters and outputs
+ * Scrapes/fetches pet data from ten central Wisconsin shelters and outputs
  * a single JSON file that the widget can consume.
- * 
+ *
  * Data sources:
- *   - Marathon County HS → Adoptapet.com (HTML scrape)
- *   - Clark County HS → Petfinder.com (HTML scrape)  
- *   - Adams County HS → Adoptapet.com (HTML scrape)
- *   - Lincoln County HS → Adoptapet.com (same as Marathon/Adams; they list there)
+ *   - Adoptapet.com: Marathon, Adams, Lincoln, Fetch, South Wood County,
+ *     Marshfield, Portage County, Taylor County
+ *   - Petfinder.com: Clark County (official API when credentials are set)
+ *   - nlpac.com: New Life Pet Adoption Center (direct HTML)
  * 
  * Usage:
  *   npm install
@@ -1319,6 +1319,16 @@ async function main() {
   }
 
 
+  // Normalize display text on every pet (including carried-forward ones) so
+  // the widget, modal, JSON feed, and newsletter all get clean values.
+  for (const pets of Object.values(data.shelters)) {
+    for (const pet of pets) {
+      if (pet.placeholder) continue;
+      pet.bio = fixBioSpacing(pet.bio);
+      pet.age = tidyAge(pet.age);
+    }
+  }
+
   computeFirstSeen(previous, data);
 
   // Health check: classify each shelter as ok / low / failed so a silent outage
@@ -1368,6 +1378,33 @@ async function main() {
   console.log(`\n✅ Saved to ${OUTPUT_FILE}`);
 
   injectIntoWidget(data, path.join(__dirname, 'adopt-widget.html'));
+}
+
+/**
+ * Restore spaces lost when adjacent paragraphs were concatenated during
+ * scraping ("...adopted yet?Fortune is..." / "...visit me soon!*Terracotta...").
+ * Requires a lowercase letter or digit before the punctuation so abbreviations
+ * like "U.S.A." and measurements like "4.5 lbs" survive untouched.
+ */
+function fixBioSpacing(bio) {
+  if (!bio) return bio;
+  return bio.replace(/([a-z0-9])([.!?])(["'*)\]]?)([A-Z])/g, '$1$2$3 $4');
+}
+
+/**
+ * Shorten verbose scraped age strings for display: Adoptapet detail pages give
+ * "4 years 1 month old, Adult" — trim to "4 yrs 1 mo". Word-only ages from
+ * Petfinder ("Adult", "Young") pass through unchanged.
+ */
+function tidyAge(age) {
+  if (!age) return age;
+  let a = age.trim();
+  a = a.replace(/\s*,\s*(?:baby|puppy|kitten|young|adult|senior)\s*$/i, '');
+  a = a.replace(/\s+old\s*$/i, '');
+  a = a.replace(/\byears\b/gi, 'yrs').replace(/\byear\b/gi, 'yr');
+  a = a.replace(/\bmonths\b/gi, 'mos').replace(/\bmonth\b/gi, 'mo');
+  a = a.replace(/\bweeks\b/gi, 'wks').replace(/\bweek\b/gi, 'wk');
+  return a.trim() || age;
 }
 
 /**
@@ -1442,7 +1479,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS, fixBioSpacing, tidyAge };
 
 if (require.main === module) {
   main().catch(err => {

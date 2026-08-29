@@ -162,7 +162,7 @@ function cleanBio(bio) {
   // Restore spaces lost when adjacent paragraphs were concatenated during
   // scraping ("...not been adopted yet?Fortune is a sweet..."). Requires a
   // lowercase/digit before the punctuation so "U.S.A" and "J.R.Smith" survive.
-  b = b.replace(/([a-z0-9])([.!?])(["')\]]?)([A-Z])/g, '$1$2$3 $4');
+  b = b.replace(/([a-z0-9])([.!?])(["'*)\]]?)([A-Z])/g, '$1$2$3 $4');
   // Drop a trailing application URL + its lead-in clause ("...apply at: https://…").
   // It's non-clickable inside the PNG and is replaced by the snippet's real
   // "Meet [Name] →" link. Only strips a URL at the very end, never mid-sentence.

@@ -148,6 +148,8 @@ All scrapers output a standard pet object:
 
 Species classification uses keyword matching: cat breeds (shorthair, longhair, siamese, etc.) and URL patterns (`-cat$`) → Cat; small animals (rabbit, guinea pig, hamster, etc.) → Other; everything else → Dog.
 
+After scraping, `main()` normalizes display text on every pet (including carried-forward ones): `fixBioSpacing()` restores spaces lost to paragraph concatenation ("adopted yet?Fortune" → "adopted yet? Fortune", guarded so "U.S.A." and "4.5 lbs" survive) and `tidyAge()` shortens verbose ages ("4 years 1 month old, Adult" → "4 yrs 1 mo"). This is the single cleanup point for all downstream consumers — widget, modal, JSON feed, newsletter.
+
 ---
 
 ## Frontend Widget
@@ -186,13 +188,22 @@ Species classification uses keyword matching: cat breeds (shorthair, longhair, s
 - Click anywhere on card → opens pet detail modal
 - Share button with Facebook, "Instagram & more" (native share sheet via Web Share API — shown only where `navigator.share` exists; attaches the pet photo when file-sharing is supported), email, SMS, and copy-link options
 - "✨ New" badge when `pet.firstSeen` is within 8 days
-- "Waiting the longest for a home" spotlight strip (top of unfiltered view): 3 oldest pets by `firstSeen`, falling back to lowest Adoptapet IDs until 3+ pets have tracked dates
+- "Waiting the longest for a home" spotlight strip (top of unfiltered view): pre-tracking "veterans" (no `firstSeen` — listed longer than any tracked pet, ordered by lowest Adoptapet ID) lead, then oldest tracked pets fill the 3 slots; labels are honest ("A long-time resident" / "Waiting N months")
+- Lincoln's `placeholder:true` link-out cards render as plain `<a>` cards straight to furrypets.com (no modal, no share button) and are excluded from the banner pet count
 
 ### Widget Sections (per shelter)
 - Branded header with shelter icon, name, location, and "Visit Website →" link
-- Pet grid (responsive CSS grid)
+- Pet grid (responsive CSS grid) — grids with >8 pets render collapsed (first 8 shown; 6 on mobile) with a "Show all N pets ▾" toggle so one big shelter can't bury the ones below it
 - "View all at [shelter]" link at bottom
 - Status banner showing total count + active filters
+
+### "From Our Shelters on Facebook" section (below listings, above footer)
+- Facebook's official **Page Plugin** iframe (no API key, no scraping, ToS-compliant) shows a shelter's live timeline
+- `FB_PAGES` const maps shelter key → Facebook page URL (handles collected from each shelter's own website; all render in the plugin, including the old-style `/pages/...` URLs for Adams and NLPAC)
+- Tab pills (one per shelter) swap the embedded page; Marathon is the default
+- Lazy-loaded via IntersectionObserver (400px rootMargin) so the embed never slows initial load
+- A plain "Follow [shelter] on Facebook →" link always renders beneath the iframe — the fallback path for readers whose ad blockers hide Facebook embeds
+- NOT usable in the email newsletters (clients strip iframes) — the featured-pet JPEG remains the newsletter format
 
 ---
 

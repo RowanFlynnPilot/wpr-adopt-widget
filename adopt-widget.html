@@ -6,7 +6,7 @@
 <title>Adopt a Pet — Wausau Pilot & Review</title>
 <!-- Social share previews (Facebook/Messenger/etc. read these when a pet link is shared) -->
 <meta property="og:title" content="Adopt a Pet — Central Wisconsin Shelters">
-<meta property="og:description" content="Adoptable dogs, cats, and small animals from eight central Wisconsin shelters — updated twice daily by Wausau Pilot & Review.">
+<meta property="og:description" content="Adoptable dogs, cats, and small animals from ten central Wisconsin shelters — updated twice daily by Wausau Pilot & Review.">
 <meta property="og:image" content="https://rowanflynnpilot.github.io/wpr-adopt-widget/logos/share-image.jpg">
 <meta property="og:url" content="https://rowanflynnpilot.github.io/wpr-adopt-widget/adopt-widget.html">
 <meta property="og:type" content="website">
@@ -333,6 +333,21 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 .spotlight-info span{font-size:.72rem;color:var(--slate);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .spotlight-info em{font-size:.68rem;color:var(--teal-dark);font-style:normal;font-weight:600}
 
+/* ─── FROM OUR SHELTERS ON FACEBOOK ─── */
+.fb-section{
+  margin-top:28px;padding:20px 16px 24px;
+  background:linear-gradient(135deg,var(--teal-bg) 0%,#f4f1ea 100%);
+  border:1px solid #c8e0da;border-radius:var(--radius);text-align:center;
+}
+.fb-title{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;margin-bottom:4px}
+.fb-sub{font-size:.83rem;color:var(--slate);margin-bottom:14px}
+.fb-tabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.fb-embed-wrap{display:flex;justify-content:center;min-height:120px}
+.fb-embed-wrap iframe{border:none;overflow:hidden;max-width:100%;background:#fff;border-radius:8px;box-shadow:var(--shadow-sm)}
+.fb-follow{margin-top:10px;font-size:.8rem}
+.fb-follow a{color:var(--teal-dark);font-weight:600;text-decoration:none}
+.fb-follow a:hover{text-decoration:underline}
+
 @media(max-width:640px){
   .adopt-widget{padding:0 10px 28px}
   .pet-grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -408,6 +423,15 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
   </div>
 
   <div id="shelterContent" style="padding-top:20px"></div>
+
+  <!-- FROM OUR SHELTERS ON FACEBOOK -->
+  <div class="fb-section" id="fbSection">
+    <div class="fb-title">📣 From Our Shelters on Facebook</div>
+    <p class="fb-sub">Adoption updates, events, and happy endings — straight from the shelters.</p>
+    <div class="fb-tabs" id="fbTabs"></div>
+    <div class="fb-embed-wrap" id="fbEmbed"></div>
+    <p class="fb-follow" id="fbFollow"></p>
+  </div>
 
   <!-- FOOTER -->
   <div class="widget-footer">
@@ -622,6 +646,17 @@ const NEW_ARRIVAL_BIO='Recently arrived. More information coming soon!';
 
 function card(p,shelterKey){
   const sc=getAnimalType(p.species);
+  // Link-out placeholder cards (Lincoln's application-first browse links) go
+  // straight to the shelter's site — a modal detour just delays the reader.
+  if(p.placeholder){
+    return`<a class="pet-card" href="${esc(p.url)}" target="_blank" rel="noopener" title="${esc(p.name)} at Lincoln County Humane Society">
+      <div class="pet-card-img-placeholder">${emoji(p.species)}</div><div class="pet-card-body">
+      <div class="pet-card-name">${esc(p.name)} →</div>
+      <div class="pet-card-breed">${esc(p.breed)}</div>
+      <div class="pet-card-bio">${esc(p.bio)}</div>
+      <div class="pet-card-tags"><span class="pet-tag ${sc}">${esc(p.species||'Pet')}</span></div>
+      </div></a>`;
+  }
   const gc=(p.gender||'').toLowerCase()==='female'?'female':(p.gender||'').toLowerCase()==='male'?'male':'';
   const img=p.photo
     ?`<img class="pet-card-img" src="${esc(p.photo)}" alt="Photo of ${esc(p.name)}" loading="lazy" data-emoji="${emoji(p.species)}" onerror="imgFail(this)">`
@@ -693,8 +728,13 @@ function section(key){
   const staleNote=st&&st.status==='stale'&&st.staleSince&&pets.length>0
     ?`<div class="stale-note">⚠️ These listings were last refreshed ${fmtDateTime(st.staleSince)} — call the shelter to confirm availability.</div>`
     :'';
+  // Collapse big grids to the first rows with a "Show all" toggle — without it
+  // a shelter with 50+ pets buries every shelter below it (especially on
+  // phones, where the full page ran to ~150 screens of scrolling).
+  const collapse=pets.length>8;
   const grid=pets.length>0
-    ?`<div class="pet-grid" id="${gridId}">${pets.map(p=>card(p,key)).join('')}</div>`
+    ?`<div class="pet-grid${collapse?' collapsed':''}" id="${gridId}">${pets.map(p=>card(p,key)).join('')}</div>`+
+     (collapse?`<div class="toggle-row"><button class="toggle-btn" data-count="${pets.length}" onclick="toggleGrid('${gridId}',this)">Show all ${pets.length} pets ▾</button></div>`:'')
     :`<div class="empty-state"><div class="empty-paw">🐾</div><p>${emptyMsg}</p></div>`;
 
   return`<div class="shelter-section" data-shelter="${key}">
@@ -715,6 +755,7 @@ function countByType(type){
   const keys=activeShelter==='all'?Object.keys(SHELTERS):[activeShelter];
   const q=activeSearch.toLowerCase();
   keys.forEach(k=>(PET_DATA[k]||[]).forEach(p=>{
+    if(p.placeholder)return; // Lincoln link-out cards aren't pets — keep the count honest
     if(type!=='all'&&getAnimalType(p.species)!==type)return;
     if(q&&!((p.name||'').toLowerCase().includes(q)||(p.breed||'').toLowerCase().includes(q)))return;
     c++;
@@ -735,27 +776,25 @@ function spotlightHtml(){
     if(/More (Pets|Dogs|Cats) Available/i.test(p.name||''))return;
     candidates.push({p,k});
   }));
-  const tracked=candidates.filter(e=>e.p.firstSeen);
-  let pick;
-  if(tracked.length>=3){
-    tracked.sort((a,b)=>new Date(a.p.firstSeen)-new Date(b.p.firstSeen));
-    pick=tracked.slice(0,3);
-  }else{
-    const withId=candidates.filter(e=>/adoptapet\.com\/pet\/\d+/.test(e.p.url||''));
-    withId.sort((a,b)=>{
-      const ai=parseInt((a.p.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
-      const bi=parseInt((b.p.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
-      return ai-bi;
-    });
-    pick=withId.slice(0,3);
-  }
+  // Pets with no firstSeen date predate tracking (began June 2026) — they've
+  // been listed LONGER than any tracked pet, so they lead the spotlight.
+  // Among veterans, a lower Adoptapet listing ID means an older listing.
+  const aapId=e=>parseInt((e.p.url||'').match(/\/pet\/(\d+)/)?.[1]||'0',10);
+  const veterans=candidates.filter(e=>!e.p.firstSeen&&aapId(e)>0).sort((a,b)=>aapId(a)-aapId(b));
+  const tracked=candidates.filter(e=>e.p.firstSeen).sort((a,b)=>new Date(a.p.firstSeen)-new Date(b.p.firstSeen));
+  const pick=[...veterans,...tracked].slice(0,3);
   if(pick.length<3)return'';
   return`<div class="spotlight"><div class="spotlight-title">🏠 Waiting the longest for a home</div><div class="spotlight-row">${
     pick.map(e=>{
       const pid=petIdFromUrl(e.p.url);
-      const since=e.p.firstSeen
-        ?'Waiting since '+new Date(e.p.firstSeen).toLocaleDateString('en-US',{month:'short',day:'numeric'})
-        :SHELTERS[e.k].location;
+      let since;
+      if(!e.p.firstSeen)since='A long-time resident';
+      else{
+        const days=(Date.now()-new Date(e.p.firstSeen).getTime())/86400000;
+        if(days>=60){const m=Math.round(days/30);since=`Waiting ${m} month${m===1?'':'s'}`}
+        else if(days>=30)since='Waiting over a month';
+        else since='Waiting since '+new Date(e.p.firstSeen).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+      }
       return`<div class="spotlight-card" onclick="openPetModal('${pid}')" title="Learn more about ${esc(e.p.name)}"><img src="${esc(e.p.photo)}" alt="Photo of ${esc(e.p.name)}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="spotlight-info"><strong>${esc(e.p.name)}</strong><span>${esc(e.p.breed)}</span><em>${since}</em></div></div>`;
     }).join('')
   }</div></div>`;
@@ -905,7 +944,7 @@ function openPetModal(pid,opts){
   // Image
   const imgEl=document.getElementById('petModalImg');
   if(p.photo){
-    imgEl.innerHTML=`<img class="pet-modal-img" src="${p.photo}" alt="Photo of ${p.name}" onerror="this.outerHTML='<div class=\\'pet-modal-img-placeholder\\'>${emoji(p.species)}</div>'">`;
+    imgEl.innerHTML=`<img class="pet-modal-img" src="${esc(p.photo)}" alt="Photo of ${esc(p.name)}" onerror="this.outerHTML='<div class=\\'pet-modal-img-placeholder\\'>${emoji(p.species)}</div>'">`;
   }else{
     imgEl.innerHTML=`<div class="pet-modal-img-placeholder">${emoji(p.species)}</div>`;
   }
@@ -916,7 +955,7 @@ function openPetModal(pid,opts){
 
   // Tags
   const tagsEl=document.getElementById('petModalTags');
-  tagsEl.innerHTML=`<span class="pet-tag ${sc}">${p.species||'Pet'}</span>${gc?`<span class="pet-tag ${gc}">${p.gender}</span>`:''}`;
+  tagsEl.innerHTML=`<span class="pet-tag ${sc}">${esc(p.species||'Pet')}</span>${gc?`<span class="pet-tag ${gc}">${esc(p.gender)}</span>`:''}`;
 
   // Bio (fix backtick apostrophes from Adoptapet)
   const bioEl=document.getElementById('petModalBio');
@@ -950,7 +989,7 @@ function openPetModal(pid,opts){
       <a class="pet-modal-btn gmail" href="${gmailUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📧 Gmail</a>
     </div>`:''}
     <a class="pet-modal-btn directions" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 Get Directions</a>
-    <a class="pet-modal-btn adopt" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
+    <a class="pet-modal-btn adopt" href="${esc(p.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
   `;
 
   const overlay=document.getElementById('petModal');
@@ -979,6 +1018,58 @@ function closePetModal(){
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePetModal()});
+
+// ═══ FROM OUR SHELTERS ON FACEBOOK ═══
+// Facebook's official Page Plugin (an iframe embed — no API key, no scraping,
+// ToS-compliant) shows each shelter's live timeline. The embed is lazy-loaded
+// only when the section scrolls into view so it never slows the pet listings,
+// and a plain "Follow on Facebook" link always renders beneath it so readers
+// with ad blockers (which commonly hide Facebook embeds) still get a path in.
+const FB_PAGES={
+  marathon:'https://www.facebook.com/HumaneSocietyMarathonCounty',
+  clark:'https://www.facebook.com/petshelter',
+  adams:'https://www.facebook.com/pages/Adams-County-Humane-Society/113161525419358',
+  lincoln:'https://www.facebook.com/LCHSFurryPets',
+  nlpac:'https://www.facebook.com/New-Life-Pet-Adoption-Center-126887317065',
+  fetch:'https://www.facebook.com/fetchfosterandrescue',
+  southwood:'https://www.facebook.com/swchs',
+  marshfield:'https://www.facebook.com/marshfieldareapetshelter',
+  portage:'https://www.facebook.com/HSPCWI',
+  taylor:'https://www.facebook.com/TaylorCountyWisconsinHumaneSociety'
+};
+let fbActive=null;
+function fbLabel(key){
+  const btn=document.querySelector(`#shelterFilter [data-filter="${key}"]`);
+  return btn?btn.textContent:SHELTERS[key].name;
+}
+function showFbPage(key){
+  fbActive=key;
+  document.querySelectorAll('#fbTabs .filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.fb===key));
+  const wrap=document.getElementById('fbEmbed');
+  // The Page Plugin renders at a fixed width (180–500px) — size it to fit
+  const w=Math.max(180,Math.min(500,wrap.clientWidth||500));
+  const src='https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FB_PAGES[key])
+    +`&tabs=timeline&width=${w}&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
+  wrap.innerHTML=`<iframe src="${src}" width="${w}" height="600" title="${esc(SHELTERS[key].name)} on Facebook" scrolling="no" allow="encrypted-media" loading="lazy"></iframe>`;
+  document.getElementById('fbFollow').innerHTML=
+    `<a href="${esc(FB_PAGES[key])}" target="_blank" rel="noopener">Follow ${esc(SHELTERS[key].name)} on Facebook →</a>`;
+  setTimeout(reportHeight,300);
+}
+(function initFbSection(){
+  const tabs=document.getElementById('fbTabs');
+  if(!tabs)return;
+  tabs.innerHTML=Object.keys(FB_PAGES).filter(k=>SHELTERS[k]).map(k=>
+    `<button class="filter-btn" data-fb="${k}" onclick="showFbPage('${k}')">${esc(fbLabel(k))}</button>`).join('');
+  // Lazy-load the first embed only when the section is (nearly) on screen
+  const section=document.getElementById('fbSection');
+  const start=()=>{if(!fbActive)showFbPage('marathon')};
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{
+      if(entries.some(e=>e.isIntersecting)){start();io.disconnect()}
+    },{rootMargin:'400px'});
+    io.observe(section);
+  }else start();
+})();
 
 // ═══ IFRAME MODAL POSITIONING ═══
 // Listen for viewport info from parent to position modal where user can see it
