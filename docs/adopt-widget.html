@@ -333,6 +333,15 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 .spotlight-info span{font-size:.72rem;color:var(--slate);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .spotlight-info em{font-size:.68rem;color:var(--teal-dark);font-style:normal;font-weight:600}
 
+/* ─── SOCIAL MEDIA ZONE JUMP BUTTON ─── */
+.jump-fb-btn{
+  margin-top:2px;padding:8px 20px;border:none;border-radius:100px;
+  background:linear-gradient(135deg,var(--teal-dark),var(--teal));color:#fff;
+  font-family:'Source Sans 3',sans-serif;font-size:.84rem;font-weight:600;
+  cursor:pointer;box-shadow:var(--shadow-sm);transition:filter .15s,transform .15s;
+}
+.jump-fb-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
 /* ─── FROM OUR SHELTERS ON FACEBOOK ─── */
 .fb-section{
   margin-top:28px;padding:20px 16px 24px;
@@ -420,6 +429,7 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
       <input type="search" id="searchInput" class="search-input" placeholder="Search by name or breed…" aria-label="Search adoptable pets">
       <button class="search-clear" id="searchClear" aria-label="Clear search">×</button>
     </div>
+    <button class="jump-fb-btn" onclick="jumpToFbSection()" title="Jump to the shelters' Facebook feeds">📣 Social Media Zone ↓</button>
   </div>
 
   <div id="shelterContent" style="padding-top:20px"></div>
@@ -1038,6 +1048,17 @@ const FB_PAGES={
   taylor:'https://www.facebook.com/TaylorCountyWisconsinHumaneSociety'
 };
 let fbActive=null;
+// "Social Media Zone" jump button (top of widget). Standalone, scrollIntoView
+// does the job. Embedded, the iframe auto-resizes to full content height so
+// it has no internal scrollbar — we ask the parent page (embed.js) to scroll
+// instead. Calling both is safe: inside the iframe scrollIntoView is a no-op,
+// and cross-origin propagation to the parent is blocked by the browser.
+function jumpToFbSection(){
+  if(!fbActive)showFbPage('marathon'); // load the embed now so it's ready on arrival
+  const s=document.getElementById('fbSection');
+  window.parent.postMessage({type:'wpr-adopt-widget-scroll-to',offset:s.offsetTop},'*');
+  s.scrollIntoView(); // instant — a smooth scroll over ~19k px is slow and easily canceled by in-flight layout work
+}
 function fbLabel(key){
   const btn=document.querySelector(`#shelterFilter [data-filter="${key}"]`);
   return btn?btn.textContent:SHELTERS[key].name;

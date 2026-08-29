@@ -60,5 +60,13 @@
         viewportHeight: window.innerHeight
       }, '*');
     }
+    // Widget asks to bring one of its sections into view (e.g. the "Social
+    // Media Zone" jump button). The iframe auto-resizes to its full content
+    // height, so it has no internal scrollbar — scrolling is the parent
+    // page's job. e.data.offset is the section's offsetTop inside the widget.
+    if (e.data.type === 'wpr-adopt-widget-scroll-to' && typeof e.data.offset === 'number') {
+      var frameTop = iframe.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo(0, Math.max(0, frameTop + e.data.offset - 20));
+    }
   });
 })();
