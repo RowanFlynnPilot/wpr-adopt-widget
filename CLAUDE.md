@@ -198,6 +198,7 @@ After scraping, `main()` normalizes display text on every pet (including carried
 - Status banner showing total count + active filters
 
 ### "From Our Shelters on Facebook" section (below listings, above footer)
+- A "🐾 Happy Tails & Updates ↓" jump button under the search bar scrolls readers to this section (and preloads the embed). Embedded, the widget posts `wpr-adopt-widget-scroll-to` and `docs/embed.js` scrolls the host page — the auto-resized iframe has no internal scrollbar, so in-iframe scrolling can't work there.
 - Facebook's official **Page Plugin** iframe (no API key, no scraping, ToS-compliant) shows a shelter's live timeline
 - `FB_PAGES` const maps shelter key → Facebook page URL (handles collected from each shelter's own website; all render in the plugin, including the old-style `/pages/...` URLs for Adams and NLPAC)
 - Tab pills (one per shelter) swap the embedded page; Marathon is the default
