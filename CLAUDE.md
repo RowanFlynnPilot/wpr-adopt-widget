@@ -40,7 +40,7 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 │  GitHub Pages (docs/)          │
 │  - adopt-widget.html           │
 │  - pet-data.json               │
-│  - diag-*.html (debug snapshots│
+│                                │
 └───────────┬────────────────────┘
             │  iframe embed
             ▼
@@ -66,8 +66,8 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 | `build-featured-pet.js` | **Newsletter snapshot generator.** Picks one long-stay pet from `pet-data.json` and renders a branded ~600px card to PNG (rendered @2×) for embedding in the daily email newsletters. Handles rotation/dedup and writes `featured-history.json` + a metadata sidecar. |
 | `featured-history.json` | Rotation/dedup log for the featured-pet snapshot: `url → [ISO timestamps featured]`. Enforces "≤3 features per 14 days" and "different pet each edition". Pruned to 90 days. |
 | `docs/snapshots/` | Newsletter PNGs: `featured-pet-latest.png` (always newest), `featured-pet-YYYY-MM-DD-{am,pm}.png` (stable per-edition archive), and `featured-pet.json` (who's featured + metadata). |
-| `docs/` | GitHub Pages deploy directory. Contains the widget HTML, pet-data.json, update-log.txt, and diagnostic HTML snapshots. |
-| `docs/diag-*.html` | Diagnostic page snapshots saved by scrapers when results are unexpectedly low or a fallback fires. Useful for debugging anti-bot blocks or site layout changes. |
+| `docs/` | GitHub Pages deploy directory. Contains the widget HTML, embed.js, pet-data.json, update-log.txt, and newsletter snapshots. |
+| `diag/` (gitignored) | Diagnostic page snapshots saved by scrapers when results are unexpectedly low or a fallback fires. In CI they are uploaded as the run's `diag-snapshots` artifact (7-day retention) instead of being committed. |
 
 ---
 
@@ -127,7 +127,7 @@ All scrapers use a shared `makePage(browser)` helper that applies:
 This is the most complex scraper (~270 lines). Key behaviors:
 - **Pagination:** Client-side only. Detects "X - Y of Z" text to determine total count, finds and clicks numbered page buttons or "Next" links, waits for range indicator to update before scraping next page.
 - **Card parsing:** Finds `a[href*="/pet/"]` links. Extracts name from `img[alt^="Photo of"]` or first text line (with cleanup for concatenated blobs like "AdaDomestic ShorthairFemale, 11 mos"). Breed extracted from second text line or parsed from fullText.
-- **Bio fetching:** After card scraping, visits each pet's detail page to extract bio text (from `<p>` elements in main/article/content containers) and breed (from `<dt>Breed</dt><dd>` pairs, page title, or og:description meta).
+- **Bio fetching:** After card scraping, visits each pet's detail page to extract bio text (from `<p>` elements in main/article/content containers), breed (from `<dt>Breed</dt><dd>` pairs, page title, or og:description meta), color, and "My health" badges. Runs on a pool of 3 long-lived pages (`BIO_POOL`) — ~3× faster than sequential; pages are reused, not opened per pet (mass open/close cycles crashed Chrome on 2026-07-26), and all workers stop if the browser dies.
 - **Fallback:** If only ≤3 pets found from cards, re-fetches the page and regex-extracts `/pet/(\d+)-([a-z-]+)` URLs from raw HTML (catches server-rendered data that JS hydration may have removed).
 - **Image optimization:** Rewrites Adoptapet image URLs to use their Cloudinary CDN with `w_400,ar_4:3,dpr_2` parameters.
 
@@ -188,7 +188,7 @@ Accessibility: pet/spotlight cards are focusable (`tabindex=0`, `role=button`, E
 - State tracked in `activeShelter`/`activeAnimal`/`activeAge`/`activeGender`/`activeSearch` globals; `render()` rebuilds all DOM; all filter pills carry `aria-pressed`
 
 ### Pet Cards
-- Photo with smart cropping (`smartPosition()` — canvas-based edge detection to find focal third of image for `object-position`)
+- Photo cropping is server-side only: Adoptapet images arrive pre-cropped 4:3 by Cloudinary `g_auto` (a 14-photo side-by-side test showed `g_auto` beats `g_north`/`g_auto:subject` overall, despite occasional bad crops); the old client-side `smartPosition()` canvas cropper was removed as dead code (Petfinder's CDN sends no CORS headers, so its canvas was always tainted)
 - Fallback emoji placeholder when no photo available
 - Name, breed + age, bio excerpt, species/gender tags
 - Click anywhere on card → opens pet detail modal
@@ -202,6 +202,11 @@ Accessibility: pet/spotlight cards are focusable (`tabindex=0`, `role=button`, E
 - Pet grid (responsive CSS grid) — grids with >8 pets render collapsed (first 8 shown; 6 on mobile) with a "Show all N pets ▾" toggle so one big shelter can't bury the ones below it
 - "View all at [shelter]" link at bottom
 - Status banner showing total count + active filters
+
+### Analytics (lightweight, no new trackers)
+- The widget stores nothing itself. `trackEvent(action, params)` posts `wpr-adopt-widget-event` messages to the parent page; `docs/embed.js` forwards them into the host site's EXISTING Google Analytics (`gtag`, GA4 property `G-CXWNY53DN1` on wausaupilotandreview.com) as `adopt_widget_<action>` events. No gtag on the page (or standalone on GitHub Pages) → events are silently dropped.
+- Events: `pet_modal_open`, `adoption_click` (the money metric — "View Adoption Page →"), `view_all_click`, `happy_tails_jump`, `fb_tab_click`. Params are whitelisted (`pet_name`/`shelter`/`species`) and truncated in embed.js so scraped text can't inject anything.
+- Find them in GA4 under Reports → Engagement → Events (or Realtime while testing).
 
 ### "From Our Shelters on Facebook" section (below listings, above footer)
 - A "🐾 Happy Tails & Updates ↓" jump button under the search bar scrolls readers to this section (and preloads the embed). Embedded, the widget posts `wpr-adopt-widget-scroll-to` and `docs/embed.js` scrolls the host page — the auto-resized iframe has no internal scrollbar, so in-iframe scrolling can't work there.
@@ -263,7 +268,7 @@ Steps:
 ## Common Maintenance Tasks
 
 ### A scraper returns 0 pets
-1. Check `docs/diag-{shelter}-*.html` diagnostic files — open in a browser to see what the page actually returned
+1. Check the diagnostic files — locally `diag/diag-{shelter}-*.html`; in CI, download the `diag-snapshots` artifact from the failing run — and open in a browser to see what the page actually returned
 2. Common causes: anti-bot block (Cloudflare challenge page), site layout change (selectors no longer match), pagination change
 3. The Adoptapet scraper has a fallback path for low results — check if it fired in the Actions log
 4. When a scrape returns 0, `main()` carries forward the previous run's pets for that shelter (marked `status: "stale"` with `staleSince` in `scrape_status`) for up to 14 days, so the widget keeps showing real, recent pets. After 14 days the shelter goes to `failed`/empty. The widget shows a yellow stale notice for `stale` shelters and an honest "having trouble reaching this shelter" empty state for `failed` ones.
@@ -303,12 +308,12 @@ node build-widget-data.js
 # Preview the widget
 # Open adopt-widget.html in a browser (or use a local server)
 
-# Check diagnostic output if a shelter returned 0
-ls docs/diag-*.html
+# Check diagnostic output if a shelter returned 0 (CI: diag-snapshots artifact)
+ls diag/
 ```
 
 ### Key Debugging Tips
-- The scraper saves diagnostic HTML snapshots to `docs/diag-{shelter}-{context}.html` whenever results are unexpectedly low. Open these in a browser to see exactly what Puppeteer received.
+- The scraper saves diagnostic HTML snapshots to `diag/diag-{shelter}-{context}.html` (gitignored; CI uploads them as the `diag-snapshots` workflow artifact) whenever results are unexpectedly low. Open these in a browser to see exactly what Puppeteer received.
 - Adoptapet is a Next.js React app — after JS hydration, pet cards may be re-rendered differently than the server HTML. The fallback path in `scrapeAdoptapet` handles this by extracting URLs from raw page source.
 - Petfinder and NLPAC may return bot-detection pages. The `makePage()` stealth settings help but aren't foolproof. If a scraper consistently returns 0, the site may have tightened anti-bot measures.
 - The fallback injection in `adopt-widget.html` is marker-based: `injectIntoWidget()` replaces the `/*FALLBACK_DATA_START*/…END*/` and `/*FALLBACK_META_START*/…END*/` blocks. If a marker is missing it logs `⚠️ … markers not found` and skips the write — grep the Actions log for that warning if the widget seems to ship stale fallback data.

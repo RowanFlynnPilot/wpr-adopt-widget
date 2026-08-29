@@ -635,55 +635,21 @@ function getAnimalType(species){
 function emoji(s){const t=getAnimalType(s);return t==='dog'?'🐕':t==='cat'?'🐈':'🐾'}
 function imgFail(el){const d=document.createElement('div');d.className='pet-card-img-placeholder';d.textContent=el.dataset.emoji||'🐾';el.replaceWith(d)}
 
-// Smart crop: analyze each loaded image to find the focal point (where the animal face likely is)
-// Uses a small canvas to find the region with the most detail/contrast
-function smartPosition(img){
-  if(!img.naturalWidth)return;
-  try{
-    const c=document.createElement('canvas');
-    const sz=64; // sample at 64px for speed
-    c.width=sz;c.height=sz;
-    const ctx=c.getContext('2d');
-    ctx.drawImage(img,0,0,sz,sz);
-    const data=ctx.getImageData(0,0,sz,sz).data;
-    // Divide image into vertical thirds and measure detail (variance) in each
-    const thirds=[0,0,0];
-    const thirdH=Math.floor(sz/3);
-    for(let row=0;row<sz;row++){
-      const third=Math.min(Math.floor(row/thirdH),2);
-      for(let col=0;col<sz;col++){
-        const i=(row*sz+col)*4;
-        // Edge detection approximation: difference from neighbors
-        if(col>0&&row>0){
-          const prev=(row*sz+(col-1))*4;
-          const above=((row-1)*sz+col)*4;
-          const diff=Math.abs(data[i]-data[prev])+Math.abs(data[i]-data[above])+
-                     Math.abs(data[i+1]-data[prev+1])+Math.abs(data[i+1]-data[above+1]);
-          thirds[third]+=diff;
-        }
-      }
-    }
-    // If the top third has the most detail, crop from top (face is up)
-    // If bottom third has the most, crop from bottom
-    // Otherwise stay at 20% from top (our default bias)
-    const max=Math.max(...thirds);
-    if(thirds[0]===max)img.style.objectPosition='center 15%';
-    else if(thirds[2]===max)img.style.objectPosition='center 70%';
-    else img.style.objectPosition='center 35%';
-  }catch(e){/* canvas tainted by CORS, keep default */}
-}
+// (A canvas-based "smartPosition" focal-point cropper used to live here. It
+// was removed as dead code: Adoptapet photos arrive pre-cropped to 4:3 by
+// Cloudinary so object-position never applies, and Petfinder's CDN sends no
+// CORS headers so the canvas was always tainted. Server-side g_auto beat
+// every client-side alternative in a 14-photo side-by-side test.)
 
-// Apply smart positioning to all pet images once they load
-document.addEventListener('DOMContentLoaded',()=>{
-  const observer=new MutationObserver(()=>{
-    document.querySelectorAll('.pet-card-img:not([data-positioned])').forEach(img=>{
-      img.dataset.positioned='1';
-      if(img.complete&&img.naturalWidth)smartPosition(img);
-      else img.addEventListener('load',()=>smartPosition(img),{once:true});
-    });
-  });
-  observer.observe(document.getElementById('shelterContent'),{childList:true,subtree:true});
-});
+// ═══ LIGHTWEIGHT ANALYTICS ═══
+// The widget itself stores nothing. Embedded on wausaupilotandreview.com it
+// posts events to the parent page, where embed.js forwards them into the
+// site's EXISTING Google Analytics (gtag) — no new trackers, no cookies of
+// our own. Standalone (GitHub Pages direct) the message has no listener and
+// the event is a no-op.
+function trackEvent(action,params){
+  try{window.parent.postMessage({type:'wpr-adopt-widget-event',action,params:params||{}},'*')}catch(_){/* never break the UI over analytics */}
+}
 
 // Store pet data for modal access
 const _petStore={};
@@ -803,7 +769,7 @@ function section(key){
       <span class="shelter-location">${s.location}</span>
     </div>
     ${staleNote}${grid}
-    <div class="view-all-row"><a class="view-all-link" href="${pets.length>0?s.allPetsUrl:s.website}" target="_blank" rel="noopener">
+    <div class="view-all-row"><a class="view-all-link" href="${pets.length>0?s.allPetsUrl:s.website}" target="_blank" rel="noopener" onclick="trackEvent('view_all_click',{shelter:'${key}'})">
       ${pets.length>0?`View all at ${shortName}`:`Visit ${shortName}`}
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>
     </a></div></div>`;
@@ -1078,6 +1044,10 @@ function openPetModal(pid,opts){
     <a class="pet-modal-btn adopt" href="${esc(p.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Adoption Page →</a>
   `;
 
+  trackEvent('pet_modal_open',{pet_name:p.name,shelter:entry.shelterKey,species:p.species});
+  const adoptBtn=actionsEl.querySelector('.pet-modal-btn.adopt');
+  if(adoptBtn)adoptBtn.addEventListener('click',()=>trackEvent('adoption_click',{pet_name:p.name,shelter:entry.shelterKey,species:p.species}));
+
   const overlay=document.getElementById('petModal');
   _modalOpener=document.activeElement; // restore focus here on close
   overlay.classList.add('open');
@@ -1160,6 +1130,7 @@ let fbActive=null;
 // instead. Calling both is safe: inside the iframe scrollIntoView is a no-op,
 // and cross-origin propagation to the parent is blocked by the browser.
 function jumpToFbSection(){
+  trackEvent('happy_tails_jump',{});
   if(!fbActive)showFbPage('marathon'); // load the embed now so it's ready on arrival
   const s=document.getElementById('fbSection');
   window.parent.postMessage({type:'wpr-adopt-widget-scroll-to',offset:s.offsetTop},'*');
@@ -1170,6 +1141,7 @@ function fbLabel(key){
   return btn?btn.textContent:SHELTERS[key].name;
 }
 function showFbPage(key){
+  if(fbActive&&fbActive!==key)trackEvent('fb_tab_click',{shelter:key}); // skip the auto-loaded default
   fbActive=key;
   document.querySelectorAll('#fbTabs .filter-btn').forEach(b=>{b.classList.toggle('active',b.dataset.fb===key);b.setAttribute('aria-pressed',b.dataset.fb===key?'true':'false')});
   const wrap=document.getElementById('fbEmbed');

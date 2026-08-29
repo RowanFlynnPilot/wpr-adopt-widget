@@ -47,6 +47,16 @@ jobs:
           # this repo, so npm install can leave churn behind).
           git pull --rebase --autostash origin main
           git push origin main
+      # Diagnostic page snapshots (saved when a scrape looks wrong) are kept as
+      # a short-lived artifact instead of being committed to the repo.
+      - name: Upload diagnostic snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diag-snapshots
+          path: diag/
+          retention-days: 7
+          if-no-files-found: ignore
       # Runs AFTER the push so healthy shelters still publish; a failed or
       # stale shelter turns the run red and triggers the alert step below.
       - name: Health check
@@ -71,4 +81,4 @@ jobs:
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-          Check the \`docs/diag-*.html\` snapshots to see what the blocked pages returned. This issue was opened automatically by the scrape workflow; close it once scrapes are healthy again."
+          Check the \`diag-snapshots\` artifact on the run to see what the blocked pages returned. This issue was opened automatically by the scrape workflow; close it once scrapes are healthy again."

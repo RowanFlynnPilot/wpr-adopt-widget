@@ -27,7 +27,9 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_FILE = path.join(__dirname, 'pet-data.json');
-const DIAG_DIR = path.join(__dirname, 'docs');
+// Diagnostics are NOT committed (they were ~500KB each in docs/): they land in
+// gitignored diag/ and CI uploads them as a workflow artifact (7-day retention).
+const DIAG_DIR = path.join(__dirname, 'diag');
 
 // Realistic Chrome UA to reduce bot detection (sites often block headless)
 const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
@@ -40,7 +42,7 @@ function saveDiag(name, html) {
   ensureDiagDir();
   const file = path.join(DIAG_DIR, `diag-${name}.html`);
   fs.writeFileSync(file, (html || '').substring(0, 500000));
-  console.log(`    [diag] Saved docs/diag-${name}.html — open to see what the page actually returned`);
+  console.log(`    [diag] Saved diag/diag-${name}.html — open to see what the page actually returned (CI: in the run's "diag-snapshots" artifact)`);
 }
 
 /** Create a page with stealth-ish settings to reduce bot blocks */
@@ -387,16 +389,13 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
   // clear them so the bio fetcher recovers the real name from the detail page.
   allPets.forEach(p => { if (/^\d+$/.test((p.name || '').trim())) p.name = ''; });
 
-  // Fetch bio from each pet's detail page (Adoptapet lists only name/breed/age
-  // on listing). ONE page is reused for all pets — creating hundreds of pages
-  // per run destabilizes Chrome on CI runners and crashed the 2026-07-26 build.
-  if (allPets.length > 0) {
-    console.log(`  Fetching bios for ${allPets.length} pets...`);
-    let bioPage = null;
-    for (let i = 0; i < allPets.length; i++) {
-      const pet = allPets[i];
-      try {
-        if (!bioPage || bioPage.isClosed()) bioPage = await makePage(browser);
+  // Fetch each pet's detail page (Adoptapet lists only name/breed/age on the
+  // listing). A small pool of LONG-LIVED pages: sequential fetching made a
+  // full 10-shelter run take ~33 minutes; 3 workers cut that roughly 3× while
+  // keeping page open/close counts low (the 2026-07-26 Chrome crash came from
+  // ~340 open/close cycles per run, not from concurrency).
+  const BIO_POOL = 3;
+  async function fetchDetail(bioPage, pet) {
         await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
         await new Promise(r => setTimeout(r, 3000)); // longer wait for React/Next.js hydration
 
@@ -578,22 +577,41 @@ async function scrapeAdoptapet(browser, shelterId, shelterKey) {
         if (pageGender) pet.genderFromPage = pageGender;
         if (pageColor) pet.colorFromPage = pageColor;
         if (pageHealth && pageHealth.length) pet.healthFromPage = pageHealth;
-      } catch (err) {
-        pet.bio = '';
-        // The page (or whole browser) may have died — drop it so the next
-        // iteration recreates it. If Chrome itself is gone, stop fetching
-        // bios and keep the listing data we already have.
-        await safeClose(bioPage);
-        bioPage = null;
-        if (!browser.connected) {
-          console.log(`    Browser connection lost — keeping listing data for remaining ${allPets.length - i - 1} pets`);
-          break;
+  }
+
+  if (allPets.length > 0) {
+    const poolSize = Math.min(BIO_POOL, allPets.length);
+    console.log(`  Fetching bios for ${allPets.length} pets (${poolSize} parallel)...`);
+    let nextIdx = 0, done = 0, browserGone = false;
+    const worker = async () => {
+      let page = null;
+      while (!browserGone) {
+        const i = nextIdx++;
+        if (i >= allPets.length) break;
+        const pet = allPets[i];
+        try {
+          if (!page || page.isClosed()) page = await makePage(browser);
+          await fetchDetail(page, pet);
+        } catch (err) {
+          pet.bio = '';
+          // The page (or whole browser) may have died — drop it so the next
+          // iteration recreates it. If Chrome itself is gone, all workers stop
+          // and we keep the listing data we already have.
+          await safeClose(page);
+          page = null;
+          if (!browser.connected) {
+            browserGone = true;
+            console.log(`    Browser connection lost — keeping listing data for remaining ${allPets.length - i - 1} pets`);
+            break;
+          }
         }
+        done++;
+        if (done % 10 === 0) console.log(`    Bios: ${done}/${allPets.length}`);
+        await new Promise(r => setTimeout(r, 600));
       }
-      if ((i + 1) % 10 === 0) console.log(`    Bios: ${i + 1}/${allPets.length}`);
-      await new Promise(r => setTimeout(r, 600));
-    }
-    await safeClose(bioPage);
+      await safeClose(page);
+    };
+    await Promise.all(Array.from({ length: poolSize }, worker));
   }
 
   // Filter out pets with no name, error page names, or numeric ID names
@@ -715,13 +733,14 @@ function synthesizeFactsBio(f) {
   const article = /^[aeiou]/i.test(desc || noun) ? 'an' : 'a';
   let out = `${f.name} is ${article} ${desc ? desc + ' ' : ''}${noun}${agePart}.`;
 
+  // Fixed order regardless of how the page lists them: fixed → shots → housetrained
+  const flags = (f.health || []).join(' ');
   const healthBits = [];
-  for (const h of f.health || []) {
-    if (/spay|neuter/i.test(h)) {
-      healthBits.push(/female/i.test(f.gender || '') ? 'Spayed' : /male/i.test(f.gender || '') ? 'Neutered' : 'Spayed/neutered');
-    } else if (/shots/i.test(h)) healthBits.push('up to date on shots');
-    else if (/housetrain|house-train/i.test(h)) healthBits.push('housetrained');
+  if (/spay|neuter/i.test(flags)) {
+    healthBits.push(/female/i.test(f.gender || '') ? 'spayed' : /male/i.test(f.gender || '') ? 'neutered' : 'spayed/neutered');
   }
+  if (/shots/i.test(flags)) healthBits.push('up to date on shots');
+  if (/housetrain|house-train/i.test(flags)) healthBits.push('housetrained');
   if (healthBits.length) {
     const joined = healthBits.length > 2
       ? `${healthBits.slice(0, -1).join(', ')}, and ${healthBits[healthBits.length - 1]}`

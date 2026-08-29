@@ -60,6 +60,19 @@
         viewportHeight: window.innerHeight
       }, '*');
     }
+    // Widget analytics: forward events into the host page's EXISTING Google
+    // Analytics (gtag) so pet clicks show up alongside normal site stats.
+    // No gtag on the page → silently ignored. Only whitelisted string params
+    // are forwarded, truncated, so a scraped pet name can't inject anything.
+    if (e.data.type === 'wpr-adopt-widget-event' && typeof e.data.action === 'string' && typeof window.gtag === 'function') {
+      var action = e.data.action.replace(/[^a-z0-9_]/gi, '').slice(0, 32);
+      var raw = e.data.params || {};
+      var params = { event_category: 'adopt_widget' };
+      ['pet_name', 'shelter', 'species'].forEach(function (k) {
+        if (typeof raw[k] === 'string' && raw[k]) params[k] = raw[k].slice(0, 100);
+      });
+      if (action) window.gtag('event', 'adopt_widget_' + action, params);
+    }
     // Widget asks to bring one of its sections into view (e.g. the "Happy
     // Tails & Updates" jump button). The iframe auto-resizes to its full content
     // height, so it has no internal scrollbar — scrolling is the parent
