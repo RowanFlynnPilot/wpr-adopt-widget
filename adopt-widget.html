@@ -503,8 +503,19 @@ body{font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--warm-
 </div>
 
 <script>
-// Detect iframe embedding and add class for CSS adjustments
-if(window.parent!==window)document.documentElement.classList.add('in-iframe');
+// Two supported embeds behave differently, so the modal can't assume either:
+//   A. embed.js stretches the iframe to full content height — the HOST page
+//      scrolls, the frame has no scrollbar, and the modal must be placed via
+//      postMessage using the parent's viewport offset (.in-iframe styles).
+//   B. a plain fixed-height <iframe> with no parent script (used where a
+//      security filter strips <script> from the page) — the frame scrolls
+//      itself, so an ordinary position:fixed overlay is already correct.
+// Decided per modal-open, by whether this document scrolls inside its own
+// frame, so the same widget works in both without coordination.
+function parentHandlesScrolling(){
+  return window.parent!==window
+    && document.documentElement.scrollHeight <= window.innerHeight + 100;
+}
 // Web Share API (phones/tablets) unlocks the "Instagram & more" share entry
 if(navigator.share)document.documentElement.classList.add('can-native-share');
 
@@ -1054,11 +1065,14 @@ function openPetModal(pid,opts){
   overlay.scrollTop=0;
   const closeBtn=overlay.querySelector('.pet-modal-close');
   if(closeBtn)closeBtn.focus();
-  if(window.parent===window){
-    document.body.style.overflow='hidden';
-  } else {
-    // In iframe: ask parent for viewport position so we can place modal where user can see it
+  const parentScrolls=parentHandlesScrolling();
+  document.documentElement.classList.toggle('in-iframe',parentScrolls);
+  if(parentScrolls){
+    // Full-height iframe: ask the parent where its viewport is so the modal
+    // lands where the reader is actually looking.
     window.parent.postMessage({type:'wpr-adopt-widget-modal-open'},'*');
+  }else{
+    document.body.style.overflow='hidden';
   }
   setTimeout(reportHeight,50);
 }
@@ -1071,7 +1085,7 @@ function closePetModal(){
   // Reset modal position
   const modal=document.querySelector('.pet-modal');
   if(modal) modal.style.marginTop='';
-  if(window.parent===window) document.body.style.overflow='';
+  document.body.style.overflow='';
   // Clear the deep-link hash
   if((location.hash||'').startsWith('#pet/')){
     try{history.replaceState(null,'',location.pathname+location.search)}catch(_){location.hash=''}
