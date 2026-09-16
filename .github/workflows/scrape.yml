@@ -81,4 +81,33 @@ jobs:
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-          Check the \`diag-snapshots\` artifact on the run to see what the blocked pages returned. This issue was opened automatically by the scrape workflow; close it once scrapes are healthy again."
+          Check the \`diag-snapshots\` artifact on the run to see what the blocked pages returned. This issue was opened automatically by the scrape workflow; it closes itself once a later run is healthy again."
+      # The mirror image of the alert above, and the reason it can be trusted:
+      # the alert step refuses to open a second issue while one is already open,
+      # so without this an alert nobody closed by hand would silently suppress
+      # every future outage alert (issue #3 did exactly that for ~2 weeks).
+      - name: Resolve — close the alert issue once scrapes are healthy
+        # Only after every step above passed, health gate included.
+        if: success()
+        # A hiccup here must never fail the run: a red run would be misleading,
+        # and the alert step sits earlier in the job, so failing after it has
+        # been skipped cannot re-open an issue either way.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Match on BOTH the alert title and bot authorship so an issue a
+          # human filed is never auto-closed. Listing and filtering locally
+          # beats `--search`, which is eventually consistent and can miss a
+          # recently opened issue.
+          NUMS=$(gh issue list --state open --limit 100 --json number,title,author \
+            --jq '.[] | select(.author.login | test("github-actions")) | select(.title | startswith("Pet scraper failure")) | .number')
+          if [ -z "$NUMS" ]; then
+            echo "No open scraper alert issue — nothing to close."
+            exit 0
+          fi
+          for N in $NUMS; do
+            echo "Scrapes are healthy again — closing alert issue #$N."
+            gh issue comment "$N" --body "All shelter scrapes are healthy again, so this alert is resolved. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} — closed automatically by the scrape workflow."
+            gh issue close "$N"
+          done
