@@ -124,6 +124,7 @@ function ensureLincolnLinkouts(pets) {
 // /pet-search shows 42/page and is more reliable. Try search URL first, fall back to shelter page.
 const SHELTER_POSTAL = {
   '77626': '54401',  // Marathon
+  '80908': '54456',  // Clark County HS (Neillsville)
   '76343': '53934',  // Adams
   '66070': '54452',  // Lincoln
   '151032': '54401', // Fetch (Wausau)
@@ -750,260 +751,6 @@ function synthesizeFactsBio(f) {
   return out;
 }
 
-// ─── PETFINDER API ───
-// Preferred over HTML scraping when credentials exist. Get a free key at
-// https://www.petfinder.com/developers and set PETFINDER_API_KEY and
-// PETFINDER_API_SECRET as GitHub Actions secrets to activate this path.
-// Returns null when no credentials are configured; throws on API errors so
-// the caller can fall back to the HTML scraper.
-async function fetchPetfinderApi(orgId) {
-  const key = process.env.PETFINDER_API_KEY, secret = process.env.PETFINDER_API_SECRET;
-  if (!key || !secret) return null;
-  const tokenRes = await fetch('https://api.petfinder.com/v2/oauth2/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `grant_type=client_credentials&client_id=${encodeURIComponent(key)}&client_secret=${encodeURIComponent(secret)}`
-  });
-  if (!tokenRes.ok) throw new Error(`token HTTP ${tokenRes.status}`);
-  const { access_token } = await tokenRes.json();
-  const animals = [];
-  let pageUrl = `https://api.petfinder.com/v2/animals?organization=${encodeURIComponent(orgId)}&status=adoptable&limit=100`;
-  for (let page = 0; page < 5 && pageUrl; page++) {
-    const res = await fetch(pageUrl, { headers: { Authorization: `Bearer ${access_token}` } });
-    if (!res.ok) throw new Error(`animals HTTP ${res.status}`);
-    const json = await res.json();
-    animals.push(...(json.animals || []));
-    const next = json.pagination && json.pagination._links && json.pagination._links.next;
-    pageUrl = next ? `https://api.petfinder.com${next.href}` : null;
-  }
-  return animals.map(mapApiAnimal).filter(p => p.name);
-}
-
-/** Map a Petfinder API v2 animal object to the widget's standard pet shape */
-function mapApiAnimal(a) {
-  const decode = s => (s || '')
-    .replace(/&amp;/g, '&').replace(/&#0?39;|&apos;|&rsquo;/g, "'")
-    .replace(/&quot;|&ldquo;|&rdquo;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ').replace(/&#\d+;/g, '');
-  const species = a.species === 'Cat' ? 'Cat' : a.species === 'Dog' ? 'Dog' : 'Other';
-  const breeds = a.breeds || {};
-  let breed = [breeds.primary, breeds.secondary].filter(Boolean).join(' / ');
-  if (breeds.mixed && breed && !/mix/i.test(breed)) breed += ' Mix';
-  const photo = (a.photos && a.photos[0] && (a.photos[0].large || a.photos[0].medium || a.photos[0].small)) || null;
-  return {
-    name: decode(a.name).trim(),
-    species,
-    breed: breed || 'Unknown',
-    age: a.age || '',
-    gender: a.gender || '',
-    // API descriptions are truncated by Petfinder (~250 chars) — still better
-    // than nothing, and the pet's detail page has the full story.
-    bio: decode(a.description || '').trim(),
-    photo,
-    url: a.url ? a.url.split('?')[0] : '',
-    // Real listing date — powers absolute "long-stay" tenure in the
-    // featured-pet newsletter snapshot. Only present via the API path.
-    publishedAt: a.published_at || null
-  };
-}
-
-// ─── PETFINDER SCRAPER ───
-// Clark County's Petfinder page has pet cards with images and links
-async function scrapePetfinder(browser, shelterSlug, shelterKey) {
-  const url = `https://www.petfinder.com/member/us/wi/${shelterSlug}`;
-  console.log(`\n[${shelterKey}] Scraping Petfinder: ${url}`);
-  
-  const page = await makePage(browser);
-  try {
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
-    await new Promise(r => setTimeout(r, 5000));
-    
-    const pets = await page.evaluate(() => {
-      const results = [];
-      // Petfinder pet cards are links with images and alt text
-      document.querySelectorAll('a[href*="/details/"]').forEach(card => {
-        const img = card.querySelector('img');
-        if (!img) return;
-        
-        const alt = img.alt || '';
-        const href = card.href;
-        const name = card.textContent?.trim() || '';
-        
-        // Parse alt text like "Harvey, Adoptable, Adult Male Australian Cattle Dog / Blue Heeler."
-        const altParts = alt.split(',').map(s => s.trim());
-        const petName = altParts[0] || name;
-        const ageGender = altParts[2] || '';  // "Adult Male Australian Cattle Dog"
-        
-        if (petName && !results.find(r => r.name === petName)) {
-          results.push({
-            name: petName,
-            altText: alt,
-            photo: img.src,
-            url: href
-          });
-        }
-      });
-      return results;
-    });
-    
-    console.log(`  Found ${pets.length} pets`);
-    if (pets.length === 0) saveDiag(`${shelterKey}-petfinder`, await page.content());
-    await safeClose(page);
-
-    const parsed = pets.map(p => {
-      // Parse alt text: "Harvey, Adoptable, Adult Male Australian Cattle Dog / Blue Heeler."
-      const parts = p.altText.split(',').map(s => s.trim());
-      const descriptor = parts[2] || '';
-      const ageMatch = descriptor.match(/(Baby|Puppy|Kitten|Young|Adult|Senior)/i);
-      const genderMatch = descriptor.match(/(Male|Female)/i);
-      const breedPart = descriptor.replace(/(Baby|Puppy|Kitten|Young|Adult|Senior|Male|Female)/gi, '').trim();
-      const speciesPart = parts.length > 2 ? parts[parts.length - 1].replace('.', '').trim() : '';
-
-      const iscat = p.url.includes('/cat/') || speciesPart.toLowerCase().includes('domestic') ||
-                    speciesPart.toLowerCase().includes('shorthair') || speciesPart.toLowerCase().includes('longhair');
-
-      return {
-        name: p.name,
-        species: iscat ? 'Cat' : 'Dog',
-        breed: breedPart || speciesPart || 'Unknown',
-        age: ageMatch?.[1] || 'Unknown',
-        gender: genderMatch?.[1] || 'Unknown',
-        bio: '',
-        photo: p.photo,
-        url: p.url
-      };
-    });
-
-    // Fetch bios from each pet's Petfinder detail page
-    if (parsed.length > 0) {
-      console.log(`  Fetching bios for ${parsed.length} Petfinder pets...`);
-      let bioPage = null;
-      for (let i = 0; i < parsed.length; i++) {
-        const pet = parsed[i];
-        try {
-          if (!bioPage || bioPage.isClosed()) bioPage = await makePage(browser);
-          await bioPage.goto(pet.url, { waitUntil: 'networkidle2', timeout: 15000 });
-          await new Promise(r => setTimeout(r, 2000));
-
-          // Dismiss cookie consent banner (Petfinder uses OneTrust)
-          await bioPage.evaluate(() => {
-            const reject = document.querySelector('#onetrust-reject-all-handler, [id*="reject"], .onetrust-close-btn-handler');
-            if (reject) reject.click();
-            // Also try generic cookie dismiss buttons
-            const dismiss = [...document.querySelectorAll('button')].find(b => /reject|decline|close|dismiss|got it/i.test(b.textContent) && b.offsetParent);
-            if (dismiss) dismiss.click();
-          });
-          await new Promise(r => setTimeout(r, 500));
-
-          // Click "Read More" / "Show More" if present
-          await bioPage.evaluate(() => {
-            const candidates = [...document.querySelectorAll('button, a, span, [role="button"]')];
-            const readMore = candidates.find(el => /^\s*(Read|Show)\s*more\s*$/i.test(el.textContent));
-            if (readMore) readMore.click();
-          });
-          await new Promise(r => setTimeout(r, 800));
-
-          const bio = await bioPage.evaluate(() => {
-            // Skip cookie/legal text, site boilerplate — but NOT the word "Petfinder" in normal sentences
-            const junk = /cookie|trademarks|Nestl[eé]|privacy|personali[sz]ation|advertising|third.party|browser.*block|Start Your Inquiry|^Share$|^Print$|sponsored|purina|unknown compatibility|compatibility with other|This pet has unknown|Manage Consent|Strictly Necessary/i;
-
-            // Strategy 1: Look for "[Name]'s Story" heading (most reliable on Petfinder)
-            const headings = [...document.querySelectorAll('h2, h3, h4')];
-            const storyHeading = headings.find(h => /story/i.test(h.textContent) && h.textContent.length < 60 && !/compatibility/i.test(h.textContent));
-            if (storyHeading) {
-              // Get the parent section's visible text, then clip before junk starts
-              const section = storyHeading.parentElement;
-              if (section) {
-                // Find the visible <p> with the story text (skip invisible ones)
-                const allPs = [...section.querySelectorAll('p')];
-                const visibleP = allPs.find(p => {
-                  const style = window.getComputedStyle(p);
-                  return style.display !== 'none' && style.visibility !== 'hidden' && style.height !== '0px' && p.offsetHeight > 0;
-                });
-                if (visibleP) {
-                  // Get just the text nodes and inline element text, not nested block elements
-                  let bioText = '';
-                  const walker = document.createTreeWalker(visibleP, NodeFilter.SHOW_TEXT);
-                  while (walker.nextNode()) {
-                    const t = walker.currentNode.textContent.trim();
-                    if (t) bioText += (bioText ? ' ' : '') + t;
-                  }
-                  bioText = bioText.replace(/\s+/g, ' ').trim();
-                  // Cut before any junk text sneaks in
-                  const junkIdx = bioText.search(/Please note|Start Your Inquiry|More About Us|Adoption Application|bit\.ly\//i);
-                  if (junkIdx > 0) bioText = bioText.substring(0, junkIdx).trim();
-                  bioText = bioText.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Show\s*less\s*$/i, '').trim();
-                  if (bioText.length >= 50) return bioText.substring(0, 1500);
-                }
-              }
-            }
-
-            // Strategy 2: data-testid selectors
-            const storyEl = document.querySelector(
-              '[data-testid="pet-story"], [data-testid="pet-description"], ' +
-              '[class*="pet-story"], [class*="pet_story"], [class*="petStory"]'
-            );
-            if (storyEl) {
-              const t = storyEl.textContent.trim().replace(/\s+/g, ' ');
-              if (t.length > 50 && !junk.test(t)) return t.substring(0, 1500);
-            }
-
-            // Strategy 3: "About [Name]" heading
-            const aboutHeading = headings.find(h => /about/i.test(h.textContent) && h.textContent.length < 60);
-            if (aboutHeading) {
-              let out = '';
-              let next = aboutHeading.nextElementSibling;
-              while (next && !/^H[1-4]$/i.test(next.tagName)) {
-                const t = next.textContent.trim().replace(/\s+/g, ' ');
-                if (t.length > 30 && !junk.test(t)) {
-                  out += (out ? ' ' : '') + t;
-                }
-                if (out.length >= 1500) break;
-                next = next.nextElementSibling;
-              }
-              if (out.length >= 50) return out.replace(/\s*Read\s*more\s*$/i, '').substring(0, 1500);
-            }
-
-            // Strategy 4: Fallback to paragraphs
-            const paras = [...document.querySelectorAll('main p, article p')];
-            let out = '';
-            for (const para of paras) {
-              const t = para.textContent.trim().replace(/\s+/g, ' ');
-              if (t.length < 50) continue;
-              if (junk.test(t)) continue;
-              out += (out ? ' ' : '') + t;
-              if (out.length >= 1500) break;
-            }
-            return out ? out.replace(/\s*Read\s*more\s*$/i, '').replace(/\s*Read\s*less\s*$/i, '').trim().substring(0, 1500) : '';
-          });
-
-          if (bio && bio.length >= 50 && !/unknown compatibility|This pet has unknown/i.test(bio)) {
-            pet.bio = bio.replace(/`/g, "'");
-          }
-        } catch (err) {
-          // Skip bio on error; recreate the page next iteration if it died
-          await safeClose(bioPage);
-          bioPage = null;
-          if (!browser.connected) {
-            console.log(`    Browser connection lost — skipping remaining ${parsed.length - i - 1} bios`);
-            break;
-          }
-        }
-        if ((i + 1) % 5 === 0) console.log(`    Bios: ${i + 1}/${parsed.length}`);
-        await new Promise(r => setTimeout(r, 600));
-      }
-      await safeClose(bioPage);
-    }
-
-    return parsed;
-
-  } catch (err) {
-    console.error(`  Error: ${err.message}`);
-    await safeClose(page);
-    return [];
-  }
-}
-
 // ─── NLPAC SCRAPER (New Life Pet Adoption Center) ───
 // Uses Puppeteer + stealth because the site now sits behind Cloudflare's
 // "Just a moment..." challenge, which blocks plain HTTP fetches.
@@ -1287,27 +1034,15 @@ async function main() {
     'marathon'
   ));
   
-  // Clark County — Petfinder. Official API when credentials are configured
-  // (reliable, structured data); HTML scraper otherwise or on any API error.
-  data.shelters.clark = null;
-  try {
-    const apiPets = await fetchPetfinderApi('WI34');
-    if (apiPets && apiPets.length > 0) {
-      console.log(`\n[clark] Petfinder API: ${apiPets.length} pets`);
-      data.shelters.clark = apiPets;
-    } else if (apiPets) {
-      console.log('\n[clark] Petfinder API returned 0 pets — falling back to HTML scrape');
-    }
-  } catch (err) {
-    console.log(`\n[clark] Petfinder API failed (${err.message}) — falling back to HTML scrape`);
-  }
-  if (!data.shelters.clark) {
-    data.shelters.clark = await scrapeSafe('clark', () => scrapePetfinder(
-      browser,
-      'neillsville/clark-county-humane-society-wi34',
-      'clark'
-    ));
-  }
+  // Clark County — Adoptapet. Was Petfinder until Sep 2026, when Petfinder's
+  // firewall began serving a CAPTCHA block page to datacenter IPs (GitHub
+  // Actions runners) and its developer-API signup page was retired, closing
+  // both Petfinder routes. Clark cross-lists the same pets on Adoptapet.
+  data.shelters.clark = await scrapeSafe('clark', () => scrapeAdoptapet(
+    browser,
+    '80908-clark-county-humane-society-neillsville-wisconsin',
+    'clark'
+  ));
   
   // Adams County — Adoptapet
   data.shelters.adams = await scrapeSafe('adams', () => scrapeAdoptapet(
@@ -1507,21 +1242,74 @@ function tidyAge(age) {
  * get mistaken for new arrivals later. Entries for pets that vanish are
  * kept (scrape hiccups happen; a reappearing pet keeps its original date)
  * unless the map balloons past 3000 entries.
+ *
+ * A pet whose listing URL changed — its shelter moved to a different listing
+ * site (Clark: Petfinder → Adoptapet, Sep 2026) or re-posted the listing —
+ * inherits the date of the same-named pet at the same shelter whose old URL
+ * vanished this run. Otherwise every such pet would wrongly show "New" and
+ * lose its long-stay tenure, which drives the newsletter's selection.
  */
+// Shelters annotate names differently per listing site — Petfinder had
+// "Darla (Adoption Fee Sponsored!)", "Myrtle (Bonded with Morris)"; Adoptapet
+// has "Yellow Sugar *adoption pending*" — so annotations are dropped before
+// comparing. Only bracketed/starred text is stripped, never bare words, to
+// keep distinct pets from colliding.
+function normPetName(name) {
+  return (name || '')
+    .toLowerCase()
+    .replace(/\([^)]*\)|\[[^\]]*\]|\{[^}]*\}/g, ' ')
+    .replace(/\*.*$/, ' ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
 function computeFirstSeen(previous, data) {
   const prevSeen = (previous && previous.firstSeen) || null;
+  const has = (obj, k) => Object.prototype.hasOwnProperty.call(obj, k);
+
+  // shelter → (normalized name → first-seen value) for pets that were listed
+  // last run but whose URL is gone now. A name shared by two vanished pets is
+  // ambiguous and is dropped rather than guessed.
+  const vanished = {};
+  if (prevSeen && previous.shelters) {
+    const currentUrls = new Set(Object.values(data.shelters).flat().map(p => p.url));
+    for (const [key, pets] of Object.entries(previous.shelters)) {
+      const byName = new Map(), dupes = new Set();
+      for (const p of pets || []) {
+        if (!p.url || p.placeholder || currentUrls.has(p.url) || !has(prevSeen, p.url)) continue;
+        const nm = normPetName(p.name);
+        if (!nm) continue;
+        if (byName.has(nm)) dupes.add(nm); else byName.set(nm, prevSeen[p.url]);
+      }
+      for (const nm of dupes) byName.delete(nm);
+      vanished[key] = byName;
+    }
+  }
+
   data.firstSeen = {};
-  for (const pets of Object.values(data.shelters)) {
+  let inherited = 0;
+  for (const [key, pets] of Object.entries(data.shelters)) {
     for (const pet of pets) {
       if (!pet.url || pet.placeholder) continue; // skip link-out/placeholder cards
       let seen;
-      if (prevSeen && Object.prototype.hasOwnProperty.call(prevSeen, pet.url)) seen = prevSeen[pet.url];
+      if (prevSeen && has(prevSeen, pet.url)) seen = prevSeen[pet.url];
       else if (!prevSeen) seen = null; // tracking starts now; existing pets have unknown age
-      else seen = data.lastUpdated;    // genuinely new since the last run
+      else {
+        const nm = normPetName(pet.name);
+        const byName = vanished[key];
+        if (nm && byName && byName.has(nm)) {
+          seen = byName.get(nm);   // same pet, new URL (may be null = pre-tracking veteran)
+          byName.delete(nm);       // one old listing can't vouch for two new ones
+          inherited++;
+        } else {
+          seen = data.lastUpdated; // genuinely new since the last run
+        }
+      }
       data.firstSeen[pet.url] = seen;
       if (seen) pet.firstSeen = seen;
     }
   }
+  if (inherited > 0) console.log(`  [firstSeen] ${inherited} pet(s) kept their original date across a listing-URL change`);
   if (prevSeen) {
     for (const [url, seen] of Object.entries(prevSeen)) {
       if (!(url in data.firstSeen) && Object.keys(data.firstSeen).length < 3000) {
@@ -1569,7 +1357,7 @@ function injectIntoWidget(data, widgetPath) {
   console.log('✅ Refreshed FALLBACK_DATA + FALLBACK_META in adopt-widget.html');
 }
 
-module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, fetchPetfinderApi, mapApiAnimal, ensureLincolnLinkouts, LINCOLN_LINKOUTS, fixBioSpacing, tidyAge, synthesizeFactsBio };
+module.exports = { classifySpecies, injectIntoWidget, scrapeNlpac, scrapeAdoptapet, computeFirstSeen, normPetName, ensureLincolnLinkouts, LINCOLN_LINKOUTS, fixBioSpacing, tidyAge, synthesizeFactsBio };
 
 if (require.main === module) {
   main().catch(err => {

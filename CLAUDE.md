@@ -19,8 +19,7 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 ┌────────────────────────────────┐
 │       DATA SOURCES             │
 │                                │
-│  Adoptapet.com (8 shelters)    │
-│  Petfinder.com (1 shelter)     │
+│  Adoptapet.com (9 shelters)    │
 │  nlpac.com     (1 shelter)     │
 └───────────┬────────────────────┘
             │  Puppeteer (headless Chrome)
@@ -80,10 +79,10 @@ An automated data pipeline and frontend widget that scrapes adoptable pet listin
 - **Fallback:** If card scraping finds ≤3 pets, a raw HTML fallback extracts pet URLs from the page source (RSC payloads, script data)
 
 ### 2. Clark County Humane Society (`clark`)
-- **Source:** Petfinder — official API when `PETFINDER_API_KEY`/`PETFINDER_API_SECRET` env vars (GitHub Actions secrets) are set (`fetchPetfinderApi('WI34')`, free key at petfinder.com/developers); otherwise falls back to HTML scraping the member page
-- **Slug:** `neillsville/clark-county-humane-society-wi34`
-- **Scrape method:** `scrapePetfinder()` — Scrapes `a[href*="/details/"]` cards, parses alt text for name/breed/age/gender
-- **Note:** API descriptions are truncated by Petfinder (~250 chars); the HTML scraper gets full bios
+- **Source:** Adoptapet.com — shelter ID `80908-clark-county-humane-society-neillsville-wisconsin`, same `scrapeAdoptapet()` as Marathon.
+- **Why not Petfinder (Clark's other listing site):** since ~2026-09-24 Petfinder's Imperva/Incapsula firewall serves a CAPTCHA page titled "This site is temporarily unavailable | Nestlé" to datacenter IPs, including GitHub Actions runners (it still works from a normal home browser). Petfinder's developer portal (`/developers/`) and API-key page were also retired, so no new API key can be obtained. Both Petfinder routes are dead for automation; the old `scrapePetfinder()`/`fetchPetfinderApi()` code was removed (it's in git history).
+- **Clark's own website** (cchs-petshelter.org) embeds Petfinder's widget with a token issued to *their* site — don't lift that token into this code; it isn't ours.
+- **Coverage caveat:** Clark posts to Petfinder and Adoptapet separately and the lists drift by a few pets at any moment (checked 2026-09-25: 20 on both, 8 Petfinder-only, 10 Adoptapet-only — timing lag, not a systematic split). The widget's "View all at Clark County HS" link deliberately still points at Petfinder, which works for human readers and shows the fuller list.
 
 ### 3. Adams County Humane Society (`adams`)
 - **Source:** Adoptapet.com shelter page
@@ -257,7 +256,7 @@ Steps:
 **The rewrite fails safe.** `rewriteBio()` returns `null` (→ excerpt) when there's no API key, the SDK is missing, the API errors or refuses, output is unparseable or over 300 chars, **or `retainsConstraints()` finds the rewrite dropped a restriction the shelter stated** — no-cats/no-dogs/no-kids, only-pet, experienced-home, medical needs, bonded pairs. That guard exists because a summary that reads more permissive than the shelter's own words can land an animal in the wrong home; the system prompt also forbids inventing facts or softening restrictions. Never loosen it without a good reason.
 
 **Selection** (`rankCandidates` in `build-featured-pet.js`):
-- Goal is to spotlight pets listed the longest (the "≥ 2 months" focus). Tenure uses the best signal per pet: tracked `firstSeen` date → Petfinder `publishedAt` → else the pet predates `firstSeen` tracking (began 2026-06-13) and is treated as a long-stay "veteran", ranked oldest-first by Adoptapet listing ID.
+- Goal is to spotlight pets listed the longest (the "≥ 2 months" focus). Tenure uses the best signal per pet: tracked `firstSeen` date → `publishedAt` (only ever set by the removed Petfinder API path; now dormant) → else the pet predates `firstSeen` tracking (began 2026-06-13) and is treated as a long-stay "veteran", ranked oldest-first by Adoptapet listing ID.
 - Tiers: (1) provably ≥ 60 days, (2) pre-tracking veterans, (3) tracked but younger. Until `firstSeen` matures past 60 days (~mid-Aug 2026), tier 1 is empty and the veterans carry the focus.
 - Rotation rules: never feature a pet more than 3× in a rolling 14 days; never repeat the immediately-previous edition's pet. Chosen pet must have a photo and pass a tolerant liveness check (only a definitive 404/410 rejects it).
 
@@ -274,7 +273,7 @@ Steps:
 4. When a scrape returns 0, `main()` carries forward the previous run's pets for that shelter (marked `status: "stale"` with `staleSince` in `scrape_status`) for up to 14 days, so the widget keeps showing real, recent pets. After 14 days the shelter goes to `failed`/empty. The widget shows a yellow stale notice for `stale` shelters and an honest "having trouble reaching this shelter" empty state for `failed` ones.
 
 ### Adding a new shelter
-1. Write a scraper function in `build-widget-data.js` (use `scrapeAdoptapet()` for aggregator sites, `scrapeNlpac()` for direct HTML sites, or `scrapePetfinder()` for Petfinder)
+1. Write a scraper function in `build-widget-data.js` (use `scrapeAdoptapet()` for aggregator sites or `scrapeNlpac()` as a model for direct HTML sites; Petfinder blocks CI runners, so prefer a shelter's Adoptapet listing)
 2. Call it from `main()` and assign to `data.shelters.{key}`
 3. Add the shelter key to the `shelterOrder` dedup array
 4. In `adopt-widget.html`:
@@ -289,7 +288,7 @@ Steps:
 
 ### Image URLs
 - **Adoptapet:** Uses Cloudinary CDN. Template: `https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/{petId}`
-- **Petfinder:** Uses CloudFront. Template: `https://dbw3zep4prcju.cloudfront.net/animal/{animalId}/image/{imageId}.jpg`
+- **Petfinder** (no current source uses it; kept for reading old data): Uses CloudFront. Template: `https://dbw3zep4prcju.cloudfront.net/animal/{animalId}/image/{imageId}.jpg`
 - **NLPAC:** Direct URLs from `custompages` path on their site
 
 ---
@@ -315,6 +314,7 @@ ls diag/
 ### Key Debugging Tips
 - The scraper saves diagnostic HTML snapshots to `diag/diag-{shelter}-{context}.html` (gitignored; CI uploads them as the `diag-snapshots` workflow artifact) whenever results are unexpectedly low. Open these in a browser to see exactly what Puppeteer received.
 - Adoptapet is a Next.js React app — after JS hydration, pet cards may be re-rendered differently than the server HTML. The fallback path in `scrapeAdoptapet` handles this by extracting URLs from raw page source.
-- Petfinder and NLPAC may return bot-detection pages. The `makePage()` stealth settings help but aren't foolproof. If a scraper consistently returns 0, the site may have tightened anti-bot measures.
+- A shelter's listings changing URL (moving listing sites, or a re-post) would otherwise mark every pet "✨ New" and reset its tenure. `computeFirstSeen()` prevents that: a pet with an unseen URL inherits the date of the same-named pet at the same shelter whose old URL vanished that run. `normPetName()` strips bracketed/starred annotations first ("Darla (Adoption Fee Sponsored!)" → "darla"); a name shared by two vanished pets is treated as ambiguous and not guessed.
+- NLPAC may return bot-detection pages (Cloudflare); Petfinder blocks CI outright (see Clark). The `makePage()` stealth settings help but aren't foolproof. If a scraper consistently returns 0, the site may have tightened anti-bot measures.
 - The fallback injection in `adopt-widget.html` is marker-based: `injectIntoWidget()` replaces the `/*FALLBACK_DATA_START*/…END*/` and `/*FALLBACK_META_START*/…END*/` blocks. If a marker is missing it logs `⚠️ … markers not found` and skips the write — grep the Actions log for that warning if the widget seems to ship stale fallback data.
 - Species classification lives in `classifySpecies(breed, url)` and deliberately ignores the pet's name and free-text details — a Pit Bull named "Finch" must not be classified as a bird. Keep it that way when touching it.
