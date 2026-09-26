@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-25T18:34:06.735Z",
+  "lastUpdated": "2026-09-26T05:58:56.751Z",
   "shelters": {
     "marathon": [
       {
@@ -63,7 +63,7 @@
         "breed": "Domestic Shorthair",
         "age": "2 yrs",
         "gender": "Female",
-        "bio": "Hi there, I'm Verdi! I'm a fun loving lady that is here at HSMC looking for a new place to call home, and let me tell you - I'm a little picky! I'm a diva, and I'm not afraid to say it. I'm not a big fan of being picked up or held, but will curl up in your lap on my own terms - I just like to be in charge. I love to be spoiled and would be best as an only pet. If you think I could be the diva of my dreams then come visit me soon! My adoption fees have been sponsored in full. Less",
+        "bio": "Hi there, I'm Verdi! I'm a fun loving lady that is here at HSMC looking for a new place to call home, and let me tell you - I'm a little picky! I'm a diva, and I'm not afraid to say it. I'm not a big fan of being picked up or held, but will curl up in your lap on my own terms - I just like to be in charge. I love to be spoiled and would be best as an only pet. If you think I could be the diva of my dreams then come visit me soon! My adoption fees have been sponsored in full.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973106",
         "url": "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat"
       },
@@ -82,12 +82,45 @@
         "name": "Quest",
         "species": "Dog",
         "breed": "German Shepherd Dog",
-        "age": "4 yrs",
+        "age": "",
         "gender": "Male",
-        "bio": "Are you looking for a Quest to go on to show your bravery and wit? Well, I'm Quest and adopting me would be the greatest adventure ever! I'm a sweet guy that came to HSMC as a stray. I'm adventurous and social - making me the greatest companion! I'd be a good fit in a party with other dogs and even cats! If you think I could help on your big adventure in life then come adopt me today! Less",
+        "bio": "Quest is a German Shepherd Dog dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Dog-v3.png",
         "url": "https://www.adoptapet.com/pet/49325589-wausau-wisconsin-german-shepherd-dog-mix",
         "firstSeen": "2026-09-16T03:58:13.932Z"
+      },
+      {
+        "name": "Kit 2",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Kit 2 is a black Domestic Shorthair cat.",
+        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "url": "https://www.adoptapet.com/pet/49444557-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Tattoo",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Male",
+        "bio": "Just like the ink of a tattoo, my love for you will be permanent! I'm super playful and fun with a great attitude. Loving me will be easy and true. Let's do this!* Tattoo is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Tattoo please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339247724",
+        "url": "https://www.adoptapet.com/pet/49446763-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Seraphim",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Female",
+        "bio": "Hi there, I'm Seraphim! I'm a loving girl that is here at HSMC looking for a new family. I'm super playful and I'll be tons of fun in my new home! I'd even be a purrfect fit in a home with other pets and kids! Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339277406",
+        "url": "https://www.adoptapet.com/pet/49447946-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
       },
       {
         "name": "Lantern *Barn Cat*",
@@ -188,28 +221,6 @@
         "firstSeen": "2026-09-18T05:41:46.985Z"
       },
       {
-        "name": "Ginny",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "6 mos",
-        "gender": "Female",
-        "bio": "Hello there, my name is Ginny. My namesake might be good at bat bogey hexes, but I am more of a lover than a fighter. Come down and meet me, you won't need a bottle of Amortencia to fall in love with me. I just need a bit of your patience to let me warm up to you. I will be waiting at the shelter to meet you. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973137",
-        "url": "https://www.adoptapet.com/pet/48341011-wausau-wisconsin-cat",
-        "firstSeen": "2026-06-14T05:54:51.597Z"
-      },
-      {
-        "name": "Conductor",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "3 yrs 2 mos",
-        "gender": "Male",
-        "bio": "Hi there, I'm Conductor! I'm a handsome guy that is here at HSMC waiting for you to adopt me! I'm very active, talkative and ready to be YOURS! Come visit me soon! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321834163",
-        "url": "https://www.adoptapet.com/pet/48738789-wausau-wisconsin-cat",
-        "firstSeen": "2026-07-21T04:17:31.888Z"
-      },
-      {
         "name": "Nolan",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -254,6 +265,61 @@
         "firstSeen": "2026-09-23T05:42:01.620Z"
       },
       {
+        "name": "Kit 1",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Kit 1 is a black Domestic Shorthair cat.",
+        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "url": "https://www.adoptapet.com/pet/49444556-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Waffles",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 yrs",
+        "gender": "Male",
+        "bio": "Be honest, have you ever seen a more handsome cat? My name is Waffles and I'm a sweetheart of a cat who is looking for a sweetheart of a home. I had a family who loved me but I found myself in the shelter due to allergies and a new baby at home. It's been quite the adjustment but I'm trying my best to be brave. I'm best known for my role as a couch potato but I have a playful and cuddly side, too. I've got my eye on someone like you and I sure do hope you feel the same way, too!* Waffles is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Waffles please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339247784",
+        "url": "https://www.adoptapet.com/pet/49446766-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Anaheim *Barn Cat*",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "5 yrs 1 mo",
+        "gender": "Female",
+        "bio": "My name is Anaheim and I've got a hunger for freedom and independence that can't be found inside the four walls of a home. I'm a working gal and I'd like to stay that way. If you've got a barn or a shed for me to call home, I'll get to work! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1333674562",
+        "url": "https://www.adoptapet.com/pet/49228660-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-05T05:27:38.113Z"
+      },
+      {
+        "name": "Ginny",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "6 mos",
+        "gender": "Female",
+        "bio": "Hello there, my name is Ginny. My namesake might be good at bat bogey hexes, but I am more of a lover than a fighter. Come down and meet me, you won't need a bottle of Amortencia to fall in love with me. I just need a bit of your patience to let me warm up to you. I will be waiting at the shelter to meet you.* Ginny is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Ginny please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973137",
+        "url": "https://www.adoptapet.com/pet/48341011-wausau-wisconsin-cat",
+        "firstSeen": "2026-06-14T05:54:51.597Z"
+      },
+      {
+        "name": "Conductor",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 yrs 2 mos",
+        "gender": "Male",
+        "bio": "Hi there, I'm Conductor! I'm a handsome guy that is here at HSMC waiting for you to adopt me! I'm very active, talkative and ready to be YOURS! Come visit me soon!* Conductor is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Conductor please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321834163",
+        "url": "https://www.adoptapet.com/pet/48738789-wausau-wisconsin-cat",
+        "firstSeen": "2026-07-21T04:17:31.888Z"
+      },
+      {
         "name": "Record Player",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -276,26 +342,26 @@
         "firstSeen": "2026-09-13T05:49:18.636Z"
       },
       {
-        "name": "Cheesy Fry",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "5 mos",
-        "gender": "Female",
-        "bio": "Hiya, I'm Cheesy Fry! I'm a fun loving gal that is hoping and waiting eagerly for my new family! I'm a great cat that loves people, kids and other cats! I love to play with my toys and I have lots of energy and love to give! Come visit me soon!* Cheesy Fry is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Cheesy Fry please visit https://www.starrynightcatcafe.com/visit",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1319652996",
-        "url": "https://www.adoptapet.com/pet/48651162-wausau-wisconsin-cat",
-        "firstSeen": "2026-07-13T04:33:15.254Z"
-      },
-      {
         "name": "Jingle Belle *Bonded Pair*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
         "age": "9 yrs 1 mo",
         "gender": "Female",
-        "bio": "Hi there, I'm Jingle Belle! I'm a sweet lady that is here hoping to find my new home! I'm very outgoing, affectionate and oh so sweet! If you think I could be the cat for you come visit me soon!* Jingle Belle is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Jingle Belle please visit https://www.starrynightcatcafe.com/visitLess",
+        "bio": "Hi there, I'm Jingle Belle! I'm a sweet lady that is here hoping to find my new home! I'm very outgoing, affectionate and oh so sweet! If you think I could be the cat for you come visit me soon!* Jingle Belle is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Jingle Belle please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1330709150",
         "url": "https://www.adoptapet.com/pet/49105537-wausau-wisconsin-cat",
         "firstSeen": "2026-08-24T02:23:45.598Z"
+      },
+      {
+        "name": "Cheesy Fry",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "5 mos",
+        "gender": "Female",
+        "bio": "Hiya, I'm Cheesy Fry! I'm a fun loving gal that is hoping and waiting eagerly for my new family! I'm a great cat that loves people, kids and other cats! I love to play with my toys and I have lots of energy and love to give! Come visit me soon!* Cheesy Fry is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Cheesy Fry please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1319652996",
+        "url": "https://www.adoptapet.com/pet/48651162-wausau-wisconsin-cat",
+        "firstSeen": "2026-07-13T04:33:15.254Z"
       },
       {
         "name": "Dionysus",
@@ -334,9 +400,9 @@
         "name": "Knox",
         "species": "Dog",
         "breed": "German Shepherd Dog",
-        "age": "",
+        "age": "6 yrs 6 mos",
         "gender": "Female",
-        "bio": "Knox is a German Shepherd Dog dog.",
+        "bio": "All around me are dogs who are at different stages of acclimating to shelter life; some are brave and make it look easy and some are just trying to right the world that has been turned upside down. Here's the thing, I'm having a hard time. The people I used to love, the dog I used to be, the life I used to know; all of that's gone and I've had to start over new. I tell you this so that you know to take things slow and give me grace when we meet; I've never had to do this before. I'm a loyal and independent girl who would prefer to be the only pet in a quiet household. I need only a few things but very consistently; food/water, love and exercise. Maybe you too have been through a difficult time and felt misunderstood? I'm hoping you're the person who can give me everything that I need and that I may return the favor, too. Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973512",
         "url": "https://www.adoptapet.com/pet/47593433-wausau-wisconsin-german-shepherd-dog-mix"
       },
@@ -357,21 +423,65 @@
         "breed": "Domestic Shorthair",
         "age": "5 mos",
         "gender": "Male",
-        "bio": "Hi there, I'm Mr. Krabbs! I'm an energetic feline that is here at HSMC looking for my purrfect new home! I'm a great cat that loves everyone I meet, including other cats! I'm playful, snuggly and ready to be YOURS! Come visit me soon!",
+        "bio": "Hi there, I'm Mr. Krabbs! I'm an energetic feline that is here at HSMC looking for my purrfect new home! I'm a great cat that loves everyone I meet, including other cats! I'm playful, snuggly and ready to be YOURS! Come visit me soon! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973586",
         "url": "https://www.adoptapet.com/pet/49335081-wausau-wisconsin-cat",
         "firstSeen": "2026-09-16T03:58:13.932Z"
       },
       {
-        "name": "Willow *Bonded Pair*",
-        "species": "Dog",
-        "breed": "Boston Terrier",
-        "age": "2 yrs 9 mos",
+        "name": "Asteroid",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "6 mos",
         "gender": "Female",
-        "bio": "Hey there! Are you looking to add two adorable companions into your life? Well my sister and best friend Gracie and I are looking for our forever home. We must stay together! Due to some life changes we found our way here. We still have each other and we know there is a new family for us in the future. I am a sweet girl, I am active and playful. I can be a little shy at first with new people, just give me time and I will come around. If you have room in your home and heart for two sweet girls, apply for us today! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338398254",
-        "url": "https://www.adoptapet.com/pet/49408559-wausau-wisconsin-boston-terrier-mix",
-        "firstSeen": "2026-09-23T05:42:01.620Z"
+        "bio": "Asteroid is a black Domestic Shorthair kitten, 6 mos old.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339182312",
+        "url": "https://www.adoptapet.com/pet/49433263-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Black Hole",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "6 mos",
+        "gender": "Male",
+        "bio": "Black Hole is a black Domestic Shorthair kitten, 6 mos old.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339182302",
+        "url": "https://www.adoptapet.com/pet/49433264-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Shady Belle",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Female",
+        "bio": "Hi there, I'm Shady Belle! I'm a sweet little lady that is here at HSMC looking for a new family. I'm very playful, snuggly and oh so sweet! Come visit me soon! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339267509",
+        "url": "https://www.adoptapet.com/pet/48880501-wausau-wisconsin-cat",
+        "firstSeen": "2026-08-02T04:26:00.669Z"
+      },
+      {
+        "name": "Aveefa",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
+        "age": "4 yrs 4 mos",
+        "gender": "Female",
+        "bio": "Hi there, I'm Aveefa! I'm a great girl that is hoping you will take me home with you! I came to the shelter as a stray but I'm ready to walk out adopted! I'm very loving, soft and ready to be YOURS! Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1306542195",
+        "url": "https://www.adoptapet.com/pet/48065059-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Blackwater",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Male",
+        "bio": "HI there, I'm Blackwater! I'm a sweet boy that is here looking for my new family! I'm great with other cats, kids and probably even dogs too! I love to play with toys and I promise to bring lots of fun to any home! Come see me soon! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339277482",
+        "url": "https://www.adoptapet.com/pet/48880499-wausau-wisconsin-cat",
+        "firstSeen": "2026-08-02T04:26:00.669Z"
       },
       {
         "name": "Clarisse",
@@ -390,7 +500,7 @@
         "breed": "Domestic Shorthair",
         "age": "6 yrs 1 mo",
         "gender": "Female",
-        "bio": "HI there, I'm Terracotta! I'm a sweet girl that is here at HSMC as a stray. I'm a great cat that loves attention but can be a little shy until I get to know you! Come visit me soon!* Terracotta is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Terracotta please visit https://www.starrynightcatcafe.com/visitLess",
+        "bio": "HI there, I'm Terracotta! I'm a sweet girl that is here at HSMC as a stray. I'm a great cat that loves attention but can be a little shy until I get to know you! Come visit me soon!* Terracotta is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Terracotta please visit https://www.starrynightcatcafe.com/visit",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973014",
         "url": "https://www.adoptapet.com/pet/45397819-wausau-wisconsin-cat",
         "firstSeen": "2026-06-13T14:58:18.390Z"
@@ -439,17 +549,6 @@
         "firstSeen": "2026-08-14T03:25:19.248Z"
       },
       {
-        "name": "Gracie *Bonded Pair*",
-        "species": "Dog",
-        "breed": "Boston Terrier",
-        "age": "2 yrs 9 mos",
-        "gender": "Female",
-        "bio": "What's better than one Boston Terrier? TWO! Guess what, my sister Willow and I are not only sisters but also BFFs and we are looking for a home together. We are here due to no fault of our own and it wasn't an easy decision for our family either. I am a friendly girl, I love playtime and toys. I just love getting attention and cuddling. If you have room in your home and heart for two sweet girls, apply for us today.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338398253",
-        "url": "https://www.adoptapet.com/pet/49408558-wausau-wisconsin-boston-terrier",
-        "firstSeen": "2026-09-23T05:42:01.620Z"
-      },
-      {
         "name": "Lenny",
         "species": "Dog",
         "breed": "American Pit Bull Terrier",
@@ -466,7 +565,7 @@
         "breed": "Domestic Longhair",
         "age": "1 yr",
         "gender": "Female",
-        "bio": "They call me Plant Stand because I'm multi-purpose and sturdy, ready to get the job done. I was born outside and intended to stay there until I was caught in a live trap and brought to the shelter. I long to get back to the great outdoors where I can hunt and be free. I'd be happy to be your shop or barn cat and will even work for free! Less",
+        "bio": "They call me Plant Stand because I'm multi-purpose and sturdy, ready to get the job done. I was born outside and intended to stay there until I was caught in a live trap and brought to the shelter. I long to get back to the great outdoors where I can hunt and be free. I'd be happy to be your shop or barn cat and will even work for free!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1311151143",
         "url": "https://www.adoptapet.com/pet/48272693-wausau-wisconsin-cat"
       },
@@ -504,15 +603,114 @@
         "firstSeen": "2026-09-25T05:59:21.429Z"
       },
       {
-        "name": "Melly",
-        "species": "Dog",
-        "breed": "Golden Retriever",
-        "age": "1 yr",
+        "name": "Kit 4",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Kit 4 is a black Domestic Shorthair cat.",
+        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "url": "https://www.adoptapet.com/pet/49444559-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Vincent",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Vincent is a gray or blue Domestic Shorthair cat.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339182303",
+        "url": "https://www.adoptapet.com/pet/49442637-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Nip Nip",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 yrs 4 mos",
         "gender": "Female",
-        "bio": "Talk about sweet! My name is Melly and I'm so easy to love. I'm a social, submissive girlie who would fit right in with any pack. I'm not too big and not too small; I think I'm what Goldilocks would call 'just right'. Heck, if I had fingers I would fill out the application for you. What are you waiting for?",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973297",
-        "url": "https://www.adoptapet.com/pet/49169558-wausau-wisconsin-golden-retriever-mix",
-        "firstSeen": "2026-08-30T06:22:10.381Z"
+        "bio": "My name is Nip Nip and I'd love to be your kitty. I'm a shy girl who struggled to adjust to shelter life; I'm currently enjoying my freedom and the company of other felines at the Starry Night Cafe in Stevens Point. I'm hoping to find a patient human who will save a spot in their lap for me. Ps. I can in with Squeaky if you're thinking about two cats!* Nip Nip is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Nip Nip please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339234242",
+        "url": "https://www.adoptapet.com/pet/49446019-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Junior",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 yr 7 mos",
+        "gender": "Male",
+        "bio": "My name is Junior and I'm just a shy boy who is trying to find his place in this world. I am happiest around other cats and trying my best to be brave. I can be chatty, am good at snuggling and will never turn down canned cat food. I hope you'll help me be the best that I can be!* Junior is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Junior please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339234257",
+        "url": "https://www.adoptapet.com/pet/49446020-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Mixed Media",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Male",
+        "bio": "Where are the art lovers at? My name is Mixed Media and I'm hoping to be the cat you choose. I'm playful and sweet, at times a little shy but I'm a work in progress, what can I say? I hope you can see that there's something special about me and that we belong together. See you soon?* Mixed Media is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Mixed Media please visit https://www.starrynightcatcafe.com/visit",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339247718",
+        "url": "https://www.adoptapet.com/pet/49446762-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Pick Up Stix",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 mos",
+        "gender": "Male",
+        "bio": "Pick Up Stix is a white Domestic Shorthair kitten, 2 mos old.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339267450",
+        "url": "https://www.adoptapet.com/pet/49441671-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Squeaky",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 yrs 4 mos",
+        "gender": "Female",
+        "bio": "My name is Squeaky and I hope you don't mind that I'm a little camera shy. I came to the shelter because there were too many cats in my last home. I'm a beautiful girl with so much potential, I just need someone like you to remind me of that. I'm happiest with other cats and could even go home with my bestie, Nip Nip, if you wanted two cats!* Squeaky is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Squeaky please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339258301",
+        "url": "https://www.adoptapet.com/pet/49447276-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Strawberry",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 yr 1 mo",
+        "gender": "Female",
+        "bio": "Hiya, I'm Strawberry! I'm an absolutely gorgeous feline here at HSMC looking for a new family. I'm very outgoing, loving and sweet so I know you will just love me! I've been around the block a few times and would be a great fit in a home with other cats. If you think I could be the one for you come visit me soon! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1325308972",
+        "url": "https://www.adoptapet.com/pet/48880500-wausau-wisconsin-cat",
+        "firstSeen": "2026-08-02T04:26:00.669Z"
+      },
+      {
+        "name": "Fashion",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "3 mos",
+        "gender": "Female",
+        "bio": "Hi there, I'm Fashion! I'm a sweet girl that is hoping you will be the one to adopt me! I'm a great cat that loves other cats, playing with toys and being around those that I love! Come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339277398",
+        "url": "https://www.adoptapet.com/pet/49447945-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Whispers",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "1 yr",
+        "gender": "Male",
+        "bio": "Hiya, I'm Whispers! I'm a handsome guy that is here at HSMC looking for a new place to call home. I wasn't getting along with the other pets in my home, so here I am! I know there is someone out there for me! I'm told I'm very handsome, snuggly and very happy go lucky - so you better come visit me soon! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339277423",
+        "url": "https://www.adoptapet.com/pet/49447947-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
       },
       {
         "name": "Kadabra",
@@ -531,7 +729,7 @@
         "breed": "Domestic Shorthair",
         "age": "Adult",
         "gender": "Male",
-        "bio": "My name is Bandit and I previously lived my life as a barn cat. It is what I know and love and I am looking for my next home as a barn cat. I prefer not to interact with people, but I love the outdoors and mousing. Apply for me today! Less",
+        "bio": "My name is Bandit and I previously lived my life as a barn cat. It is what I know and love and I am looking for my next home as a barn cat. I prefer not to interact with people, but I love the outdoors and mousing. Apply for me today!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336801107",
         "url": "https://www.adoptapet.com/pet/49360595-wausau-wisconsin-cat",
         "firstSeen": "2026-09-18T05:41:46.985Z"
@@ -542,7 +740,7 @@
         "breed": "Domestic Shorthair",
         "age": "3 mos",
         "gender": "Male",
-        "bio": "Hey there, I'm Bear Claw! I'm a fun loving guy that is here at HSMC waiting for my new family to find me! I'm a lucky boy as I was the only one of my whole group to make it after a lot of health scares I'm finally ready for adoption! Come visit me soon!",
+        "bio": "Hey there, I'm Bear Claw! I'm a fun loving guy that is here at HSMC waiting for my new family to find me! I'm a lucky boy as I was the only one of my whole group to make it after a lot of health scares I'm finally ready for adoption! Come visit me soon! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337066806",
         "url": "https://www.adoptapet.com/pet/49372103-wausau-wisconsin-cat",
         "firstSeen": "2026-09-19T05:36:17.479Z"
@@ -559,23 +757,12 @@
         "firstSeen": "2026-09-22T17:30:12.519Z"
       },
       {
-        "name": "Brooke",
-        "species": "Cat",
-        "breed": "Siamese",
-        "age": "1 yr 3 mos",
-        "gender": "Female",
-        "bio": "Hi my name is Brooke. I came to HSMC due to no fault of my own. I am the most beautiful girl with the personality to match. I'm friendly to other cats, love to play with toys and am affectionate, too. What more do you need to hear? Apply to adopt me today! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973952",
-        "url": "https://www.adoptapet.com/pet/49362771-wausau-wisconsin-cat",
-        "firstSeen": "2026-09-18T16:55:11.078Z"
-      },
-      {
         "name": "Chewy",
         "species": "Dog",
         "breed": "Husky",
         "age": "2 yrs 4 mos",
         "gender": "Male",
-        "bio": "Hey friends! They call me Chewy and tell me that I'm a good boy and I'm sure hoping that you feel the same way, too. I've got beautiful blue eyes, a stubborn streak and the smarts and wit common to my breed. I enjoy spending time outside, playing fetch and singing the songs of my people. I'm tolerant of other dogs but do not want to share treats or high value items. You look like you could be a forever kind of human, let's make my dreams come true!",
+        "bio": "Hey friends! They call me Chewy and tell me that I'm a good boy and I'm sure hoping that you feel the same way, too. I've got beautiful blue eyes, a stubborn streak and the smarts and wit common to my breed. I enjoy spending time outside, playing fetch and singing the songs of my people. I'm tolerant of other dogs but do not want to share treats or high value items. You look like you could be a forever kind of human, let's make my dreams come true! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973107",
         "url": "https://www.adoptapet.com/pet/47921174-wausau-wisconsin-husky-mix"
       },
@@ -589,17 +776,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973047",
         "url": "https://www.adoptapet.com/pet/44254073-wausau-wisconsin-boxer-mix",
         "firstSeen": "2026-09-04T16:42:31.716Z"
-      },
-      {
-        "name": "Bevvy",
-        "species": "Cat",
-        "breed": "Domestic Longhair",
-        "age": "4 yrs 6 mos",
-        "gender": "Male",
-        "bio": "Hi there, I'm Bevvy! I'm a shy girl here at HSMC that is hoping to find a home to call my very own. Don't be surprised if it takes me a little bit to warm up to you, I haven't always been able to trust humans but the staff here have been showing me that I can. I'm a sweet girl that enjoys being brushed and pet. I especially love a little canned cat food in the morning! Come visit me soon if you think I could be the cat for you!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973036",
-        "url": "https://www.adoptapet.com/pet/47562392-wausau-wisconsin-cat",
-        "firstSeen": "2026-08-02T04:26:00.669Z"
       },
       {
         "name": "Zeus",
@@ -618,10 +794,43 @@
         "breed": "Domestic Shorthair",
         "age": "2 yrs 3 mos",
         "gender": "Male",
-        "bio": "Hi there, I'm Filch! I'm an outspoken feline that is here at HSMC looking for a new place to call my own. I came to the shelter as a stray and now am looking for my new family. I'm active, playful and have my bags all packed to go with you. I may do best in a home with older kids, as I can be a kind of a lot sometimes. Come visit me soon!",
+        "bio": "Hi there, I'm Filch! I'm an outspoken feline that is here at HSMC looking for a new place to call my own. I came to the shelter as a stray and now am looking for my new family. I'm active, playful and have my bags all packed to go with you. I may do best in a home with older kids, as I can be a kind of a lot sometimes. Come visit me soon! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973170",
         "url": "https://www.adoptapet.com/pet/49372102-wausau-wisconsin-cat",
         "firstSeen": "2026-09-19T05:36:17.479Z"
+      },
+      {
+        "name": "Kit 3",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Kit 3 is a black Domestic Shorthair cat.",
+        "photo": "https://media.adoptapet.com/image/upload/c_scale,w_358,ar_142:135,dpr_2.5/f_auto,q_auto/Fallback-Photo_Cat-v3.png",
+        "url": "https://www.adoptapet.com/pet/49444558-wausau-wisconsin-cat",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
+      },
+      {
+        "name": "Bevvy",
+        "species": "Cat",
+        "breed": "Domestic Longhair",
+        "age": "4 yrs 6 mos",
+        "gender": "Male",
+        "bio": "Hi there, I'm Bevvy! I'm a shy guy that is hoping to find a home to call my very own. Don't be surprised if it takes me a little bit to warm up to you, I haven't always been able to trust humans but the staff here have been showing me that I can. I enjoy being brushed and pet. I especially love a little canned cat food in the morning! Come visit me soon if you think I could be the cat for you!* Bevvy is currently being fostered at the Starry Night Cat Cafe in Stevens Point. For more information on meeting with Bevvy please visit https://www.starrynightcatcafe.com/visitLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337973036",
+        "url": "https://www.adoptapet.com/pet/47562392-wausau-wisconsin-cat",
+        "firstSeen": "2026-08-02T04:26:00.669Z"
+      },
+      {
+        "name": "Post Office",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "8 yrs 1 mo",
+        "gender": "Male",
+        "bio": "Hey there, I'm Post Office! I'm a handsome feline that came to HSMC as a stray. I was at first so so scared but now with help from the staff here I see that people aren't so scary! I'm an affectionate guy that would love a quiet home with older kids. If you think you have the home for me come visit me soon!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339277464",
+        "url": "https://www.adoptapet.com/pet/48560868-wausau-wisconsin-cat",
+        "firstSeen": "2026-07-04T04:38:45.749Z"
       }
     ],
     "clark": [
@@ -633,7 +842,7 @@
         "gender": "Male",
         "bio": "Luke may be the lone boy name surrounded by a litter of Gilmore Girls, but this Rat Terrier/Border Collie mix is every bit as ready for his starring role! Luke is a sweet and smart puppy who is looking for a family ready to make him part of their everyday lives. He’s got plenty of growing, learning, playing, and exploring ahead of him, and his future family will get to be there for all of it. He’ll need patience and guidance as he learns how to navigate the world, but that’s part of the fun of bringing home a puppy. Luke is ready for his forever family—and hopefully a lifetime of happy endings. Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated for Rabies and bl",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336402712",
-        "url": "https://www.adoptapet.com/pet/49343881-neillsville-wisconsin-rat-terrier-border-collie-mix",
+        "url": "https://www.adoptapet.com/pet/49343881-neillsville-wisconsin-rat-terrier-mix",
         "firstSeen": "2026-09-17T17:26:27.916Z"
       },
       {
@@ -655,18 +864,18 @@
         "gender": "Female",
         "bio": "Jess is a member of our Gilmore Girl litter! This adorable Rat Terrier/Border Collie mix is smart, sweet, and ready to meet the people who will become her forever family. With two breeds known for their intelligence and personality in her mix, Jess has plenty of potential to grow into a wonderful companion. She’s at the perfect stage of life to start learning, exploring, and discovering all the fun things the world has to offer. Jess is looking for a family who wants to be part of that process and will give her the training, patience, and love she needs to become the best dog she can be. Come meet our girl Jess and see if she’s the missing piece your family has been looking for! Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetell",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336402721",
-        "url": "https://www.adoptapet.com/pet/49343882-neillsville-wisconsin-rat-terrier-mix",
+        "url": "https://www.adoptapet.com/pet/49343882-neillsville-wisconsin-rat-terrier-border-collie-mix",
         "firstSeen": "2026-09-17T17:26:27.916Z"
       },
       {
         "name": "Logan",
         "species": "Dog",
-        "breed": "Rat Terrier Border Collie",
-        "age": "",
+        "breed": "Rat Terrier / Border Collie",
+        "age": "2 mos",
         "gender": "Male",
-        "bio": "Logan is a Rat Terrier Border Collie dog.",
+        "bio": "Logan is one of the boys of our Gilmore Girl litter, and this Rat Terrier/Border Collie mix is ready to meet his future family! Logan is a sweet, smart puppy with a whole lifetime ahead of him. His new family will get to experience all the fun that comes with watching a puppy grow—from those goofy puppy moments to the satisfaction of seeing him learn something new. He’ll need a family who is ready to put in the time and patience that raising a puppy requires, but Logan will have so much potential to become an incredible lifelong companion. His forever story is just getting started. Could you be part of it? Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated for R",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336402730",
-        "url": "https://www.adoptapet.com/pet/49343883-neillsville-wisconsin-rat-terrier-mix",
+        "url": "https://www.adoptapet.com/pet/49343883-neillsville-wisconsin-rat-terrier-border-collie-mix",
         "firstSeen": "2026-09-17T17:26:27.916Z"
       },
       {
@@ -675,7 +884,7 @@
         "breed": "Domestic Shorthair",
         "age": "3 mos",
         "gender": "Female",
-        "bio": "Meet Minie, a cute little kitten with a big future ahead! Minie is part of a playful litter with siblings Bo, Eenie, Meenie, and Mo. Minie is an adventurous kitten who is excited to learn about life outside of the litter. From batting around toys to finding cozy places to relax, Minie is ready for all the fun and love that comes with having a forever home. Minie hopes to find a family who will cherish every silly kitten moment along the way",
+        "bio": "Meet Minie, a cute little kitten with a big future ahead! Minie is part of a playful litter with siblings Bo, Eenie, Meenie, and Mo. Minie is an adventurous kitten who is excited to learn about life outside of the litter. From batting around toys to finding cozy places to relax, Minie is ready for all the fun and love that comes with having a forever home. Minie hopes to find a family who will cherish every silly kitten moment along the wayLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338387495",
         "url": "https://www.adoptapet.com/pet/49408138-neillsville-wisconsin-cat",
         "firstSeen": "2026-09-25T18:34:06.735Z"
@@ -705,24 +914,13 @@
       {
         "name": "Gale",
         "species": "Dog",
-        "breed": "Chow Chow Cattle Dog",
-        "age": "",
+        "breed": "Chow Chow / Cattle Dog",
+        "age": "3 mos",
         "gender": "Male",
-        "bio": "Gale is a Chow Chow Cattle Dog dog.",
+        "bio": "🐶 GaleHeeler/Chow Mix PuppyGale is an adventurous little guy with a bright future ahead of him. Rescued with his siblings, he’s looking for a family to show him what love, security, and a forever home are all about. Like all puppies, he’ll thrive with training, socialization, and lots of playtime. Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated for Rabies and blood tested for Heartworm, Lymes, Anaplasmosis and Ehrlichiosis. Dogs and puppies will be spayed or neutered before adoption. CCHS is proud to be a No-Kill Humane Society. As a private, non-profit charity, our work depends on donations and volunteers to keep going. We are committed to helping the ani",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1327670873",
-        "url": "https://www.adoptapet.com/pet/48979501-neillsville-wisconsin-chow-chow-mix",
+        "url": "https://www.adoptapet.com/pet/48979501-neillsville-wisconsin-chow-chow-cattle-dog-mix",
         "firstSeen": "2026-08-20T02:18:19.195Z"
-      },
-      {
-        "name": "Biggie",
-        "species": "Dog",
-        "breed": "American Pit Bull Terrier",
-        "age": "4 yrs 3 mos",
-        "gender": "Male",
-        "bio": "Biggie may have arrived as a stray, but hes quickly showing that underneath his unsure first impressions is a big-hearted dog just waiting for the right person to help him feel safe. At around 4 years old, Biggie is past the puppy chaos but still has plenty of life, love, and personality to share. He can be a little skittish when meeting new people or experiencing new environments, but give him a bit of time and patience and youll see the transformation-soft eyes, relaxed body language, and a whole lot of affection. Once Biggie trusts you, he leans in hard for love. He enjoys gentle attention, reassurance, and simply being near his person. Hes the kind of dog who bonds deeply and becomes incredibly loyal once he knows hes safe. Biggie will do best in a calm, patient home that understands he may need a little time to decompress and adjust. In return, he offers a big personality, a big heart, and a whole lot of love just waiting to come out. If youre looking for a diamond-in-the-ruff who just needs someone to believe in him, Biggie might be your guy. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334665296",
-        "url": "https://www.adoptapet.com/pet/49270645-neillsville-wisconsin-american-pit-bull-terrier",
-        "firstSeen": "2026-08-02T04:26:00.669Z"
       },
       {
         "name": "Chip",
@@ -734,6 +932,17 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338965172",
         "url": "https://www.adoptapet.com/pet/49433516-neillsville-wisconsin-cat",
         "firstSeen": "2026-09-25T18:34:06.735Z"
+      },
+      {
+        "name": "Biggie",
+        "species": "Dog",
+        "breed": "American Pit Bull Terrier",
+        "age": "4 yrs 3 mos",
+        "gender": "Male",
+        "bio": "Biggie may have arrived as a stray, but hes quickly showing that underneath his unsure first impressions is a big-hearted dog just waiting for the right person to help him feel safe. At around 4 years old, Biggie is past the puppy chaos but still has plenty of life, love, and personality to share. He can be a little skittish when meeting new people or experiencing new environments, but give him a bit of time and patience and youll see the transformation-soft eyes, relaxed body language, and a whole lot of affection. Once Biggie trusts you, he leans in hard for love. He enjoys gentle attention, reassurance, and simply being near his person. Hes the kind of dog who bonds deeply and becomes incredibly loyal once he knows hes safe. Biggie will do best in a calm, patient home that understands he may need a little time to decompress and adjust. In return, he offers a big personality, a big heart, and a whole lot of love just waiting to come out. If youre looking for a diamond-in-the-ruff who just needs someone to believe in him, Biggie might be your guy. Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334665296",
+        "url": "https://www.adoptapet.com/pet/49270645-neillsville-wisconsin-american-pit-bull-terrier",
+        "firstSeen": "2026-08-02T04:26:00.669Z"
       },
       {
         "name": "Darla",
@@ -748,10 +957,10 @@
       {
         "name": "Bowie",
         "species": "Dog",
-        "breed": "Terrier (Unknown Type, Small) Australian Shepherd",
-        "age": "",
+        "breed": "Terrier (Unknown Type, Small) / Australian Shepherd",
+        "age": "3 mos",
         "gender": "Male",
-        "bio": "Bowie is a Terrier (Unknown Type, Small) Australian Shepherd dog.",
+        "bio": "Bowie is one seriously entertaining puppy! This adorable terrier mix is energetic, playful, curious, and just a little bit crazy—in the absolute best puppy way. Bowie loves being part of the action and has never met a game he didn’t want to join. He’s got plenty of puppy zoomies, plenty of goofy antics, and plenty of opinions to share. His terrier personality shines through in his confidence, enthusiasm, and determination to investigate everything around him. Bowie is looking for a family ready to embrace puppyhood in all its chaotic glory and help him grow into the wonderful dog he’s meant to be. With training, exercise, and lots of love, this goofy guy is going to make someone a fantastic companion! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1327670982",
         "url": "https://www.adoptapet.com/pet/48979512-neillsville-wisconsin-terrier-unknown-type-small-mix",
         "firstSeen": "2026-08-12T03:24:54.502Z"
@@ -762,7 +971,7 @@
         "breed": "Domestic Shorthair",
         "age": "3 mos",
         "gender": "Female",
-        "bio": "Say hello to Meenie! This sweet kitten is ready to bring some fun, purrs, and personality into a lucky family’s life. Meenie is part of a lovable sibling group with Bo, Eenie, Minie, and Mo. Meenie enjoys the simple pleasures of kitten life — playtime, exploring, and discovering new things every day. With love, guidance, and plenty of attention, Meenie will grow into a fantastic feline friend. Meenie is ready to start the next chapter of their story. Could it be with you?",
+        "bio": "Say hello to Meenie! This sweet kitten is ready to bring some fun, purrs, and personality into a lucky family’s life. Meenie is part of a lovable sibling group with Bo, Eenie, Minie, and Mo. Meenie enjoys the simple pleasures of kitten life — playtime, exploring, and discovering new things every day. With love, guidance, and plenty of attention, Meenie will grow into a fantastic feline friend. Meenie is ready to start the next chapter of their story. Could it be with you? Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338387504",
         "url": "https://www.adoptapet.com/pet/49408139-neillsville-wisconsin-cat",
         "firstSeen": "2026-09-25T18:34:06.735Z"
@@ -808,7 +1017,7 @@
         "gender": "Female",
         "bio": "Don’t let her tiny size fool you—Barbie is ready to make a BIG impression! This adorable little Beagle/Jack Russell mix is one of four siblings, along with Chelsea, Skipper, and Stacey. Barbie may be a tiny puppy, but she has plenty of love to give and is ready to find a family who will adore her for years to come. She’ll need all the things puppies need to become great dogs: patience, guidance, socialization, training, playtime, and lots and lots of love. If your heart has room for a tiny puppy with a whole lifetime of love ahead of her, Barbie would love to meet you! Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated for Rabies and blood tested for Heartworm,",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336402667",
-        "url": "https://www.adoptapet.com/pet/49343875-neillsville-wisconsin-beagle-mix",
+        "url": "https://www.adoptapet.com/pet/49343875-neillsville-wisconsin-beagle-jack-russell-terrier-mix",
         "firstSeen": "2026-09-25T18:34:06.735Z"
       },
       {
@@ -821,39 +1030,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338387522",
         "url": "https://www.adoptapet.com/pet/49408141-neillsville-wisconsin-australian-shepherd-mix",
         "firstSeen": "2026-09-25T18:34:06.735Z"
-      },
-      {
-        "name": "Peeta",
-        "species": "Dog",
-        "breed": "Chow Chow / Cattle Dog",
-        "age": "3 mos",
-        "gender": "Male",
-        "bio": "🐶 PeetaHeeler/Chow Mix PuppyMeet Peeta! This sweet little guy recently arrived at the shelter with his siblings after being rescued from an Amish property. Like any puppy, he’s full of curiosity, playful energy, and is ready to discover the world! Peeta is looking for a family that will help him learn all about house training, basic manners, and how wonderful life as a beloved family member can be. Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated for Rabies and blood tested for Heartworm, Lymes, Anaplasmosis and Ehrlichiosis. Dogs and puppies will be spayed or neutered before adoption. CCHS is proud to be a No-Kill Humane Society. As a private, non-profit c",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1329322867",
-        "url": "https://www.adoptapet.com/pet/49047496-neillsville-wisconsin-chow-chow-cattle-dog-mix",
-        "firstSeen": "2026-08-18T13:38:41.376Z"
-      },
-      {
-        "name": "Reyn",
-        "species": "Dog",
-        "breed": "Coonhound",
-        "age": "3 yrs 4 mos",
-        "gender": "Female",
-        "bio": "Reyns' story didn't begin the way every dog deserves. She, along with Connie and Nana, were abandoned and left behind in a basement, relying only on each other until help finally arrived. Despite everything, Reyn hasn't let her past steal her future. She's a sweet, gentle soul whos ready to discover what it means to be someones beloved companion. Whether its following her nose on a leisurely walk, soaking up attention, or simply enjoying the comfort of a warm bed, Reyn is ready for the life shes always deserved. Shes looking for a family that understands trust takes time, but knows the reward of watching a dogs confidence bloom is worth every moment. Reyn has survived the hardest chapter of her life—now shes ready for the happiest one. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1308742334",
-        "url": "https://www.adoptapet.com/pet/48164675-neillsville-wisconsin-coonhound-mix",
-        "firstSeen": "2026-09-09T17:00:52.408Z"
-      },
-      {
-        "name": "Rita",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "4 yrs 3 mos",
-        "gender": "Female",
-        "bio": "Rita is a 4-year-old Domestic Shorthair who came in with Tom Tom and is still learning that the world and people can be safe. She is not very socialized yet and tends to be shy in new situations, preferring to observe from a distance rather than jump right into interaction. Because of her background, Rita will need a patient home that allows her to adjust at her own pace without pressure. She may take time to warm up, but with consistency and a calm environment, she has the potential to build confidence and slowly learn trust. Rita would do best in a quiet home where routines are predictable, and she can feel secure. She's not the type to demand attention, but she deserves a space where she can finally relax and just be herself. For someone willing to give her time and understanding, Rita can blossom into a quiet, steady companion. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336712650",
-        "url": "https://www.adoptapet.com/pet/49356636-neillsville-cat",
-        "firstSeen": "2026-08-11T03:05:39.766Z"
       },
       {
         "name": "Teller",
@@ -878,15 +1054,26 @@
         "firstSeen": "2026-09-25T18:34:06.735Z"
       },
       {
-        "name": "Lennon",
+        "name": "Reyn",
         "species": "Dog",
-        "breed": "Terrier (Unknown Type, Small) / Australian Shepherd",
-        "age": "3 mos",
-        "gender": "Male",
-        "bio": "Lennon is a goofy little terrier mix who is always ready for fun! He’s energetic, playful, curious, and has absolutely no shortage of puppy personality. Lennon loves to run, wrestle, explore, and join in on whatever his siblings are doing. He has the classic terrier enthusiasm and can be delightfully loud when he feels like sharing his thoughts with the world. He’s still young and learning, so his future family should be prepared for plenty of puppy energy, training, chewing, zoomies, and general silliness. With the right family, Lennon will have everything he needs to grow into a happy, well-rounded companion—and he’s sure to provide plenty of laughs along the way!",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1329451442",
-        "url": "https://www.adoptapet.com/pet/49053121-neillsville-wisconsin-terrier-unknown-type-small-australian-shepherd-mix",
-        "firstSeen": "2026-09-01T06:08:45.634Z"
+        "breed": "Coonhound",
+        "age": "3 yrs 4 mos",
+        "gender": "Female",
+        "bio": "Reyns' story didn't begin the way every dog deserves. She, along with Connie and Nana, were abandoned and left behind in a basement, relying only on each other until help finally arrived. Despite everything, Reyn hasn't let her past steal her future. She's a sweet, gentle soul whos ready to discover what it means to be someones beloved companion. Whether its following her nose on a leisurely walk, soaking up attention, or simply enjoying the comfort of a warm bed, Reyn is ready for the life shes always deserved. Shes looking for a family that understands trust takes time, but knows the reward of watching a dogs confidence bloom is worth every moment. Reyn has survived the hardest chapter of her life—now shes ready for the happiest one. Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1308742334",
+        "url": "https://www.adoptapet.com/pet/48164675-neillsville-wisconsin-coonhound-mix",
+        "firstSeen": "2026-09-09T17:00:52.408Z"
+      },
+      {
+        "name": "Rita",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "4 yrs 3 mos",
+        "gender": "Female",
+        "bio": "Rita is a 4-year-old Domestic Shorthair who came in with Tom Tom and is still learning that the world and people can be safe. She is not very socialized yet and tends to be shy in new situations, preferring to observe from a distance rather than jump right into interaction. Because of her background, Rita will need a patient home that allows her to adjust at her own pace without pressure. She may take time to warm up, but with consistency and a calm environment, she has the potential to build confidence and slowly learn trust. Rita would do best in a quiet home where routines are predictable, and she can feel secure. She's not the type to demand attention, but she deserves a space where she can finally relax and just be herself. For someone willing to give her time and understanding, Rita can blossom into a quiet, steady companion. Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336712650",
+        "url": "https://www.adoptapet.com/pet/49356636-neillsville-cat",
+        "firstSeen": "2026-08-11T03:05:39.766Z"
       },
       {
         "name": "Ozzy",
@@ -900,14 +1087,25 @@
         "firstSeen": "2026-09-01T06:08:45.634Z"
       },
       {
+        "name": "Lennon",
+        "species": "Dog",
+        "breed": "Terrier (Unknown Type, Small) / Australian Shepherd",
+        "age": "3 mos",
+        "gender": "Male",
+        "bio": "Lennon is a goofy little terrier mix who is always ready for fun! He’s energetic, playful, curious, and has absolutely no shortage of puppy personality. Lennon loves to run, wrestle, explore, and join in on whatever his siblings are doing. He has the classic terrier enthusiasm and can be delightfully loud when he feels like sharing his thoughts with the world. He’s still young and learning, so his future family should be prepared for plenty of puppy energy, training, chewing, zoomies, and general silliness. With the right family, Lennon will have everything he needs to grow into a happy, well-rounded companion—and he’s sure to provide plenty of laughs along the way!",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1329451442",
+        "url": "https://www.adoptapet.com/pet/49053121-neillsville-wisconsin-terrier-unknown-type-small-australian-shepherd-mix",
+        "firstSeen": "2026-09-01T06:08:45.634Z"
+      },
+      {
         "name": "Lorelai",
         "species": "Dog",
-        "breed": "Rat Terrier / Border Collie",
-        "age": "2 mos",
+        "breed": "Rat Terrier Border Collie",
+        "age": "",
         "gender": "Female",
-        "bio": "Lorelei is one of our adorable Gilmore Girl litter puppies! This sweet Rat Terrier/Border Collie mix is ready to find someone who will love her through every stage of life. Lorelei is smart and lovable and is just beginning to figure out what the big wide world is all about. Her future family will get to help her learn everything from the important basics to all the little things that make a dog a wonderful member of the family. She’s looking for someone who is ready for puppyhood—the training, the adventures, the occasional mischief, and all those precious cuddles. Lorelei is ready to write her next chapter. Please note the \"Start Your Inquiry\" button to the right above is not submitting your application. You can click on \"More About Us\" to the right and then click on \"Adoption Application\" button which will take you to our website where you can actually apply. You can also go to cchs-petshelter.org/applying-to-adopt or bit.ly/CCHSadopt. Thank you! Approved applicants will be notified via email. Please check junk/spam folders for a response. The adoption fee is $400. Adoption applications can be filled out at CCHS or online through our website, www.cchs-petshelter.org. Applications are not first come, first served. All applications will be reviewed by the adoption committee and the home chosen will be the one considered to be the best match. All dogs and puppies have been vaccinated for Distemper and Bordetella, dewormed and microchipped. If old enough, they will be vaccinated fo",
+        "bio": "Lorelai is a Rat Terrier Border Collie dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336402694",
-        "url": "https://www.adoptapet.com/pet/49343878-neillsville-wisconsin-rat-terrier-mix",
+        "url": "https://www.adoptapet.com/pet/49343878-neillsville-wisconsin-rat-terrier-border-collie-mix",
         "firstSeen": "2026-09-17T17:26:27.916Z"
       },
       {
@@ -927,7 +1125,7 @@
         "breed": "Terrier (Unknown Type, Small) / Australian Shepherd",
         "age": "3 mos",
         "gender": "Male",
-        "bio": "Hendrix is a little terrier mix with a rockstar personality! He is energetic, playful, goofy, and always ready to turn the volume up to eleven. Like any good terrier puppy, Hendrix is curious about EVERYTHING. He loves to play, explore, wrestle, zoom around, and generally make sure there is never a dull moment. He’s got a fun-loving personality and plenty of puppy energy that will need an outlet through play, exercise, training, and enrichment. If your idea of the perfect puppy includes a little bit of chaos, a lot of laughs, and an adorable face you can’t resist, Hendrix could be your next best friend! Less",
+        "bio": "Hendrix is a little terrier mix with a rockstar personality! He is energetic, playful, goofy, and always ready to turn the volume up to eleven. Like any good terrier puppy, Hendrix is curious about EVERYTHING. He loves to play, explore, wrestle, zoom around, and generally make sure there is never a dull moment. He’s got a fun-loving personality and plenty of puppy energy that will need an outlet through play, exercise, training, and enrichment. If your idea of the perfect puppy includes a little bit of chaos, a lot of laughs, and an adorable face you can’t resist, Hendrix could be your next best friend!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1327670964",
         "url": "https://www.adoptapet.com/pet/48979510-neillsville-wisconsin-terrier-unknown-type-small-mix",
         "firstSeen": "2026-08-13T03:28:05.264Z"
@@ -1008,8 +1206,8 @@
         "gender": "Male",
         "bio": "Bud is a black Domestic Shorthair kitten, 5 mos old. Neutered.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1321717722",
-        "url": "https://www.adoptapet.com/pet/48734337-friendship-cat",
-        "firstSeen": "2026-09-25T05:59:21.429Z"
+        "url": "https://www.adoptapet.com/pet/48734337-friendship-wisconsin-cat",
+        "firstSeen": "2026-07-21T04:17:31.888Z"
       },
       {
         "name": "Kiki",
@@ -1026,9 +1224,9 @@
         "name": "Greta",
         "species": "Dog",
         "breed": "Mixed Breed (Large)",
-        "age": "1 yr 7 mos",
+        "age": "",
         "gender": "Female",
-        "bio": "Greta is a brindle/white Mixed Breed (Large) dog, 1 yr 7 mos old. Spayed.",
+        "bio": "Greta is a Mixed Breed (Large) dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337256475",
         "url": "https://www.adoptapet.com/pet/49380315-friendship-wisconsin-mixed-breed-large-mix",
         "firstSeen": "2026-09-20T05:55:04.351Z"
@@ -1048,9 +1246,9 @@
         "name": "Elvira",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "8 mos",
         "gender": "Female",
-        "bio": "Elvira is a Domestic Shorthair cat.",
+        "bio": "Elvira is a black Domestic Shorthair cat, 8 mos old. Spayed.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338512930",
         "url": "https://www.adoptapet.com/pet/49204449-friendship-wisconsin-cat",
         "firstSeen": "2026-09-03T05:34:55.809Z"
@@ -1091,13 +1289,13 @@
       {
         "name": "Taylor",
         "species": "Dog",
-        "breed": "Australian Cattle Dog Chow Chow",
-        "age": "",
+        "breed": "Australian Cattle Dog / Chow Chow",
+        "age": "5 yrs 2 mos",
         "gender": "Male",
-        "bio": "Taylor is an Australian Cattle Dog Chow Chow dog.",
+        "bio": "Taylor is a black/tan/yellow/fawn Australian Cattle Dog / Chow Chow dog, 5 yrs 2 mos old. Neutered.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1328858280",
-        "url": "https://www.adoptapet.com/pet/49029156-friendship-wisconsin-australian-cattle-dog-chow-chow-mix",
-        "firstSeen": "2026-08-17T02:20:36.824Z"
+        "url": "https://www.adoptapet.com/pet/49029156-friendship-australian-cattle-dog-mix",
+        "firstSeen": "2026-09-01T06:08:45.634Z"
       },
       {
         "name": "Bandit",
@@ -1129,8 +1327,8 @@
         "gender": "Female",
         "bio": "Freya is a white/black Australian Cattle Dog / Mixed Breed (Medium) dog, 3 yrs old. Spayed.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337256436",
-        "url": "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix",
-        "firstSeen": "2026-09-20T05:55:04.351Z"
+        "url": "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mix",
+        "firstSeen": "2026-09-21T06:01:17.302Z"
       },
       {
         "name": "Sugar",
@@ -1200,17 +1398,6 @@
         "bio": "Breckie is a male American Eskimo.",
         "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/48684/8A92992F-img_7034.jpeg",
         "url": "https://www.nlpac.com/q/pets/breckie"
-      },
-      {
-        "name": "Angel",
-        "species": "Cat",
-        "breed": "Domestic Short Hair - orange and white",
-        "age": "",
-        "gender": "Male",
-        "bio": "Angel is a male DSH",
-        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/95072/2AA567DB-img_1601.jpeg",
-        "url": "https://www.nlpac.com/q/pets/angel",
-        "firstSeen": "2026-07-01T15:39:10.845Z"
       },
       {
         "name": "Burglar",
@@ -1288,17 +1475,6 @@
         "firstSeen": "2026-08-20T02:18:19.195Z"
       },
       {
-        "name": "Tito",
-        "species": "Cat",
-        "breed": "Domestic Short Hair - orange",
-        "age": "",
-        "gender": "Male",
-        "bio": "Tito is a male DSH",
-        "photo": "https://www.wausaubusinessdirectory.com/images/wausaubusinessdirectorycom/bizcategories/627/custompages/95071/2AA26D76-img_1602.jpeg",
-        "url": "https://www.nlpac.com/q/pets/tito",
-        "firstSeen": "2026-07-01T15:39:10.845Z"
-      },
-      {
         "name": "Tonio",
         "species": "Dog",
         "breed": "Shepherd",
@@ -1325,11 +1501,12 @@
         "name": "Gretzky",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
-        "age": "Adult",
+        "age": "",
         "gender": "Male",
-        "bio": "Ello again...In case you forgot, I'm Gretzky. I've been in foster care for a long time now and I've really got a good schedule down. I'll tell you about it if you want....First I wake up and am excited to go potty outside. It's one of my favorite times and I may bark or nip your butt with excitement. Don't worry, I'm not /that/ excited. I just really have to pee. Then I come inside and lay on my beddy. It's my favorite spot. Unfortunately, I'm what my foster calls 'a babe magnet.' This means my canine and feline roommates will come to snuggle in my beddy with me, even in very warm temperatures. I don't understand it either. So we spend the next several hours rotating beddies until lunch, when we go back outside. Much sleeping is had. And snacks. Then the garage door opens and my room mates and I loose our collective minds because foster M'mam is home! I love her. And it means we get to do the best thing ever: walkies. I love pooping when I'm on a leash. I love walking. I don't need to smell anything, I don't care. I just like to walk. Especially in the woods! Sometimes we will see people on our walk. It makes me very nervous. Sometimes they will ask to pet me. I tell them 'No Thank You' by desperately trying to get away from them. Then I am edgy the rest of the walk. What if they secretly pop out of a bush to pet me?? Sometimes my foster M'mam will lock me in the bathroom and pet me. I've gotten used to this strange habit, but I don't really like it. Then, after food smells (someti",
+        "bio": "Gretzky is a Mixed Breed (Medium) dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1124575559",
-        "url": "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium"
+        "url": "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix",
+        "firstSeen": "2026-06-17T06:20:15.925Z"
       },
       {
         "name": "Russell",
@@ -1489,8 +1666,7 @@
         "gender": "Female",
         "bio": "Meet Vanilla Bean! Vanilla Bean is the happiest girl when she’s right by your side, soaking up both your attention and a warm patch of sunlight along with fresh air. She has a calm, loving nature and truly thrives on being close to her favorite people—whether that means following you from room to room or simply settling in next to you for some quiet time. She adores getting some pets while in your company, maybe even a few kisses. *Has done well with a dog previously, unknown with cats and other animals - no young kids please!* Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882397",
-        "url": "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-mixed-breed-medium-mix",
-        "firstSeen": "2026-09-20T05:55:04.351Z"
+        "url": "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
       },
       {
         "name": "Coral",
@@ -1536,17 +1712,6 @@
         "firstSeen": "2026-09-11T05:43:43.759Z"
       },
       {
-        "name": "Hei Hei *Bonded with Bill Ande",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "5 mos",
-        "gender": "Male",
-        "bio": "Meet Hei Hei! Hi there! My name is Hei Hei, and I’m an adorable 2-month-old kitten looking for my forever home! I came to the Humane Society as a stray with my siblings, Pua, Tomatoa, and Maui, along with our mom, Moana. I’m still just a little kitten, which means I have so much growing, exploring, and learning ahead of me! I’m ready to find a loving family who will give me plenty of attention, playtime, cozy naps, and all the love a kitten could ask for. I may be small right now, but I’m ready to fill your home with lots of fun, curiosity, and kitten adventures! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1319224060",
-        "url": "https://www.adoptapet.com/pet/48622115-wisconsin-rapids-wisconsin-cat",
-        "firstSeen": "2026-07-10T04:56:33.289Z"
-      },
-      {
         "name": "Gomez",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1554,8 +1719,8 @@
         "gender": "Male",
         "bio": "Meet Gomez! Gomez came to us as a surrender and is now looking for a loving forever home where he can continue to grow, learn, and be his fun-loving self! Gomez is a playful, curious youngster who always seems ready for his next adventure! He loves chewing on stuffed toys and playing tug-of-war with his people. Rope toys are definitely his absolute favorite! This inquisitive boy enjoys sniffing around and checking out everything happening around him. But when playtime is over, Gomez is more than happy to settle in for some cuddles and soak up all the pets he can get. Gomez is still getting to know the world around him, so his compatibility with other dogs, cats, and small animals is currently unknown. Proper introductions and patience will be important as he settles into his forever home. If you're looking for a fun, playful companion with plenty of personality and a sweet side, Gomez might just be your guy!* DOG SELECTIVE - unsure how I feel about kids/cats/other small animals!* Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882115",
-        "url": "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-mixed-breed-medium-mix",
-        "firstSeen": "2026-09-07T05:52:09.010Z"
+        "url": "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-wisconsin-mixed-breed-medium-mix",
+        "firstSeen": "2026-09-05T05:27:38.113Z"
       },
       {
         "name": "Zara",
@@ -1565,7 +1730,8 @@
         "gender": "Female",
         "bio": "Meet Zara! Zara is a beautiful 4-year-old mixed breed girl with a heart full of sunshine and a love for the great outdoors. If there’s fresh air involved, Zara is happy! Whether she’s going for a walk, exploring new scents, or simply relaxing outside in the pens watching the world go by, being outside is her absolute favorite place to be. She has a playful side too — give her a tennis ball and she’s in heaven! While she may eventually “redecorate” it by chewing it up here and there, that’s all part of the fun in her book. It’s safe to say tennis balls don’t stand a chance against this happy girl. Fun Fact- She does amazing in vehicles!* NO other pets please, I prefer to be an only child!* Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338297157",
-        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix"
+        "url": "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-mixed-breed-medium-mix",
+        "firstSeen": "2026-08-27T11:02:57.234Z"
       },
       {
         "name": "Spice Rack *Working Cat*",
@@ -1592,9 +1758,9 @@
         "name": "Wednesday",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
-        "age": "5 yrs 3 mos",
+        "age": "",
         "gender": "Female",
-        "bio": "Hi! My name is Wednesday! I’m a 5-year-old girl who came to the shelter as a stray, and I’m ready to find my forever home! I’m a super sweet, playful girl who loves having fun and spending time with my people. I have a big personality and lots of love to give! I do need to be the only pet in the home. I have a high prey drive, so I’m also looking for a home without small animals. My perfect family will be one where I can be your one-and-only and get all the love and attention I deserve. If you’re looking for a fun, loving companion who wants to be your best friend, I might be the girl for you! Come meet me and let’s see if we’re a perfect match.* NO other pets please, I prefer to be an only child!* Less",
+        "bio": "Wednesday is a Mixed Breed (Medium) dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882673",
         "url": "https://www.adoptapet.com/pet/48139033-wisconsin-rapids-wisconsin-mixed-breed-medium-mix",
         "firstSeen": "2026-07-01T15:39:10.845Z"
@@ -1633,17 +1799,6 @@
         "firstSeen": "2026-09-11T05:43:43.759Z"
       },
       {
-        "name": "Toby",
-        "species": "Dog",
-        "breed": "Dachshund",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Meet Toby! A sweet male Dachshund who is looking for someone who understands that trust takes time. Toby is a shy boy who needs his own space and a patient person willing to let him come out of his shell at his own pace. Once he feels comfortable and safe, he can show his sweet and loving side. Because of his sensitive nature, Toby would do best in a calm, quiet home where he can feel secure. He needs to be the only dog in the home and would do best in a home without children. Toby may take some time to build trust, but for the right person, earning his love will be incredibly rewarding. He is looking for a patient forever family who will give him the time, space, and understanding he needs to thrive. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882802",
-        "url": "https://www.adoptapet.com/pet/49382173-wisconsin-rapids-wisconsin-dachshund-mix",
-        "firstSeen": "2026-09-20T16:40:14.908Z"
-      },
-      {
         "name": "Pugsley",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1664,6 +1819,39 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1335149680",
         "url": "https://www.adoptapet.com/pet/49282792-wisconsin-rapids-wisconsin-cat",
         "firstSeen": "2026-09-11T05:43:43.759Z"
+      },
+      {
+        "name": "Toby *adoption pending*",
+        "species": "Dog",
+        "breed": "Dachshund",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Meet Toby! A sweet male Dachshund who is looking for someone who understands that trust takes time. Toby is a shy boy who needs his own space and a patient person willing to let him come out of his shell at his own pace. Once he feels comfortable and safe, he can show his sweet and loving side. Because of his sensitive nature, Toby would do best in a calm, quiet home where he can feel secure. He needs to be the only dog in the home and would do best in a home without children. Toby may take some time to build trust, but for the right person, earning his love will be incredibly rewarding. He is looking for a patient forever family who will give him the time, space, and understanding he needs to thrive. Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882802",
+        "url": "https://www.adoptapet.com/pet/49382173-wisconsin-rapids-wisconsin-dachshund-mix",
+        "firstSeen": "2026-09-20T16:40:14.908Z"
+      },
+      {
+        "name": "Willie",
+        "species": "Dog",
+        "breed": "St. Bernard",
+        "age": "1 yr 7 mos",
+        "gender": "Male",
+        "bio": "Meet Willie, our shy boy! Willie is a 10 month old Saint Bernard with a light cream coat. At first, he is a bashful youngster, but as he gains confidence, he becomes an active, joyful boy. Willie likes to go for walks and discover new sights and smells. He is fantastic with volunteers and walks extremely well on leashes. His favorite pass time is snuggling with his humans. Has done well with other dogs Unknown with cats and other small animalsLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339158332",
+        "url": "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix",
+        "firstSeen": "2026-06-13T05:23:34.271Z"
+      },
+      {
+        "name": "Outlaw",
+        "species": "Dog",
+        "breed": "Border Collie",
+        "age": "5 yrs",
+        "gender": "Male",
+        "bio": "Outlaw is a brown/chocolate - with black Border Collie dog, 5 yrs old.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1339265960",
+        "url": "https://www.adoptapet.com/pet/49447527-wisconsin-rapids-wisconsin-border-collie-mix",
+        "firstSeen": "2026-09-26T05:58:56.751Z"
       },
       {
         "name": "Pepper Shaker",
@@ -1698,17 +1886,6 @@
         "firstSeen": "2026-09-11T05:43:43.759Z"
       },
       {
-        "name": "Bill Anderson *Bonded with Hei",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "5 mos",
-        "gender": "Male",
-        "bio": "Bill Anderson *Bonded with Hei is a brown or chocolate Domestic Shorthair kitten, 5 mos old.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1329995581",
-        "url": "https://www.adoptapet.com/pet/49076078-wisconsin-rapids-wisconsin-cat",
-        "firstSeen": "2026-08-21T02:24:27.409Z"
-      },
-      {
         "name": "Kate",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
@@ -1729,16 +1906,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337259774",
         "url": "https://www.adoptapet.com/pet/49380420-wisconsin-rapids-wisconsin-mixed-breed-medium-mix",
         "firstSeen": "2026-09-23T05:42:01.620Z"
-      },
-      {
-        "name": "Oatmeal Raisin *Working Cat*",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 yrs 5 mos",
-        "gender": "Female",
-        "bio": "Hi! My name is Oatmeal Raisin! I came in as a stray! I'm a working cat so my perfect home is a shop or barn! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312162881",
-        "url": "https://www.adoptapet.com/pet/48319460-wisconsin-rapids-wisconsin-cat"
       },
       {
         "name": "Carmel Delight",
@@ -1767,7 +1934,7 @@
         "breed": "Domestic Mediumhair",
         "age": "15 yrs 2 mos",
         "gender": "Female",
-        "bio": "Hi! My name is Stormie! I’m a 15-year-old kitty who came to the shelter as a stray. I may be a senior, but don’t let my age fool you—I still have plenty of energy and personality! I’m a very sweet girl who also enjoys having my own space and taking things at my own pace. I’m looking for a loving forever home where I can be comfortable, enjoy my golden years, and still have plenty of fun! If you have room in your heart for a sweet senior with some pep in her step, I’d love to meet you! Less",
+        "bio": "Hi! My name is Stormie! I’m a 15-year-old kitty who came to the shelter as a stray. I may be a senior, but don’t let my age fool you—I still have plenty of energy and personality! I’m a very sweet girl who also enjoys having my own space and taking things at my own pace. I’m looking for a loving forever home where I can be comfortable, enjoy my golden years, and still have plenty of fun! If you have room in your heart for a sweet senior with some pep in her step, I’d love to meet you!",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882772",
         "url": "https://www.adoptapet.com/pet/48928248-wisconsin-rapids-wisconsin-cat",
         "firstSeen": "2026-08-07T03:52:26.020Z"
@@ -1809,9 +1976,9 @@
         "name": "Ethel *Pink*",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "2 mos",
         "gender": "Female",
-        "bio": "Ethel *Pink* is a Domestic Shorthair cat.",
+        "bio": "Ethel *Pink* is a black Domestic Shorthair kitten, 2 mos old.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1335149682",
         "url": "https://www.adoptapet.com/pet/49282793-wisconsin-rapids-wisconsin-cat",
         "firstSeen": "2026-09-11T05:43:43.759Z"
@@ -1881,17 +2048,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337882783",
         "url": "https://www.adoptapet.com/pet/49228320-wisconsin-rapids-wisconsin-hound-unknown-type-mix",
         "firstSeen": "2026-09-05T05:27:38.113Z"
-      },
-      {
-        "name": "Norman *Green*",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 mos",
-        "gender": "Male",
-        "bio": "Norman *Green* is a black Domestic Shorthair kitten, 2 mos old.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1335149681",
-        "url": "https://www.adoptapet.com/pet/49282788-wisconsin-rapids-wisconsin-cat",
-        "firstSeen": "2026-09-11T05:43:43.759Z"
       }
     ],
     "marshfield": [
@@ -1929,17 +2085,6 @@
         "firstSeen": "2026-09-15T17:27:11.594Z"
       },
       {
-        "name": "Gooseberry",
-        "species": "Cat",
-        "breed": "Domestic Mediumhair",
-        "age": "1 yr 9 mos",
-        "gender": "Female",
-        "bio": "Hi, I'm Gooseberry, and I'm a beautiful 2-year-old girl! Recently, my best pal Trillion and I were returned to the shelter because our previous owner could no longer care for us. Adjusting to shelter life again has been a bit overwhelming, but I'm being super brave and coming out of my shell more every day! I absolutely thrive on human attention, and I just can't resist batting around a fun toy or two. At heart, I am a total sweetheart who is endlessly affectionate, and I would love nothing more than to settle back into a real home soon. If you already have a feline friend looking for a companion-or if you have room in your heart and home for two sweet cats-please consider adopting Trillion along with me! You can even take advantage of the shelter's BOGO deal to bring us both home together. Apply to visit me (and Trillion!) today! My adoption fee is $100. BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337421759",
-        "url": "https://www.adoptapet.com/pet/45097745-marshfield-wisconsin-cat",
-        "firstSeen": "2026-09-21T06:01:17.302Z"
-      },
-      {
         "name": "Note (bonded w/Lyric)",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -1951,12 +2096,23 @@
         "firstSeen": "2026-09-10T05:43:53.583Z"
       },
       {
+        "name": "Gooseberry",
+        "species": "Cat",
+        "breed": "Domestic Mediumhair",
+        "age": "1 yr 10 mos",
+        "gender": "Female",
+        "bio": "Hi, I'm Gooseberry, and I'm a beautiful 2-year-old girl! Recently, my best pal Trillion and I were returned to the shelter because our previous owner could no longer care for us. Adjusting to shelter life again has been a bit overwhelming, but I'm being super brave and coming out of my shell more every day! I absolutely thrive on human attention, and I just can't resist batting around a fun toy or two. At heart, I am a total sweetheart who is endlessly affectionate, and I would love nothing more than to settle back into a real home soon. If you already have a feline friend looking for a companion-or if you have room in your heart and home for two sweet cats-please consider adopting Trillion along with me! You can even take advantage of the shelter's BOGO deal to bring us both home together. Apply to visit me (and Trillion!) today! My adoption fee is $100. BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337421759",
+        "url": "https://www.adoptapet.com/pet/45097745-marshfield-cat",
+        "firstSeen": "2026-09-23T05:42:01.620Z"
+      },
+      {
         "name": "Mario",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "2 yrs",
         "gender": "Male",
-        "bio": "Mario is a Domestic Shorthair cat.",
+        "bio": "Hi, I'm Mario, and I'm a handsome two-year-old guy! Just look at this adorable face and tell me you don't want to take me home right now. Honestly, if I were in your shoes, I’d already be filling out the adoption application—just saying! I love everyone I meet and I'm always down for a good pet session or an intense round of playtime with my favorite toys. There is just one tiny rule if you want to be my human: I need to be the only pet in the home. I promise I have enough love, energy, and charm to fill your whole house all by myself! So, if you're looking for the ultimate solo cat experience and happen to be a total sucker for a ridiculously handsome face, hit me up today. I'm ready to pack my bags and move in! My adoption fee is $100. We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338308339",
         "url": "https://www.adoptapet.com/pet/49372863-marshfield-wisconsin-cat",
         "firstSeen": "2026-09-19T05:36:17.479Z"
@@ -1980,19 +2136,8 @@
         "gender": "Female",
         "bio": "Hi, I'm Raccoon and I'm about 2 years old! I showed up at the shelter in pretty rough shape with my two little kittens. It’s obvious I’ve had a tough go of it, but I’m so ready for a much better life. I’m currently bunking in with two other kitties, and while we are co-existing, I would really rather have a new home without them so I don't have to share the spotlight. I'm dreaming of a quiet place where I can watch the birds out the window and hang out with my favorite person. If you're looking for an affectionate little lady to spend time with in a calm, peaceful home, please apply to meet me! I would love to get out of the shelter soon. My adoption fee is $100. BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338077165",
-        "url": "https://www.adoptapet.com/pet/49241197-marshfield-cat",
-        "firstSeen": "2026-09-13T05:49:18.636Z"
-      },
-      {
-        "name": "Letterman",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "5 mos",
-        "gender": "Male",
-        "bio": "Hi, I'm Letterman and I'm 5 months old! My brothers, Leno and Conan, and I are a fun-loving trio of five-month-old farm boys who are so grateful to trade the outdoors for the cozy indoor life! I am a total sweetheart with a big heart and endless energy. My absolute favorite pastimes include chasing down every toy in sight, indulging in delicious snacks, and settling in for epic nap sessions once the fun is over. Whether you're looking to adopt just me or bring me home alongside one of my famous brothers, I promise to keep you entertained and showered with love every single day. Ready to add a late-night legend to your family? Apply to meet me today! My adoption fee is $100. BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338077503",
-        "url": "https://www.adoptapet.com/pet/49310737-marshfield-wisconsin-cat",
-        "firstSeen": "2026-09-13T16:48:14.257Z"
+        "url": "https://www.adoptapet.com/pet/49241197-marshfield-wisconsin-cat",
+        "firstSeen": "2026-09-07T05:52:09.010Z"
       },
       {
         "name": "Celeste",
@@ -2009,7 +2154,7 @@
         "name": "Lambchop",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "7 mos",
+        "age": "8 mos",
         "gender": "Female",
         "bio": "Hi, I'm Lambchop, a delightful 7-month-old who's as sweet as can be! I'm a friendly little girl who loves everyone—people and other cats alike. If you already have a kitty at home, I'd be thrilled to join your crew. I'm a wonderful mix of playful energy and loving snuggles, always ready for an adventure or a quiet moment on your lap. If your life needs a loving and adorable new addition, don't wait—apply to meet me! My adoption fee is $100. BOGO adoptions! Adopt one cat or kitten and the second is FREE!We do not have open hours for public viewing of our adoptable animals. We are by appointment only. If interested in adopting, please complete our adoption application. Once your application is approved, an appointment will be scheduled to visit with your desired pet. ONLINE APPLICATION can be found at: www.marshfieldpetshelter.org/adoption-applicationAll animals are vet examined, spayed/neutered and microchipped. If old enough, they receive routine vaccinations. FELV test available upon request. Thank you! Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338076874",
@@ -2018,6 +2163,39 @@
       }
     ],
     "portage": [
+      {
+        "name": "Bread Pudding",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "We're still learning about Bread Pudding's personality - check back soon! Bread Pudding tested positive for FIV (Feline Immunodeficiency Virus). FIV is a virus that suppresses a cat's immune system. This means they are more susceptible to illnesses. Recovery time of illnesses may also be lengthened. FIV infects 3-5% of the cat population. With good care, many cats with FIV have a similar lifespan as cats without FIV. FIV cannot be transmitted to people. FIV can only be passed from cat to cat if the FIV cat bites another causing a deep wound. To practice the highest level of safety, we are looking for an adopting home with no other cats, or resident cats that are also FIV positive. --- Bread Pudding is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336145020",
+        "url": "https://www.adoptapet.com/pet/49330663-plover-wisconsin-cat",
+        "firstSeen": "2026-09-16T03:58:13.932Z"
+      },
+      {
+        "name": "Bubblegum Pop",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Bubblegum, bubblegum, in a dish! How many smooches do you wish?? Bubblegum Pop says she wishes for A MILLION! This sweet girl loves to snuggle and receive lots of attention and affection while you carry her around! --- Bubblegum Pop is a 6-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334892592",
+        "url": "https://www.adoptapet.com/pet/49279191-plover-wisconsin-cat",
+        "firstSeen": "2026-09-11T05:43:43.759Z"
+      },
+      {
+        "name": "Tigerclaw",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Male",
+        "bio": "Tigerclaw is a curious, chatty guy who would love a home to explore and snuggle, where he can be with other FeLV+ kitties, or by himself. Tigerclaw loves to be held and will snuggle right up against your chest and lay there for as long as you'll let him! Tigerclaw may do well with other kitties, however Tigerclaw is positive for FeLV and would need to go to a home without other kitties, or with cats who are also positive for FeLV. FeLV can be passed from cat to cat through saliva, so any mutual grooming, nose to nose contact, and shared water bowls can become sources of infection. It cannot be transmitted to people. If you would like more information about FeLV cats, please email the Adoption Team at adoption@hspcwi.org. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182204",
+        "url": "https://www.adoptapet.com/pet/48229112-plover-cat",
+        "firstSeen": "2026-07-31T04:25:59.405Z"
+      },
       {
         "name": "Garage Rock (Working Cat)",
         "species": "Cat",
@@ -2041,6 +2219,50 @@
         "firstSeen": "2026-08-01T04:23:18.595Z"
       },
       {
+        "name": "Major Melon",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Senior",
+        "gender": "Male",
+        "bio": "This shy, quiet guy is ready for a home where he can relax, unwind, and grow comfortable and show his cuddly side! Major Melon is a little nervous in new places at first, but if you give him the chance to settle down, you'll see that he's a gentle guy who'd love nothing more than to relax in your windows and snuggle up in your blankets! --- Major Melon is a 8-year-old short-hair male. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318085937",
+        "url": "https://www.adoptapet.com/pet/48581766-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Geyser",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Kitten",
+        "gender": "Female",
+        "bio": "My name is Geyser! I'm a sweet, shy girl that would love a home where I can be given consistent attention to continue my successful journey into being a confident kitty! I really like to be held close so I can bury my head under your chin, and I also enjoy lots of little snacks and treats! I also really enjoy being wrapped in a burrito. I'm still a little shy, so I would do best in a home where it's a little calmer so I can learn to be brave. Young children might be a little too scary for me and make me hide! I seem to do well with other kitties, and a calm dog might not be so bad! --- Geyser is a kitten born in early June 2026. Her adoption fee is $85. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338837447",
+        "url": "https://www.adoptapet.com/pet/49427852-plover-wisconsin-cat",
+        "firstSeen": "2026-09-25T05:59:21.429Z"
+      },
+      {
+        "name": "Jolene",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "This sweet girl is a lap cat through and through - she loves to sit and purr endlessly in your lap! Jolene enjoys cheek and shoulder scratches, comfy beds, and heated blankets! Jolene is a tripod kitty - her front right leg required amputation when she came to HSPC with an old leg injury that healed incorrectly. Jolene is a pro at getting around on only 3 legs, and she loves to explore and play just like any other kitty! --- Jolene is a 6-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337830214",
+        "url": "https://www.adoptapet.com/pet/49402236-plover-wisconsin-cat",
+        "firstSeen": "2026-09-23T05:42:01.620Z"
+      },
+      {
+        "name": "Sesame",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "Adult",
+        "gender": "Female",
+        "bio": "Beautiful Sesame is a chatty, curious girl who loves a good nap and a lil bit of catnip! Sesame loves to lounge about, but when something grabs her attention, she is super curious and just has to investigate! Sesame is mostly slow paced, and loves cheek scratches. --- Sesame is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334363639",
+        "url": "https://www.adoptapet.com/pet/49253093-plover-wisconsin-cat",
+        "firstSeen": "2026-09-08T17:02:59.120Z"
+      },
+      {
         "name": "Greased Lightning (Working Cat)",
         "species": "Cat",
         "breed": "Domestic Shorthair",
@@ -2061,83 +2283,6 @@
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1327306056",
         "url": "https://www.adoptapet.com/pet/48965132-plover-wisconsin-cat",
         "firstSeen": "2026-08-11T03:05:39.766Z"
-      },
-      {
-        "name": "Tigerclaw",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Male",
-        "bio": "Tigerclaw is a curious, chatty guy who would love a home to explore and snuggle, where he can be with other FeLV+ kitties, or by himself. Tigerclaw loves to be held and will snuggle right up against your chest and lay there for as long as you'll let him! Tigerclaw may do well with other kitties, however Tigerclaw is positive for FeLV and would need to go to a home without other kitties, or with cats who are also positive for FeLV. FeLV can be passed from cat to cat through saliva, so any mutual grooming, nose to nose contact, and shared water bowls can become sources of infection. It cannot be transmitted to people. If you would like more information about FeLV cats, please email the Adoption Team at adoption@hspcwi.org. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310182204",
-        "url": "https://www.adoptapet.com/pet/48229112-plover-cat",
-        "firstSeen": "2026-07-31T04:25:59.405Z"
-      },
-      {
-        "name": "Major Melon",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Senior",
-        "gender": "Male",
-        "bio": "This shy, quiet guy is ready for a home where he can relax, unwind, and grow comfortable and show his cuddly side! Major Melon is a little nervous in new places at first, but if you give him the chance to settle down, you'll see that he's a gentle guy who'd love nothing more than to relax in your windows and snuggle up in your blankets! --- Major Melon is a 8-year-old short-hair male. His adoption fee is $30. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1318085937",
-        "url": "https://www.adoptapet.com/pet/48581766-plover-wisconsin-cat",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
-        "name": "Bubblegum Pop",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Bubblegum, bubblegum, in a dish! How many smooches do you wish?? Bubblegum Pop says she wishes for A MILLION! This sweet girl loves to snuggle and receive lots of attention and affection while you carry her around! --- Bubblegum Pop is a 6-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334892592",
-        "url": "https://www.adoptapet.com/pet/49279191-plover-wisconsin-cat",
-        "firstSeen": "2026-09-11T05:43:43.759Z"
-      },
-      {
-        "name": "Sesame",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "Beautiful Sesame is a chatty, curious girl who loves a good nap and a lil bit of catnip! Sesame loves to lounge about, but when something grabs her attention, she is super curious and just has to investigate! Sesame is mostly slow paced, and loves cheek scratches. --- Sesame is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334363639",
-        "url": "https://www.adoptapet.com/pet/49253093-plover-wisconsin-cat",
-        "firstSeen": "2026-09-08T17:02:59.120Z"
-      },
-      {
-        "name": "Bread Pudding",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "We're still learning about Bread Pudding's personality - check back soon! Bread Pudding tested positive for FIV (Feline Immunodeficiency Virus). FIV is a virus that suppresses a cat's immune system. This means they are more susceptible to illnesses. Recovery time of illnesses may also be lengthened. FIV infects 3-5% of the cat population. With good care, many cats with FIV have a similar lifespan as cats without FIV. FIV cannot be transmitted to people. FIV can only be passed from cat to cat if the FIV cat bites another causing a deep wound. To practice the highest level of safety, we are looking for an adopting home with no other cats, or resident cats that are also FIV positive. --- Bread Pudding is a 2-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1336145020",
-        "url": "https://www.adoptapet.com/pet/49330663-plover-wisconsin-cat",
-        "firstSeen": "2026-09-16T03:58:13.932Z"
-      },
-      {
-        "name": "Geyser",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "",
-        "gender": "Female",
-        "bio": "Geyser is a Domestic Shorthair cat.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338837447",
-        "url": "https://www.adoptapet.com/pet/49427852-plover-wisconsin-cat",
-        "firstSeen": "2026-09-25T05:59:21.429Z"
-      },
-      {
-        "name": "Jolene",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "Adult",
-        "gender": "Female",
-        "bio": "This sweet girl is a lap cat through and through - she loves to sit and purr endlessly in your lap! Jolene enjoys cheek and shoulder scratches, comfy beds, and heated blankets! Jolene is a tripod kitty - her front right leg required amputation when she came to HSPC with an old leg injury that healed incorrectly. Jolene is a pro at getting around on only 3 legs, and she loves to explore and play just like any other kitty! --- Jolene is a 6-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337830214",
-        "url": "https://www.adoptapet.com/pet/49402236-plover-wisconsin-cat",
-        "firstSeen": "2026-09-23T05:42:01.620Z"
       },
       {
         "name": "Clementine",
@@ -2176,12 +2321,12 @@
         "name": "Blue",
         "species": "Dog",
         "breed": "Australian Shepherd",
-        "age": "Adult",
+        "age": "",
         "gender": "Male",
-        "bio": "This is Blue. Blue is an Australian Shepherd, but some might say he is the equivalent of an 86 lb teddy bear. Blue is about 8 years old, and the total package. He is sweet, laid back, well behaved, potty trained and loves everyone. Blue is on a special hepatic diet and a liver supplement. He is also bonded to his brother Presley. They will need to go to a home together. Presley and Blue keep each other busy, and comfortable. They are the best of friends and cannot be separated. They both seem to like other dogs; they don't mind cats and may do well with teenagers. Blue and Presley's adoption fee will be $100 for the pair. Blue is neutered, current on vaccines, micro chipped and heart worm negative. If you are interested in meeting/adopting Blue and Presley please submit a dog application on our website www.hspcwi.org. The approved adopter will be contacted within three business days for an appointment to meet him. If all goes well, Blue and Presley can go home the same day. All dog adoptions come with a leash, collar, toys and 3 days of food. The adopter is given copies of all medical records. If the adopter is a resident of Portage County a dog license will be issued at the time of adoption. September 24, 2026, 8:20 pmLess",
+        "bio": "Blue is an Australian Shepherd dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334892514",
-        "url": "https://www.adoptapet.com/pet/49280290-plover-australian-shepherd-mix",
-        "firstSeen": "2026-09-14T05:57:31.208Z"
+        "url": "https://www.adoptapet.com/pet/49280290-plover-wisconsin-australian-shepherd",
+        "firstSeen": "2026-09-11T05:43:43.759Z"
       },
       {
         "name": "Buckingham",
@@ -2224,8 +2369,8 @@
         "gender": "Female",
         "bio": "Meet Pixie Dust! This beautiful little lady is quite the talker. She loves to let you know when she wants attention (which is all of the time). Pixie has a soft spot for people and enjoys getting all sorts of affection. Pixie prefers to be the only kitty in the home, and she's quite unsure about younger children. Pixie Dust has been diagnosed with diabetes. This is something that will require veterinary care in the future. She should have an established veterinarian ready to help keep her diabetes under control. The good news is that Pixie has been doing amazing! She is responding well to her treatment and is feeling better each day. Her adoption fee is waived. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1310183167",
-        "url": "https://www.adoptapet.com/pet/48229155-plover-cat",
-        "firstSeen": "2026-09-12T05:30:38.603Z"
+        "url": "https://www.adoptapet.com/pet/48229155-plover-wisconsin-cat",
+        "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
         "name": "Malarkey (Working Cat)",
@@ -2246,8 +2391,8 @@
         "gender": "Female",
         "bio": "This sweet, beautiful girl is Riley. She is a young black and white spotted girl who we think resembles a dalmatian mix. We are not sure what she is, but she is 100% cute! Riley would love to curl right up on your lap and go to sleep. She is relaxed here in the adoption office, but when she goes out to the play yard, it is zoomie central! She seems to do well with dogs and does not mind cats. She may even do fine with a well-mannered child. Riley does not like it when you watch her go to the bathroom, so she would prefer to go off leash in a fenced in yard where she can do her business in private. She loves to show off her toys and give kisses. If you're looking for a nice girl to be your best friend for life, and make you laugh every day, Riley is the one! She is spayed, micro chipped, and current on her vaccines. She weighs 50lbs. Her adoption fee is $200 +tax. If you are interested in meeting/adopting Riley please fill out an application on our website; www.hspcwi.org. Only the approved adopter will be notified for an appointment. If the adopter is a resident of Portage County a dog license will be issued at the time of adoption. September 24, 2026, 8:20 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1338548287",
-        "url": "https://www.adoptapet.com/pet/49414948-plover-dalmatian-mix",
-        "firstSeen": "2026-09-25T05:59:21.429Z"
+        "url": "https://www.adoptapet.com/pet/49414948-plover-wisconsin-dalmatian-mix",
+        "firstSeen": "2026-09-24T05:57:44.976Z"
       },
       {
         "name": "Nyla",
@@ -2264,9 +2409,9 @@
         "name": "Michele",
         "species": "Cat",
         "breed": "Domestic Shorthair",
-        "age": "",
+        "age": "Young",
         "gender": "Female",
-        "bio": "Michele is a Domestic Shorthair cat.",
+        "bio": "Michele is a quiet, gentle girl looking for a home where she can relax, decompress, and show her affectionate side once she feels comfortable! --- Michele is a 1-year-old short-hair female. Her adoption fee is $55. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1323037824",
         "url": "https://www.adoptapet.com/pet/48790865-plover-wisconsin-cat",
         "firstSeen": "2026-07-25T04:15:14.471Z"
@@ -2411,8 +2556,8 @@
         "gender": "Male",
         "bio": "Meet Presley! Presley is a 63lb husky mix. He is a quiet, polite, and respectful boy. Presley knows how to sit, stay, and lay down. He can be a little shy at first, but he really comes out of his shell when he is with his brother Blue. They are bonded and will need to go to a home together. Presley and Blue keep each other busy, and comfortable. They are the best of friends and cannot be separated. They both seem to like other dogs; they don't mind cats and may do well with teenagers. Presley is approximately 3 years old. Blue and Presley's adoption fee will be $100 for the pair. Presley is neutered, current on vaccines, micro chipped and heart worm negative. If you are interested in meeting/adopting Blue and Presley please submit a dog application on our website www.hspcwi.org. The approved adopter will be contacted within three business days for an appointment to meet him. If all goes well, Blue and Presley can go home the same day. All dog adoptions come with a leash, collar, toys and 3 days of food. The adopter is given copies of all medical records. If the adopter is a resident of Portage County a dog license will be issued at the time of adoption. September 24, 2026, 8:20 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334892565",
-        "url": "https://www.adoptapet.com/pet/49280291-plover-siberian-husky-mix",
-        "firstSeen": "2026-09-14T05:57:31.208Z"
+        "url": "https://www.adoptapet.com/pet/49280291-plover-wisconsin-siberian-husky-mix",
+        "firstSeen": "2026-09-11T05:43:43.759Z"
       },
       {
         "name": "Mbappe",
@@ -2475,7 +2620,7 @@
         "breed": "Domestic Shorthair",
         "age": "Kitten",
         "gender": "Female",
-        "bio": "Lazy River is a kitten born in mid-June 2026. Her adoption fee is $85. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
+        "bio": "Lazy River is a kitten born in mid-June 2026. Her adoption fee is $85. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pm",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337668389",
         "url": "https://www.adoptapet.com/pet/49395975-plover-wisconsin-cat",
         "firstSeen": "2026-09-22T05:57:41.010Z"
@@ -2486,7 +2631,7 @@
         "breed": "Domestic Shorthair",
         "age": "Kitten",
         "gender": "Male",
-        "bio": "Ho Ho is a kitten born in March 2026. His adoption fee is $85. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pm",
+        "bio": "Ho Ho is a kitten born in March 2026. His adoption fee is $85. If you are interested in adopting a cat from HSPC, please complete our adoption application. Approved applicants will be contacted within 3 working days for an appointment. We operate by appointment only. Our online application can be found at: https://hspcwi.org/adopt/ All cats adopted through HSPC are spayed/neutered, microchipped, FeLV & FIV tested, and receive core vaccinations (younger kittens may not be fully vaccinated due to age). If you have any questions or concerns, please email the Cat Adoption Manager at adoption@hspcwi.org We look forward to introducing you to your new cat! September 24, 2026, 8:20 pmLess",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1334363606",
         "url": "https://www.adoptapet.com/pet/49253090-plover-wisconsin-cat",
         "firstSeen": "2026-09-08T17:02:59.120Z"
@@ -2607,9 +2752,9 @@
         "name": "Angus",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
-        "age": "2 yrs",
+        "age": "",
         "gender": "Male",
-        "bio": "Hello. My name is Angus. I was found on a dead end road with numerous puncture wounds from getting attacked by another animal. I will make a full recovery but it will take a little time. I am a male mixed breed around 2-3 years old. I love everyone I meet. Less",
+        "bio": "Angus is a Mixed Breed (Medium) dog.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1332607614",
         "url": "https://www.adoptapet.com/pet/49182312-medford-wisconsin-mixed-breed-medium-mix",
         "firstSeen": "2026-09-01T06:08:45.634Z"
@@ -2659,23 +2804,12 @@
         "firstSeen": "2026-09-19T16:12:23.469Z"
       },
       {
-        "name": "Buttercup",
-        "species": "Cat",
-        "breed": "Domestic Shorthair",
-        "age": "2 mos",
-        "gender": "Female",
-        "bio": "Buttercup is a Domestic Shorthair kitten, 2 mos old.",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337141102",
-        "url": "https://www.adoptapet.com/pet/49375508-medford-wisconsin-cat",
-        "firstSeen": "2026-09-19T16:12:23.469Z"
-      },
-      {
         "name": "Zeus 1",
         "species": "Dog",
         "breed": "Mixed Breed (Medium)",
-        "age": "",
+        "age": "6 yrs 4 mos",
         "gender": "Male",
-        "bio": "Zeus 1 is a Mixed Breed (Medium) dog.",
+        "bio": "Hello. My name is Zeus. I am a male Heeler/Lab mix around 6 years old. I am very friendly. I love to cuddle and play. I have a broken leg that was never fixed when I was a puppy. I will need to be on pain meds and joint supplements the rest of my life. Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1308002355",
         "url": "https://www.adoptapet.com/pet/48130710-medford-wisconsin-mixed-breed-medium-mix",
         "firstSeen": "2026-07-19T18:54:42.206Z"
@@ -2697,10 +2831,21 @@
         "breed": "Plott Hound",
         "age": "4 yrs 8 mos",
         "gender": "Female",
-        "bio": "Hello. My name is Molly. I am a female Plott Hound. I am around 4 years old. I am a little shy meeting new people. I get along with dogs and cats. I am a little rambunctious. I love going for daily walks. I love cuddling up to someone and having my belly rubbed.",
+        "bio": "Hello. My name is Molly. I am a female Plott Hound. I am around 4 years old. I am a little shy meeting new people. I get along with dogs and cats. I am a little rambunctious. I love going for daily walks. I love cuddling up to someone and having my belly rubbed. Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1290007691",
         "url": "https://www.adoptapet.com/pet/47367116-medford-wisconsin-plott-hound",
         "firstSeen": "2026-07-19T18:54:42.206Z"
+      },
+      {
+        "name": "Bud",
+        "species": "Cat",
+        "breed": "Domestic Shorthair",
+        "age": "2 mos",
+        "gender": "Male",
+        "bio": "Bud is a Domestic Shorthair kitten, 2 mos old.",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1337141102",
+        "url": "https://www.adoptapet.com/pet/49375508-medford-wisconsin-cat",
+        "firstSeen": "2026-09-19T16:12:23.469Z"
       },
       {
         "name": "Zoro",
@@ -2741,7 +2886,7 @@
         "breed": "Domestic Shorthair",
         "age": "2 yrs 1 mo",
         "gender": "Female",
-        "bio": "Hello. My name is Emerald. I am avery friendly cat. I do have a bad front left leg. I use it for balance and stuff. The leg is getting better. Less",
+        "bio": "Hello. My name is Emerald. I am avery friendly cat. I do have a bad front left leg. I use it for balance and stuff. The leg is getting better.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1332534637",
         "url": "https://www.adoptapet.com/pet/49179651-medford-wisconsin-cat",
         "firstSeen": "2026-08-31T19:21:54.042Z"
@@ -2758,23 +2903,12 @@
         "firstSeen": "2026-09-19T16:12:23.469Z"
       },
       {
-        "name": "Buster",
-        "species": "Dog",
-        "breed": "Mixed Breed (Medium)",
-        "age": "2 yrs",
-        "gender": "Male",
-        "bio": "Hello. My name is Buster. I am a mixed breed around 2 years old. I am very friendly with people. I get along with other dogs if properly introduced. I love to run and play and chase toys. Less",
-        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312814231",
-        "url": "https://www.adoptapet.com/pet/48349716-medford-wisconsin-mixed-breed-medium-mix",
-        "firstSeen": "2026-07-19T18:54:42.206Z"
-      },
-      {
         "name": "Monty",
         "species": "Dog",
         "breed": "Black and Tan Coonhound",
         "age": "5 yrs 3 mos",
         "gender": "Male",
-        "bio": "Meet Monty, a handsome 4-year-old male hound with a fun-loving personality and a heart full of friendliness. Monty gets along well with other animals and thrives in a social environment. He has a playful, curious nature, which sometimes means he gets a little carried away—especially when it comes to chewing! Because of this, Monty may do best as an outdoor dog where he has the space and freedom to explore without getting into too much trouble. With the right setup and a bit of structure, Monty will make a loyal, energetic companion for someone who appreciates his spirited hound personality.",
+        "bio": "Meet Monty, a handsome 4-year-old male hound with a fun-loving personality and a heart full of friendliness. Monty gets along well with other animals and thrives in a social environment. He has a playful, curious nature, which sometimes means he gets a little carried away—especially when it comes to chewing! Because of this, Monty may do best as an outdoor dog where he has the space and freedom to explore without getting into too much trouble. With the right setup and a bit of structure, Monty will make a loyal, energetic companion for someone who appreciates his spirited hound personality. Less",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1200625845",
         "url": "https://www.adoptapet.com/pet/43510261-medford-wisconsin-black-and-tan-coonhound",
         "firstSeen": "2026-07-19T18:54:42.206Z"
@@ -2785,9 +2919,20 @@
         "breed": "Hound (Unknown Type)",
         "age": "5 yrs 10 mos",
         "gender": "Male",
-        "bio": "Hello. My name is Moose. I am a hound mix. I am looking for a home to where I can retire and get my health back to normal. I was not treated well in my previous home. I am slowly growing my hair back. I am very shy trusting new people. Once I feel comfortable with a person, I will be a very loyal companion. Less",
+        "bio": "Hello. My name is Moose. I am a hound mix. I am looking for a home to where I can retire and get my health back to normal. I was not treated well in my previous home. I am slowly growing my hair back. I am very shy trusting new people. Once I feel comfortable with a person, I will be a very loyal companion.",
         "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1269987423",
-        "url": "https://www.adoptapet.com/pet/46525122-medford-wisconsin-hound-unknown-type",
+        "url": "https://www.adoptapet.com/pet/46525122-medford-hound-unknown-type-mix",
+        "firstSeen": "2026-09-11T05:43:43.759Z"
+      },
+      {
+        "name": "Buster",
+        "species": "Dog",
+        "breed": "Mixed Breed (Medium)",
+        "age": "2 yrs",
+        "gender": "Male",
+        "bio": "Hello. My name is Buster. I am a mixed breed around 2 years old. I am very friendly with people. I get along with other dogs if properly introduced. I love to run and play and chase toys. Less",
+        "photo": "https://media.adoptapet.com/image/upload/c_auto,g_auto,w_400,ar_4:3,dpr_2/f_auto,q_auto/1312814231",
+        "url": "https://www.adoptapet.com/pet/48349716-medford-wisconsin-mixed-breed-medium-mix",
         "firstSeen": "2026-07-19T18:54:42.206Z"
       },
       {
@@ -2845,6 +2990,9 @@
     "https://www.adoptapet.com/pet/45727911-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/49417675-wausau-wisconsin-cat": "2026-09-24T05:57:44.976Z",
     "https://www.adoptapet.com/pet/49325589-wausau-wisconsin-german-shepherd-dog-mix": "2026-09-16T03:58:13.932Z",
+    "https://www.adoptapet.com/pet/49444557-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49446763-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49447946-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
     "https://www.adoptapet.com/pet/48701369-wausau-wisconsin-cat": "2026-07-17T04:10:41.108Z",
     "https://www.adoptapet.com/pet/48692361-wausau-wisconsin-treeing-walker-coonhound-mix": "2026-07-17T04:10:41.108Z",
     "https://www.adoptapet.com/pet/49349720-wausau-wisconsin-cat": "2026-09-17T05:55:02.936Z",
@@ -2854,72 +3002,87 @@
     "https://www.adoptapet.com/pet/48319891-wausau-wisconsin-australian-shepherd-mix": null,
     "https://www.adoptapet.com/pet/49105538-wausau-wisconsin-cat": "2026-08-24T02:23:45.598Z",
     "https://www.adoptapet.com/pet/49360593-wausau-wisconsin-cat": "2026-09-18T05:41:46.985Z",
-    "https://www.adoptapet.com/pet/48341011-wausau-wisconsin-cat": "2026-06-14T05:54:51.597Z",
-    "https://www.adoptapet.com/pet/48738789-wausau-wisconsin-cat": "2026-07-21T04:17:31.888Z",
     "https://www.adoptapet.com/pet/49421775-wausau-wisconsin-cat": "2026-09-24T05:57:44.976Z",
     "https://www.adoptapet.com/pet/49430495-wausau-wisconsin-cat": "2026-09-25T05:59:21.429Z",
     "https://www.adoptapet.com/pet/48485265-wausau-wisconsin-cat": "2026-06-27T04:56:41.030Z",
     "https://www.adoptapet.com/pet/49406356-wausau-wisconsin-labrador-retriever-mix": "2026-09-23T05:42:01.620Z",
+    "https://www.adoptapet.com/pet/49444556-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49446766-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49228660-wausau-wisconsin-cat": "2026-09-05T05:27:38.113Z",
+    "https://www.adoptapet.com/pet/48341011-wausau-wisconsin-cat": "2026-06-14T05:54:51.597Z",
+    "https://www.adoptapet.com/pet/48738789-wausau-wisconsin-cat": "2026-07-21T04:17:31.888Z",
     "https://www.adoptapet.com/pet/48024168-wausau-wisconsin-cat": "2026-08-03T04:33:53.146Z",
     "https://www.adoptapet.com/pet/49308747-wausau-wisconsin-cat": "2026-09-13T05:49:18.636Z",
-    "https://www.adoptapet.com/pet/48651162-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/49105537-wausau-wisconsin-cat": "2026-08-24T02:23:45.598Z",
+    "https://www.adoptapet.com/pet/48651162-wausau-wisconsin-cat": "2026-07-13T04:33:15.254Z",
     "https://www.adoptapet.com/pet/49360594-wausau-wisconsin-cat": "2026-09-18T05:41:46.985Z",
     "https://www.adoptapet.com/pet/49360598-wausau-wisconsin-cat": "2026-09-18T05:41:46.985Z",
     "https://www.adoptapet.com/pet/49372106-wausau-wisconsin-labrador-retriever-mix": "2026-09-19T05:36:17.479Z",
     "https://www.adoptapet.com/pet/47593433-wausau-wisconsin-german-shepherd-dog-mix": null,
     "https://www.adoptapet.com/pet/49403041-wausau-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49335081-wausau-wisconsin-cat": "2026-09-16T03:58:13.932Z",
-    "https://www.adoptapet.com/pet/49408559-wausau-wisconsin-boston-terrier-mix": "2026-09-23T05:42:01.620Z",
+    "https://www.adoptapet.com/pet/49433263-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49433264-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/48880501-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
+    "https://www.adoptapet.com/pet/48065059-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/48880499-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/49360597-wausau-wisconsin-cat": "2026-09-18T05:41:46.985Z",
     "https://www.adoptapet.com/pet/45397819-wausau-wisconsin-cat": "2026-06-13T14:58:18.390Z",
     "https://www.adoptapet.com/pet/48471607-wausau-wisconsin-cat": "2026-06-26T05:12:52.294Z",
     "https://www.adoptapet.com/pet/49349721-wausau-wisconsin-cat": "2026-09-17T05:55:02.936Z",
     "https://www.adoptapet.com/pet/47699350-wausau-wisconsin-german-shepherd-dog-mix": null,
     "https://www.adoptapet.com/pet/49001597-wausau-wisconsin-cat": "2026-08-14T03:25:19.248Z",
-    "https://www.adoptapet.com/pet/49408558-wausau-wisconsin-boston-terrier": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49429416-wausau-wisconsin-american-pit-bull-terrier-mix": "2026-09-25T05:59:21.429Z",
     "https://www.adoptapet.com/pet/48272693-wausau-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/47958593-wausau-wisconsin-cat": "2026-08-03T04:33:53.146Z",
     "https://www.adoptapet.com/pet/48885572-wausau-wisconsin-cat": "2026-08-03T04:33:53.146Z",
     "https://www.adoptapet.com/pet/49431552-wausau-wisconsin-cat": "2026-09-25T05:59:21.429Z",
-    "https://www.adoptapet.com/pet/49169558-wausau-wisconsin-golden-retriever-mix": "2026-08-30T06:22:10.381Z",
+    "https://www.adoptapet.com/pet/49444559-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49442637-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49446019-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49446020-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49446762-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49441671-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49447276-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/48880500-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
+    "https://www.adoptapet.com/pet/49447945-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/49447947-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
     "https://www.adoptapet.com/pet/49308746-wausau-wisconsin-cat": "2026-09-13T05:49:18.636Z",
     "https://www.adoptapet.com/pet/49360595-wausau-wisconsin-cat": "2026-09-18T05:41:46.985Z",
     "https://www.adoptapet.com/pet/49372103-wausau-wisconsin-cat": "2026-09-19T05:36:17.479Z",
     "https://www.adoptapet.com/pet/49398863-wausau-wisconsin-australian-cattle-dog-mix": "2026-09-22T17:30:12.519Z",
-    "https://www.adoptapet.com/pet/49362771-wausau-wisconsin-cat": "2026-09-18T16:55:11.078Z",
     "https://www.adoptapet.com/pet/47921174-wausau-wisconsin-husky-mix": null,
     "https://www.adoptapet.com/pet/44254073-wausau-wisconsin-boxer-mix": "2026-09-04T16:42:31.716Z",
-    "https://www.adoptapet.com/pet/47562392-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/48920254-wausau-wisconsin-american-pit-bull-terrier-mix": "2026-09-24T05:57:44.976Z",
     "https://www.adoptapet.com/pet/49372102-wausau-wisconsin-cat": "2026-09-19T05:36:17.479Z",
-    "https://www.adoptapet.com/pet/49343881-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49444558-wausau-wisconsin-cat": "2026-09-26T05:58:56.751Z",
+    "https://www.adoptapet.com/pet/47562392-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
+    "https://www.adoptapet.com/pet/48560868-wausau-wisconsin-cat": "2026-07-04T04:38:45.749Z",
+    "https://www.adoptapet.com/pet/49343881-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
     "https://www.adoptapet.com/pet/49408137-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
-    "https://www.adoptapet.com/pet/49343882-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
-    "https://www.adoptapet.com/pet/49343883-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49343882-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49343883-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-17T17:26:27.916Z",
     "https://www.adoptapet.com/pet/49408138-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49408136-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49381148-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-16T03:58:13.932Z",
-    "https://www.adoptapet.com/pet/48979501-neillsville-wisconsin-chow-chow-mix": "2026-08-20T02:18:19.195Z",
-    "https://www.adoptapet.com/pet/49270645-neillsville-wisconsin-american-pit-bull-terrier": "2026-08-02T04:26:00.669Z",
+    "https://www.adoptapet.com/pet/48979501-neillsville-wisconsin-chow-chow-cattle-dog-mix": "2026-08-20T02:18:19.195Z",
     "https://www.adoptapet.com/pet/49433516-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
+    "https://www.adoptapet.com/pet/49270645-neillsville-wisconsin-american-pit-bull-terrier": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/49237895-neillsville-wisconsin-australian-cattle-dog": null,
     "https://www.adoptapet.com/pet/48979512-neillsville-wisconsin-terrier-unknown-type-small-mix": "2026-08-12T03:24:54.502Z",
     "https://www.adoptapet.com/pet/49408139-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49408140-neillsville-wisconsin-cat": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49307511-neillsville-wisconsin-hound-unknown-type": "2026-09-15T05:58:33.316Z",
     "https://www.adoptapet.com/pet/48979508-neillsville-wisconsin-chow-chow-cattle-dog-mix": "2026-08-23T02:24:30.802Z",
-    "https://www.adoptapet.com/pet/49343875-neillsville-wisconsin-beagle-mix": "2026-09-25T18:34:06.735Z",
+    "https://www.adoptapet.com/pet/49343875-neillsville-wisconsin-beagle-jack-russell-terrier-mix": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49408141-neillsville-wisconsin-australian-shepherd-mix": "2026-09-25T18:34:06.735Z",
-    "https://www.adoptapet.com/pet/49047496-neillsville-wisconsin-chow-chow-cattle-dog-mix": "2026-08-18T13:38:41.376Z",
-    "https://www.adoptapet.com/pet/48164675-neillsville-wisconsin-coonhound-mix": "2026-09-09T17:00:52.408Z",
-    "https://www.adoptapet.com/pet/49356636-neillsville-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/49381147-neillsville-wisconsin-rat-terrier-cattle-dog-mix": "2026-09-25T18:34:06.735Z",
     "https://www.adoptapet.com/pet/49395886-neillsville-wisconsin-labrador-retriever-mix": "2026-09-25T18:34:06.735Z",
-    "https://www.adoptapet.com/pet/49053121-neillsville-wisconsin-terrier-unknown-type-small-australian-shepherd-mix": "2026-09-01T06:08:45.634Z",
+    "https://www.adoptapet.com/pet/48164675-neillsville-wisconsin-coonhound-mix": "2026-09-09T17:00:52.408Z",
+    "https://www.adoptapet.com/pet/49356636-neillsville-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/49053122-neillsville-wisconsin-terrier-unknown-type-small-mix": "2026-09-01T06:08:45.634Z",
-    "https://www.adoptapet.com/pet/49343878-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49053121-neillsville-wisconsin-terrier-unknown-type-small-australian-shepherd-mix": "2026-09-01T06:08:45.634Z",
+    "https://www.adoptapet.com/pet/49343878-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-17T17:26:27.916Z",
     "https://www.adoptapet.com/pet/49319922-neillsville-wisconsin-chow-chow-mix": "2026-08-20T02:18:19.195Z",
     "https://www.adoptapet.com/pet/48979510-neillsville-wisconsin-terrier-unknown-type-small-mix": "2026-08-13T03:28:05.264Z",
     "https://www.adoptapet.com/pet/48447073-neillsville-coonhound-mix": "2026-09-09T17:00:52.408Z",
@@ -2928,7 +3091,7 @@
     "https://www.adoptapet.com/pet/49129018-friendship-wisconsin-cat": "2026-08-28T12:36:27.432Z",
     "https://www.adoptapet.com/pet/48384366-friendship-wisconsin-cat": "2026-06-18T05:58:51.647Z",
     "https://www.adoptapet.com/pet/49418966-friendship-wisconsin-mixed-breed-medium-mix": "2026-09-24T05:57:44.976Z",
-    "https://www.adoptapet.com/pet/48734337-friendship-cat": "2026-09-25T05:59:21.429Z",
+    "https://www.adoptapet.com/pet/48734337-friendship-wisconsin-cat": "2026-07-21T04:17:31.888Z",
     "https://www.adoptapet.com/pet/49274505-friendship-wisconsin-cat": "2026-09-10T05:43:53.583Z",
     "https://www.adoptapet.com/pet/49380315-friendship-wisconsin-mixed-breed-large-mix": "2026-09-20T05:55:04.351Z",
     "https://www.adoptapet.com/pet/49383866-friendship-wisconsin-cat": "2026-09-21T06:01:17.302Z",
@@ -2936,15 +3099,14 @@
     "https://www.adoptapet.com/pet/49383865-friendship-wisconsin-cat": "2026-09-21T06:01:17.302Z",
     "https://www.adoptapet.com/pet/49274503-friendship-wisconsin-cat": "2026-09-10T05:43:53.583Z",
     "https://www.adoptapet.com/pet/49274506-friendship-wisconsin-cat": "2026-09-10T05:43:53.583Z",
-    "https://www.adoptapet.com/pet/49029156-friendship-wisconsin-australian-cattle-dog-chow-chow-mix": "2026-08-17T02:20:36.824Z",
+    "https://www.adoptapet.com/pet/49029156-friendship-australian-cattle-dog-mix": "2026-09-01T06:08:45.634Z",
     "https://www.adoptapet.com/pet/49370423-friendship-wisconsin-australian-cattle-dog-mix": "2026-09-19T05:36:17.479Z",
     "https://www.adoptapet.com/pet/49380313-friendship-wisconsin-labrador-retriever-mix": "2026-09-22T05:57:41.010Z",
-    "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix": "2026-09-20T05:55:04.351Z",
+    "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mix": "2026-09-21T06:01:17.302Z",
     "https://www.adoptapet.com/pet/49146017-friendship-wisconsin-shepherd-unknown-type-mixed-breed-medium-mix": "2026-08-28T22:52:00.499Z",
     "https://www.adoptapet.com/pet/48756650-friendship-wisconsin-cat": "2026-07-23T04:18:22.720Z",
     "https://www.adoptapet.com/pet/49418967-friendship-wisconsin-poodle-standard-mix": "2026-09-24T05:57:44.976Z",
     "https://www.nlpac.com/q/pets/breckie": null,
-    "https://www.nlpac.com/q/pets/angel": "2026-07-01T15:39:10.845Z",
     "https://www.nlpac.com/q/pets/burglar": "2026-07-08T15:17:55.273Z",
     "https://www.nlpac.com/q/pets/dispatch": "2026-07-08T15:17:55.273Z",
     "https://www.nlpac.com/q/pets/gene": "2026-07-16T04:12:27.115Z",
@@ -2952,10 +3114,9 @@
     "https://www.nlpac.com/q/pets/mac": null,
     "https://www.nlpac.com/q/pets/ninja": null,
     "https://www.nlpac.com/q/pets/pudgy": "2026-08-20T02:18:19.195Z",
-    "https://www.nlpac.com/q/pets/tito": "2026-07-01T15:39:10.845Z",
     "https://www.nlpac.com/q/pets/tonio1": null,
     "https://www.nlpac.com/q/pets/vader": "2026-06-24T15:31:46.482Z",
-    "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium": null,
+    "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix": "2026-06-17T06:20:15.925Z",
     "https://www.adoptapet.com/pet/48719152-wausau-wisconsin-poodle-standard-mix": "2026-07-19T04:23:20.212Z",
     "https://www.adoptapet.com/pet/42975074-wausau-wisconsin-shepherd-unknown-type-mix": null,
     "https://www.adoptapet.com/pet/49171046-wausau-wisconsin-poodle-standard": "2026-08-30T17:11:00.617Z",
@@ -2970,30 +3131,29 @@
     "https://www.adoptapet.com/pet/42975073-wausau-wisconsin-shepherd-unknown-type-mix": null,
     "https://www.adoptapet.com/pet/44614010-wausau-wisconsin-chihuahua-mix": null,
     "https://www.adoptapet.com/pet/47360527-wisconsin-rapids-wisconsin-cat": null,
-    "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-mixed-breed-medium-mix": "2026-09-20T05:55:04.351Z",
+    "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48319463-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48526072-wisconsin-rapids-wisconsin-cat": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/48926013-wisconsin-rapids-wisconsin-husky-mix": "2026-08-07T03:52:26.020Z",
     "https://www.adoptapet.com/pet/49282790-wisconsin-rapids-wisconsin-cat": "2026-09-11T05:43:43.759Z",
-    "https://www.adoptapet.com/pet/48622115-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
-    "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-mixed-breed-medium-mix": "2026-09-07T05:52:09.010Z",
-    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
+    "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-05T05:27:38.113Z",
+    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-mixed-breed-medium-mix": "2026-08-27T11:02:57.234Z",
     "https://www.adoptapet.com/pet/47930750-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/47975994-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48139033-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-07-01T15:39:10.845Z",
     "https://www.adoptapet.com/pet/48928249-wisconsin-rapids-wisconsin-cat": "2026-08-07T03:52:26.020Z",
     "https://www.adoptapet.com/pet/49050005-wisconsin-rapids-wisconsin-cat": "2026-08-19T02:19:27.037Z",
     "https://www.adoptapet.com/pet/49282778-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-11T05:43:43.759Z",
-    "https://www.adoptapet.com/pet/49382173-wisconsin-rapids-wisconsin-dachshund-mix": "2026-09-20T16:40:14.908Z",
     "https://www.adoptapet.com/pet/49382439-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-23T17:40:47.505Z",
     "https://www.adoptapet.com/pet/49282792-wisconsin-rapids-wisconsin-cat": "2026-09-11T05:43:43.759Z",
+    "https://www.adoptapet.com/pet/49382173-wisconsin-rapids-wisconsin-dachshund-mix": "2026-09-20T16:40:14.908Z",
+    "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix": "2026-06-13T05:23:34.271Z",
+    "https://www.adoptapet.com/pet/49447527-wisconsin-rapids-wisconsin-border-collie-mix": "2026-09-26T05:58:56.751Z",
     "https://www.adoptapet.com/pet/47975992-wisconsin-rapids-cat": "2026-09-19T16:12:23.469Z",
     "https://www.adoptapet.com/pet/48288891-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/49282779-wisconsin-rapids-wisconsin-cat": "2026-09-11T05:43:43.759Z",
-    "https://www.adoptapet.com/pet/49076078-wisconsin-rapids-wisconsin-cat": "2026-08-21T02:24:27.409Z",
     "https://www.adoptapet.com/pet/49382175-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-20T16:40:14.908Z",
     "https://www.adoptapet.com/pet/49380420-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-23T05:42:01.620Z",
-    "https://www.adoptapet.com/pet/48319460-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48319461-wisconsin-rapids-wisconsin-cat": null,
     "https://www.adoptapet.com/pet/48926016-wisconsin-rapids-wisconsin-cat": "2026-08-07T03:52:26.020Z",
     "https://www.adoptapet.com/pet/48928248-wisconsin-rapids-wisconsin-cat": "2026-08-07T03:52:26.020Z",
@@ -3007,39 +3167,37 @@
     "https://www.adoptapet.com/pet/48622118-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
     "https://www.adoptapet.com/pet/49380421-wisconsin-rapids-wisconsin-cat": "2026-09-20T05:55:04.351Z",
     "https://www.adoptapet.com/pet/49228320-wisconsin-rapids-wisconsin-hound-unknown-type-mix": "2026-09-05T05:27:38.113Z",
-    "https://www.adoptapet.com/pet/49282788-wisconsin-rapids-wisconsin-cat": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/49272907-marshfield-wisconsin-cat": "2026-09-10T05:43:53.583Z",
     "https://www.adoptapet.com/pet/49377979-marshfield-wisconsin-cat": "2026-09-20T05:55:04.351Z",
     "https://www.adoptapet.com/pet/49329216-marshfield-wisconsin-cat": "2026-09-15T17:27:11.594Z",
-    "https://www.adoptapet.com/pet/45097745-marshfield-wisconsin-cat": "2026-09-21T06:01:17.302Z",
     "https://www.adoptapet.com/pet/49272906-marshfield-wisconsin-cat": "2026-09-10T05:43:53.583Z",
+    "https://www.adoptapet.com/pet/45097745-marshfield-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49372863-marshfield-wisconsin-cat": "2026-09-19T05:36:17.479Z",
     "https://www.adoptapet.com/pet/49292580-marshfield-wisconsin-cat": "2026-09-11T16:53:02.101Z",
-    "https://www.adoptapet.com/pet/49241197-marshfield-cat": "2026-09-13T05:49:18.636Z",
-    "https://www.adoptapet.com/pet/49310737-marshfield-wisconsin-cat": "2026-09-13T16:48:14.257Z",
+    "https://www.adoptapet.com/pet/49241197-marshfield-wisconsin-cat": "2026-09-07T05:52:09.010Z",
     "https://www.adoptapet.com/pet/49377980-marshfield-wisconsin-cat": "2026-09-20T05:55:04.351Z",
     "https://www.adoptapet.com/pet/49208543-marshfield-cat": "2026-09-11T16:53:02.101Z",
+    "https://www.adoptapet.com/pet/49330663-plover-wisconsin-cat": "2026-09-16T03:58:13.932Z",
+    "https://www.adoptapet.com/pet/49279191-plover-wisconsin-cat": "2026-09-11T05:43:43.759Z",
+    "https://www.adoptapet.com/pet/48229112-plover-cat": "2026-07-31T04:25:59.405Z",
     "https://www.adoptapet.com/pet/49154653-plover-wisconsin-cat": "2026-08-28T22:52:00.499Z",
     "https://www.adoptapet.com/pet/48864475-plover-wisconsin-cat": "2026-08-01T04:23:18.595Z",
-    "https://www.adoptapet.com/pet/48965126-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
-    "https://www.adoptapet.com/pet/48965132-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
-    "https://www.adoptapet.com/pet/48229112-plover-cat": "2026-07-31T04:25:59.405Z",
     "https://www.adoptapet.com/pet/48581766-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/49279191-plover-wisconsin-cat": "2026-09-11T05:43:43.759Z",
-    "https://www.adoptapet.com/pet/49253093-plover-wisconsin-cat": "2026-09-08T17:02:59.120Z",
-    "https://www.adoptapet.com/pet/49330663-plover-wisconsin-cat": "2026-09-16T03:58:13.932Z",
     "https://www.adoptapet.com/pet/49427852-plover-wisconsin-cat": "2026-09-25T05:59:21.429Z",
     "https://www.adoptapet.com/pet/49402236-plover-wisconsin-cat": "2026-09-23T05:42:01.620Z",
+    "https://www.adoptapet.com/pet/49253093-plover-wisconsin-cat": "2026-09-08T17:02:59.120Z",
+    "https://www.adoptapet.com/pet/48965126-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
+    "https://www.adoptapet.com/pet/48965132-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/49402233-plover-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49404216-plover-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49395972-plover-wisconsin-cat": "2026-09-22T05:57:41.010Z",
-    "https://www.adoptapet.com/pet/49280290-plover-australian-shepherd-mix": "2026-09-14T05:57:31.208Z",
+    "https://www.adoptapet.com/pet/49280290-plover-wisconsin-australian-shepherd": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/49318207-plover-wisconsin-cat": "2026-09-14T18:19:30.623Z",
     "https://www.adoptapet.com/pet/48965129-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/48962754-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
-    "https://www.adoptapet.com/pet/48229155-plover-cat": "2026-09-12T05:30:38.603Z",
+    "https://www.adoptapet.com/pet/48229155-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48789508-plover-wisconsin-cat": "2026-07-25T04:15:14.471Z",
-    "https://www.adoptapet.com/pet/49414948-plover-dalmatian-mix": "2026-09-25T05:59:21.429Z",
+    "https://www.adoptapet.com/pet/49414948-plover-wisconsin-dalmatian-mix": "2026-09-24T05:57:44.976Z",
     "https://www.adoptapet.com/pet/49402234-plover-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/48790865-plover-wisconsin-cat": "2026-07-25T04:15:14.471Z",
     "https://www.adoptapet.com/pet/48962752-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
@@ -3054,7 +3212,7 @@
     "https://www.adoptapet.com/pet/48965127-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/48935847-plover-wisconsin-cat": "2026-08-08T02:55:40.235Z",
     "https://www.adoptapet.com/pet/48790870-plover-wisconsin-cat": "2026-07-25T04:15:14.471Z",
-    "https://www.adoptapet.com/pet/49280291-plover-siberian-husky-mix": "2026-09-14T05:57:31.208Z",
+    "https://www.adoptapet.com/pet/49280291-plover-wisconsin-siberian-husky-mix": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/48962755-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
     "https://www.adoptapet.com/pet/49255853-plover-wisconsin-cat": "2026-09-09T05:49:27.257Z",
     "https://www.adoptapet.com/pet/48965128-plover-wisconsin-cat": "2026-08-11T03:05:39.766Z",
@@ -3077,22 +3235,54 @@
     "https://www.adoptapet.com/pet/49375504-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
     "https://www.adoptapet.com/pet/49375507-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
     "https://www.adoptapet.com/pet/49375510-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
-    "https://www.adoptapet.com/pet/49375508-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
     "https://www.adoptapet.com/pet/48130710-medford-wisconsin-mixed-breed-medium-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/49165738-medford-wisconsin-cat": "2026-08-30T06:22:10.381Z",
     "https://www.adoptapet.com/pet/47367116-medford-wisconsin-plott-hound": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/49375508-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
     "https://www.adoptapet.com/pet/48978119-medford-cat": "2026-09-12T05:30:38.603Z",
     "https://www.adoptapet.com/pet/49155799-medford-wisconsin-cat": "2026-08-28T22:52:00.499Z",
     "https://www.adoptapet.com/pet/49218619-medford-wisconsin-cat": "2026-09-04T05:44:40.321Z",
     "https://www.adoptapet.com/pet/49179651-medford-wisconsin-cat": "2026-08-31T19:21:54.042Z",
     "https://www.adoptapet.com/pet/49375512-medford-wisconsin-cat": "2026-09-19T16:12:23.469Z",
-    "https://www.adoptapet.com/pet/48349716-medford-wisconsin-mixed-breed-medium-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/43510261-medford-wisconsin-black-and-tan-coonhound": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/46525122-medford-wisconsin-hound-unknown-type": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/46525122-medford-hound-unknown-type-mix": "2026-09-11T05:43:43.759Z",
+    "https://www.adoptapet.com/pet/48349716-medford-wisconsin-mixed-breed-medium-mix": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48903034-medford-cat": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/49218617-medford-wisconsin-cat": "2026-09-04T05:44:40.321Z",
     "https://www.adoptapet.com/pet/49218618-medford-wisconsin-cat": "2026-09-04T05:44:40.321Z",
     "https://www.adoptapet.com/pet/45715583-medford-wisconsin-plott-hound": "2026-07-19T18:54:42.206Z",
+    "https://www.adoptapet.com/pet/49408559-wausau-wisconsin-boston-terrier-mix": "2026-09-23T05:42:01.620Z",
+    "https://www.adoptapet.com/pet/49408558-wausau-wisconsin-boston-terrier": "2026-09-23T05:42:01.620Z",
+    "https://www.adoptapet.com/pet/49169558-wausau-wisconsin-golden-retriever-mix": "2026-08-30T06:22:10.381Z",
+    "https://www.adoptapet.com/pet/49362771-wausau-wisconsin-cat": "2026-09-18T16:55:11.078Z",
+    "https://www.adoptapet.com/pet/49343881-neillsville-wisconsin-rat-terrier-border-collie-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49343882-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/49343883-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/48979501-neillsville-wisconsin-chow-chow-mix": "2026-08-20T02:18:19.195Z",
+    "https://www.adoptapet.com/pet/49343875-neillsville-wisconsin-beagle-mix": "2026-09-25T18:34:06.735Z",
+    "https://www.adoptapet.com/pet/49047496-neillsville-wisconsin-chow-chow-cattle-dog-mix": "2026-08-18T13:38:41.376Z",
+    "https://www.adoptapet.com/pet/49343878-neillsville-wisconsin-rat-terrier-mix": "2026-09-17T17:26:27.916Z",
+    "https://www.adoptapet.com/pet/48734337-friendship-cat": "2026-09-25T05:59:21.429Z",
+    "https://www.adoptapet.com/pet/49029156-friendship-wisconsin-australian-cattle-dog-chow-chow-mix": "2026-08-17T02:20:36.824Z",
+    "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix": "2026-09-20T05:55:04.351Z",
+    "https://www.nlpac.com/q/pets/angel": "2026-07-01T15:39:10.845Z",
+    "https://www.nlpac.com/q/pets/tito": "2026-07-01T15:39:10.845Z",
+    "https://www.adoptapet.com/pet/41494794-wausau-wisconsin-mixed-breed-medium": null,
+    "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-mixed-breed-medium-mix": "2026-09-20T05:55:04.351Z",
+    "https://www.adoptapet.com/pet/48622115-wisconsin-rapids-wisconsin-cat": "2026-07-10T04:56:33.289Z",
+    "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-mixed-breed-medium-mix": "2026-09-07T05:52:09.010Z",
+    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
+    "https://www.adoptapet.com/pet/49076078-wisconsin-rapids-wisconsin-cat": "2026-08-21T02:24:27.409Z",
+    "https://www.adoptapet.com/pet/48319460-wisconsin-rapids-wisconsin-cat": null,
+    "https://www.adoptapet.com/pet/49282788-wisconsin-rapids-wisconsin-cat": "2026-09-11T05:43:43.759Z",
+    "https://www.adoptapet.com/pet/45097745-marshfield-wisconsin-cat": "2026-09-21T06:01:17.302Z",
+    "https://www.adoptapet.com/pet/49241197-marshfield-cat": "2026-09-13T05:49:18.636Z",
+    "https://www.adoptapet.com/pet/49310737-marshfield-wisconsin-cat": "2026-09-13T16:48:14.257Z",
+    "https://www.adoptapet.com/pet/49280290-plover-australian-shepherd-mix": "2026-09-14T05:57:31.208Z",
+    "https://www.adoptapet.com/pet/48229155-plover-cat": "2026-09-12T05:30:38.603Z",
+    "https://www.adoptapet.com/pet/49414948-plover-dalmatian-mix": "2026-09-25T05:59:21.429Z",
+    "https://www.adoptapet.com/pet/49280291-plover-siberian-husky-mix": "2026-09-14T05:57:31.208Z",
+    "https://www.adoptapet.com/pet/46525122-medford-wisconsin-hound-unknown-type": "2026-07-19T18:54:42.206Z",
     "https://www.petfinder.com/dog/darla-adoption-fee-sponsored-a904443b-e142-49a0-90ae-5439b28c692f/wi/neillsville/clark-county-humane-society-wi34/details/": null,
     "https://www.petfinder.com/dog/reyn-adoption-fee-sponsored-355255b1-d617-4992-b1c4-1b81b53e6023/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-09-09T17:00:52.408Z",
     "https://www.petfinder.com/dog/nana-adoption-fee-sponsored-a088391f-e0ec-4ddc-9cc6-f856b4c098fa/wi/neillsville/clark-county-humane-society-wi34/details/": "2026-09-09T17:00:52.408Z",
@@ -3132,11 +3322,7 @@
     "https://www.adoptapet.com/pet/49407124-wausau-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/49407123-wausau-wisconsin-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/48384366-friendship-cat": "2026-08-08T02:55:40.235Z",
-    "https://www.adoptapet.com/pet/48734337-friendship-wisconsin-cat": "2026-07-21T04:17:31.888Z",
-    "https://www.adoptapet.com/pet/41494794-wausau-mixed-breed-medium-mix": "2026-06-17T06:20:15.925Z",
     "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-mix": "2026-06-14T05:54:51.597Z",
-    "https://www.adoptapet.com/pet/47750305-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": null,
-    "https://www.adoptapet.com/pet/47161140-wisconsin-rapids-mixed-breed-medium-mix": "2026-08-27T11:02:57.234Z",
     "https://www.adoptapet.com/pet/49076085-wisconsin-rapids-wisconsin-cat": "2026-08-21T02:24:27.409Z",
     "https://www.adoptapet.com/pet/49366389-wisconsin-rapids-wisconsin-cat": "2026-09-19T05:36:17.479Z",
     "https://www.adoptapet.com/pet/49380419-wisconsin-rapids-wisconsin-cat": "2026-09-20T05:55:04.351Z",
@@ -3144,13 +3330,8 @@
     "https://www.adoptapet.com/pet/49272905-marshfield-wisconsin-cat": "2026-09-10T05:43:53.583Z",
     "https://www.adoptapet.com/pet/49329217-marshfield-wisconsin-cat": "2026-09-15T17:27:11.594Z",
     "https://www.adoptapet.com/pet/49306612-marshfield-wisconsin-cat": "2026-09-13T05:49:18.636Z",
-    "https://www.adoptapet.com/pet/49241197-marshfield-wisconsin-cat": "2026-09-07T05:52:09.010Z",
     "https://www.adoptapet.com/pet/49309761-marshfield-wisconsin-cat": "2026-09-13T16:48:14.257Z",
     "https://www.adoptapet.com/pet/49310739-marshfield-wisconsin-cat": "2026-09-13T16:48:14.257Z",
-    "https://www.adoptapet.com/pet/49280290-plover-wisconsin-australian-shepherd": "2026-09-11T05:43:43.759Z",
-    "https://www.adoptapet.com/pet/48229155-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
-    "https://www.adoptapet.com/pet/49414948-plover-wisconsin-dalmatian-mix": "2026-09-24T05:57:44.976Z",
-    "https://www.adoptapet.com/pet/49280291-plover-wisconsin-siberian-husky-mix": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/49279192-plover-wisconsin-cat": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/45727911-wausau-cat": "2026-07-30T04:09:25.193Z",
     "https://www.adoptapet.com/pet/47593433-wausau-german-shepherd-dog-mix": "2026-07-12T04:27:42.260Z",
@@ -3159,22 +3340,16 @@
     "https://www.adoptapet.com/pet/49390481-friendship-wisconsin-yorkie-yorkshire-terrier-mixed-breed-medium-mix": "2026-09-23T17:40:47.505Z",
     "https://www.adoptapet.com/pet/49219916-wausau-wisconsin-chesapeake-bay-retriever": "2026-09-04T16:42:31.716Z",
     "https://www.adoptapet.com/pet/42856670-wausau-wisconsin-shih-tzu-mix": "2026-06-19T06:24:14.971Z",
-    "https://www.adoptapet.com/pet/49029156-friendship-australian-cattle-dog-mix": "2026-09-01T06:08:45.634Z",
-    "https://www.adoptapet.com/pet/49380314-friendship-wisconsin-australian-cattle-dog-mix": "2026-09-21T06:01:17.302Z",
     "https://www.adoptapet.com/pet/42856669-wausau-wisconsin-shih-tzu-bichon-frise-mix": null,
-    "https://www.adoptapet.com/pet/46160372-wisconsin-rapids-wisconsin-mixed-breed-medium-mix": "2026-09-05T05:27:38.113Z",
-    "https://www.adoptapet.com/pet/45097745-marshfield-cat": "2026-09-23T05:42:01.620Z",
     "https://www.adoptapet.com/pet/48229120-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48903033-medford-cat": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/43510261-medford-black-and-tan-coonhound-mix": "2026-07-23T04:18:22.720Z",
-    "https://www.adoptapet.com/pet/46525122-medford-hound-unknown-type-mix": "2026-09-11T05:43:43.759Z",
     "https://www.adoptapet.com/pet/45715583-medford-plott-hound-mix": "2026-07-20T15:08:58.002Z",
     "https://www.adoptapet.com/pet/49390481-friendship-wisconsin-yorkie-yorkshire-terrier-mix": "2026-09-21T18:26:49.571Z",
     "https://www.adoptapet.com/pet/49382439-wisconsin-rapids-wisconsin-american-pit-bull-terrier-mix": "2026-09-20T16:40:14.908Z",
     "https://www.adoptapet.com/pet/49206005-wisconsin-rapids-wisconsin-cat": "2026-09-03T16:54:10.370Z",
     "https://www.adoptapet.com/pet/49246319-marshfield-wisconsin-cat": "2026-09-07T18:04:21.741Z",
     "https://www.adoptapet.com/pet/49394672-wausau-wisconsin-cairn-terrier-mix": "2026-09-22T05:57:41.010Z",
-    "https://www.adoptapet.com/pet/49228660-wausau-wisconsin-cat": "2026-09-05T05:27:38.113Z",
     "https://www.adoptapet.com/pet/49029156-friendship-wisconsin-australian-cattle-dog-mix": "2026-08-18T02:16:48.642Z",
     "https://www.adoptapet.com/pet/49336710-friendship-labrador-retriever-mix": "2026-09-22T05:57:41.010Z",
     "https://www.adoptapet.com/pet/49370423-friendship-wisconsin-australian-cattle-dog-mixed-breed-medium-mix": "2026-09-20T05:55:04.351Z",
@@ -3459,7 +3634,6 @@
     "https://www.adoptapet.com/pet/48734338-friendship-wisconsin-cat": "2026-07-21T04:17:31.888Z",
     "https://www.adoptapet.com/pet/49129016-friendship-wisconsin-cat": "2026-08-27T11:02:57.234Z",
     "https://www.adoptapet.com/pet/49129015-friendship-wisconsin-cat": "2026-08-27T11:02:57.234Z",
-    "https://www.adoptapet.com/pet/46976127-wisconsin-rapids-wisconsin-st-bernard-mix": "2026-06-13T05:23:34.271Z",
     "https://www.adoptapet.com/pet/46841349-wisconsin-rapids-wisconsin-cat": "2026-07-19T04:23:20.212Z",
     "https://www.adoptapet.com/pet/48491649-marshfield-wisconsin-cat": "2026-06-28T05:20:18.491Z",
     "https://www.adoptapet.com/pet/49094074-marshfield-wisconsin-cat": "2026-08-23T02:24:30.802Z",
@@ -3561,7 +3735,6 @@
     "https://www.adoptapet.com/pet/48992693-friendship-wisconsin-terrier-unknown-type-medium-mixed-breed-medium-mix": "2026-08-14T03:25:19.248Z",
     "https://www.adoptapet.com/pet/48192023-wausau-wisconsin-mixed-breed-medium-mix": null,
     "https://www.adoptapet.com/pet/48719150-wausau-wisconsin-goldendoodle": "2026-07-19T04:23:20.212Z",
-    "https://www.adoptapet.com/pet/48560868-wausau-wisconsin-cat": "2026-07-04T04:38:45.749Z",
     "https://www.adoptapet.com/pet/48845056-friendship-wisconsin-cat": "2026-07-30T04:09:25.193Z",
     "https://www.adoptapet.com/pet/49088176-wausau-wisconsin-cat": "2026-08-22T02:16:48.469Z",
     "https://www.adoptapet.com/pet/48219739-wausau-wisconsin-american-pit-bull-terrier-mix": null,
@@ -3604,13 +3777,10 @@
     "https://www.adoptapet.com/pet/49040724-plover-wisconsin-cat": "2026-08-18T02:16:48.642Z",
     "https://www.adoptapet.com/pet/48229108-plover-wisconsin-cat": "2026-07-19T18:54:42.206Z",
     "https://www.adoptapet.com/pet/48917784-wausau-wisconsin-cat": "2026-08-06T04:16:20.624Z",
-    "https://www.adoptapet.com/pet/48880501-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/48858106-wausau-wisconsin-cat": "2026-08-01T04:23:18.595Z",
     "https://www.adoptapet.com/pet/48820439-wausau-wisconsin-cat": "2026-07-28T04:13:51.998Z",
-    "https://www.adoptapet.com/pet/48880500-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/49054080-wausau-wisconsin-cat": "2026-08-19T13:40:53.377Z",
     "https://www.adoptapet.com/pet/48962060-wausau-wisconsin-mixed-breed-medium-mix": "2026-08-11T03:05:39.766Z",
-    "https://www.adoptapet.com/pet/48880499-wausau-wisconsin-cat": "2026-08-02T04:26:00.669Z",
     "https://www.adoptapet.com/pet/49003401-wausau-wisconsin-american-staffordshire-terrier-mix": "2026-08-14T03:25:19.248Z",
     "https://www.adoptapet.com/pet/48514318-wausau-wisconsin-cat": "2026-06-30T05:09:10.155Z",
     "https://www.adoptapet.com/pet/48912834-friendship-wisconsin-labrador-retriever-mix": "2026-08-06T04:16:20.624Z",
@@ -4379,12 +4549,12 @@
   },
   "scrape_status": {
     "marathon": {
-      "count": 57,
+      "count": 76,
       "status": "ok",
       "expected_min": 20
     },
     "clark": {
-      "count": 30,
+      "count": 29,
       "status": "ok",
       "expected_min": 10
     },
@@ -4399,7 +4569,7 @@
       "expected_min": 1
     },
     "nlpac": {
-      "count": 12,
+      "count": 10,
       "status": "ok",
       "expected_min": 3
     },
@@ -4409,12 +4579,12 @@
       "expected_min": 5
     },
     "southwood": {
-      "count": 39,
+      "count": 37,
       "status": "ok",
       "expected_min": 10
     },
     "marshfield": {
-      "count": 11,
+      "count": 10,
       "status": "ok",
       "expected_min": 3
     },
